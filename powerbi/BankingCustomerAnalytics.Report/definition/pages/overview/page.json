@@ -1,0 +1,711 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "overview",
+  "displayName": "Executive Overview",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_country",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "country_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "country_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "value_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "credit_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "age_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "segment_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "insight",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "country_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "country_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "value_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "credit_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "age_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "segment_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "insight",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "country_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "country_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "value_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "credit_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "age_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "segment_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "insight",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "country_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "value_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "credit_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "age_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "segment_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_customers",
+      "target": "insight",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "country_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "value_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "credit_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "age_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "segment_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_balance",
+      "target": "insight",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "country_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "country_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "credit_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "age_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "segment_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_mix",
+      "target": "insight",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "country_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "country_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "value_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "age_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "segment_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_mix",
+      "target": "insight",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "country_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "country_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "value_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "credit_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "segment_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_mix",
+      "target": "insight",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "country_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "country_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "value_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "credit_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "age_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_mix",
+      "target": "insight",
+      "type": "DataFilter"
+    }
+  ]
+}

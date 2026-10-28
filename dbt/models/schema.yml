@@ -1,0 +1,267 @@
+version: 2
+sources:
+- name: banking
+  schema: main
+  tables:
+  - name: silver_customers
+    description: Published accepted Silver or explicit configuration seed; no Python
+      business-model output is used.
+  - name: configured_country_codes
+    description: Published accepted Silver or explicit configuration seed; no Python
+      business-model output is used.
+  - name: configured_dim_age_group
+    description: Published accepted Silver or explicit configuration seed; no Python
+      business-model output is used.
+  - name: configured_dim_credit_band
+    description: Published accepted Silver or explicit configuration seed; no Python
+      business-model output is used.
+  - name: configured_dim_tenure_band
+    description: Published accepted Silver or explicit configuration seed; no Python
+      business-model output is used.
+models:
+- name: stg_customers
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: customer_id
+    description: Sensitive source lineage identifier, unique in accepted Silver.
+    tests:
+    - unique
+    - not_null
+- name: int_customer_features
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: customer_id
+    description: Sensitive source lineage identifier, unique in accepted Silver.
+    tests:
+    - unique
+    - not_null
+- name: int_customer_value
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: customer_id
+    description: Sensitive source lineage identifier, unique in accepted Silver.
+    tests:
+    - unique
+    - not_null
+- name: int_customer_segments
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: customer_id
+    description: Sensitive source lineage identifier, unique in accepted Silver.
+    tests:
+    - unique
+    - not_null
+- name: dim_customer
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: customer_key
+    description: Stable integer surrogate key; zero is Unknown for lookup dimensions.
+    tests:
+    - unique
+    - not_null
+  - name: customer_id
+    description: Sensitive source lineage identifier, unique in accepted Silver.
+    tests:
+    - unique
+    - not_null
+  - name: customer_value_segment
+    description: Tie-preserving quantile tier; Unknown means incomplete score.
+    tests:
+    - accepted_values:
+        arguments:
+          values:
+          - Low
+          - Medium
+          - High
+          - Premium
+          - Unknown
+  - name: primary_customer_segment
+    description: First matching segment by configured priority.
+    tests:
+    - accepted_values:
+        arguments:
+          values:
+          - High Value
+          - Affluent
+          - High Balance
+          - High Credit Quality
+          - Long-Term Customer
+          - Mass Market
+- name: dim_country
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: country_key
+    description: Stable integer surrogate key; zero is Unknown for lookup dimensions.
+    tests:
+    - unique
+    - not_null
+- name: dim_age_group
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: age_group_key
+    description: Stable integer surrogate key; zero is Unknown for lookup dimensions.
+    tests:
+    - unique
+    - not_null
+- name: dim_credit_band
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: credit_band_key
+    description: Stable integer surrogate key; zero is Unknown for lookup dimensions.
+    tests:
+    - unique
+    - not_null
+- name: dim_tenure_band
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: tenure_band_key
+    description: Stable integer surrogate key; zero is Unknown for lookup dimensions.
+    tests:
+    - unique
+    - not_null
+- name: fact_customer_financials
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: customer_key
+    description: Dimension foreign key in the current customer snapshot.
+    tests:
+    - unique
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('dim_customer')
+          field: customer_key
+  - name: country_key
+    description: Dimension foreign key in the current customer snapshot.
+    tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('dim_country')
+          field: country_key
+  - name: age_group_key
+    description: Dimension foreign key in the current customer snapshot.
+    tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('dim_age_group')
+          field: age_group_key
+  - name: credit_band_key
+    description: Dimension foreign key in the current customer snapshot.
+    tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('dim_credit_band')
+          field: credit_band_key
+  - name: tenure_band_key
+    description: Dimension foreign key in the current customer snapshot.
+    tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('dim_tenure_band')
+          field: tenure_band_key
+- name: mart_customer_segments
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: customer_value_segment
+    description: Tie-preserving quantile tier; Unknown means incomplete score.
+    tests:
+    - accepted_values:
+        arguments:
+          values:
+          - Low
+          - Medium
+          - High
+          - Premium
+          - Unknown
+  - name: primary_customer_segment
+    description: First matching segment by configured priority.
+    tests:
+    - accepted_values:
+        arguments:
+          values:
+          - High Value
+          - Affluent
+          - High Balance
+          - High Credit Quality
+          - Long-Term Customer
+          - Mass Market
+- name: mart_country_summary
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns: []
+- name: mart_age_group_summary
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns: []
+- name: mart_credit_band_summary
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns: []
+- name: mart_tenure_summary
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns: []
+- name: mart_customer_kpis
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns: []
+- name: fct_customer_financials
+  description: Current accepted-customer snapshot transformation; see docs/gold_models.md
+    for grain and metric contracts.
+  columns:
+  - name: customer_key
+    description: Dimension foreign key in the current customer snapshot.
+    tests:
+    - unique
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('dim_customer')
+          field: customer_key
+  - name: country_key
+    description: Dimension foreign key in the current customer snapshot.
+    tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('dim_country')
+          field: country_key
+  - name: age_group_key
+    description: Dimension foreign key in the current customer snapshot.
+    tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('dim_age_group')
+          field: age_group_key
+  - name: credit_band_key
+    description: Dimension foreign key in the current customer snapshot.
+    tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('dim_credit_band')
+          field: credit_band_key
+  - name: tenure_band_key
+    description: Dimension foreign key in the current customer snapshot.
+    tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('dim_tenure_band')
+          field: tenure_band_key

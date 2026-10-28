@@ -1,0 +1,916 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "customers",
+  "displayName": "Customer Profile",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_country",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_age_group",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "age",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "tenure",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "age_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "age_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "slicer_age_group",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "age",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "tenure",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "age_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "age_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "age",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "tenure",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "age_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "age_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_age_group",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "slicer_age_group",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "age",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "tenure",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "age_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "age_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "slicer_age_group",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "age",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "tenure",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "age_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "age_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "slicer_age_group",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "tenure",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "age_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "age_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "slicer_age_group",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "age",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "tenure",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "age_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "age_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "gender",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_age_group",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "age",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "tenure",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "age_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "age_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "slicer_age_group",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "age",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "age_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "age_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "slicer_age_group",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "age",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "tenure",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "age_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_balance",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "slicer_age_group",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "age",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "tenure",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "age_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "age_salary",
+      "target": "age_profile_matrix",
+      "type": "DataFilter"
+    }
+  ]
+}

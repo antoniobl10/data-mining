@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@microsoft/powerquery-parser": "^4.0.1"
+  }
+}

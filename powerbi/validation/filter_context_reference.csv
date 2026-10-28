@@ -1,0 +1,558 @@
+scenario,measure,pandas_reference,sql_reference,status,native_dax_executed
+all,Total Customers,1439.0,1439.0,PASS,False
+all,Total Balance,68552786.88,68552786.87999995,PASS,False
+all,Average Balance,73633.49825993554,73633.4982599355,PASS,False
+all,Median Balance,81576.75,81576.75,PASS,False
+all,Average Estimated Salary,67018.17497567755,67018.17497567766,PASS,False
+all,Median Estimated Salary,44937.1,44937.1,PASS,False
+all,Average Credit Score,644.3564425770309,644.3564425770309,PASS,False
+all,Median Credit Score,648.0,648.0,PASS,False
+all,Average Age,38.49860529986053,38.49860529986053,PASS,False
+all,Average Tenure,4.821014492753624,4.821014492753624,PASS,False
+all,Average Customer Value Score,50.010005900491485,50.010005900491514,PASS,False
+all,High Value Customers,444.0,444.0,PASS,False
+all,High Value Customer %,0.3085476025017373,0.3085476025017373,PASS,False
+all,High Credit Quality Customers,244.0,244.0,PASS,False
+all,High Credit Quality %,0.1695621959694232,0.1695621959694232,PASS,False
+all,High Balance Customers,94.0,94.0,PASS,False
+all,High Balance Customer %,0.06532314107018763,0.06532314107018763,PASS,False
+all,Long-Term Customers,450.0,450.0,PASS,False
+all,Long-Term Customer %,0.3127171646977067,0.3127171646977067,PASS,False
+all,High Income Customers,360.0,360.0,PASS,False
+all,High Income Customer %,0.2501737317581654,0.2501737317581654,PASS,False
+all,Premium Customers,222.0,222.0,PASS,False
+all,Premium Customer %,0.15427380125086865,0.15427380125086865,PASS,False
+all,Customers with Balance,931.0,931.0,PASS,False
+all,Scored Customers,888.0,888.0,PASS,False
+all,Customers with Credit Score,1428.0,1428.0,PASS,False
+all,Balance Coverage %,0.6469770674079222,0.6469770674079222,PASS,False
+all,Score Coverage %,0.6170952050034746,0.6170952050034746,PASS,False
+all,High Credit Quality % of Observed,0.17086834733893558,0.17086834733893558,PASS,False
+all,Balance per Customer,47639.18476719944,47639.18476719941,PASS,False
+all:France,Balance Share %,0.3882596488249436,0.38825964882494407,PASS,False
+all:Germany,Balance Share %,0.394172525287713,0.39417252528771307,PASS,False
+all:Spain,Balance Share %,0.21756782588734344,0.2175678258873436,PASS,False
+all:Germany,Country Rank by Total Balance,1.0,1.0,PASS,False
+all:France,Country Rank by Total Balance,2.0,2.0,PASS,False
+all:Spain,Country Rank by Total Balance,3.0,3.0,PASS,False
+all:France,Country Rank by Customers,1.0,1.0,PASS,False
+all:Spain,Country Rank by Customers,2.0,2.0,PASS,False
+all:Germany,Country Rank by Customers,3.0,3.0,PASS,False
+all:Spain,Country Rank by Average Customer Value,1.0,1.0,PASS,False
+all:Germany,Country Rank by Average Customer Value,2.0,2.0,PASS,False
+all:France,Country Rank by Average Customer Value,3.0,3.0,PASS,False
+all,Average Balance vs Overall,0.0,0.0,PASS,False
+all,Average Credit Score vs Overall,0.0,0.0,PASS,False
+all,Average Customer Value vs Overall,0.0,0.0,PASS,False
+all:0.01,Balance Concentration Share,0.027465637294890384,0.027465637294890384,PASS,False
+all:0.05,Balance Concentration Share,0.12010186565299268,0.12010186565299269,PASS,False
+all:0.1,Balance Concentration Share,0.22796377508846805,0.227963775088468,PASS,False
+all:0.5,Balance Concentration Share,0.11810003500181553,0.11810003500181546,PASS,False
+country_france,Total Customers,699.0,699.0,PASS,False
+country_france,Total Balance,26616280.96,26616280.960000016,PASS,False
+country_france,Average Balance,73525.63801104973,73525.63801104977,PASS,False
+country_france,Median Balance,82474.75,82474.75,PASS,False
+country_france,Average Estimated Salary,64630.01804005722,64630.01804005717,PASS,False
+country_france,Median Estimated Salary,37976.36,37976.36,PASS,False
+country_france,Average Credit Score,641.7553956834532,641.7553956834532,PASS,False
+country_france,Median Credit Score,646.0,646.0,PASS,False
+country_france,Average Age,38.32951289398281,38.32951289398281,PASS,False
+country_france,Average Tenure,4.7481481481481485,4.7481481481481485,PASS,False
+country_france,Average Customer Value Score,49.62574093951285,49.62574093951281,PASS,False
+country_france,High Value Customers,172.0,172.0,PASS,False
+country_france,High Value Customer %,0.24606580829756797,0.24606580829756797,PASS,False
+country_france,High Credit Quality Customers,107.0,107.0,PASS,False
+country_france,High Credit Quality %,0.1530758226037196,0.1530758226037196,PASS,False
+country_france,High Balance Customers,38.0,38.0,PASS,False
+country_france,High Balance Customer %,0.05436337625178827,0.05436337625178827,PASS,False
+country_france,Long-Term Customers,212.0,212.0,PASS,False
+country_france,Long-Term Customer %,0.3032904148783977,0.3032904148783977,PASS,False
+country_france,High Income Customers,168.0,168.0,PASS,False
+country_france,High Income Customer %,0.24034334763948498,0.24034334763948498,PASS,False
+country_france,Premium Customers,89.0,89.0,PASS,False
+country_france,Premium Customer %,0.12732474964234622,0.12732474964234622,PASS,False
+country_france,Customers with Balance,362.0,362.0,PASS,False
+country_france,Scored Customers,349.0,349.0,PASS,False
+country_france,Customers with Credit Score,695.0,695.0,PASS,False
+country_france,Balance Coverage %,0.5178826895565093,0.5178826895565093,PASS,False
+country_france,Score Coverage %,0.49928469241773965,0.49928469241773965,PASS,False
+country_france,High Credit Quality % of Observed,0.1539568345323741,0.1539568345323741,PASS,False
+country_france,Balance per Customer,38077.655164520744,38077.655164520766,PASS,False
+country_france:France,Balance Share %,1.0,1.0,PASS,False
+country_france:France,Country Rank by Total Balance,1.0,1.0,PASS,False
+country_france:France,Country Rank by Customers,1.0,1.0,PASS,False
+country_france:France,Country Rank by Average Customer Value,1.0,1.0,PASS,False
+country_france,Average Balance vs Overall,-107.86024888581596,-107.86024888572865,PASS,False
+country_france,Average Credit Score vs Overall,-2.6010468935776316,-2.6010468935776316,PASS,False
+country_france,Average Customer Value vs Overall,-0.3842649609786335,-0.38426496097870455,PASS,False
+country_france:0.01,Balance Concentration Share,0.027998513808895415,0.027998513808895387,PASS,False
+country_france:0.05,Balance Concentration Share,0.12543103429879035,0.1254310342987902,PASS,False
+country_france:0.1,Balance Concentration Share,0.23267811078892367,0.23267811078892345,PASS,False
+country_france:0.5,Balance Concentration Share,0.11743355898208853,0.1174335589820885,PASS,False
+gender_female,Total Customers,661.0,661.0,PASS,False
+gender_female,Total Balance,33354796.39,33354796.39000001,PASS,False
+gender_female,Average Balance,76152.50317351599,76152.50317351602,PASS,False
+gender_female,Median Balance,84536.535,84536.535,PASS,False
+gender_female,Average Estimated Salary,66851.67417549167,66851.67417549156,PASS,False
+gender_female,Median Estimated Salary,38867.46,38867.46,PASS,False
+gender_female,Average Credit Score,643.1062215477997,643.1062215477997,PASS,False
+gender_female,Median Credit Score,646.0,646.0,PASS,False
+gender_female,Average Age,38.764795144157816,38.764795144157816,PASS,False
+gender_female,Average Tenure,4.582018927444795,4.582018927444795,PASS,False
+gender_female,Average Customer Value Score,50.11906848125818,50.119068481258154,PASS,False
+gender_female,High Value Customers,213.0,213.0,PASS,False
+gender_female,High Value Customer %,0.32223903177004537,0.32223903177004537,PASS,False
+gender_female,High Credit Quality Customers,118.0,118.0,PASS,False
+gender_female,High Credit Quality %,0.17851739788199697,0.17851739788199697,PASS,False
+gender_female,High Balance Customers,49.0,49.0,PASS,False
+gender_female,High Balance Customer %,0.07413010590015129,0.07413010590015129,PASS,False
+gender_female,Long-Term Customers,185.0,185.0,PASS,False
+gender_female,Long-Term Customer %,0.27987897125567324,0.27987897125567324,PASS,False
+gender_female,High Income Customers,164.0,164.0,PASS,False
+gender_female,High Income Customer %,0.2481089258698941,0.2481089258698941,PASS,False
+gender_female,Premium Customers,107.0,107.0,PASS,False
+gender_female,Premium Customer %,0.16187594553706505,0.16187594553706505,PASS,False
+gender_female,Customers with Balance,438.0,438.0,PASS,False
+gender_female,Scored Customers,424.0,424.0,PASS,False
+gender_female,Customers with Credit Score,659.0,659.0,PASS,False
+gender_female,Balance Coverage %,0.6626323751891074,0.6626323751891074,PASS,False
+gender_female,Score Coverage %,0.6414523449319214,0.6414523449319214,PASS,False
+gender_female,High Credit Quality % of Observed,0.17905918057663125,0.17905918057663125,PASS,False
+gender_female,Balance per Customer,50461.11405446294,50461.11405446295,PASS,False
+gender_female:France,Balance Share %,0.4436598388121655,0.4436598388121653,PASS,False
+gender_female:Germany,Balance Share %,0.3741129483776771,0.3741129483776767,PASS,False
+gender_female:Spain,Balance Share %,0.1822272128101574,0.18222721281015739,PASS,False
+gender_female:France,Country Rank by Total Balance,1.0,1.0,PASS,False
+gender_female:Germany,Country Rank by Total Balance,2.0,2.0,PASS,False
+gender_female:Spain,Country Rank by Total Balance,3.0,3.0,PASS,False
+gender_female:France,Country Rank by Customers,1.0,1.0,PASS,False
+gender_female:Germany,Country Rank by Customers,2.0,2.0,PASS,False
+gender_female:Spain,Country Rank by Customers,3.0,3.0,PASS,False
+gender_female:France,Country Rank by Average Customer Value,1.0,1.0,PASS,False
+gender_female:Spain,Country Rank by Average Customer Value,2.0,2.0,PASS,False
+gender_female:Germany,Country Rank by Average Customer Value,3.0,3.0,PASS,False
+gender_female,Average Balance vs Overall,2519.004913580444,2519.0049135805166,PASS,False
+gender_female,Average Credit Score vs Overall,-1.2502210292311702,-1.2502210292311702,PASS,False
+gender_female,Average Customer Value vs Overall,0.10906258076669673,0.10906258076663988,PASS,False
+gender_female:0.01,Balance Concentration Share,0.02873237476236923,0.0287323747623692,PASS,False
+gender_female:0.05,Balance Concentration Share,0.1168746405889843,0.11687464058898417,PASS,False
+gender_female:0.1,Balance Concentration Share,0.22298856401443626,0.22298856401443598,PASS,False
+gender_female:0.5,Balance Concentration Share,0.13537086472378254,0.1353708647237825,PASS,False
+age_36_45,Total Customers,538.0,538.0,PASS,False
+age_36_45,Total Balance,24823373.63,24823373.630000006,PASS,False
+age_36_45,Average Balance,70321.17175637394,70321.17175637395,PASS,False
+age_36_45,Median Balance,79731.91,79731.91,PASS,False
+age_36_45,Average Estimated Salary,63896.93578066915,63896.9357806691,PASS,False
+age_36_45,Median Estimated Salary,36635.85,36635.85,PASS,False
+age_36_45,Average Credit Score,648.6728971962617,648.6728971962617,PASS,False
+age_36_45,Median Credit Score,652.0,652.0,PASS,False
+age_36_45,Average Age,39.62639405204461,39.62639405204461,PASS,False
+age_36_45,Average Tenure,4.858527131782946,4.858527131782946,PASS,False
+age_36_45,Average Customer Value Score,49.82323248668518,49.82323248668516,PASS,False
+age_36_45,High Value Customers,164.0,164.0,PASS,False
+age_36_45,High Value Customer %,0.3048327137546468,0.3048327137546468,PASS,False
+age_36_45,High Credit Quality Customers,103.0,103.0,PASS,False
+age_36_45,High Credit Quality %,0.19144981412639406,0.19144981412639406,PASS,False
+age_36_45,High Balance Customers,25.0,25.0,PASS,False
+age_36_45,High Balance Customer %,0.046468401486988845,0.046468401486988845,PASS,False
+age_36_45,Long-Term Customers,167.0,167.0,PASS,False
+age_36_45,Long-Term Customer %,0.3104089219330855,0.3104089219330855,PASS,False
+age_36_45,High Income Customers,124.0,124.0,PASS,False
+age_36_45,High Income Customer %,0.23048327137546468,0.23048327137546468,PASS,False
+age_36_45,Premium Customers,79.0,79.0,PASS,False
+age_36_45,Premium Customer %,0.14684014869888476,0.14684014869888476,PASS,False
+age_36_45,Customers with Balance,353.0,353.0,PASS,False
+age_36_45,Scored Customers,338.0,338.0,PASS,False
+age_36_45,Customers with Credit Score,535.0,535.0,PASS,False
+age_36_45,Balance Coverage %,0.6561338289962825,0.6561338289962825,PASS,False
+age_36_45,Score Coverage %,0.6282527881040892,0.6282527881040892,PASS,False
+age_36_45,High Credit Quality % of Observed,0.1925233644859813,0.1925233644859813,PASS,False
+age_36_45,Balance per Customer,46140.099684014865,46140.09968401488,PASS,False
+age_36_45:France,Balance Share %,0.37642167979566443,0.3764216797956646,PASS,False
+age_36_45:Germany,Balance Share %,0.4341120953429407,0.43411209534294054,PASS,False
+age_36_45:Spain,Balance Share %,0.18946622486139486,0.1894662248613948,PASS,False
+age_36_45:Germany,Country Rank by Total Balance,1.0,1.0,PASS,False
+age_36_45:France,Country Rank by Total Balance,2.0,2.0,PASS,False
+age_36_45:Spain,Country Rank by Total Balance,3.0,3.0,PASS,False
+age_36_45:France,Country Rank by Customers,1.0,1.0,PASS,False
+age_36_45:Germany,Country Rank by Customers,2.0,2.0,PASS,False
+age_36_45:Spain,Country Rank by Customers,3.0,3.0,PASS,False
+age_36_45:Spain,Country Rank by Average Customer Value,1.0,1.0,PASS,False
+age_36_45:France,Country Rank by Average Customer Value,2.0,2.0,PASS,False
+age_36_45:Germany,Country Rank by Average Customer Value,3.0,3.0,PASS,False
+age_36_45,Average Balance vs Overall,-3312.326503561606,-3312.3265035615477,PASS,False
+age_36_45,Average Credit Score vs Overall,4.3164546192308535,4.3164546192308535,PASS,False
+age_36_45,Average Customer Value vs Overall,-0.18677341380630708,-0.18677341380635681,PASS,False
+age_36_45:0.01,Balance Concentration Share,0.029512578786415344,0.029512578786415306,PASS,False
+age_36_45:0.05,Balance Concentration Share,0.12405712599347442,0.12405712599347424,PASS,False
+age_36_45:0.1,Balance Concentration Share,0.23353350380199717,0.2335335038019969,PASS,False
+age_36_45:0.5,Balance Concentration Share,0.11380367278466492,0.11380367278466477,PASS,False
+high_value_segment,Total Customers,444.0,444.0,PASS,False
+high_value_segment,Total Balance,49994233.08,49994233.079999976,PASS,False
+high_value_segment,Average Balance,112599.62405405405,112599.624054054,PASS,False
+high_value_segment,Median Balance,126391.04000000001,126391.04000000001,PASS,False
+high_value_segment,Average Estimated Salary,91722.85905405406,91722.85905405405,PASS,False
+high_value_segment,Median Estimated Salary,91599.39,91599.39,PASS,False
+high_value_segment,Average Credit Score,662.4639639639639,662.4639639639639,PASS,False
+high_value_segment,Median Credit Score,668.0,668.0,PASS,False
+high_value_segment,Average Age,38.934537246049665,38.934537246049665,PASS,False
+high_value_segment,Average Tenure,5.45045045045045,5.45045045045045,PASS,False
+high_value_segment,Average Customer Value Score,62.59244255101443,62.592442551014386,PASS,False
+high_value_segment,High Value Customers,444.0,444.0,PASS,False
+high_value_segment,High Value Customer %,1.0,1.0,PASS,False
+high_value_segment,High Credit Quality Customers,99.0,99.0,PASS,False
+high_value_segment,High Credit Quality %,0.22297297297297297,0.22297297297297297,PASS,False
+high_value_segment,High Balance Customers,86.0,86.0,PASS,False
+high_value_segment,High Balance Customer %,0.19369369369369369,0.19369369369369369,PASS,False
+high_value_segment,Long-Term Customers,187.0,187.0,PASS,False
+high_value_segment,Long-Term Customer %,0.42117117117117114,0.42117117117117114,PASS,False
+high_value_segment,High Income Customers,170.0,170.0,PASS,False
+high_value_segment,High Income Customer %,0.38288288288288286,0.38288288288288286,PASS,False
+high_value_segment,Premium Customers,222.0,222.0,PASS,False
+high_value_segment,Premium Customer %,0.5,0.5,PASS,False
+high_value_segment,Customers with Balance,444.0,444.0,PASS,False
+high_value_segment,Scored Customers,444.0,444.0,PASS,False
+high_value_segment,Customers with Credit Score,444.0,444.0,PASS,False
+high_value_segment,Balance Coverage %,1.0,1.0,PASS,False
+high_value_segment,Score Coverage %,1.0,1.0,PASS,False
+high_value_segment,High Credit Quality % of Observed,0.22297297297297297,0.22297297297297297,PASS,False
+high_value_segment,Balance per Customer,112599.62405405405,112599.624054054,PASS,False
+high_value_segment:France,Balance Share %,0.3930697538364959,0.3930697538364961,PASS,False
+high_value_segment:Germany,Balance Share %,0.3850132042069521,0.38501320420695206,PASS,False
+high_value_segment:Spain,Balance Share %,0.221917041956552,0.22191704195655218,PASS,False
+high_value_segment:France,Country Rank by Total Balance,1.0,1.0,PASS,False
+high_value_segment:Germany,Country Rank by Total Balance,2.0,2.0,PASS,False
+high_value_segment:Spain,Country Rank by Total Balance,3.0,3.0,PASS,False
+high_value_segment:Germany,Country Rank by Customers,1.0,1.0,PASS,False
+high_value_segment:France,Country Rank by Customers,2.0,2.0,PASS,False
+high_value_segment:Spain,Country Rank by Customers,3.0,3.0,PASS,False
+high_value_segment:Spain,Country Rank by Average Customer Value,1.0,1.0,PASS,False
+high_value_segment:Germany,Country Rank by Average Customer Value,2.0,2.0,PASS,False
+high_value_segment:France,Country Rank by Average Customer Value,3.0,3.0,PASS,False
+high_value_segment,Average Balance vs Overall,38966.1257941185,38966.1257941185,PASS,False
+high_value_segment,Average Credit Score vs Overall,18.10752138693306,18.10752138693306,PASS,False
+high_value_segment,Average Customer Value vs Overall,12.582436650522943,12.582436650522872,PASS,False
+high_value_segment:0.01,Balance Concentration Share,0.019338561878785403,0.019338561878785392,PASS,False
+high_value_segment:0.05,Balance Concentration Share,0.08324255826348202,0.083242558263482,PASS,False
+high_value_segment:0.1,Balance Concentration Share,0.15726088501886065,0.15726088501886057,PASS,False
+high_value_segment:0.5,Balance Concentration Share,0.3398166141045642,0.33981661410456393,PASS,False
+very_good_credit,Total Customers,193.0,193.0,PASS,False
+very_good_credit,Total Balance,9916060.65,9916060.650000002,PASS,False
+very_good_credit,Average Balance,76868.68720930233,76868.68720930234,PASS,False
+very_good_credit,Median Balance,81273.13,81273.13,PASS,False
+very_good_credit,Average Estimated Salary,71589.18829015543,71589.18829015545,PASS,False
+very_good_credit,Median Estimated Salary,58974.0,58974.0,PASS,False
+very_good_credit,Average Credit Score,767.7357512953367,767.7357512953367,PASS,False
+very_good_credit,Median Credit Score,768.0,768.0,PASS,False
+very_good_credit,Average Age,37.651041666666664,37.651041666666664,PASS,False
+very_good_credit,Average Tenure,4.779569892473118,4.779569892473118,PASS,False
+very_good_credit,Average Customer Value Score,56.29988921602221,56.29988921602224,PASS,False
+very_good_credit,High Value Customers,77.0,77.0,PASS,False
+very_good_credit,High Value Customer %,0.39896373056994816,0.39896373056994816,PASS,False
+very_good_credit,High Credit Quality Customers,193.0,193.0,PASS,False
+very_good_credit,High Credit Quality %,1.0,1.0,PASS,False
+very_good_credit,High Balance Customers,17.0,17.0,PASS,False
+very_good_credit,High Balance Customer %,0.08808290155440414,0.08808290155440414,PASS,False
+very_good_credit,Long-Term Customers,67.0,67.0,PASS,False
+very_good_credit,Long-Term Customer %,0.3471502590673575,0.3471502590673575,PASS,False
+very_good_credit,High Income Customers,51.0,51.0,PASS,False
+very_good_credit,High Income Customer %,0.26424870466321243,0.26424870466321243,PASS,False
+very_good_credit,Premium Customers,48.0,48.0,PASS,False
+very_good_credit,Premium Customer %,0.24870466321243523,0.24870466321243523,PASS,False
+very_good_credit,Customers with Balance,129.0,129.0,PASS,False
+very_good_credit,Scored Customers,127.0,127.0,PASS,False
+very_good_credit,Customers with Credit Score,193.0,193.0,PASS,False
+very_good_credit,Balance Coverage %,0.6683937823834197,0.6683937823834197,PASS,False
+very_good_credit,Score Coverage %,0.6580310880829016,0.6580310880829016,PASS,False
+very_good_credit,High Credit Quality % of Observed,1.0,1.0,PASS,False
+very_good_credit,Balance per Customer,51378.55259067358,51378.552590673586,PASS,False
+very_good_credit:France,Balance Share %,0.369481995856893,0.369481995856893,PASS,False
+very_good_credit:Germany,Balance Share %,0.41528389098749613,0.41528389098749624,PASS,False
+very_good_credit:Spain,Balance Share %,0.21523411315561083,0.21523411315561075,PASS,False
+very_good_credit:Germany,Country Rank by Total Balance,1.0,1.0,PASS,False
+very_good_credit:France,Country Rank by Total Balance,2.0,2.0,PASS,False
+very_good_credit:Spain,Country Rank by Total Balance,3.0,3.0,PASS,False
+very_good_credit:France,Country Rank by Customers,1.0,1.0,PASS,False
+very_good_credit:Germany,Country Rank by Customers,2.0,2.0,PASS,False
+very_good_credit:Spain,Country Rank by Customers,3.0,3.0,PASS,False
+very_good_credit:Spain,Country Rank by Average Customer Value,1.0,1.0,PASS,False
+very_good_credit:Germany,Country Rank by Average Customer Value,2.0,2.0,PASS,False
+very_good_credit:France,Country Rank by Average Customer Value,3.0,3.0,PASS,False
+very_good_credit,Average Balance vs Overall,3235.188949366784,3235.1889493668423,PASS,False
+very_good_credit,Average Credit Score vs Overall,123.37930871830588,123.37930871830588,PASS,False
+very_good_credit,Average Customer Value vs Overall,6.289883315530723,6.289883315530723,PASS,False
+very_good_credit:0.01,Balance Concentration Share,0.03628738495059528,0.036287384950595296,PASS,False
+very_good_credit:0.05,Balance Concentration Share,0.12352015515354883,0.12352015515354887,PASS,False
+very_good_credit:0.1,Balance Concentration Share,0.2226684383984683,0.2226684383984684,PASS,False
+very_good_credit:0.5,Balance Concentration Share,0.12204206717916759,0.12204206717916766,PASS,False
+loyal_tenure,Total Customers,591.0,591.0,PASS,False
+loyal_tenure,Total Balance,27404436.07,27404436.069999993,PASS,False
+loyal_tenure,Average Balance,72690.81185676393,72690.8118567639,PASS,False
+loyal_tenure,Median Balance,77253.5,77253.5,PASS,False
+loyal_tenure,Average Estimated Salary,68256.8928426396,68256.89284263956,PASS,False
+loyal_tenure,Median Estimated Salary,48314.0,48314.0,PASS,False
+loyal_tenure,Average Credit Score,642.7342419080068,642.7342419080068,PASS,False
+loyal_tenure,Median Credit Score,646.0,646.0,PASS,False
+loyal_tenure,Average Age,37.9320882852292,37.9320882852292,PASS,False
+loyal_tenure,Average Tenure,7.49746192893401,7.49746192893401,PASS,False
+loyal_tenure,Average Customer Value Score,55.557932092176934,55.55793209217691,PASS,False
+loyal_tenure,High Value Customers,236.0,236.0,PASS,False
+loyal_tenure,High Value Customer %,0.3993231810490694,0.3993231810490694,PASS,False
+loyal_tenure,High Credit Quality Customers,102.0,102.0,PASS,False
+loyal_tenure,High Credit Quality %,0.17258883248730963,0.17258883248730963,PASS,False
+loyal_tenure,High Balance Customers,42.0,42.0,PASS,False
+loyal_tenure,High Balance Customer %,0.07106598984771574,0.07106598984771574,PASS,False
+loyal_tenure,Long-Term Customers,450.0,450.0,PASS,False
+loyal_tenure,Long-Term Customer %,0.7614213197969543,0.7614213197969543,PASS,False
+loyal_tenure,High Income Customers,155.0,155.0,PASS,False
+loyal_tenure,High Income Customer %,0.2622673434856176,0.2622673434856176,PASS,False
+loyal_tenure,Premium Customers,131.0,131.0,PASS,False
+loyal_tenure,Premium Customer %,0.22165820642978004,0.22165820642978004,PASS,False
+loyal_tenure,Customers with Balance,377.0,377.0,PASS,False
+loyal_tenure,Scored Customers,375.0,375.0,PASS,False
+loyal_tenure,Customers with Credit Score,587.0,587.0,PASS,False
+loyal_tenure,Balance Coverage %,0.637901861252115,0.637901861252115,PASS,False
+loyal_tenure,Score Coverage %,0.6345177664974619,0.6345177664974619,PASS,False
+loyal_tenure,High Credit Quality % of Observed,0.1737649063032368,0.1737649063032368,PASS,False
+loyal_tenure,Balance per Customer,46369.604179357026,46369.60417935701,PASS,False
+loyal_tenure:France,Balance Share %,0.3950191623118483,0.3950191623118486,PASS,False
+loyal_tenure:Germany,Balance Share %,0.3695211652643944,0.36952116526439455,PASS,False
+loyal_tenure:Spain,Balance Share %,0.23545967242375734,0.23545967242375743,PASS,False
+loyal_tenure:France,Country Rank by Total Balance,1.0,1.0,PASS,False
+loyal_tenure:Germany,Country Rank by Total Balance,2.0,2.0,PASS,False
+loyal_tenure:Spain,Country Rank by Total Balance,3.0,3.0,PASS,False
+loyal_tenure:France,Country Rank by Customers,1.0,1.0,PASS,False
+loyal_tenure:Spain,Country Rank by Customers,2.0,2.0,PASS,False
+loyal_tenure:Germany,Country Rank by Customers,3.0,3.0,PASS,False
+loyal_tenure:Germany,Country Rank by Average Customer Value,1.0,1.0,PASS,False
+loyal_tenure:Spain,Country Rank by Average Customer Value,2.0,2.0,PASS,False
+loyal_tenure:France,Country Rank by Average Customer Value,3.0,3.0,PASS,False
+loyal_tenure,Average Balance vs Overall,-942.6864031716104,-942.6864031715959,PASS,False
+loyal_tenure,Average Credit Score vs Overall,-1.622200669024096,-1.622200669024096,PASS,False
+loyal_tenure,Average Customer Value vs Overall,5.547926191685448,5.547926191685399,PASS,False
+loyal_tenure:0.01,Balance Concentration Share,0.027086692756746807,0.027086692756746793,PASS,False
+loyal_tenure:0.05,Balance Concentration Share,0.12162988581432246,0.12162988581432238,PASS,False
+loyal_tenure:0.1,Balance Concentration Share,0.23302056330181578,0.23302056330181567,PASS,False
+loyal_tenure:0.5,Balance Concentration Share,0.10221083742957676,0.10221083742957664,PASS,False
+premium,Total Customers,222.0,222.0,PASS,False
+premium,Total Balance,29569073.46,29569073.460000012,PASS,False
+premium,Average Balance,133194.0245945946,133194.02459459464,PASS,False
+premium,Median Balance,136590.52000000002,136590.52000000002,PASS,False
+premium,Average Estimated Salary,109314.70918918918,109314.7091891892,PASS,False
+premium,Median Estimated Salary,120600.37,120600.37,PASS,False
+premium,Average Credit Score,678.6846846846847,678.6846846846847,PASS,False
+premium,Median Credit Score,685.5,685.5,PASS,False
+premium,Average Age,38.247747747747745,38.247747747747745,PASS,False
+premium,Average Tenure,5.8108108108108105,5.8108108108108105,PASS,False
+premium,Average Customer Value Score,69.68898658370449,69.68898658370443,PASS,False
+premium,High Value Customers,222.0,222.0,PASS,False
+premium,High Value Customer %,1.0,1.0,PASS,False
+premium,High Credit Quality Customers,63.0,63.0,PASS,False
+premium,High Credit Quality %,0.28378378378378377,0.28378378378378377,PASS,False
+premium,High Balance Customers,70.0,70.0,PASS,False
+premium,High Balance Customer %,0.3153153153153153,0.3153153153153153,PASS,False
+premium,Long-Term Customers,105.0,105.0,PASS,False
+premium,Long-Term Customer %,0.47297297297297297,0.47297297297297297,PASS,False
+premium,High Income Customers,110.0,110.0,PASS,False
+premium,High Income Customer %,0.4954954954954955,0.4954954954954955,PASS,False
+premium,Premium Customers,222.0,222.0,PASS,False
+premium,Premium Customer %,1.0,1.0,PASS,False
+premium,Customers with Balance,222.0,222.0,PASS,False
+premium,Scored Customers,222.0,222.0,PASS,False
+premium,Customers with Credit Score,222.0,222.0,PASS,False
+premium,Balance Coverage %,1.0,1.0,PASS,False
+premium,Score Coverage %,1.0,1.0,PASS,False
+premium,High Credit Quality % of Observed,0.28378378378378377,0.28378378378378377,PASS,False
+premium,Balance per Customer,133194.0245945946,133194.02459459464,PASS,False
+premium:France,Balance Share %,0.4052143279433011,0.40521432794330103,PASS,False
+premium:Germany,Balance Share %,0.3598636245533545,0.3598636245533543,PASS,False
+premium:Spain,Balance Share %,0.2349220475033444,0.23492204750334433,PASS,False
+premium:France,Country Rank by Total Balance,1.0,1.0,PASS,False
+premium:Germany,Country Rank by Total Balance,2.0,2.0,PASS,False
+premium:Spain,Country Rank by Total Balance,3.0,3.0,PASS,False
+premium:France,Country Rank by Customers,1.0,1.0,PASS,False
+premium:Germany,Country Rank by Customers,2.0,2.0,PASS,False
+premium:Spain,Country Rank by Customers,3.0,3.0,PASS,False
+premium:Germany,Country Rank by Average Customer Value,1.0,1.0,PASS,False
+premium:Spain,Country Rank by Average Customer Value,2.0,2.0,PASS,False
+premium:France,Country Rank by Average Customer Value,3.0,3.0,PASS,False
+premium,Average Balance vs Overall,59560.526334659065,59560.52633465914,PASS,False
+premium,Average Credit Score vs Overall,34.328242107653864,34.328242107653864,PASS,False
+premium,Average Customer Value vs Overall,19.678980683213005,19.67898068321292,PASS,False
+premium:0.01,Balance Concentration Share,0.01987835570144375,0.019878355701443744,PASS,False
+premium:0.05,Balance Concentration Share,0.07501971115195032,0.07501971115195029,PASS,False
+premium:0.1,Balance Concentration Share,0.13943590845270945,0.1394359084527094,PASS,False
+premium:0.5,Balance Concentration Share,0.4047019283910968,0.4047019283910965,PASS,False
+multiple_countries,Total Customers,1067.0,1067.0,PASS,False
+multiple_countries,Total Balance,53637906.08,53637906.07999999,PASS,False
+multiple_countries,Average Balance,73476.58367123287,73476.58367123286,PASS,False
+multiple_countries,Median Balance,80642.92,80642.92,PASS,False
+multiple_countries,Average Estimated Salary,66067.59694470478,66067.59694470472,PASS,False
+multiple_countries,Median Estimated Salary,43169.15,43169.15,PASS,False
+multiple_countries,Average Credit Score,645.0103675777568,645.0103675777568,PASS,False
+multiple_countries,Median Credit Score,651.0,651.0,PASS,False
+multiple_countries,Average Age,38.37593984962406,38.37593984962406,PASS,False
+multiple_countries,Average Tenure,4.738072054527751,4.738072054527751,PASS,False
+multiple_countries,Average Customer Value Score,49.887429363012885,49.88742936301287,PASS,False
+multiple_countries,High Value Customers,349.0,349.0,PASS,False
+multiple_countries,High Value Customer %,0.3270852858481724,0.3270852858481724,PASS,False
+multiple_countries,High Credit Quality Customers,179.0,179.0,PASS,False
+multiple_countries,High Credit Quality %,0.16776007497656983,0.16776007497656983,PASS,False
+multiple_countries,High Balance Customers,73.0,73.0,PASS,False
+multiple_countries,High Balance Customer %,0.06841611996251172,0.06841611996251172,PASS,False
+multiple_countries,Long-Term Customers,326.0,326.0,PASS,False
+multiple_countries,Long-Term Customer %,0.3055295220243674,0.3055295220243674,PASS,False
+multiple_countries,High Income Customers,264.0,264.0,PASS,False
+multiple_countries,High Income Customer %,0.24742268041237114,0.24742268041237114,PASS,False
+multiple_countries,Premium Customers,170.0,170.0,PASS,False
+multiple_countries,Premium Customer %,0.15932521087160262,0.15932521087160262,PASS,False
+multiple_countries,Customers with Balance,730.0,730.0,PASS,False
+multiple_countries,Scored Customers,699.0,699.0,PASS,False
+multiple_countries,Customers with Credit Score,1061.0,1061.0,PASS,False
+multiple_countries,Balance Coverage %,0.6841611996251171,0.6841611996251171,PASS,False
+multiple_countries,Score Coverage %,0.6551077788191191,0.6551077788191191,PASS,False
+multiple_countries,High Credit Quality % of Observed,0.16870876531573986,0.16870876531573986,PASS,False
+multiple_countries,Balance per Customer,50269.827628865976,50269.82762886597,PASS,False
+multiple_countries:France,Balance Share %,0.4962214766605968,0.4962214766605971,PASS,False
+multiple_countries:Germany,Balance Share %,0.5037785233394033,0.5037785233394031,PASS,False
+multiple_countries:Germany,Country Rank by Total Balance,1.0,1.0,PASS,False
+multiple_countries:France,Country Rank by Total Balance,2.0,2.0,PASS,False
+multiple_countries:France,Country Rank by Customers,1.0,1.0,PASS,False
+multiple_countries:Germany,Country Rank by Customers,2.0,2.0,PASS,False
+multiple_countries:Germany,Country Rank by Average Customer Value,1.0,1.0,PASS,False
+multiple_countries:France,Country Rank by Average Customer Value,2.0,2.0,PASS,False
+multiple_countries,Average Balance vs Overall,-156.91458870266797,-156.91458870263887,PASS,False
+multiple_countries,Average Credit Score vs Overall,0.6539250007259625,0.6539250007259625,PASS,False
+multiple_countries,Average Customer Value vs Overall,-0.12257653747860076,-0.12257653747864339,PASS,False
+multiple_countries:0.01,Balance Concentration Share,0.027514899216960636,0.02751489921696064,PASS,False
+multiple_countries:0.05,Balance Concentration Share,0.1200957557961405,0.12009575579614053,PASS,False
+multiple_countries:0.1,Balance Concentration Share,0.2250136493396835,0.2250136493396836,PASS,False
+multiple_countries:0.5,Balance Concentration Share,0.11981320934517734,0.1198132093451773,PASS,False
+combined_selection,Total Customers,164.0,164.0,PASS,False
+combined_selection,Total Balance,8960619.45,8960619.450000001,PASS,False
+combined_selection,Average Balance,69462.16627906976,69462.16627906977,PASS,False
+combined_selection,Median Balance,61825.5,61825.5,PASS,False
+combined_selection,Average Estimated Salary,65958.98207317073,65958.9820731707,PASS,False
+combined_selection,Median Estimated Salary,47082.34,47082.34,PASS,False
+combined_selection,Average Credit Score,728.0731707317074,728.0731707317074,PASS,False
+combined_selection,Median Credit Score,728.0,728.0,PASS,False
+combined_selection,Average Age,38.39877300613497,38.39877300613497,PASS,False
+combined_selection,Average Tenure,4.947712418300654,4.947712418300654,PASS,False
+combined_selection,Average Customer Value Score,53.1714656161486,53.17146561614863,PASS,False
+combined_selection,High Value Customers,65.0,65.0,PASS,False
+combined_selection,High Value Customer %,0.39634146341463417,0.39634146341463417,PASS,False
+combined_selection,High Credit Quality Customers,59.0,59.0,PASS,False
+combined_selection,High Credit Quality %,0.3597560975609756,0.3597560975609756,PASS,False
+combined_selection,High Balance Customers,10.0,10.0,PASS,False
+combined_selection,High Balance Customer %,0.06097560975609756,0.06097560975609756,PASS,False
+combined_selection,Long-Term Customers,53.0,53.0,PASS,False
+combined_selection,Long-Term Customer %,0.3231707317073171,0.3231707317073171,PASS,False
+combined_selection,High Income Customers,38.0,38.0,PASS,False
+combined_selection,High Income Customer %,0.23170731707317074,0.23170731707317074,PASS,False
+combined_selection,Premium Customers,35.0,35.0,PASS,False
+combined_selection,Premium Customer %,0.21341463414634146,0.21341463414634146,PASS,False
+combined_selection,Customers with Balance,129.0,129.0,PASS,False
+combined_selection,Scored Customers,120.0,120.0,PASS,False
+combined_selection,Customers with Credit Score,164.0,164.0,PASS,False
+combined_selection,Balance Coverage %,0.7865853658536586,0.7865853658536586,PASS,False
+combined_selection,Score Coverage %,0.7317073170731707,0.7317073170731707,PASS,False
+combined_selection,High Credit Quality % of Observed,0.3597560975609756,0.3597560975609756,PASS,False
+combined_selection,Balance per Customer,54637.92347560975,54637.923475609765,PASS,False
+combined_selection:Germany,Balance Share %,0.6633580326860103,0.6633580326860105,PASS,False
+combined_selection:Spain,Balance Share %,0.3366419673139897,0.3366419673139897,PASS,False
+combined_selection:Germany,Country Rank by Total Balance,1.0,1.0,PASS,False
+combined_selection:Spain,Country Rank by Total Balance,2.0,2.0,PASS,False
+combined_selection:Spain,Country Rank by Customers,1.0,1.0,PASS,False
+combined_selection:Germany,Country Rank by Customers,2.0,2.0,PASS,False
+combined_selection:Germany,Country Rank by Average Customer Value,1.0,1.0,PASS,False
+combined_selection:Spain,Country Rank by Average Customer Value,2.0,2.0,PASS,False
+combined_selection,Average Balance vs Overall,-4171.331980865783,-4171.331980865725,PASS,False
+combined_selection,Average Credit Score vs Overall,83.7167281546765,83.7167281546765,PASS,False
+combined_selection,Average Customer Value vs Overall,3.1614597156571165,3.1614597156571165,PASS,False
+combined_selection:0.01,Balance Concentration Share,0.04093805367440306,0.04093805367440305,PASS,False
+combined_selection:0.05,Balance Concentration Share,0.1318953323031702,0.13189533230317016,PASS,False
+combined_selection:0.1,Balance Concentration Share,0.23356587473425178,0.23356587473425172,PASS,False
+combined_selection:0.5,Balance Concentration Share,0.08441644623129264,0.08441644623129266,PASS,False
+unknown_value,Total Customers,551.0,551.0,PASS,False
+unknown_value,Total Balance,3170607.4799999995,3170607.4799999995,PASS,False
+unknown_value,Average Balance,73735.0576744186,73735.0576744186,PASS,False
+unknown_value,Median Balance,75888.2,75888.2,PASS,False
+unknown_value,Average Estimated Salary,66754.97914700545,66754.9791470054,PASS,False
+unknown_value,Median Estimated Salary,47414.15,47414.15,PASS,False
+unknown_value,Average Credit Score,639.8111111111111,639.8111111111111,PASS,False
+unknown_value,Median Credit Score,640.0,640.0,PASS,False
+unknown_value,Average Age,38.357012750455375,38.357012750455375,PASS,False
+unknown_value,Average Tenure,4.902439024390244,4.902439024390244,PASS,False
+unknown_value,Average Customer Value Score,,,PASS,False
+unknown_value,High Value Customers,0.0,0.0,PASS,False
+unknown_value,High Value Customer %,0.0,0.0,PASS,False
+unknown_value,High Credit Quality Customers,82.0,82.0,PASS,False
+unknown_value,High Credit Quality %,0.14882032667876588,0.14882032667876588,PASS,False
+unknown_value,High Balance Customers,5.0,5.0,PASS,False
+unknown_value,High Balance Customer %,0.009074410163339383,0.009074410163339383,PASS,False
+unknown_value,Long-Term Customers,162.0,162.0,PASS,False
+unknown_value,Long-Term Customer %,0.294010889292196,0.294010889292196,PASS,False
+unknown_value,High Income Customers,136.0,136.0,PASS,False
+unknown_value,High Income Customer %,0.24682395644283123,0.24682395644283123,PASS,False
+unknown_value,Premium Customers,0.0,0.0,PASS,False
+unknown_value,Premium Customer %,0.0,0.0,PASS,False
+unknown_value,Customers with Balance,43.0,43.0,PASS,False
+unknown_value,Scored Customers,0.0,0.0,PASS,False
+unknown_value,Customers with Credit Score,540.0,540.0,PASS,False
+unknown_value,Balance Coverage %,0.0780399274047187,0.0780399274047187,PASS,False
+unknown_value,Score Coverage %,0.0,0.0,PASS,False
+unknown_value,High Credit Quality % of Observed,0.15185185185185185,0.15185185185185185,PASS,False
+unknown_value,Balance per Customer,5754.278548094373,5754.278548094373,PASS,False
+unknown_value:France,Balance Share %,0.2870790458111201,0.28707904581112015,PASS,False
+unknown_value:Germany,Balance Share %,0.4578502665993837,0.4578502665993837,PASS,False
+unknown_value:Spain,Balance Share %,0.2550706875894963,0.2550706875894963,PASS,False
+unknown_value:Germany,Country Rank by Total Balance,1.0,1.0,PASS,False
+unknown_value:France,Country Rank by Total Balance,2.0,2.0,PASS,False
+unknown_value:Spain,Country Rank by Total Balance,3.0,3.0,PASS,False
+unknown_value:France,Country Rank by Customers,1.0,1.0,PASS,False
+unknown_value:Spain,Country Rank by Customers,2.0,2.0,PASS,False
+unknown_value:Germany,Country Rank by Customers,3.0,3.0,PASS,False
+unknown_value,Average Balance vs Overall,101.55941448305384,101.5594144830975,PASS,False
+unknown_value,Average Credit Score vs Overall,-4.54533146591973,-4.54533146591973,PASS,False
+unknown_value,Average Customer Value vs Overall,,,PASS,False
+unknown_value:0.01,Balance Concentration Share,0.05862962891893512,0.05862962891893511,PASS,False
+unknown_value:0.05,Balance Concentration Share,0.16932407539769007,0.16932407539769004,PASS,False
+unknown_value:0.1,Balance Concentration Share,0.26598427440788097,0.2659842744078809,PASS,False
+unknown_value:0.5,Balance Concentration Share,0.09592697043659279,0.09592697043659276,PASS,False
+no_matches,Total Customers,0.0,0.0,PASS,False
+no_matches,Total Balance,,,PASS,False
+no_matches,Average Balance,,,PASS,False
+no_matches,Median Balance,,,PASS,False
+no_matches,Average Estimated Salary,,,PASS,False
+no_matches,Median Estimated Salary,,,PASS,False
+no_matches,Average Credit Score,,,PASS,False
+no_matches,Median Credit Score,,,PASS,False
+no_matches,Average Age,,,PASS,False
+no_matches,Average Tenure,,,PASS,False
+no_matches,Average Customer Value Score,,,PASS,False
+no_matches,High Value Customers,0.0,0.0,PASS,False
+no_matches,High Value Customer %,,,PASS,False
+no_matches,High Credit Quality Customers,0.0,0.0,PASS,False
+no_matches,High Credit Quality %,,,PASS,False
+no_matches,High Balance Customers,0.0,0.0,PASS,False
+no_matches,High Balance Customer %,,,PASS,False
+no_matches,Long-Term Customers,0.0,0.0,PASS,False
+no_matches,Long-Term Customer %,,,PASS,False
+no_matches,High Income Customers,0.0,0.0,PASS,False
+no_matches,High Income Customer %,,,PASS,False
+no_matches,Premium Customers,0.0,0.0,PASS,False
+no_matches,Premium Customer %,,,PASS,False
+no_matches,Customers with Balance,0.0,0.0,PASS,False
+no_matches,Scored Customers,0.0,0.0,PASS,False
+no_matches,Customers with Credit Score,0.0,0.0,PASS,False
+no_matches,Balance Coverage %,,,PASS,False
+no_matches,Score Coverage %,,,PASS,False
+no_matches,High Credit Quality % of Observed,,,PASS,False
+no_matches,Balance per Customer,,,PASS,False
+no_matches,Average Balance vs Overall,,,PASS,False
+no_matches,Average Credit Score vs Overall,,,PASS,False
+no_matches,Average Customer Value vs Overall,,,PASS,False
+no_matches:0.01,Balance Concentration Share,,,PASS,False
+no_matches:0.05,Balance Concentration Share,,,PASS,False
+no_matches:0.1,Balance Concentration Share,,,PASS,False
+no_matches:0.5,Balance Concentration Share,,,PASS,False

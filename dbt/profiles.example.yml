@@ -1,0 +1,8 @@
+banking_customer_analytics:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('BANKING_WAREHOUSE') }}"
+      schema: dbt_analytics
+      threads: 1

@@ -1,0 +1,1056 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "financial",
+  "displayName": "Financial Analysis",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_country",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "concentration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "concentration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_credit_band",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "concentration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_tenure_band",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "concentration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "concentration",
+      "type": "NoFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_total",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "concentration",
+      "type": "NoFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_average",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "concentration",
+      "type": "NoFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country_salary",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "concentration",
+      "type": "NoFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "concentration",
+      "type": "NoFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "tenure_balance",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "concentration",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "concentration",
+      "type": "NoFilter"
+    },
+    {
+      "source": "salary_balance",
+      "target": "credit_balance_scatter",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "slicer_credit_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "slicer_tenure_band",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "country_total",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "country_average",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "country_salary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "credit_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "tenure_balance",
+      "type": "DataFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "concentration",
+      "type": "NoFilter"
+    },
+    {
+      "source": "credit_balance_scatter",
+      "target": "salary_balance",
+      "type": "DataFilter"
+    }
+  ]
+}

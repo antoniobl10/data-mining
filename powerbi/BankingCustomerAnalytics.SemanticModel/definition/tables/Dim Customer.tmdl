@@ -1,0 +1,183 @@
+table 'Dim Customer'
+
+	/// Gold dim_customer.customer_key. See metric definitions and Gold business rules.
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	/// Gold dim_customer.customer_id. See metric definitions and Gold business rules.
+	column 'Customer ID'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+	/// Gold dim_customer.country_key. See metric definitions and Gold business rules.
+	column 'Country Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Country Key
+
+	/// Gold dim_customer.age_group_key. See metric definitions and Gold business rules.
+	column 'Age Group Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Age Group Key
+
+	/// Gold dim_customer.credit_band_key. See metric definitions and Gold business rules.
+	column 'Credit Band Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Credit Band Key
+
+	/// Gold dim_customer.tenure_band_key. See metric definitions and Gold business rules.
+	column 'Tenure Band Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Tenure Band Key
+
+	/// Gold dim_customer.gender. See metric definitions and Gold business rules.
+	column Gender
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Gender
+
+	/// Gold dim_customer.age. See metric definitions and Gold business rules.
+	column Age
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Age
+
+	/// Gold dim_customer.tenure. See metric definitions and Gold business rules.
+	column Tenure
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Tenure
+
+	/// Gold dim_customer.credit_score. See metric definitions and Gold business rules.
+	column 'Credit Score'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Credit Score
+
+	/// Gold dim_customer.balance. See metric definitions and Gold business rules.
+	column Balance
+		dataType: double
+		isHidden
+		formatString: €#,0
+		summarizeBy: none
+		sourceColumn: Balance
+
+	/// Gold dim_customer.estimated_salary. See metric definitions and Gold business rules.
+	column 'Estimated Salary'
+		dataType: double
+		isHidden
+		formatString: €#,0
+		summarizeBy: none
+		sourceColumn: Estimated Salary
+
+	/// Gold dim_customer.balance_band. See metric definitions and Gold business rules.
+	column 'Balance Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Balance Band
+
+	/// Gold dim_customer.salary_band. See metric definitions and Gold business rules.
+	column 'Salary Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Salary Band
+
+	/// Gold dim_customer.customer_value_score. See metric definitions and Gold business rules.
+	column 'Customer Value Score'
+		dataType: double
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: Customer Value Score
+
+	/// Gold dim_customer.customer_value_segment. See metric definitions and Gold business rules.
+	column 'Customer Value Segment'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Customer Value Segment
+		sortByColumn: 'Customer Value Sort'
+
+	/// Gold dim_customer.primary_customer_segment. See metric definitions and Gold business rules.
+	column 'Primary Customer Segment'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Primary Customer Segment
+
+	/// Gold dim_customer.data_quality_status. See metric definitions and Gold business rules.
+	column 'Data Quality Status'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Data Quality Status
+
+	/// Gold dim_customer.data_quality_issue_count. See metric definitions and Gold business rules.
+	column 'Data Quality Issue Count'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Quality Issue Count
+
+	/// Gold dim_customer.is_high_value. See metric definitions and Gold business rules.
+	column 'High Value Flag'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Value Flag
+
+	/// Gold dim_customer.is_high_balance. See metric definitions and Gold business rules.
+	column 'High Balance Flag'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Balance Flag
+
+	/// Gold dim_customer.is_high_income. See metric definitions and Gold business rules.
+	column 'High Income Flag'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Income Flag
+
+	/// Gold dim_customer.is_affluent. See metric definitions and Gold business rules.
+	column 'Affluent Flag'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Affluent Flag
+
+	/// Gold dim_customer.is_high_credit_quality. See metric definitions and Gold business rules.
+	column 'High Credit Quality Flag'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Credit Quality Flag
+
+	/// Gold dim_customer.is_long_tenure. See metric definitions and Gold business rules.
+	column 'Long Tenure Flag'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Long Tenure Flag
+
+	column 'Customer Value Sort'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Value Sort
+
+	partition 'Dim Customer' = m
+		mode: import
+		source =
+				let
+				    Source = GoldCsv("dim_customer.csv", {"customer_key", "customer_id", "country_key", "age_group_key", "credit_band_key", "tenure_band_key", "gender", "age", "tenure", "credit_score", "balance", "estimated_salary", "balance_band", "salary_band", "customer_value_score", "customer_value_segment", "primary_customer_segment", "data_quality_status", "data_quality_issue_count", "is_high_value", "is_high_balance", "is_high_income", "is_affluent", "is_high_credit_quality", "is_long_tenure"}, {{"customer_key", Int64.Type}, {"customer_id", type text}, {"country_key", Int64.Type}, {"age_group_key", Int64.Type}, {"credit_band_key", Int64.Type}, {"tenure_band_key", Int64.Type}, {"gender", type text}, {"age", Int64.Type}, {"tenure", Int64.Type}, {"credit_score", Int64.Type}, {"balance", type number}, {"estimated_salary", type number}, {"balance_band", type text}, {"salary_band", type text}, {"customer_value_score", type number}, {"customer_value_segment", type text}, {"primary_customer_segment", type text}, {"data_quality_status", type text}, {"data_quality_issue_count", Int64.Type}, {"is_high_value", type logical}, {"is_high_balance", type logical}, {"is_high_income", type logical}, {"is_affluent", type logical}, {"is_high_credit_quality", type logical}, {"is_long_tenure", type logical}}),
+				    Renamed = Table.RenameColumns(Source, {{"customer_key", "Customer Key"}, {"customer_id", "Customer ID"}, {"country_key", "Country Key"}, {"age_group_key", "Age Group Key"}, {"credit_band_key", "Credit Band Key"}, {"tenure_band_key", "Tenure Band Key"}, {"gender", "Gender"}, {"age", "Age"}, {"tenure", "Tenure"}, {"credit_score", "Credit Score"}, {"balance", "Balance"}, {"estimated_salary", "Estimated Salary"}, {"balance_band", "Balance Band"}, {"salary_band", "Salary Band"}, {"customer_value_score", "Customer Value Score"}, {"customer_value_segment", "Customer Value Segment"}, {"primary_customer_segment", "Primary Customer Segment"}, {"data_quality_status", "Data Quality Status"}, {"data_quality_issue_count", "Data Quality Issue Count"}, {"is_high_value", "High Value Flag"}, {"is_high_balance", "High Balance Flag"}, {"is_high_income", "High Income Flag"}, {"is_affluent", "Affluent Flag"}, {"is_high_credit_quality", "High Credit Quality Flag"}, {"is_long_tenure", "Long Tenure Flag"}}),
+				    Sorted = Table.AddColumn(Renamed, "Customer Value Sort", each if [Customer Value Segment] = "Unknown" then 5 else List.PositionOf({"Low", "Medium", "High", "Premium"}, [Customer Value Segment]) + 1, Int64.Type)
+				in Sorted
+

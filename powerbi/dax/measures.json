@@ -1,0 +1,490 @@
+[
+  {
+    "name": "Total Customers",
+    "expression": "COALESCE(COUNTROWS('Fact Customer Financials'), 0)",
+    "displayFolder": "Customers",
+    "formatString": "#,0",
+    "description": "Accepted customer snapshot count. Fact-based so every dimension slicer propagates; no matches gives zero customers, not invented financial values.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Total Balance",
+    "expression": "SUM('Fact Customer Financials'[Balance])",
+    "displayFolder": "Balances",
+    "formatString": "€#,0",
+    "description": "Observed valid values only; blank inputs remain excluded. Currency/salary period are unverified.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Average Balance",
+    "expression": "AVERAGE('Fact Customer Financials'[Balance])",
+    "displayFolder": "Balances",
+    "formatString": "€#,0",
+    "description": "Observed valid values only; blank inputs remain excluded. Currency/salary period are unverified.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Median Balance",
+    "expression": "MEDIAN('Fact Customer Financials'[Balance])",
+    "displayFolder": "Balances",
+    "formatString": "€#,0",
+    "description": "Observed valid values only; blank inputs remain excluded. Currency/salary period are unverified.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Average Estimated Salary",
+    "expression": "AVERAGE('Fact Customer Financials'[Estimated Salary])",
+    "displayFolder": "Salary",
+    "formatString": "€#,0",
+    "description": "Observed valid values only; blank inputs remain excluded. Currency/salary period are unverified.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Median Estimated Salary",
+    "expression": "MEDIAN('Fact Customer Financials'[Estimated Salary])",
+    "displayFolder": "Salary",
+    "formatString": "€#,0",
+    "description": "Observed valid values only; blank inputs remain excluded. Currency/salary period are unverified.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Average Credit Score",
+    "expression": "AVERAGE('Fact Customer Financials'[Credit Score])",
+    "displayFolder": "Credit",
+    "formatString": "0",
+    "description": "Observed valid values only; no inferred zeroes.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Median Credit Score",
+    "expression": "MEDIAN('Fact Customer Financials'[Credit Score])",
+    "displayFolder": "Credit",
+    "formatString": "0",
+    "description": "Observed valid values only; no inferred zeroes.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Average Age",
+    "expression": "AVERAGE('Fact Customer Financials'[Age])",
+    "displayFolder": "Customers",
+    "formatString": "0.0",
+    "description": "Observed valid values only; no inferred zeroes.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Average Tenure",
+    "expression": "AVERAGE('Fact Customer Financials'[Tenure])",
+    "displayFolder": "Customers",
+    "formatString": "0.0",
+    "description": "Observed valid values only; no inferred zeroes.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Average Customer Value Score",
+    "expression": "AVERAGE('Fact Customer Financials'[Customer Value Score])",
+    "displayFolder": "Customer Value",
+    "formatString": "0.0",
+    "description": "Observed valid values only; no inferred zeroes.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "High Value Customers",
+    "expression": "CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Value Flag] = TRUE()))",
+    "displayFolder": "Segments",
+    "formatString": "#,0",
+    "description": "Overlapping rule-flag count within the current filter context.",
+    "page": "Segmentation"
+  },
+  {
+    "name": "High Value Customer %",
+    "expression": "DIVIDE([High Value Customers], [Total Customers])",
+    "displayFolder": "Percentages",
+    "formatString": "0.0%",
+    "description": "Flagged customers divided by all selected accepted customers, including unknown inputs.",
+    "page": "Segmentation"
+  },
+  {
+    "name": "High Credit Quality Customers",
+    "expression": "CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Credit Quality Flag] = TRUE()))",
+    "displayFolder": "Segments",
+    "formatString": "#,0",
+    "description": "Overlapping rule-flag count within the current filter context.",
+    "page": "Segmentation"
+  },
+  {
+    "name": "High Credit Quality %",
+    "expression": "DIVIDE([High Credit Quality Customers], [Total Customers])",
+    "displayFolder": "Percentages",
+    "formatString": "0.0%",
+    "description": "Flagged customers divided by all selected accepted customers, including unknown inputs.",
+    "page": "Segmentation"
+  },
+  {
+    "name": "High Balance Customers",
+    "expression": "CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Balance Flag] = TRUE()))",
+    "displayFolder": "Segments",
+    "formatString": "#,0",
+    "description": "Overlapping rule-flag count within the current filter context.",
+    "page": "Segmentation"
+  },
+  {
+    "name": "High Balance Customer %",
+    "expression": "DIVIDE([High Balance Customers], [Total Customers])",
+    "displayFolder": "Percentages",
+    "formatString": "0.0%",
+    "description": "Flagged customers divided by all selected accepted customers, including unknown inputs.",
+    "page": "Segmentation"
+  },
+  {
+    "name": "Long-Term Customers",
+    "expression": "CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[Long Tenure Flag] = TRUE()))",
+    "displayFolder": "Segments",
+    "formatString": "#,0",
+    "description": "Overlapping rule-flag count within the current filter context.",
+    "page": "Segmentation"
+  },
+  {
+    "name": "Long-Term Customer %",
+    "expression": "DIVIDE([Long-Term Customers], [Total Customers])",
+    "displayFolder": "Percentages",
+    "formatString": "0.0%",
+    "description": "Flagged customers divided by all selected accepted customers, including unknown inputs.",
+    "page": "Segmentation"
+  },
+  {
+    "name": "High Income Customers",
+    "expression": "CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Income Flag] = TRUE()))",
+    "displayFolder": "Segments",
+    "formatString": "#,0",
+    "description": "Overlapping rule-flag count within the current filter context.",
+    "page": "Segmentation"
+  },
+  {
+    "name": "High Income Customer %",
+    "expression": "DIVIDE([High Income Customers], [Total Customers])",
+    "displayFolder": "Percentages",
+    "formatString": "0.0%",
+    "description": "Flagged customers divided by all selected accepted customers, including unknown inputs.",
+    "page": "Segmentation"
+  },
+  {
+    "name": "Premium Customers",
+    "expression": "CALCULATE([Total Customers], KEEPFILTERS('Dim Customer'[Customer Value Segment] = \"Premium\"))",
+    "displayFolder": "Customer Value",
+    "formatString": "#,0",
+    "description": "Premium Customers",
+    "page": "Segmentation"
+  },
+  {
+    "name": "Premium Customer %",
+    "expression": "DIVIDE([Premium Customers], [Total Customers])",
+    "displayFolder": "Percentages",
+    "formatString": "0.0%",
+    "description": "Premium / all selected customers, not only scored customers.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Balance per Customer",
+    "expression": "DIVIDE([Total Balance], [Total Customers])",
+    "displayFolder": "Balances",
+    "formatString": "€#,0",
+    "description": "Observed total / all customers. Deliberately distinct from Average Balance, whose denominator is observed balances.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Customers with Balance",
+    "expression": "COALESCE(COUNT('Fact Customer Financials'[Balance]), 0)",
+    "displayFolder": "Coverage",
+    "formatString": "#,0",
+    "description": "Customers with Balance",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Scored Customers",
+    "expression": "COALESCE(COUNT('Fact Customer Financials'[Customer Value Score]), 0)",
+    "displayFolder": "Coverage",
+    "formatString": "#,0",
+    "description": "Scored Customers",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Customers with Credit Score",
+    "expression": "COALESCE(COUNT('Fact Customer Financials'[Credit Score]), 0)",
+    "displayFolder": "Coverage",
+    "formatString": "#,0",
+    "description": "Customers with Credit Score",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Balance Coverage %",
+    "expression": "DIVIDE([Customers with Balance], [Total Customers])",
+    "displayFolder": "Coverage",
+    "formatString": "0.0%",
+    "description": "Balance Coverage %",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Score Coverage %",
+    "expression": "DIVIDE([Scored Customers], [Total Customers])",
+    "displayFolder": "Coverage",
+    "formatString": "0.0%",
+    "description": "Score Coverage %",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "High Credit Quality % of Observed",
+    "expression": "DIVIDE([High Credit Quality Customers], [Customers with Credit Score])",
+    "displayFolder": "Credit",
+    "formatString": "0.0%",
+    "description": "Uses observed valid credit scores as its explicit denominator.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Customer Share %",
+    "expression": "DIVIDE([Total Customers], CALCULATE([Total Customers], ALLSELECTED()))",
+    "displayFolder": "Percentages",
+    "formatString": "0.0%",
+    "description": "Share of visual total after external selections; removes visual row/column context, preserves slicers.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Balance Share %",
+    "expression": "DIVIDE([Total Balance], CALCULATE([Total Balance], ALLSELECTED()))",
+    "displayFolder": "Percentages",
+    "formatString": "0.0%",
+    "description": "Share of visual total after external selections; removes visual row/column context, preserves slicers.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Premium Customer Share %",
+    "expression": "DIVIDE([Premium Customers], CALCULATE([Premium Customers], ALLSELECTED()))",
+    "displayFolder": "Percentages",
+    "formatString": "0.0%",
+    "description": "Share of visual total after external selections; removes visual row/column context, preserves slicers.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Country Rank by Total Balance",
+    "expression": "IF([Total Customers] > 0 && NOT ISBLANK([Total Balance]),\nRANKX(FILTER(ALLSELECTED('Dim Country'[Country]), CALCULATE([Total Customers]) > 0 && NOT ISBLANK(CALCULATE([Total Balance]))),\n    [Total Balance], , DESC, DENSE))",
+    "displayFolder": "Comparisons",
+    "formatString": "#,0",
+    "description": "Dense rank across selected countries with an observed metric; responds to other slicers.",
+    "page": "Financial Analysis"
+  },
+  {
+    "name": "Country Rank by Customers",
+    "expression": "IF([Total Customers] > 0 && NOT ISBLANK([Total Customers]),\nRANKX(FILTER(ALLSELECTED('Dim Country'[Country]), CALCULATE([Total Customers]) > 0 && NOT ISBLANK(CALCULATE([Total Customers]))),\n    [Total Customers], , DESC, DENSE))",
+    "displayFolder": "Comparisons",
+    "formatString": "#,0",
+    "description": "Dense rank across selected countries with an observed metric; responds to other slicers.",
+    "page": "Financial Analysis"
+  },
+  {
+    "name": "Country Rank by Average Customer Value",
+    "expression": "IF([Total Customers] > 0 && NOT ISBLANK([Average Customer Value Score]),\nRANKX(FILTER(ALLSELECTED('Dim Country'[Country]), CALCULATE([Total Customers]) > 0 && NOT ISBLANK(CALCULATE([Average Customer Value Score]))),\n    [Average Customer Value Score], , DESC, DENSE))",
+    "displayFolder": "Comparisons",
+    "formatString": "#,0",
+    "description": "Dense rank across selected countries with an observed metric; responds to other slicers.",
+    "page": "Financial Analysis"
+  },
+  {
+    "name": "Overall Average Balance",
+    "expression": "CALCULATE([Average Balance], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'))",
+    "displayFolder": "Comparisons",
+    "formatString": "€#,0",
+    "description": "Full accepted-snapshot baseline: removes report dimension/fact filters, but cannot bypass security roles.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Overall Average Credit Score",
+    "expression": "CALCULATE([Average Credit Score], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'))",
+    "displayFolder": "Comparisons",
+    "formatString": "0",
+    "description": "Full accepted-snapshot baseline: removes report dimension/fact filters, but cannot bypass security roles.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Overall Average Customer Value",
+    "expression": "CALCULATE([Average Customer Value Score], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'))",
+    "displayFolder": "Comparisons",
+    "formatString": "0.0",
+    "description": "Full accepted-snapshot baseline: removes report dimension/fact filters, but cannot bypass security roles.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Average Balance vs Overall",
+    "expression": "IF(NOT ISBLANK([Average Balance]), [Average Balance] - [Overall Average Balance])",
+    "displayFolder": "Comparisons",
+    "formatString": "€#,0",
+    "description": "Average Balance vs Overall",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Average Credit Score vs Overall",
+    "expression": "IF(NOT ISBLANK([Average Credit Score]), [Average Credit Score] - [Overall Average Credit Score])",
+    "displayFolder": "Comparisons",
+    "formatString": "0.0",
+    "description": "Average Credit Score vs Overall",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Average Customer Value vs Overall",
+    "expression": "IF(NOT ISBLANK([Average Customer Value Score]), [Average Customer Value Score] - [Overall Average Customer Value])",
+    "displayFolder": "Comparisons",
+    "formatString": "0.0",
+    "description": "Average Customer Value vs Overall",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Balance Difference vs Overall",
+    "expression": "[Average Balance vs Overall]",
+    "displayFolder": "Comparisons",
+    "formatString": "€#,0",
+    "description": "Balance Difference vs Overall",
+    "page": "Segmentation"
+  },
+  {
+    "name": "Balance Difference %",
+    "expression": "DIVIDE([Balance Difference vs Overall], [Overall Average Balance])",
+    "displayFolder": "Comparisons",
+    "formatString": "0.0%",
+    "description": "Balance Difference %",
+    "page": "Segmentation"
+  },
+  {
+    "name": "Country Average Balance",
+    "expression": "VAR CustomerCountries = VALUES('Dim Customer'[Country Key])\nRETURN CALCULATE([Average Balance], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'), TREATAS(CustomerCountries, 'Dim Country'[Country Key]))",
+    "displayFolder": "Comparisons",
+    "formatString": "€#,0",
+    "description": "On customer drill-through, compares against the full country cohort of that customer, clearing personal/demographic filters.",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Selected Countries",
+    "expression": "IF(NOT ISFILTERED('Dim Country'[Country]), \"All Countries\",\nIF(HASONEVALUE('Dim Country'[Country]), SELECTEDVALUE('Dim Country'[Country]), \"Multiple Countries\"))",
+    "displayFolder": "Titles",
+    "formatString": "",
+    "description": "Explicit all/single/multiple country label.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Customer Profile Title",
+    "expression": "\"Customer Profile — \" & [Selected Countries]",
+    "displayFolder": "Titles",
+    "formatString": "",
+    "description": "Customer Profile Title",
+    "page": "Customer Profile"
+  },
+  {
+    "name": "Financial Analysis Title",
+    "expression": "\"Financial Analysis — \" & [Selected Countries]",
+    "displayFolder": "Titles",
+    "formatString": "",
+    "description": "Financial Analysis Title",
+    "page": "Financial Analysis"
+  },
+  {
+    "name": "Segmentation Title",
+    "expression": "\"Segmentation — \" & [Selected Countries]",
+    "displayFolder": "Titles",
+    "formatString": "",
+    "description": "Segmentation Title",
+    "page": "Segmentation"
+  },
+  {
+    "name": "Customer Explorer Title",
+    "expression": "\"Customer Explorer — \" & [Selected Countries]",
+    "displayFolder": "Titles",
+    "formatString": "",
+    "description": "Customer Explorer Title",
+    "page": "Customer Explorer"
+  },
+  {
+    "name": "Portfolio Insight",
+    "expression": "VAR Ranked = FILTER(ALLSELECTED('Dim Country'[Country]), NOT ISBLANK(CALCULATE([Total Balance])))\nVAR Leaders = TOPN(1, Ranked, [Total Balance], DESC)\nVAR Names = CONCATENATEX(Leaders, 'Dim Country'[Country], \", \", 'Dim Country'[Country], ASC)\nRETURN IF([Total Customers] = 0, \"No customers match the current selection.\",\n    IF(ISBLANK([Total Balance]), \"Balances are unavailable for this selection.\",\n    \"Largest observed balance: \" & Names & \". Premium: \" & FORMAT([Premium Customer %], \"0.0%\") &\n    \". Balance coverage: \" & FORMAT([Balance Coverage %], \"0.0%\") & \". Value is an analytical proxy.\"))",
+    "displayFolder": "Narrative",
+    "formatString": "",
+    "description": "Dynamic selected-country leader, honest missingness and actual premium/coverage figures. Tied leaders are all named.",
+    "page": "Executive Overview"
+  },
+  {
+    "name": "Balance Concentration Share",
+    "expression": "VAR Fraction = SELECTEDVALUE('Balance Concentration'[Requested Fraction])\nVAR Observed = FILTER(ALLSELECTED('Fact Customer Financials'), NOT ISBLANK('Fact Customer Financials'[Balance]))\nVAR N = COUNTROWS(Observed)\nVAR K = IF(Fraction = 0.5, ROUNDDOWN(N * Fraction, 0), ROUNDUP(N * Fraction, 0))\nVAR Ranked = TOPN(K, Observed, IF(Fraction = 0.5, -'Fact Customer Financials'[Balance], 'Fact Customer Financials'[Balance]), DESC,\n    IF(Fraction = 0.5, -'Fact Customer Financials'[Customer Key], 'Fact Customer Financials'[Customer Key]), ASC)\nVAR TotalObserved = SUMX(Observed, 'Fact Customer Financials'[Balance])\nRETURN IF(NOT ISBLANK(Fraction) && N > 0 && MINX(Observed, 'Fact Customer Financials'[Balance]) >= 0 && TotalObserved > 0,\n    DIVIDE(COALESCE(SUMX(Ranked, 'Fact Customer Financials'[Balance]), 0), TotalObserved))",
+    "displayFolder": "Balances",
+    "formatString": "0.0%",
+    "description": "Dynamic top ceil(1/5/10%) and bottom floor(50%) of observed balances. Negative/nonpositive cohorts return blank. No missing-zero imputation.",
+    "page": "Financial Analysis"
+  },
+  {
+    "name": "Snapshot Records Processed",
+    "expression": "MAX('Pipeline Status'[Source Rows])",
+    "displayFolder": "Data Quality",
+    "formatString": "#,0",
+    "description": "Snapshot Records Processed",
+    "page": "Data Quality"
+  },
+  {
+    "name": "Snapshot Silver Customers",
+    "expression": "MAX('Pipeline Status'[Silver Rows])",
+    "displayFolder": "Data Quality",
+    "formatString": "#,0",
+    "description": "Snapshot Silver Customers",
+    "page": "Data Quality"
+  },
+  {
+    "name": "Snapshot Quarantined Records",
+    "expression": "MAX('Pipeline Status'[Quarantine Rows])",
+    "displayFolder": "Data Quality",
+    "formatString": "#,0",
+    "description": "Snapshot Quarantined Records",
+    "page": "Data Quality"
+  },
+  {
+    "name": "Silver Checks Failed",
+    "expression": "MAX('Pipeline Status'[Silver Checks Failed])",
+    "displayFolder": "Data Quality",
+    "formatString": "#,0",
+    "description": "Aggregate original-source failures remain visible despite valid accepted Gold relationships.",
+    "page": "Data Quality"
+  },
+  {
+    "name": "Gold Checks Passed",
+    "expression": "CALCULATE(COUNTROWS('Gold Validation'), 'Gold Validation'[Status] = \"PASS\")",
+    "displayFolder": "Data Quality",
+    "formatString": "#,0",
+    "description": "Gold Checks Passed",
+    "page": "Data Quality"
+  },
+  {
+    "name": "Gold Checks Failed",
+    "expression": "COALESCE(CALCULATE(COUNTROWS('Gold Validation'), 'Gold Validation'[Status] = \"FAIL\"), 0)",
+    "displayFolder": "Data Quality",
+    "formatString": "#,0",
+    "description": "Gold Checks Failed",
+    "page": "Data Quality"
+  },
+  {
+    "name": "Balance Cell Color",
+    "expression": "IF(ISBLANK([Average Balance]), \"#617187\", IF([High Balance Customers] > 0, \"#0F6B58\", \"#142D4E\"))",
+    "displayFolder": "Formatting",
+    "formatString": "",
+    "description": "Subtle accessible text emphasis for a qualifying customer; no rainbow scale.",
+    "page": "Customer Explorer"
+  },
+  {
+    "name": "Credit Cell Color",
+    "expression": "IF(ISBLANK([Average Credit Score]), \"#617187\", IF([High Credit Quality Customers] > 0, \"#0F6B58\", \"#142D4E\"))",
+    "displayFolder": "Formatting",
+    "formatString": "",
+    "description": "Subtle accessible text emphasis for a qualifying customer; no rainbow scale.",
+    "page": "Customer Explorer"
+  },
+  {
+    "name": "Value Cell Color",
+    "expression": "IF(ISBLANK([Average Customer Value Score]), \"#617187\", IF([Premium Customers] > 0, \"#0F6B58\", \"#142D4E\"))",
+    "displayFolder": "Formatting",
+    "formatString": "",
+    "description": "Subtle accessible text emphasis for a qualifying customer; no rainbow scale.",
+    "page": "Customer Explorer"
+  }
+]

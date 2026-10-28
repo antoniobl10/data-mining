@@ -1,0 +1,308 @@
+{
+  "Dim Customer": [
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "customer_id",
+      "name": "Customer ID"
+    },
+    {
+      "source": "country_key",
+      "name": "Country Key"
+    },
+    {
+      "source": "age_group_key",
+      "name": "Age Group Key"
+    },
+    {
+      "source": "credit_band_key",
+      "name": "Credit Band Key"
+    },
+    {
+      "source": "tenure_band_key",
+      "name": "Tenure Band Key"
+    },
+    {
+      "source": "gender",
+      "name": "Gender"
+    },
+    {
+      "source": "age",
+      "name": "Age"
+    },
+    {
+      "source": "tenure",
+      "name": "Tenure"
+    },
+    {
+      "source": "credit_score",
+      "name": "Credit Score"
+    },
+    {
+      "source": "balance",
+      "name": "Balance"
+    },
+    {
+      "source": "estimated_salary",
+      "name": "Estimated Salary"
+    },
+    {
+      "source": "balance_band",
+      "name": "Balance Band"
+    },
+    {
+      "source": "salary_band",
+      "name": "Salary Band"
+    },
+    {
+      "source": "customer_value_score",
+      "name": "Customer Value Score"
+    },
+    {
+      "source": "customer_value_segment",
+      "name": "Customer Value Segment"
+    },
+    {
+      "source": "primary_customer_segment",
+      "name": "Primary Customer Segment"
+    },
+    {
+      "source": "data_quality_status",
+      "name": "Data Quality Status"
+    },
+    {
+      "source": "data_quality_issue_count",
+      "name": "Data Quality Issue Count"
+    },
+    {
+      "source": "is_high_value",
+      "name": "High Value Flag"
+    },
+    {
+      "source": "is_high_balance",
+      "name": "High Balance Flag"
+    },
+    {
+      "source": "is_high_income",
+      "name": "High Income Flag"
+    },
+    {
+      "source": "is_affluent",
+      "name": "Affluent Flag"
+    },
+    {
+      "source": "is_high_credit_quality",
+      "name": "High Credit Quality Flag"
+    },
+    {
+      "source": "is_long_tenure",
+      "name": "Long Tenure Flag"
+    }
+  ],
+  "Dim Country": [
+    {
+      "source": "country_key",
+      "name": "Country Key"
+    },
+    {
+      "source": "country_name",
+      "name": "Country"
+    },
+    {
+      "source": "country_code",
+      "name": "Country Code"
+    }
+  ],
+  "Dim Age Group": [
+    {
+      "source": "age_group_key",
+      "name": "Age Group Key"
+    },
+    {
+      "source": "age_group",
+      "name": "Age Group"
+    },
+    {
+      "source": "min_age",
+      "name": "Min Age"
+    },
+    {
+      "source": "max_age",
+      "name": "Max Age"
+    },
+    {
+      "source": "sort_order",
+      "name": "Sort Order"
+    }
+  ],
+  "Dim Credit Band": [
+    {
+      "source": "credit_band_key",
+      "name": "Credit Band Key"
+    },
+    {
+      "source": "credit_score_band",
+      "name": "Credit Band"
+    },
+    {
+      "source": "min_score",
+      "name": "Min Score"
+    },
+    {
+      "source": "max_score",
+      "name": "Max Score"
+    },
+    {
+      "source": "sort_order",
+      "name": "Sort Order"
+    },
+    {
+      "source": "credit_quality_level",
+      "name": "Credit Quality Level"
+    }
+  ],
+  "Dim Tenure Band": [
+    {
+      "source": "tenure_band_key",
+      "name": "Tenure Band Key"
+    },
+    {
+      "source": "tenure_band",
+      "name": "Tenure Band"
+    },
+    {
+      "source": "min_tenure",
+      "name": "Min Tenure"
+    },
+    {
+      "source": "max_tenure",
+      "name": "Max Tenure"
+    },
+    {
+      "source": "sort_order",
+      "name": "Sort Order"
+    }
+  ],
+  "Fact Customer Financials": [
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "country_key",
+      "name": "Country Key"
+    },
+    {
+      "source": "age_group_key",
+      "name": "Age Group Key"
+    },
+    {
+      "source": "credit_band_key",
+      "name": "Credit Band Key"
+    },
+    {
+      "source": "tenure_band_key",
+      "name": "Tenure Band Key"
+    },
+    {
+      "source": "age",
+      "name": "Age"
+    },
+    {
+      "source": "balance",
+      "name": "Balance"
+    },
+    {
+      "source": "estimated_salary",
+      "name": "Estimated Salary"
+    },
+    {
+      "source": "credit_score",
+      "name": "Credit Score"
+    },
+    {
+      "source": "tenure",
+      "name": "Tenure"
+    },
+    {
+      "source": "customer_value_score",
+      "name": "Customer Value Score"
+    },
+    {
+      "source": "source_batch_id",
+      "name": "Source Batch Id"
+    },
+    {
+      "source": "is_high_value",
+      "name": "High Value Flag"
+    },
+    {
+      "source": "is_high_balance",
+      "name": "High Balance Flag"
+    },
+    {
+      "source": "is_high_income",
+      "name": "High Income Flag"
+    },
+    {
+      "source": "is_affluent",
+      "name": "Affluent Flag"
+    },
+    {
+      "source": "is_high_credit_quality",
+      "name": "High Credit Quality Flag"
+    },
+    {
+      "source": "is_long_tenure",
+      "name": "Long Tenure Flag"
+    },
+    {
+      "source": "value_component_balance",
+      "name": "Value Component Balance"
+    },
+    {
+      "source": "value_component_estimated_salary",
+      "name": "Value Component Estimated Salary"
+    },
+    {
+      "source": "value_component_tenure",
+      "name": "Value Component Tenure"
+    },
+    {
+      "source": "value_component_credit_score",
+      "name": "Value Component Credit Score"
+    },
+    {
+      "source": "is_balance_outlier",
+      "name": "Is Balance Outlier"
+    },
+    {
+      "source": "is_salary_outlier",
+      "name": "Is Salary Outlier"
+    },
+    {
+      "source": "is_credit_score_outlier",
+      "name": "Is Credit Score Outlier"
+    },
+    {
+      "source": "is_age_outlier",
+      "name": "Is Age Outlier"
+    }
+  ],
+  "Balance Concentration": [
+    {
+      "source": "cohort",
+      "name": "Cohort"
+    },
+    {
+      "source": "requested_fraction",
+      "name": "Requested Fraction"
+    },
+    {
+      "source": "balance_share",
+      "name": "Snapshot Balance Share"
+    }
+  ]
+}

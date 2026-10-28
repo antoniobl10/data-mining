@@ -1,0 +1,216 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "explorer",
+  "displayName": "Customer Explorer",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_country",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "customer_table",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_gender",
+      "target": "customer_table",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "customer_table",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "heading",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "slicer_gender",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "customer_table",
+      "type": "DataFilter"
+    }
+  ]
+}

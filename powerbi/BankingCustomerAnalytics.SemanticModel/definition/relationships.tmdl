@@ -1,0 +1,20 @@
+relationship rel_dim_customer
+	fromColumn: 'Fact Customer Financials'.'Customer Key'
+	toColumn: 'Dim Customer'.'Customer Key'
+
+relationship rel_dim_country
+	fromColumn: 'Fact Customer Financials'.'Country Key'
+	toColumn: 'Dim Country'.'Country Key'
+
+relationship rel_dim_age_group
+	fromColumn: 'Fact Customer Financials'.'Age Group Key'
+	toColumn: 'Dim Age Group'.'Age Group Key'
+
+relationship rel_dim_credit_band
+	fromColumn: 'Fact Customer Financials'.'Credit Band Key'
+	toColumn: 'Dim Credit Band'.'Credit Band Key'
+
+relationship rel_dim_tenure_band
+	fromColumn: 'Fact Customer Financials'.'Tenure Band Key'
+	toColumn: 'Dim Tenure Band'.'Tenure Band Key'
+

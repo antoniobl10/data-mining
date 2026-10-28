@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "tables": 10,
+  "relationships": 5,
+  "measures": 61,
+  "validation": "Microsoft TOM and TMDL round-trip; no engine refresh or DAX execution"
+}

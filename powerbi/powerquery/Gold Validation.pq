@@ -1,0 +1,10 @@
+let
+    Manifest = Json.Document(File.Contents(GoldBuildPath & "/manifest.json")),
+    BuildParts = Text.Split(GoldBuildPath, "/"),
+    GoldRoot = Text.Combine(List.RemoveLastN(BuildParts, 1), "/"),
+    Raw = Csv.Document(File.Contents(GoldRoot & "/_quality/build_id=" & Manifest[gold_build_id] & "/gold_validation_report.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+    Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+    Selected = Table.SelectColumns(Headers, {"check_name", "records_checked", "failed_records", "status", "detail"}),
+    Typed = Table.TransformColumnTypes(Selected, {{"check_name", type text}, {"records_checked", Int64.Type}, {"failed_records", Int64.Type}, {"status", type text}, {"detail", type text}}),
+    Renamed = Table.RenameColumns(Typed, {{"check_name", "Check"}, {"records_checked", "Records Checked"}, {"failed_records", "Failed Records"}, {"status", "Status"}, {"detail", "Detail"}})
+in Renamed

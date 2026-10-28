@@ -1,0 +1,57 @@
+[
+  {
+    "name": "rel_dim_customer",
+    "fromTable": "Fact Customer Financials",
+    "fromColumn": "Customer Key",
+    "toTable": "Dim Customer",
+    "toColumn": "Customer Key",
+    "fromCardinality": "many",
+    "toCardinality": "one",
+    "crossFilteringBehavior": "oneDirection",
+    "isActive": true
+  },
+  {
+    "name": "rel_dim_country",
+    "fromTable": "Fact Customer Financials",
+    "fromColumn": "Country Key",
+    "toTable": "Dim Country",
+    "toColumn": "Country Key",
+    "fromCardinality": "many",
+    "toCardinality": "one",
+    "crossFilteringBehavior": "oneDirection",
+    "isActive": true
+  },
+  {
+    "name": "rel_dim_age_group",
+    "fromTable": "Fact Customer Financials",
+    "fromColumn": "Age Group Key",
+    "toTable": "Dim Age Group",
+    "toColumn": "Age Group Key",
+    "fromCardinality": "many",
+    "toCardinality": "one",
+    "crossFilteringBehavior": "oneDirection",
+    "isActive": true
+  },
+  {
+    "name": "rel_dim_credit_band",
+    "fromTable": "Fact Customer Financials",
+    "fromColumn": "Credit Band Key",
+    "toTable": "Dim Credit Band",
+    "toColumn": "Credit Band Key",
+    "fromCardinality": "many",
+    "toCardinality": "one",
+    "crossFilteringBehavior": "oneDirection",
+    "isActive": true
+  },
+  {
+    "name": "rel_dim_tenure_band",
+    "fromTable": "Fact Customer Financials",
+    "fromColumn": "Tenure Band Key",
+    "toTable": "Dim Tenure Band",
+    "toColumn": "Tenure Band Key",
+    "fromCardinality": "many",
+    "toCardinality": "one",
+    "crossFilteringBehavior": "oneDirection",
+    "isActive": true
+  }
+]

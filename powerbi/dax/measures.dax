@@ -1,0 +1,204 @@
+Total Customers =
+COALESCE(COUNTROWS('Fact Customer Financials'), 0)
+
+Total Balance =
+SUM('Fact Customer Financials'[Balance])
+
+Average Balance =
+AVERAGE('Fact Customer Financials'[Balance])
+
+Median Balance =
+MEDIAN('Fact Customer Financials'[Balance])
+
+Average Estimated Salary =
+AVERAGE('Fact Customer Financials'[Estimated Salary])
+
+Median Estimated Salary =
+MEDIAN('Fact Customer Financials'[Estimated Salary])
+
+Average Credit Score =
+AVERAGE('Fact Customer Financials'[Credit Score])
+
+Median Credit Score =
+MEDIAN('Fact Customer Financials'[Credit Score])
+
+Average Age =
+AVERAGE('Fact Customer Financials'[Age])
+
+Average Tenure =
+AVERAGE('Fact Customer Financials'[Tenure])
+
+Average Customer Value Score =
+AVERAGE('Fact Customer Financials'[Customer Value Score])
+
+High Value Customers =
+CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Value Flag] = TRUE()))
+
+High Value Customer % =
+DIVIDE([High Value Customers], [Total Customers])
+
+High Credit Quality Customers =
+CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Credit Quality Flag] = TRUE()))
+
+High Credit Quality % =
+DIVIDE([High Credit Quality Customers], [Total Customers])
+
+High Balance Customers =
+CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Balance Flag] = TRUE()))
+
+High Balance Customer % =
+DIVIDE([High Balance Customers], [Total Customers])
+
+Long-Term Customers =
+CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[Long Tenure Flag] = TRUE()))
+
+Long-Term Customer % =
+DIVIDE([Long-Term Customers], [Total Customers])
+
+High Income Customers =
+CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Income Flag] = TRUE()))
+
+High Income Customer % =
+DIVIDE([High Income Customers], [Total Customers])
+
+Premium Customers =
+CALCULATE([Total Customers], KEEPFILTERS('Dim Customer'[Customer Value Segment] = "Premium"))
+
+Premium Customer % =
+DIVIDE([Premium Customers], [Total Customers])
+
+Balance per Customer =
+DIVIDE([Total Balance], [Total Customers])
+
+Customers with Balance =
+COALESCE(COUNT('Fact Customer Financials'[Balance]), 0)
+
+Scored Customers =
+COALESCE(COUNT('Fact Customer Financials'[Customer Value Score]), 0)
+
+Customers with Credit Score =
+COALESCE(COUNT('Fact Customer Financials'[Credit Score]), 0)
+
+Balance Coverage % =
+DIVIDE([Customers with Balance], [Total Customers])
+
+Score Coverage % =
+DIVIDE([Scored Customers], [Total Customers])
+
+High Credit Quality % of Observed =
+DIVIDE([High Credit Quality Customers], [Customers with Credit Score])
+
+Customer Share % =
+DIVIDE([Total Customers], CALCULATE([Total Customers], ALLSELECTED()))
+
+Balance Share % =
+DIVIDE([Total Balance], CALCULATE([Total Balance], ALLSELECTED()))
+
+Premium Customer Share % =
+DIVIDE([Premium Customers], CALCULATE([Premium Customers], ALLSELECTED()))
+
+Country Rank by Total Balance =
+IF([Total Customers] > 0 && NOT ISBLANK([Total Balance]),
+RANKX(FILTER(ALLSELECTED('Dim Country'[Country]), CALCULATE([Total Customers]) > 0 && NOT ISBLANK(CALCULATE([Total Balance]))),
+    [Total Balance], , DESC, DENSE))
+
+Country Rank by Customers =
+IF([Total Customers] > 0 && NOT ISBLANK([Total Customers]),
+RANKX(FILTER(ALLSELECTED('Dim Country'[Country]), CALCULATE([Total Customers]) > 0 && NOT ISBLANK(CALCULATE([Total Customers]))),
+    [Total Customers], , DESC, DENSE))
+
+Country Rank by Average Customer Value =
+IF([Total Customers] > 0 && NOT ISBLANK([Average Customer Value Score]),
+RANKX(FILTER(ALLSELECTED('Dim Country'[Country]), CALCULATE([Total Customers]) > 0 && NOT ISBLANK(CALCULATE([Average Customer Value Score]))),
+    [Average Customer Value Score], , DESC, DENSE))
+
+Overall Average Balance =
+CALCULATE([Average Balance], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'))
+
+Overall Average Credit Score =
+CALCULATE([Average Credit Score], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'))
+
+Overall Average Customer Value =
+CALCULATE([Average Customer Value Score], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'))
+
+Average Balance vs Overall =
+IF(NOT ISBLANK([Average Balance]), [Average Balance] - [Overall Average Balance])
+
+Average Credit Score vs Overall =
+IF(NOT ISBLANK([Average Credit Score]), [Average Credit Score] - [Overall Average Credit Score])
+
+Average Customer Value vs Overall =
+IF(NOT ISBLANK([Average Customer Value Score]), [Average Customer Value Score] - [Overall Average Customer Value])
+
+Balance Difference vs Overall =
+[Average Balance vs Overall]
+
+Balance Difference % =
+DIVIDE([Balance Difference vs Overall], [Overall Average Balance])
+
+Country Average Balance =
+VAR CustomerCountries = VALUES('Dim Customer'[Country Key])
+RETURN CALCULATE([Average Balance], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'), TREATAS(CustomerCountries, 'Dim Country'[Country Key]))
+
+Selected Countries =
+IF(NOT ISFILTERED('Dim Country'[Country]), "All Countries",
+IF(HASONEVALUE('Dim Country'[Country]), SELECTEDVALUE('Dim Country'[Country]), "Multiple Countries"))
+
+Customer Profile Title =
+"Customer Profile — " & [Selected Countries]
+
+Financial Analysis Title =
+"Financial Analysis — " & [Selected Countries]
+
+Segmentation Title =
+"Segmentation — " & [Selected Countries]
+
+Customer Explorer Title =
+"Customer Explorer — " & [Selected Countries]
+
+Portfolio Insight =
+VAR Ranked = FILTER(ALLSELECTED('Dim Country'[Country]), NOT ISBLANK(CALCULATE([Total Balance])))
+VAR Leaders = TOPN(1, Ranked, [Total Balance], DESC)
+VAR Names = CONCATENATEX(Leaders, 'Dim Country'[Country], ", ", 'Dim Country'[Country], ASC)
+RETURN IF([Total Customers] = 0, "No customers match the current selection.",
+    IF(ISBLANK([Total Balance]), "Balances are unavailable for this selection.",
+    "Largest observed balance: " & Names & ". Premium: " & FORMAT([Premium Customer %], "0.0%") &
+    ". Balance coverage: " & FORMAT([Balance Coverage %], "0.0%") & ". Value is an analytical proxy."))
+
+Balance Concentration Share =
+VAR Fraction = SELECTEDVALUE('Balance Concentration'[Requested Fraction])
+VAR Observed = FILTER(ALLSELECTED('Fact Customer Financials'), NOT ISBLANK('Fact Customer Financials'[Balance]))
+VAR N = COUNTROWS(Observed)
+VAR K = IF(Fraction = 0.5, ROUNDDOWN(N * Fraction, 0), ROUNDUP(N * Fraction, 0))
+VAR Ranked = TOPN(K, Observed, IF(Fraction = 0.5, -'Fact Customer Financials'[Balance], 'Fact Customer Financials'[Balance]), DESC,
+    IF(Fraction = 0.5, -'Fact Customer Financials'[Customer Key], 'Fact Customer Financials'[Customer Key]), ASC)
+VAR TotalObserved = SUMX(Observed, 'Fact Customer Financials'[Balance])
+RETURN IF(NOT ISBLANK(Fraction) && N > 0 && MINX(Observed, 'Fact Customer Financials'[Balance]) >= 0 && TotalObserved > 0,
+    DIVIDE(COALESCE(SUMX(Ranked, 'Fact Customer Financials'[Balance]), 0), TotalObserved))
+
+Snapshot Records Processed =
+MAX('Pipeline Status'[Source Rows])
+
+Snapshot Silver Customers =
+MAX('Pipeline Status'[Silver Rows])
+
+Snapshot Quarantined Records =
+MAX('Pipeline Status'[Quarantine Rows])
+
+Silver Checks Failed =
+MAX('Pipeline Status'[Silver Checks Failed])
+
+Gold Checks Passed =
+CALCULATE(COUNTROWS('Gold Validation'), 'Gold Validation'[Status] = "PASS")
+
+Gold Checks Failed =
+COALESCE(CALCULATE(COUNTROWS('Gold Validation'), 'Gold Validation'[Status] = "FAIL"), 0)
+
+Balance Cell Color =
+IF(ISBLANK([Average Balance]), "#617187", IF([High Balance Customers] > 0, "#0F6B58", "#142D4E"))
+
+Credit Cell Color =
+IF(ISBLANK([Average Credit Score]), "#617187", IF([High Credit Quality Customers] > 0, "#0F6B58", "#142D4E"))
+
+Value Cell Color =
+IF(ISBLANK([Average Customer Value Score]), "#617187", IF([Premium Customers] > 0, "#0F6B58", "#142D4E"))

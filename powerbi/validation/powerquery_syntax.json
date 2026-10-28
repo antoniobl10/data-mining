@@ -1,0 +1,72 @@
+{
+  "parser": "@microsoft/powerquery-parser 4.0.1",
+  "checks": [
+    {
+      "name": "GoldDataPath",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "GoldBuildPath",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "GoldCsv",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Dim Customer",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Dim Country",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Dim Age Group",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Dim Credit Band",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Dim Tenure Band",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Fact Customer Financials",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Balance Concentration",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Pipeline Status",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Gold Validation",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "_Measures",
+      "status": "PASS",
+      "error": null
+    }
+  ],
+  "syntax_only": true,
+  "refreshed": false
+}

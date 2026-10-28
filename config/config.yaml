@@ -1,0 +1,63 @@
+paths:
+  raw: data/raw
+  source: dataset.xlsx
+  bronze: data/bronze
+  silver: data/silver
+  gold: data/gold
+  reports: data/reports
+source:
+  excel_sheet_name: Total Data
+  header_row: 1  # zero-based; actual workbook has a blank first row
+  expected_columns: [customer_id, credit_score, country, gender, age, tenure, balance, estimated_salary]
+  column_aliases: {}
+  allow_extra_columns: false
+validation:
+  credit_score_min: 300
+  credit_score_max: 850
+  age_min: 18
+  age_max: 100
+  tenure_min: 0
+  salary_min: 0
+  negative_balance_invalid: false # overdrafts may be legitimate; none observed in this source
+  country_aliases: {france: France, fr: France, germany: Germany, deutschland: Germany, de: Germany, spain: Spain, españa: Spain, es: Spain}
+  gender_aliases: {female: Female, f: Female, woman: Female, male: Male, m: Male, man: Male, nonbinary: Non-binary, non-binary: Non-binary}
+bands:
+  age_groups: {edges: [18, 26, 36, 46, 56, 66, 101], labels: ['18–25', '26–35', '36–45', '46–55', '56–65', '66+']}
+  credit_score_bands: {edges: [300, 580, 670, 740, 800, 851], labels: [Poor, Fair, Good, Very Good, Excellent]}
+  balance_bands: {edges: [-.inf, 0, 25000, 75000, 150000, .inf], labels: [Negative, Low, Medium, High, Premium], zero_label: Zero}
+  salary_bands: {edges: [0, 30000, 75000, 150000, .inf], labels: [Low, Medium, High, Premium]}
+  tenure_bands: {edges: [0, 3, 6, 10, .inf], labels: [New, Established, Loyal, Long-Term]}
+value:
+  method: percentile_rank
+  tier_quantiles: [0.25, 0.50, 0.75]
+  weights: {balance: 0.40, estimated_salary: 0.25, tenure: 0.20, credit_score: 0.15}
+  bounds: {balance: [0, 200000], estimated_salary: [0, 200000], tenure: [0, 10], credit_score: [300, 850]}
+  edges: [0, 25, 50, 75, 101]
+  labels: [Low, Medium, High, Premium]
+segments:
+  high_balance: 150000
+  high_income: 150000
+  high_credit: 740
+  young_max_age: 35
+  professional_min_salary: 75000
+  long_term_tenure: 7
+  high_value_score: 50
+quality:
+  warning_threshold: 0
+  fail_threshold: 5
+  block_on_fail: false
+  critical_checks: [null_customer_id, duplicate_later_source_row, incorrect_type_credit_score, invalid_credit_score, incorrect_type_age, invalid_age, incorrect_type_tenure, negative_tenure, fractional_tenure, incorrect_type_balance, negative_balance, incorrect_type_estimated_salary, negative_salary]
+currency:
+  display: EUR
+  verified: false # display assumption only; source has no currency metadata
+gold:
+  country_codes: {France: FR, Germany: DE, Spain: ES} # explicit ISO alpha-2 lookup; no inferred region
+  high_balance_quantile: 0.90
+  high_income_quantile: 0.75
+  affluent_balance_quantile: 0.50
+  long_tenure_quantile: 0.75
+  high_credit_bands: [Very Good, Excellent]
+  primary_priority: [High Value, Affluent, High Balance, High Credit Quality, Long-Term Customer, Mass Market]
+  outlier_iqr_multiplier: 1.5
+  concentration_fractions: [0.01, 0.05, 0.10, 0.50]
+  reconciliation_tolerance: 0.000001

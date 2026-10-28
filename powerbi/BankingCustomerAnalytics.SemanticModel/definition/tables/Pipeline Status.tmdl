@@ -1,0 +1,48 @@
+/// Full snapshot technical lineage; disconnected from customer filters.
+table 'Pipeline Status'
+
+	column 'Source Rows'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Source Rows
+
+	column 'Silver Rows'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Silver Rows
+
+	column 'Quarantine Rows'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Quarantine Rows
+
+	column 'Silver Checks Failed'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Silver Checks Failed
+
+	column 'Gold Build'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Gold Build
+
+	column 'Source Batch'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Source Batch
+
+	column 'Build Timestamp'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Build Timestamp
+
+	partition 'Pipeline Status' = m
+		mode: import
+		source =
+				let
+				    Manifest = Json.Document(File.Contents(GoldBuildPath & "/manifest.json")),
+				    Upstream = Manifest[upstream_silver_manifest],
+				    Result = #table(type table [Source Rows=Int64.Type, Silver Rows=Int64.Type, Quarantine Rows=Int64.Type, Silver Checks Failed=Int64.Type, Gold Build=text, Source Batch=text, Build Timestamp=text],
+				        {{Upstream[bronze_rows], Upstream[silver_rows], Upstream[quarantine_rows], Record.FieldOrDefault(Upstream[quality_statuses], "FAIL", 0), Manifest[gold_build_id], Manifest[source_batch_id], Manifest[gold_build_timestamp]}})
+				in Result
+

@@ -1,0 +1,547 @@
+{
+  "name": "BankingCustomerAnalytics",
+  "compatibilityLevel": 1600,
+  "model": {
+    "culture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "GoldFolder",
+        "kind": "m",
+        "expression": "\"C:\\REPLACE_WITH_GOLD_BATCH_FOLDER\\\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      }
+    ],
+    "tables": [
+      {
+        "name": "dim_customer",
+        "columns": [
+          {
+            "name": "customer_key",
+            "dataType": "string",
+            "sourceColumn": "customer_key",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "sourceColumn": "customer_id",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gender",
+            "dataType": "string",
+            "sourceColumn": "gender",
+            "isHidden": false,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age",
+            "dataType": "double",
+            "sourceColumn": "age",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age_group",
+            "dataType": "string",
+            "sourceColumn": "age_group",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tenure",
+            "dataType": "double",
+            "sourceColumn": "tenure",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tenure_band",
+            "dataType": "string",
+            "sourceColumn": "tenure_band",
+            "isHidden": false,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "credit_score",
+            "dataType": "double",
+            "sourceColumn": "credit_score",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "credit_score_band",
+            "dataType": "string",
+            "sourceColumn": "credit_score_band",
+            "isHidden": false,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "balance",
+            "dataType": "double",
+            "sourceColumn": "balance",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "balance_band",
+            "dataType": "string",
+            "sourceColumn": "balance_band",
+            "isHidden": false,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "estimated_salary",
+            "dataType": "double",
+            "sourceColumn": "estimated_salary",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "salary_band",
+            "dataType": "string",
+            "sourceColumn": "salary_band",
+            "isHidden": false,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_value_segment",
+            "dataType": "string",
+            "sourceColumn": "customer_value_segment",
+            "isHidden": false,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "primary_segment",
+            "dataType": "string",
+            "sourceColumn": "primary_segment",
+            "isHidden": false,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "data_quality_flag",
+            "dataType": "string",
+            "sourceColumn": "data_quality_flag",
+            "isHidden": false,
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_customer",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(GoldFolder & \"dim_customer.csv\"), [Delimiter=\",\", Columns=17, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Nulls = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                "    Typed = Table.TransformColumnTypes(Nulls, {{\"customer_key\", type text}, {\"customer_id\", type text}, {\"country\", type text}, {\"gender\", type text}, {\"age\", type number}, {\"age_group\", type text}, {\"tenure\", type number}, {\"tenure_band\", type text}, {\"credit_score\", type number}, {\"credit_score_band\", type text}, {\"balance\", type number}, {\"balance_band\", type text}, {\"estimated_salary\", type number}, {\"salary_band\", type text}, {\"customer_value_segment\", type text}, {\"primary_segment\", type text}, {\"data_quality_flag\", type text}}, \"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_country",
+        "columns": [
+          {
+            "name": "country_key",
+            "dataType": "string",
+            "sourceColumn": "country_key",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "isHidden": false,
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_country",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(GoldFolder & \"dim_country.csv\"), [Delimiter=\",\", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Nulls = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                "    Typed = Table.TransformColumnTypes(Nulls, {{\"country_key\", type text}, {\"country\", type text}}, \"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_age_group",
+        "columns": [
+          {
+            "name": "age_group_key",
+            "dataType": "string",
+            "sourceColumn": "age_group_key",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age_group",
+            "dataType": "string",
+            "sourceColumn": "age_group",
+            "isHidden": false,
+            "summarizeBy": "none",
+            "sortByColumn": "sort_order"
+          },
+          {
+            "name": "sort_order",
+            "dataType": "int64",
+            "sourceColumn": "sort_order",
+            "isHidden": false,
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_age_group",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(GoldFolder & \"dim_age_group.csv\"), [Delimiter=\",\", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Nulls = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                "    Typed = Table.TransformColumnTypes(Nulls, {{\"age_group_key\", type text}, {\"age_group\", type text}, {\"sort_order\", Int64.Type}}, \"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "fact_customer_financials",
+        "columns": [
+          {
+            "name": "customer_key",
+            "dataType": "string",
+            "sourceColumn": "customer_key",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_id",
+            "dataType": "string",
+            "sourceColumn": "customer_id",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country_key",
+            "dataType": "string",
+            "sourceColumn": "country_key",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age_group_key",
+            "dataType": "string",
+            "sourceColumn": "age_group_key",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age",
+            "dataType": "double",
+            "sourceColumn": "age",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "balance",
+            "dataType": "double",
+            "sourceColumn": "balance",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "estimated_salary",
+            "dataType": "double",
+            "sourceColumn": "estimated_salary",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "credit_score",
+            "dataType": "double",
+            "sourceColumn": "credit_score",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tenure",
+            "dataType": "double",
+            "sourceColumn": "tenure",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "customer_value_score",
+            "dataType": "double",
+            "sourceColumn": "customer_value_score",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_high_value",
+            "dataType": "boolean",
+            "sourceColumn": "is_high_value",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_high_balance",
+            "dataType": "boolean",
+            "sourceColumn": "is_high_balance",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_high_income",
+            "dataType": "boolean",
+            "sourceColumn": "is_high_income",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_young_professional",
+            "dataType": "boolean",
+            "sourceColumn": "is_young_professional",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_long_term",
+            "dataType": "boolean",
+            "sourceColumn": "is_long_term",
+            "isHidden": true,
+            "summarizeBy": "none"
+          },
+          {
+            "name": "is_high_credit",
+            "dataType": "boolean",
+            "sourceColumn": "is_high_credit",
+            "isHidden": true,
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_customer_financials",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(GoldFolder & \"fact_customer_financials.csv\"), [Delimiter=\",\", Columns=16, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Nulls = Table.ReplaceValue(Headers, \"\", null, Replacer.ReplaceValue, Table.ColumnNames(Headers)),",
+                "    Typed = Table.TransformColumnTypes(Nulls, {{\"customer_key\", type text}, {\"customer_id\", type text}, {\"country_key\", type text}, {\"age_group_key\", type text}, {\"age\", type number}, {\"balance\", type number}, {\"estimated_salary\", type number}, {\"credit_score\", type number}, {\"tenure\", type number}, {\"customer_value_score\", type number}, {\"is_high_value\", type logical}, {\"is_high_balance\", type logical}, {\"is_high_income\", type logical}, {\"is_young_professional\", type logical}, {\"is_long_term\", type logical}, {\"is_high_credit\", type logical}}, \"en-US\")",
+                "in Typed"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Customers",
+            "expression": "COUNTROWS(fact_customer_financials)",
+            "formatString": "#,0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Total Balance",
+            "expression": "SUM(fact_customer_financials[balance])",
+            "formatString": "€ #,0.00",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Average Balance",
+            "expression": "AVERAGE(fact_customer_financials[balance])",
+            "formatString": "€ #,0.00",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Median Balance",
+            "expression": "MEDIAN(fact_customer_financials[balance])",
+            "formatString": "€ #,0.00",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Average Credit Score",
+            "expression": "AVERAGE(fact_customer_financials[credit_score])",
+            "formatString": "0.0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Average Salary",
+            "expression": "AVERAGE(fact_customer_financials[estimated_salary])",
+            "formatString": "€ #,0.00",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Average Age",
+            "expression": "AVERAGE(fact_customer_financials[age])",
+            "formatString": "0.0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Average Tenure",
+            "expression": "AVERAGE(fact_customer_financials[tenure])",
+            "formatString": "0.0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "High Value Customers",
+            "expression": "CALCULATE([Total Customers], fact_customer_financials[is_high_value] = TRUE())",
+            "formatString": "#,0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "High Value Customer %",
+            "expression": "DIVIDE([High Value Customers], [Total Customers])",
+            "formatString": "0.0%",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Premium Customers",
+            "expression": "CALCULATE([Total Customers], KEEPFILTERS(dim_customer[customer_value_segment] = \"Premium\"))",
+            "formatString": "#,0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Premium Customer %",
+            "expression": "DIVIDE([Premium Customers], [Total Customers])",
+            "formatString": "0.0%",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Average Customer Value Score",
+            "expression": "AVERAGE(fact_customer_financials[customer_value_score])",
+            "formatString": "0.0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Customers by Country",
+            "expression": "[Total Customers]",
+            "formatString": "#,0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Balance per Customer",
+            "expression": "DIVIDE([Total Balance], [Total Customers])",
+            "formatString": "€ #,0.00",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "High Credit Quality Customers",
+            "expression": "CALCULATE([Total Customers], fact_customer_financials[is_high_credit] = TRUE())",
+            "formatString": "#,0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "High Credit Quality %",
+            "expression": "DIVIDE([High Credit Quality Customers], [Total Customers])",
+            "formatString": "0.0%",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Customers with Balance",
+            "expression": "COUNT(fact_customer_financials[balance])",
+            "formatString": "#,0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Balance Coverage %",
+            "expression": "DIVIDE([Customers with Balance], [Total Customers])",
+            "formatString": "0.0%",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Scored Customers",
+            "expression": "COUNT(fact_customer_financials[customer_value_score])",
+            "formatString": "#,0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Score Coverage %",
+            "expression": "DIVIDE([Scored Customers], [Total Customers])",
+            "formatString": "0.0%",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "Customers with Credit Score",
+            "expression": "COUNT(fact_customer_financials[credit_score])",
+            "formatString": "#,0",
+            "displayFolder": "Customer Analytics"
+          },
+          {
+            "name": "High Credit Quality % of Observed",
+            "expression": "DIVIDE([High Credit Quality Customers], [Customers with Credit Score])",
+            "formatString": "0.0%",
+            "displayFolder": "Customer Analytics"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "rel_dim_customer",
+        "fromTable": "fact_customer_financials",
+        "fromColumn": "customer_key",
+        "toTable": "dim_customer",
+        "toColumn": "customer_key",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "rel_dim_country",
+        "fromTable": "fact_customer_financials",
+        "fromColumn": "country_key",
+        "toTable": "dim_country",
+        "toColumn": "country_key",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "rel_dim_age_group",
+        "fromTable": "fact_customer_financials",
+        "fromColumn": "age_group_key",
+        "toTable": "dim_age_group",
+        "toColumn": "age_group_key",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      }
+    ]
+  }
+}

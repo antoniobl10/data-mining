@@ -1,0 +1,43 @@
+table 'Dim Age Group'
+
+	/// Gold dim_age_group.age_group_key. See metric definitions and Gold business rules.
+	column 'Age Group Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Age Group Key
+
+	/// Gold dim_age_group.age_group. See metric definitions and Gold business rules.
+	column 'Age Group'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Age Group
+		sortByColumn: 'Sort Order'
+
+	/// Gold dim_age_group.min_age. See metric definitions and Gold business rules.
+	column 'Min Age'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Min Age
+
+	/// Gold dim_age_group.max_age. See metric definitions and Gold business rules.
+	column 'Max Age'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Max Age
+
+	/// Gold dim_age_group.sort_order. See metric definitions and Gold business rules.
+	column 'Sort Order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Sort Order
+
+	partition 'Dim Age Group' = m
+		mode: import
+		source =
+				let
+				    Source = GoldCsv("dim_age_group.csv", {"age_group_key", "age_group", "min_age", "max_age", "sort_order"}, {{"age_group_key", Int64.Type}, {"age_group", type text}, {"min_age", Int64.Type}, {"max_age", Int64.Type}, {"sort_order", Int64.Type}}),
+				    Renamed = Table.RenameColumns(Source, {{"age_group_key", "Age Group Key"}, {"age_group", "Age Group"}, {"min_age", "Min Age"}, {"max_age", "Max Age"}, {"sort_order", "Sort Order"}})
+				in Renamed
+

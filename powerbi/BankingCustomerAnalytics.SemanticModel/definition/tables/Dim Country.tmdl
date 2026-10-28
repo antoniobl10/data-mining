@@ -1,0 +1,29 @@
+table 'Dim Country'
+
+	/// Gold dim_country.country_key. See metric definitions and Gold business rules.
+	column 'Country Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Country Key
+
+	/// Gold dim_country.country_name. See metric definitions and Gold business rules.
+	column Country
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Country
+
+	/// Gold dim_country.country_code. See metric definitions and Gold business rules.
+	column 'Country Code'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Country Code
+
+	partition 'Dim Country' = m
+		mode: import
+		source =
+				let
+				    Source = GoldCsv("dim_country.csv", {"country_key", "country_name", "country_code"}, {{"country_key", Int64.Type}, {"country_name", type text}, {"country_code", type text}}),
+				    Renamed = Table.RenameColumns(Source, {{"country_key", "Country Key"}, {"country_name", "Country"}, {"country_code", "Country Code"}})
+				in Renamed
+

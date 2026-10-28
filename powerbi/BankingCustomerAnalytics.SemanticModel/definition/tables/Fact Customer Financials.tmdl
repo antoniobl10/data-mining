@@ -1,0 +1,195 @@
+table 'Fact Customer Financials'
+
+	/// Gold fact_customer_financials.customer_key. See metric definitions and Gold business rules.
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	/// Gold fact_customer_financials.country_key. See metric definitions and Gold business rules.
+	column 'Country Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Country Key
+
+	/// Gold fact_customer_financials.age_group_key. See metric definitions and Gold business rules.
+	column 'Age Group Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Age Group Key
+
+	/// Gold fact_customer_financials.credit_band_key. See metric definitions and Gold business rules.
+	column 'Credit Band Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Credit Band Key
+
+	/// Gold fact_customer_financials.tenure_band_key. See metric definitions and Gold business rules.
+	column 'Tenure Band Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Tenure Band Key
+
+	/// Gold fact_customer_financials.age. See metric definitions and Gold business rules.
+	column Age
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Age
+
+	/// Gold fact_customer_financials.balance. See metric definitions and Gold business rules.
+	column Balance
+		dataType: double
+		isHidden
+		formatString: €#,0
+		summarizeBy: none
+		sourceColumn: Balance
+
+	/// Gold fact_customer_financials.estimated_salary. See metric definitions and Gold business rules.
+	column 'Estimated Salary'
+		dataType: double
+		isHidden
+		formatString: €#,0
+		summarizeBy: none
+		sourceColumn: Estimated Salary
+
+	/// Gold fact_customer_financials.credit_score. See metric definitions and Gold business rules.
+	column 'Credit Score'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Credit Score
+
+	/// Gold fact_customer_financials.tenure. See metric definitions and Gold business rules.
+	column Tenure
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Tenure
+
+	/// Gold fact_customer_financials.customer_value_score. See metric definitions and Gold business rules.
+	column 'Customer Value Score'
+		dataType: double
+		isHidden
+		formatString: 0.0
+		summarizeBy: none
+		sourceColumn: Customer Value Score
+
+	/// Gold fact_customer_financials.source_batch_id. See metric definitions and Gold business rules.
+	column 'Source Batch Id'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Source Batch Id
+
+	/// Gold fact_customer_financials.is_high_value. See metric definitions and Gold business rules.
+	column 'High Value Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: High Value Flag
+
+	/// Gold fact_customer_financials.is_high_balance. See metric definitions and Gold business rules.
+	column 'High Balance Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: High Balance Flag
+
+	/// Gold fact_customer_financials.is_high_income. See metric definitions and Gold business rules.
+	column 'High Income Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: High Income Flag
+
+	/// Gold fact_customer_financials.is_affluent. See metric definitions and Gold business rules.
+	column 'Affluent Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Affluent Flag
+
+	/// Gold fact_customer_financials.is_high_credit_quality. See metric definitions and Gold business rules.
+	column 'High Credit Quality Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: High Credit Quality Flag
+
+	/// Gold fact_customer_financials.is_long_tenure. See metric definitions and Gold business rules.
+	column 'Long Tenure Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Long Tenure Flag
+
+	/// Gold fact_customer_financials.value_component_balance. See metric definitions and Gold business rules.
+	column 'Value Component Balance'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Value Component Balance
+
+	/// Gold fact_customer_financials.value_component_estimated_salary. See metric definitions and Gold business rules.
+	column 'Value Component Estimated Salary'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Value Component Estimated Salary
+
+	/// Gold fact_customer_financials.value_component_tenure. See metric definitions and Gold business rules.
+	column 'Value Component Tenure'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Value Component Tenure
+
+	/// Gold fact_customer_financials.value_component_credit_score. See metric definitions and Gold business rules.
+	column 'Value Component Credit Score'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Value Component Credit Score
+
+	/// Gold fact_customer_financials.is_balance_outlier. See metric definitions and Gold business rules.
+	column 'Is Balance Outlier'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Is Balance Outlier
+
+	/// Gold fact_customer_financials.is_salary_outlier. See metric definitions and Gold business rules.
+	column 'Is Salary Outlier'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Is Salary Outlier
+
+	/// Gold fact_customer_financials.is_credit_score_outlier. See metric definitions and Gold business rules.
+	column 'Is Credit Score Outlier'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Is Credit Score Outlier
+
+	/// Gold fact_customer_financials.is_age_outlier. See metric definitions and Gold business rules.
+	column 'Is Age Outlier'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Is Age Outlier
+
+	partition 'Fact Customer Financials' = m
+		mode: import
+		source =
+				let
+				    Source = GoldCsv("fact_customer_financials.csv", {"customer_key", "country_key", "age_group_key", "credit_band_key", "tenure_band_key", "age", "balance", "estimated_salary", "credit_score", "tenure", "customer_value_score", "source_batch_id", "is_high_value", "is_high_balance", "is_high_income", "is_affluent", "is_high_credit_quality", "is_long_tenure", "value_component_balance", "value_component_estimated_salary", "value_component_tenure", "value_component_credit_score", "is_balance_outlier", "is_salary_outlier", "is_credit_score_outlier", "is_age_outlier"}, {{"customer_key", Int64.Type}, {"country_key", Int64.Type}, {"age_group_key", Int64.Type}, {"credit_band_key", Int64.Type}, {"tenure_band_key", Int64.Type}, {"age", Int64.Type}, {"balance", type number}, {"estimated_salary", type number}, {"credit_score", Int64.Type}, {"tenure", Int64.Type}, {"customer_value_score", type number}, {"source_batch_id", type text}, {"is_high_value", type logical}, {"is_high_balance", type logical}, {"is_high_income", type logical}, {"is_affluent", type logical}, {"is_high_credit_quality", type logical}, {"is_long_tenure", type logical}, {"value_component_balance", type number}, {"value_component_estimated_salary", type number}, {"value_component_tenure", type number}, {"value_component_credit_score", type number}, {"is_balance_outlier", type logical}, {"is_salary_outlier", type logical}, {"is_credit_score_outlier", type logical}, {"is_age_outlier", type logical}}),
+				    Renamed = Table.RenameColumns(Source, {{"customer_key", "Customer Key"}, {"country_key", "Country Key"}, {"age_group_key", "Age Group Key"}, {"credit_band_key", "Credit Band Key"}, {"tenure_band_key", "Tenure Band Key"}, {"age", "Age"}, {"balance", "Balance"}, {"estimated_salary", "Estimated Salary"}, {"credit_score", "Credit Score"}, {"tenure", "Tenure"}, {"customer_value_score", "Customer Value Score"}, {"source_batch_id", "Source Batch Id"}, {"is_high_value", "High Value Flag"}, {"is_high_balance", "High Balance Flag"}, {"is_high_income", "High Income Flag"}, {"is_affluent", "Affluent Flag"}, {"is_high_credit_quality", "High Credit Quality Flag"}, {"is_long_tenure", "Long Tenure Flag"}, {"value_component_balance", "Value Component Balance"}, {"value_component_estimated_salary", "Value Component Estimated Salary"}, {"value_component_tenure", "Value Component Tenure"}, {"value_component_credit_score", "Value Component Credit Score"}, {"is_balance_outlier", "Is Balance Outlier"}, {"is_salary_outlier", "Is Salary Outlier"}, {"is_credit_score_outlier", "Is Credit Score Outlier"}, {"is_age_outlier", "Is Age Outlier"}})
+				in Renamed
+

@@ -1,0 +1,1 @@
+EVALUATE ROW("Customers", [Total Customers], "Balance", [Total Balance], "Average Balance", [Average Balance], "Premium", [Premium Customers], "High Value", [High Value Customers], "Narrative", [Portfolio Insight])

@@ -1,0 +1,31 @@
+{
+  "name": "banking_theme.json",
+  "dataColors": [
+    "#167D9A",
+    "#142D4E",
+    "#3B8C78",
+    "#BD8E32",
+    "#65768C",
+    "#9F5561"
+  ],
+  "background": "#F4F7FA",
+  "foreground": "#142D4E",
+  "tableAccent": "#167D9A",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#142D4E"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 11,
+      "color": "#142D4E"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 27,
+      "color": "#142D4E"
+    }
+  }
+}

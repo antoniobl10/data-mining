@@ -1,0 +1,317 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.0.0/schema.json",
+  "name": "reset_all",
+  "displayName": "Reset Filters",
+  "options": {
+    "suppressActiveSection": true,
+    "suppressDisplay": true,
+    "suppressData": false
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "overview",
+    "sections": {
+      "overview": {
+        "visualContainers": {
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_gender": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_customer_value_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "customers": {
+        "visualContainers": {
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_gender": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_age_group": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_tenure_band": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_credit_band": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "financial": {
+        "visualContainers": {
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_credit_band": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_tenure_band": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_customer_value_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "segments": {
+        "visualContainers": {
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_primary_customer_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_customer_value_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "explorer": {
+        "visualContainers": {
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_gender": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_customer_value_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_primary_customer_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "customer_detail": {
+        "visualContainers": {}
+      },
+      "country_tooltip": {
+        "visualContainers": {}
+      },
+      "segment_tooltip": {
+        "visualContainers": {}
+      },
+      "quality": {
+        "visualContainers": {}
+      }
+    },
+    "filters": {
+      "byName": {}
+    }
+  }
+}

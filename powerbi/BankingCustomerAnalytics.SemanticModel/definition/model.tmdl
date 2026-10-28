@@ -1,0 +1,16 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+
+ref table 'Dim Customer'
+ref table 'Dim Country'
+ref table 'Dim Age Group'
+ref table 'Dim Credit Band'
+ref table 'Dim Tenure Band'
+ref table 'Fact Customer Financials'
+ref table 'Balance Concentration'
+ref table 'Pipeline Status'
+ref table 'Gold Validation'
+ref table _Measures
+

@@ -1,0 +1,49 @@
+table 'Dim Credit Band'
+
+	/// Gold dim_credit_band.credit_band_key. See metric definitions and Gold business rules.
+	column 'Credit Band Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Credit Band Key
+
+	/// Gold dim_credit_band.credit_score_band. See metric definitions and Gold business rules.
+	column 'Credit Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Credit Band
+		sortByColumn: 'Sort Order'
+
+	/// Gold dim_credit_band.min_score. See metric definitions and Gold business rules.
+	column 'Min Score'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Min Score
+
+	/// Gold dim_credit_band.max_score. See metric definitions and Gold business rules.
+	column 'Max Score'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Max Score
+
+	/// Gold dim_credit_band.sort_order. See metric definitions and Gold business rules.
+	column 'Sort Order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Sort Order
+
+	/// Gold dim_credit_band.credit_quality_level. See metric definitions and Gold business rules.
+	column 'Credit Quality Level'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Credit Quality Level
+
+	partition 'Dim Credit Band' = m
+		mode: import
+		source =
+				let
+				    Source = GoldCsv("dim_credit_band.csv", {"credit_band_key", "credit_score_band", "min_score", "max_score", "sort_order", "credit_quality_level"}, {{"credit_band_key", Int64.Type}, {"credit_score_band", type text}, {"min_score", Int64.Type}, {"max_score", Int64.Type}, {"sort_order", Int64.Type}, {"credit_quality_level", Int64.Type}}),
+				    Renamed = Table.RenameColumns(Source, {{"credit_band_key", "Credit Band Key"}, {"credit_score_band", "Credit Band"}, {"min_score", "Min Score"}, {"max_score", "Max Score"}, {"sort_order", "Sort Order"}, {"credit_quality_level", "Credit Quality Level"}})
+				in Renamed
+

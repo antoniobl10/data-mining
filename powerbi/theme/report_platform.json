@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Banking Customer Analytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fe9150b4-5ec5-42c2-b537-78f1b08b4b82"
+  }
+}

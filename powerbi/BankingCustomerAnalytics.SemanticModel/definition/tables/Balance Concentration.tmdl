@@ -1,0 +1,32 @@
+/// Disconnected four-row cohort selector. Concentration measure recomputes from filtered fact; snapshot share is hidden QA data.
+table 'Balance Concentration'
+
+	/// Gold mart_balance_concentration.cohort. See metric definitions and Gold business rules.
+	column Cohort
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Cohort
+		sortByColumn: 'Requested Fraction'
+
+	/// Gold mart_balance_concentration.requested_fraction. See metric definitions and Gold business rules.
+	column 'Requested Fraction'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Requested Fraction
+
+	/// Gold mart_balance_concentration.balance_share. See metric definitions and Gold business rules.
+	column 'Snapshot Balance Share'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Snapshot Balance Share
+
+	partition 'Balance Concentration' = m
+		mode: import
+		source =
+				let
+				    Source = GoldCsv("mart_balance_concentration.csv", {"cohort", "requested_fraction", "balance_share"}, {{"cohort", type text}, {"requested_fraction", type number}, {"balance_share", type number}}),
+				    Renamed = Table.RenameColumns(Source, {{"cohort", "Cohort"}, {"requested_fraction", "Requested Fraction"}, {"balance_share", "Snapshot Balance Share"}})
+				in Renamed
+

@@ -1,0 +1,337 @@
+table _Measures
+
+	/// Accepted customer snapshot count. Fact-based so every dimension slicer propagates; no matches gives zero customers, not invented financial values.
+	measure 'Total Customers' = COALESCE(COUNTROWS('Fact Customer Financials'), 0)
+		formatString: #,0
+		displayFolder: Customers
+
+	/// Observed valid values only; blank inputs remain excluded. Currency/salary period are unverified.
+	measure 'Total Balance' = SUM('Fact Customer Financials'[Balance])
+		formatString: €#,0
+		displayFolder: Balances
+
+	/// Observed valid values only; blank inputs remain excluded. Currency/salary period are unverified.
+	measure 'Average Balance' = AVERAGE('Fact Customer Financials'[Balance])
+		formatString: €#,0
+		displayFolder: Balances
+
+	/// Observed valid values only; blank inputs remain excluded. Currency/salary period are unverified.
+	measure 'Median Balance' = MEDIAN('Fact Customer Financials'[Balance])
+		formatString: €#,0
+		displayFolder: Balances
+
+	/// Observed valid values only; blank inputs remain excluded. Currency/salary period are unverified.
+	measure 'Average Estimated Salary' = AVERAGE('Fact Customer Financials'[Estimated Salary])
+		formatString: €#,0
+		displayFolder: Salary
+
+	/// Observed valid values only; blank inputs remain excluded. Currency/salary period are unverified.
+	measure 'Median Estimated Salary' = MEDIAN('Fact Customer Financials'[Estimated Salary])
+		formatString: €#,0
+		displayFolder: Salary
+
+	/// Observed valid values only; no inferred zeroes.
+	measure 'Average Credit Score' = AVERAGE('Fact Customer Financials'[Credit Score])
+		formatString: 0
+		displayFolder: Credit
+
+	/// Observed valid values only; no inferred zeroes.
+	measure 'Median Credit Score' = MEDIAN('Fact Customer Financials'[Credit Score])
+		formatString: 0
+		displayFolder: Credit
+
+	/// Observed valid values only; no inferred zeroes.
+	measure 'Average Age' = AVERAGE('Fact Customer Financials'[Age])
+		formatString: 0.0
+		displayFolder: Customers
+
+	/// Observed valid values only; no inferred zeroes.
+	measure 'Average Tenure' = AVERAGE('Fact Customer Financials'[Tenure])
+		formatString: 0.0
+		displayFolder: Customers
+
+	/// Observed valid values only; no inferred zeroes.
+	measure 'Average Customer Value Score' = AVERAGE('Fact Customer Financials'[Customer Value Score])
+		formatString: 0.0
+		displayFolder: Customer Value
+
+	/// Overlapping rule-flag count within the current filter context.
+	measure 'High Value Customers' = CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Value Flag] = TRUE()))
+		formatString: #,0
+		displayFolder: Segments
+
+	/// Flagged customers divided by all selected accepted customers, including unknown inputs.
+	measure 'High Value Customer %' = DIVIDE([High Value Customers], [Total Customers])
+		formatString: 0.0%
+		displayFolder: Percentages
+
+	/// Overlapping rule-flag count within the current filter context.
+	measure 'High Credit Quality Customers' = CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Credit Quality Flag] = TRUE()))
+		formatString: #,0
+		displayFolder: Segments
+
+	/// Flagged customers divided by all selected accepted customers, including unknown inputs.
+	measure 'High Credit Quality %' = DIVIDE([High Credit Quality Customers], [Total Customers])
+		formatString: 0.0%
+		displayFolder: Percentages
+
+	/// Overlapping rule-flag count within the current filter context.
+	measure 'High Balance Customers' = CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Balance Flag] = TRUE()))
+		formatString: #,0
+		displayFolder: Segments
+
+	/// Flagged customers divided by all selected accepted customers, including unknown inputs.
+	measure 'High Balance Customer %' = DIVIDE([High Balance Customers], [Total Customers])
+		formatString: 0.0%
+		displayFolder: Percentages
+
+	/// Overlapping rule-flag count within the current filter context.
+	measure 'Long-Term Customers' = CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[Long Tenure Flag] = TRUE()))
+		formatString: #,0
+		displayFolder: Segments
+
+	/// Flagged customers divided by all selected accepted customers, including unknown inputs.
+	measure 'Long-Term Customer %' = DIVIDE([Long-Term Customers], [Total Customers])
+		formatString: 0.0%
+		displayFolder: Percentages
+
+	/// Overlapping rule-flag count within the current filter context.
+	measure 'High Income Customers' = CALCULATE([Total Customers], KEEPFILTERS('Fact Customer Financials'[High Income Flag] = TRUE()))
+		formatString: #,0
+		displayFolder: Segments
+
+	/// Flagged customers divided by all selected accepted customers, including unknown inputs.
+	measure 'High Income Customer %' = DIVIDE([High Income Customers], [Total Customers])
+		formatString: 0.0%
+		displayFolder: Percentages
+
+	/// Premium Customers
+	measure 'Premium Customers' = CALCULATE([Total Customers], KEEPFILTERS('Dim Customer'[Customer Value Segment] = "Premium"))
+		formatString: #,0
+		displayFolder: Customer Value
+
+	/// Premium / all selected customers, not only scored customers.
+	measure 'Premium Customer %' = DIVIDE([Premium Customers], [Total Customers])
+		formatString: 0.0%
+		displayFolder: Percentages
+
+	/// Observed total / all customers. Deliberately distinct from Average Balance, whose denominator is observed balances.
+	measure 'Balance per Customer' = DIVIDE([Total Balance], [Total Customers])
+		formatString: €#,0
+		displayFolder: Balances
+
+	/// Customers with Balance
+	measure 'Customers with Balance' = COALESCE(COUNT('Fact Customer Financials'[Balance]), 0)
+		formatString: #,0
+		displayFolder: Coverage
+
+	/// Scored Customers
+	measure 'Scored Customers' = COALESCE(COUNT('Fact Customer Financials'[Customer Value Score]), 0)
+		formatString: #,0
+		displayFolder: Coverage
+
+	/// Customers with Credit Score
+	measure 'Customers with Credit Score' = COALESCE(COUNT('Fact Customer Financials'[Credit Score]), 0)
+		formatString: #,0
+		displayFolder: Coverage
+
+	/// Balance Coverage %
+	measure 'Balance Coverage %' = DIVIDE([Customers with Balance], [Total Customers])
+		formatString: 0.0%
+		displayFolder: Coverage
+
+	/// Score Coverage %
+	measure 'Score Coverage %' = DIVIDE([Scored Customers], [Total Customers])
+		formatString: 0.0%
+		displayFolder: Coverage
+
+	/// Uses observed valid credit scores as its explicit denominator.
+	measure 'High Credit Quality % of Observed' = DIVIDE([High Credit Quality Customers], [Customers with Credit Score])
+		formatString: 0.0%
+		displayFolder: Credit
+
+	/// Share of visual total after external selections; removes visual row/column context, preserves slicers.
+	measure 'Customer Share %' = DIVIDE([Total Customers], CALCULATE([Total Customers], ALLSELECTED()))
+		formatString: 0.0%
+		displayFolder: Percentages
+
+	/// Share of visual total after external selections; removes visual row/column context, preserves slicers.
+	measure 'Balance Share %' = DIVIDE([Total Balance], CALCULATE([Total Balance], ALLSELECTED()))
+		formatString: 0.0%
+		displayFolder: Percentages
+
+	/// Share of visual total after external selections; removes visual row/column context, preserves slicers.
+	measure 'Premium Customer Share %' = DIVIDE([Premium Customers], CALCULATE([Premium Customers], ALLSELECTED()))
+		formatString: 0.0%
+		displayFolder: Percentages
+
+	/// Dense rank across selected countries with an observed metric; responds to other slicers.
+	measure 'Country Rank by Total Balance' =
+			IF([Total Customers] > 0 && NOT ISBLANK([Total Balance]),
+			RANKX(FILTER(ALLSELECTED('Dim Country'[Country]), CALCULATE([Total Customers]) > 0 && NOT ISBLANK(CALCULATE([Total Balance]))),
+			    [Total Balance], , DESC, DENSE))
+		formatString: #,0
+		displayFolder: Comparisons
+
+	/// Dense rank across selected countries with an observed metric; responds to other slicers.
+	measure 'Country Rank by Customers' =
+			IF([Total Customers] > 0 && NOT ISBLANK([Total Customers]),
+			RANKX(FILTER(ALLSELECTED('Dim Country'[Country]), CALCULATE([Total Customers]) > 0 && NOT ISBLANK(CALCULATE([Total Customers]))),
+			    [Total Customers], , DESC, DENSE))
+		formatString: #,0
+		displayFolder: Comparisons
+
+	/// Dense rank across selected countries with an observed metric; responds to other slicers.
+	measure 'Country Rank by Average Customer Value' =
+			IF([Total Customers] > 0 && NOT ISBLANK([Average Customer Value Score]),
+			RANKX(FILTER(ALLSELECTED('Dim Country'[Country]), CALCULATE([Total Customers]) > 0 && NOT ISBLANK(CALCULATE([Average Customer Value Score]))),
+			    [Average Customer Value Score], , DESC, DENSE))
+		formatString: #,0
+		displayFolder: Comparisons
+
+	/// Full accepted-snapshot baseline: removes report dimension/fact filters, but cannot bypass security roles.
+	measure 'Overall Average Balance' = CALCULATE([Average Balance], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'))
+		formatString: €#,0
+		displayFolder: Comparisons
+
+	/// Full accepted-snapshot baseline: removes report dimension/fact filters, but cannot bypass security roles.
+	measure 'Overall Average Credit Score' = CALCULATE([Average Credit Score], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'))
+		formatString: 0
+		displayFolder: Comparisons
+
+	/// Full accepted-snapshot baseline: removes report dimension/fact filters, but cannot bypass security roles.
+	measure 'Overall Average Customer Value' = CALCULATE([Average Customer Value Score], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'))
+		formatString: 0.0
+		displayFolder: Comparisons
+
+	/// Average Balance vs Overall
+	measure 'Average Balance vs Overall' = IF(NOT ISBLANK([Average Balance]), [Average Balance] - [Overall Average Balance])
+		formatString: €#,0
+		displayFolder: Comparisons
+
+	/// Average Credit Score vs Overall
+	measure 'Average Credit Score vs Overall' = IF(NOT ISBLANK([Average Credit Score]), [Average Credit Score] - [Overall Average Credit Score])
+		formatString: 0.0
+		displayFolder: Comparisons
+
+	/// Average Customer Value vs Overall
+	measure 'Average Customer Value vs Overall' = IF(NOT ISBLANK([Average Customer Value Score]), [Average Customer Value Score] - [Overall Average Customer Value])
+		formatString: 0.0
+		displayFolder: Comparisons
+
+	/// Balance Difference vs Overall
+	measure 'Balance Difference vs Overall' = [Average Balance vs Overall]
+		formatString: €#,0
+		displayFolder: Comparisons
+
+	/// Balance Difference %
+	measure 'Balance Difference %' = DIVIDE([Balance Difference vs Overall], [Overall Average Balance])
+		formatString: 0.0%
+		displayFolder: Comparisons
+
+	/// On customer drill-through, compares against the full country cohort of that customer, clearing personal/demographic filters.
+	measure 'Country Average Balance' =
+			VAR CustomerCountries = VALUES('Dim Customer'[Country Key])
+			RETURN CALCULATE([Average Balance], REMOVEFILTERS('Dim Customer'), REMOVEFILTERS('Dim Country'), REMOVEFILTERS('Dim Age Group'), REMOVEFILTERS('Dim Credit Band'), REMOVEFILTERS('Dim Tenure Band'), REMOVEFILTERS('Fact Customer Financials'), TREATAS(CustomerCountries, 'Dim Country'[Country Key]))
+		formatString: €#,0
+		displayFolder: Comparisons
+
+	/// Explicit all/single/multiple country label.
+	measure 'Selected Countries' =
+			IF(NOT ISFILTERED('Dim Country'[Country]), "All Countries",
+			IF(HASONEVALUE('Dim Country'[Country]), SELECTEDVALUE('Dim Country'[Country]), "Multiple Countries"))
+		displayFolder: Titles
+
+	/// Customer Profile Title
+	measure 'Customer Profile Title' = "Customer Profile — " & [Selected Countries]
+		displayFolder: Titles
+
+	/// Financial Analysis Title
+	measure 'Financial Analysis Title' = "Financial Analysis — " & [Selected Countries]
+		displayFolder: Titles
+
+	/// Segmentation Title
+	measure 'Segmentation Title' = "Segmentation — " & [Selected Countries]
+		displayFolder: Titles
+
+	/// Customer Explorer Title
+	measure 'Customer Explorer Title' = "Customer Explorer — " & [Selected Countries]
+		displayFolder: Titles
+
+	/// Dynamic selected-country leader, honest missingness and actual premium/coverage figures. Tied leaders are all named.
+	measure 'Portfolio Insight' =
+			VAR Ranked = FILTER(ALLSELECTED('Dim Country'[Country]), NOT ISBLANK(CALCULATE([Total Balance])))
+			VAR Leaders = TOPN(1, Ranked, [Total Balance], DESC)
+			VAR Names = CONCATENATEX(Leaders, 'Dim Country'[Country], ", ", 'Dim Country'[Country], ASC)
+			RETURN IF([Total Customers] = 0, "No customers match the current selection.",
+			    IF(ISBLANK([Total Balance]), "Balances are unavailable for this selection.",
+			    "Largest observed balance: " & Names & ". Premium: " & FORMAT([Premium Customer %], "0.0%") &
+			    ". Balance coverage: " & FORMAT([Balance Coverage %], "0.0%") & ". Value is an analytical proxy."))
+		displayFolder: Narrative
+
+	/// Dynamic top ceil(1/5/10%) and bottom floor(50%) of observed balances. Negative/nonpositive cohorts return blank. No missing-zero imputation.
+	measure 'Balance Concentration Share' =
+			VAR Fraction = SELECTEDVALUE('Balance Concentration'[Requested Fraction])
+			VAR Observed = FILTER(ALLSELECTED('Fact Customer Financials'), NOT ISBLANK('Fact Customer Financials'[Balance]))
+			VAR N = COUNTROWS(Observed)
+			VAR K = IF(Fraction = 0.5, ROUNDDOWN(N * Fraction, 0), ROUNDUP(N * Fraction, 0))
+			VAR Ranked = TOPN(K, Observed, IF(Fraction = 0.5, -'Fact Customer Financials'[Balance], 'Fact Customer Financials'[Balance]), DESC,
+			    IF(Fraction = 0.5, -'Fact Customer Financials'[Customer Key], 'Fact Customer Financials'[Customer Key]), ASC)
+			VAR TotalObserved = SUMX(Observed, 'Fact Customer Financials'[Balance])
+			RETURN IF(NOT ISBLANK(Fraction) && N > 0 && MINX(Observed, 'Fact Customer Financials'[Balance]) >= 0 && TotalObserved > 0,
+			    DIVIDE(COALESCE(SUMX(Ranked, 'Fact Customer Financials'[Balance]), 0), TotalObserved))
+		formatString: 0.0%
+		displayFolder: Balances
+
+	/// Snapshot Records Processed
+	measure 'Snapshot Records Processed' = MAX('Pipeline Status'[Source Rows])
+		formatString: #,0
+		displayFolder: Data Quality
+
+	/// Snapshot Silver Customers
+	measure 'Snapshot Silver Customers' = MAX('Pipeline Status'[Silver Rows])
+		formatString: #,0
+		displayFolder: Data Quality
+
+	/// Snapshot Quarantined Records
+	measure 'Snapshot Quarantined Records' = MAX('Pipeline Status'[Quarantine Rows])
+		formatString: #,0
+		displayFolder: Data Quality
+
+	/// Aggregate original-source failures remain visible despite valid accepted Gold relationships.
+	measure 'Silver Checks Failed' = MAX('Pipeline Status'[Silver Checks Failed])
+		formatString: #,0
+		displayFolder: Data Quality
+
+	/// Gold Checks Passed
+	measure 'Gold Checks Passed' = CALCULATE(COUNTROWS('Gold Validation'), 'Gold Validation'[Status] = "PASS")
+		formatString: #,0
+		displayFolder: Data Quality
+
+	/// Gold Checks Failed
+	measure 'Gold Checks Failed' = COALESCE(CALCULATE(COUNTROWS('Gold Validation'), 'Gold Validation'[Status] = "FAIL"), 0)
+		formatString: #,0
+		displayFolder: Data Quality
+
+	/// Subtle accessible text emphasis for a qualifying customer; no rainbow scale.
+	measure 'Balance Cell Color' = IF(ISBLANK([Average Balance]), "#617187", IF([High Balance Customers] > 0, "#0F6B58", "#142D4E"))
+		displayFolder: Formatting
+
+	/// Subtle accessible text emphasis for a qualifying customer; no rainbow scale.
+	measure 'Credit Cell Color' = IF(ISBLANK([Average Credit Score]), "#617187", IF([High Credit Quality Customers] > 0, "#0F6B58", "#142D4E"))
+		displayFolder: Formatting
+
+	/// Subtle accessible text emphasis for a qualifying customer; no rainbow scale.
+	measure 'Value Cell Color' = IF(ISBLANK([Average Customer Value Score]), "#617187", IF([Premium Customers] > 0, "#0F6B58", "#142D4E"))
+		displayFolder: Formatting
+
+	column Value
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Value
+
+	partition _Measures = m
+		mode: import
+		source = #table(type table [Value=nullable number], {{null}})
+

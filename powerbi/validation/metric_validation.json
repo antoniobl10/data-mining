@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "reference_comparisons": 557,
+  "filter_scenarios": 12,
+  "gold_build_id": "20261028T174328_3fc49c69451a",
+  "native_dax_executed": false,
+  "meaning": "Expected DAX outputs validated by independent Pandas/SQL. Native DAX engine verification remains required."
+}
