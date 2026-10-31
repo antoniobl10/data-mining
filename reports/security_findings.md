@@ -1,0 +1,9 @@
+# Security validation findings and limits
+
+The controlled platform boundary passed Bandit's medium/high-severity scan after explicit review of the duplicate-key YAML loader. It subclasses PyYAML SafeLoader; the targeted B506 annotations document that fact rather than permitting unsafe constructors. Dynamic audit dataset names use fixed internal fields/allowlists and SQL values use bound parameters. Fixed subprocess commands do not invoke a shell. Whole-repository heuristics cannot prove the absence of all vulnerabilities.
+
+The complete hash-pinned development dependency lock was audited against the available advisory service with no known vulnerabilities reported at this run. That result is time-specific and applies to the lock, not every unrelated package installed globally on the workstation. Regenerate/re-audit on dependency changes. Original ML artifacts were trained with the recorded runtime; do not blindly upgrade their serving environment without compatibility tests.
+
+Repository policy passed YAML/credential-pattern/size checks. The previously tracked private source workbook was removed from Git tracking while preserving the local `dataset.xlsx` input. Existing Git history is not rewritten and can still contain that prior file; an owner-reviewed history/data-sharing decision remains necessary before public distribution. No workbook content, secrets or customer-level runtime export is included in this report.
+
+Docker CLI is present but its daemon is unavailable, so the container was not built/executed. Databricks CLI/workspace credentials are unavailable; reference jobs remain paused and the adapter fails closed. No cloud resources, secrets/permissions, service refresh or external alert delivery was configured. The desktop UI helper also failed to initialize for the advanced analytics visual/save pass; native model refresh/DAX evidence is recorded separately without claiming screenshot verification.

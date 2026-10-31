@@ -1,0 +1,20 @@
+{
+  "environment": "prod",
+  "release_tag": "v1.1.0",
+  "config_sha256": "a73b690c34461d1ea4cd3694a13ed9eb04d64ef2b763b4acc60620f80d3e2b6a",
+  "status": "VALIDATED_REFERENCE_PLAN",
+  "remote_deployed": false,
+  "tasks": 13,
+  "required_external_controls": [
+    "governed Delta task adapter",
+    "real workspace/catalog/Volume configuration",
+    "OIDC or approved service identity",
+    "protected main branch and production environment approval",
+    "passing CI/quality evidence",
+    "nonsynthetic validated model before production serving"
+  ],
+  "commands_after_configuration": [
+    "databricks bundle validate -t prod",
+    "databricks bundle deploy -t prod"
+  ]
+}

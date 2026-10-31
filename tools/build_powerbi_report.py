@@ -185,6 +185,15 @@ def build():
     text('quality','quality_note','Source failures remain visible. Critical records are quarantined; accepted Silver still includes missing-value warnings.',24,466,1392,28,11)
     visual('quality','checks','tableEx',24,505,1392,650,'Gold validation checks',{'Values':[c('Gold Validation',col) for col in ['Check','Records Checked','Failed Records','Status','Detail']]})
 
+    if (ROOT/'data/reports/latest_synthetic.json').exists():
+        from tools.build_digital_report import append
+        append(globals())
+    if (ROOT/'data/reports/latest_ml.json').exists():
+        from tools.build_ml_report import append as append_ml
+        append_ml(globals())
+    if (ROOT/'data/reports/latest_analytics.json').exists():
+        from tools.build_analytics_report import append as append_analytics
+        append_analytics(globals())
     # Explicit filter interactions avoid ambiguous cross-highlighting.
     for name,content in PAGES.items():
         data=[v for v in content['visuals'] if v['visual'].get('query') and v['visual']['visualType'] not in ['card','tableEx','pivotTable']]

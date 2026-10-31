@@ -1,0 +1,70 @@
+/// SYNTHETIC DEMO ANALYTICS. Aggregate analytical grains require scoped measures; no real bank results.
+table 'AN Attribution'
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_marketing_attribution.channel
+	column Channel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Channel
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_marketing_attribution.campaign
+	column Campaign
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Campaign
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_marketing_attribution.attributed_cost
+	column 'Attributed Cost'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Attributed Cost
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_marketing_attribution.attributed_conversions
+	column 'Attributed Conversions'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Attributed Conversions
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_marketing_attribution.attributed_value
+	column 'Attributed Value'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Attributed Value
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_marketing_attribution.attribution_model
+	column 'Attribution Model'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Attribution Model
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_marketing_attribution.attribution_window_days
+	column 'Attribution Window Days'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Attribution Window Days
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_marketing_attribution.roi_proxy
+	column 'Roi Proxy'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Roi Proxy
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_marketing_attribution.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_marketing_attribution.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'AN Attribution' = m
+		mode: import
+		source = let Source = AnalyticsCsv("mart_marketing_attribution.csv", {"channel", "campaign", "attributed_cost", "attributed_conversions", "attributed_value", "attribution_model", "attribution_window_days", "roi_proxy", "synthetic_data_flag", "data_origin"}, {{"channel", type text}, {"campaign", type text}, {"attributed_cost", type number}, {"attributed_conversions", type number}, {"attributed_value", type number}, {"attribution_model", type text}, {"attribution_window_days", Int64.Type}, {"roi_proxy", type number}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"channel", "Channel"}, {"campaign", "Campaign"}, {"attributed_cost", "Attributed Cost"}, {"attributed_conversions", "Attributed Conversions"}, {"attributed_value", "Attributed Value"}, {"attribution_model", "Attribution Model"}, {"attribution_window_days", "Attribution Window Days"}, {"roi_proxy", "Roi Proxy"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

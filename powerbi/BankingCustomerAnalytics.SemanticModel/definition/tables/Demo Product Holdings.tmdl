@@ -1,0 +1,119 @@
+/// SYNTHETIC DEMO DATA. fact_product_holdings
+table 'Demo Product Holdings'
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.customer_id
+	column 'Customer ID'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.product_id
+	column 'Product Id'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Product Id
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.product_type
+	column 'Product Type'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Product Type
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.product_status
+	column 'Product Status'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Product Status
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.product_start_date
+	column 'Product Start Date'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Product Start Date
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.product_end_date
+	column 'Product End Date'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Product End Date
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.monthly_fee
+	column 'Monthly Fee'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Monthly Fee
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.product_balance
+	column 'Product Balance'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Product Balance
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.is_active
+	column 'Is Active'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Is Active
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.is_primary_product
+	column 'Is Primary Product'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Is Primary Product
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.customer_key
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.product_key
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Product Key
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.start_date_key
+	column 'Start Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Start Date Key
+
+	/// SYNTHETIC DEMO DATA. fact_product_holdings.end_date_key
+	column 'End Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: End Date Key
+
+	partition 'Demo Product Holdings' = m
+		mode: import
+		source = let Source = SyntheticCsv("fact_product_holdings.csv", {"customer_id", "product_id", "product_type", "product_status", "product_start_date", "product_end_date", "monthly_fee", "product_balance", "is_active", "is_primary_product", "synthetic_data_flag", "data_origin", "customer_key", "product_key", "start_date_key", "end_date_key"}, {{"customer_id", type text}, {"product_id", type text}, {"product_type", type text}, {"product_status", type text}, {"product_start_date", type datetime}, {"product_end_date", type datetime}, {"monthly_fee", type number}, {"product_balance", type number}, {"is_active", type logical}, {"is_primary_product", type logical}, {"synthetic_data_flag", type logical}, {"data_origin", type text}, {"customer_key", Int64.Type}, {"product_key", Int64.Type}, {"start_date_key", Int64.Type}, {"end_date_key", Int64.Type}}), Renamed = Table.RenameColumns(Source, {{"customer_id", "Customer ID"}, {"product_id", "Product Id"}, {"product_type", "Product Type"}, {"product_status", "Product Status"}, {"product_start_date", "Product Start Date"}, {"product_end_date", "Product End Date"}, {"monthly_fee", "Monthly Fee"}, {"product_balance", "Product Balance"}, {"is_active", "Is Active"}, {"is_primary_product", "Is Primary Product"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}, {"customer_key", "Customer Key"}, {"product_key", "Product Key"}, {"start_date_key", "Start Date Key"}, {"end_date_key", "End Date Key"}}) in Renamed
+

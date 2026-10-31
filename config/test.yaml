@@ -1,0 +1,5 @@
+environment: test
+catalog: banking_test
+source: {mode: fixture, fixture_customers: 120}
+models: {mode: fixture_prior_baselines}
+logging: {level: WARNING}

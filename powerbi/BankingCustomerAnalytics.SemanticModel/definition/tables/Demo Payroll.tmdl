@@ -1,0 +1,91 @@
+/// SYNTHETIC DEMO DATA. fact_payroll
+table 'Demo Payroll'
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.customer_id
+	column 'Customer ID'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.has_salary_domiciliation
+	column 'Has Salary Domiciliation'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Has Salary Domiciliation
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.monthly_payroll_amount
+	column 'Monthly Payroll Amount'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Monthly Payroll Amount
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.payroll_start_date
+	column 'Payroll Start Date'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payroll Start Date
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.salary_frequency
+	column 'Salary Frequency'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Salary Frequency
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.months_with_payroll
+	column 'Months With Payroll'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Months With Payroll
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.snapshot_date
+	column 'Snapshot Date'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Snapshot Date
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.customer_key
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.payroll_start_date_key
+	column 'Payroll Start Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Payroll Start Date Key
+
+	/// SYNTHETIC DEMO DATA. fact_payroll.snapshot_date_key
+	column 'Snapshot Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Snapshot Date Key
+
+	partition 'Demo Payroll' = m
+		mode: import
+		source = let Source = SyntheticCsv("fact_payroll.csv", {"customer_id", "has_salary_domiciliation", "monthly_payroll_amount", "payroll_start_date", "salary_frequency", "months_with_payroll", "snapshot_date", "synthetic_data_flag", "data_origin", "customer_key", "payroll_start_date_key", "snapshot_date_key"}, {{"customer_id", type text}, {"has_salary_domiciliation", type logical}, {"monthly_payroll_amount", type number}, {"payroll_start_date", type datetime}, {"salary_frequency", type text}, {"months_with_payroll", Int64.Type}, {"snapshot_date", type datetime}, {"synthetic_data_flag", type logical}, {"data_origin", type text}, {"customer_key", Int64.Type}, {"payroll_start_date_key", Int64.Type}, {"snapshot_date_key", Int64.Type}}), Renamed = Table.RenameColumns(Source, {{"customer_id", "Customer ID"}, {"has_salary_domiciliation", "Has Salary Domiciliation"}, {"monthly_payroll_amount", "Monthly Payroll Amount"}, {"payroll_start_date", "Payroll Start Date"}, {"salary_frequency", "Salary Frequency"}, {"months_with_payroll", "Months With Payroll"}, {"snapshot_date", "Snapshot Date"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}, {"customer_key", "Customer Key"}, {"payroll_start_date_key", "Payroll Start Date Key"}, {"snapshot_date_key", "Snapshot Date Key"}}) in Renamed
+

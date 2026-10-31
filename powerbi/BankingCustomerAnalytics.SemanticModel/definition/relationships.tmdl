@@ -18,3 +18,91 @@ relationship rel_dim_tenure_band
 	fromColumn: 'Fact Customer Financials'.'Tenure Band Key'
 	toColumn: 'Dim Tenure Band'.'Tenure Band Key'
 
+relationship demo_fact_product_holdings_customer
+	fromColumn: 'Demo Product Holdings'.'Customer Key'
+	toColumn: 'Demo Customer 360'.'Customer Key'
+
+relationship demo_fact_payroll_customer
+	fromColumn: 'Demo Payroll'.'Customer Key'
+	toColumn: 'Demo Customer 360'.'Customer Key'
+
+relationship demo_fact_campaign_interactions_customer
+	fromColumn: 'Demo Campaign Interactions'.'Customer Key'
+	toColumn: 'Demo Customer 360'.'Customer Key'
+
+relationship demo_fact_digital_events_customer
+	fromColumn: 'Demo Digital Events'.'Customer Key'
+	toColumn: 'Demo Customer 360'.'Customer Key'
+
+relationship demo_fact_service_adoption_customer
+	fromColumn: 'Demo Service Adoption'.'Customer Key'
+	toColumn: 'Demo Customer 360'.'Customer Key'
+
+relationship demo_fact_customer_satisfaction_customer
+	fromColumn: 'Demo Satisfaction'.'Customer Key'
+	toColumn: 'Demo Customer 360'.'Customer Key'
+
+relationship demo_fact_product_holdings_date
+	fromColumn: 'Demo Product Holdings'.'Start Date Key'
+	toColumn: 'Demo Date'.'Date Key'
+
+relationship demo_fact_payroll_date
+	fromColumn: 'Demo Payroll'.'Snapshot Date Key'
+	toColumn: 'Demo Date'.'Date Key'
+
+relationship demo_fact_campaign_interactions_date
+	fromColumn: 'Demo Campaign Interactions'.'Campaign Date Key'
+	toColumn: 'Demo Date'.'Date Key'
+
+relationship demo_fact_digital_events_date
+	fromColumn: 'Demo Digital Events'.'Date Key'
+	toColumn: 'Demo Date'.'Date Key'
+
+relationship demo_fact_service_adoption_date
+	fromColumn: 'Demo Service Adoption'.'Offer Date Key'
+	toColumn: 'Demo Date'.'Date Key'
+
+relationship demo_fact_customer_satisfaction_date
+	fromColumn: 'Demo Satisfaction'.'Date Key'
+	toColumn: 'Demo Date'.'Date Key'
+
+relationship demo_fact_product_holdings_end_date_key
+	isActive: false
+	fromColumn: 'Demo Product Holdings'.'End Date Key'
+	toColumn: 'Demo Date'.'Date Key'
+
+relationship demo_fact_payroll_payroll_start_date_key
+	isActive: false
+	fromColumn: 'Demo Payroll'.'Payroll Start Date Key'
+	toColumn: 'Demo Date'.'Date Key'
+
+relationship demo_fact_campaign_interactions_conversion_date_key
+	isActive: false
+	fromColumn: 'Demo Campaign Interactions'.'Conversion Date Key'
+	toColumn: 'Demo Date'.'Date Key'
+
+relationship demo_fact_service_adoption_activation_date_key
+	isActive: false
+	fromColumn: 'Demo Service Adoption'.'Activation Date Key'
+	toColumn: 'Demo Date'.'Date Key'
+
+relationship demo_fact_product_holdings_lookup
+	fromColumn: 'Demo Product Holdings'.'Product Key'
+	toColumn: 'Demo Product'.'Product Key'
+
+relationship demo_fact_campaign_interactions_lookup
+	fromColumn: 'Demo Campaign Interactions'.'Campaign Key'
+	toColumn: 'Demo Campaign'.'Campaign Key'
+
+relationship demo_fact_service_adoption_lookup
+	fromColumn: 'Demo Service Adoption'.'Service Key'
+	toColumn: 'Demo Service'.'Service Key'
+
+relationship ml_scores_customer
+	fromColumn: 'ML Customer Scores'.'Customer Key'
+	toColumn: 'Demo Customer 360'.'Customer Key'
+
+relationship analytics_opportunity_customer
+	fromColumn: 'AN Opportunities'.'Customer Key'
+	toColumn: 'Demo Customer 360'.'Customer Key'
+

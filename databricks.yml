@@ -1,0 +1,26 @@
+bundle:
+  name: banking-customer-analytics
+include:
+  - deployment/databricks/workflows/*.yml
+variables:
+  environment:
+    description: Target environment
+  existing_cluster_id:
+    description: Organization-approved job compute; supply through bundle variables
+  task_entry_path:
+    description: Deployed wheel/task entry absolute workspace path
+  workspace_host:
+    description: Organization workspace URL; supply externally
+targets:
+  dev:
+    mode: development
+    workspace: {host: '${var.workspace_host}'}
+    variables: {environment: dev}
+  test:
+    mode: development
+    workspace: {host: '${var.workspace_host}'}
+    variables: {environment: test}
+  prod:
+    mode: production
+    workspace: {host: '${var.workspace_host}'}
+    variables: {environment: prod}

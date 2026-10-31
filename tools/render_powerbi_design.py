@@ -56,6 +56,7 @@ def render():
     output=PBI/'previews';output.mkdir(exist_ok=True)
     for page_file in sorted((PBI/'BankingCustomerAnalytics.Report/definition/pages').glob('*/page.json')):
         page=json.loads(page_file.read_text(encoding='utf-8'))
+        if page['name'] not in ['overview','customers','financial','segments','explorer','customer_detail','country_tooltip','segment_tooltip','quality']:continue
         w,h=page['width'],page['height']
         fig=plt.figure(figsize=(w/100,h/100),facecolor=BG)
         data=base.loc[base.customer_value_segment.eq('Premium')].iloc[:1] if page['name']=='customer_detail' else base.loc[base.country.eq('France')] if page['name']=='country_tooltip' else base.loc[base.primary_customer_segment.eq('High Value')] if page['name']=='segment_tooltip' else base
@@ -64,6 +65,7 @@ def render():
             pos=visual['position'];x,y,vw,vh=[pos[n] for n in ['x','y','width','height']]
             ax=fig.add_axes([x/w,1-(y+vh)/h,vw/w,vh/h],facecolor='white')
             cfg=visual['visual'];kind=cfg['visualType'];roles=cfg.get('query',{}).get('queryState',{})
+            if 'Demo ' in json.dumps(roles):continue
             annotations={a['name']:a['value'] for a in visual.get('annotations',[])}
             title=cfg['visualContainerObjects']['title'][0]['properties'].get('text',{}).get('expr',{}).get('Literal',{}).get('Value',"''")[1:-1]
             if kind=='textbox':
@@ -141,7 +143,7 @@ def render():
             for spine in ax.spines.values():spine.set_visible(False)
         fig.savefig(output/(page['name']+'.png'),dpi=140,facecolor=BG)
         plt.close(fig)
-    print('Rendered nine design previews from current Gold and PBIR positions. Explorer IDs are masked.')
+    print('Rendered original nine design previews only. Synthetic pages require native screenshots; Explorer IDs are masked.')
 
 
 if __name__=='__main__':render()

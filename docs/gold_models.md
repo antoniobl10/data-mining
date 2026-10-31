@@ -1,3 +1,5 @@
+> Scope: Original Gold modeling scope. For current totals and execution boundaries, see [final health](../reports/final_project_health.md) and [documentation index](README.md). Historical counts below are not current platform totals.
+
 # Gold business models and methodology
 
 Gold consumes only published accepted Silver (PASS/WARNING). Quarantined rows remain upstream evidence and never enter the customer fact. It adds a dimensional model, calibrated scoring, segments, aggregates, diagnostics, validation and typed BI exports; it is not a renamed Silver table.

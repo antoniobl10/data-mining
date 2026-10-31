@@ -17,6 +17,36 @@
       "error": null
     },
     {
+      "name": "SyntheticGoldDataPath",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "SyntheticCsv",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "MLGoldDataPath",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "MLCsv",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AnalyticsGoldDataPath",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AnalyticsCsv",
+      "status": "PASS",
+      "error": null
+    },
+    {
       "name": "Dim Customer",
       "status": "PASS",
       "error": null
@@ -63,6 +93,131 @@
     },
     {
       "name": "_Measures",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Customer 360",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Date",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Product",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Service",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Campaign",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Product Holdings",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Payroll",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Campaign Interactions",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Digital Events",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Service Adoption",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Satisfaction",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "Demo Funnel Stage",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "ML Customer Scores",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "ML Model Performance",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Funnels",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Cohorts",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Retention Segments",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Journeys",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Experiments",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Attribution",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Opportunities",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Campaign Economics",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Experiment Economics",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Growth",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "name": "AN Lifecycle",
       "status": "PASS",
       "error": null
     }

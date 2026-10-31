@@ -1,0 +1,238 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "retention_definitions",
+  "position": {
+    "x": 24,
+    "y": 942,
+    "width": 1392,
+    "height": 230,
+    "z": 16,
+    "tabOrder": 16
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Retention Definitions'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#142D4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SYNTHETIC DEMO ANALYTICS. retention_definitions'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Cohorts"
+                    }
+                  },
+                  "Property": "Cohort Name"
+                }
+              },
+              "queryRef": "AN Cohorts.Cohort Name",
+              "nativeQueryRef": "Cohort Name",
+              "displayName": "Cohort Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Cohorts"
+                    }
+                  },
+                  "Property": "Cohort Period"
+                }
+              },
+              "queryRef": "AN Cohorts.Cohort Period",
+              "nativeQueryRef": "Cohort Period",
+              "displayName": "Cohort Period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Cohorts"
+                    }
+                  },
+                  "Property": "Months Since Cohort"
+                }
+              },
+              "queryRef": "AN Cohorts.Months Since Cohort",
+              "nativeQueryRef": "Months Since Cohort",
+              "displayName": "Months Since Cohort"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "AN Digital Retention"
+                }
+              },
+              "queryRef": "_Measures.AN Digital Retention",
+              "nativeQueryRef": "AN Digital Retention",
+              "displayName": "AN Digital Retention"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "AN Product Retention"
+                }
+              },
+              "queryRef": "_Measures.AN Product Retention",
+              "nativeQueryRef": "AN Product Retention",
+              "displayName": "AN Product Retention"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "AN Service Cohort Digital Retention"
+                }
+              },
+              "queryRef": "_Measures.AN Service Cohort Digital Retention",
+              "nativeQueryRef": "AN Service Cohort Digital Retention",
+              "displayName": "AN Service Cohort Digital Retention"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+> Scope: Bronze/Silver walkthrough scope. For current totals and execution boundaries, see [final health](../reports/final_project_health.md) and [documentation index](README.md). Historical counts below are not current platform totals.
+
 # Source, Bronze and Silver implementation
 
 This is the active project phase. Existing Gold, dbt, SQL analytics and Power BI assets are preserved for future work. The CLI now stops at Silver. Previous top-level documentation is retained under `docs/history/initial_project/` as historical material, not the active pipeline contract.

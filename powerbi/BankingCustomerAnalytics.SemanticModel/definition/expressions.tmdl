@@ -1,5 +1,5 @@
 /// Absolute path to one immutable Gold build powerbi export folder. Configure locally; never commit a developer-specific path.
-expression GoldDataPath = "C:/Users/anton/Desktop/repos/Power BI/data-mining/data/gold/build_id=20261028T174328_3fc49c69451a/powerbi" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression GoldDataPath = "" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 
 expression GoldBuildPath = let Root = if Text.Trim(GoldDataPath) = "" then error "Set GoldDataPath to the selected Gold build powerbi folder." else GoldDataPath, Parts = Text.Split(Text.TrimEnd(Text.Replace(Root, "\", "/"), "/"), "/") in Text.Combine(List.RemoveLastN(Parts, 1), "/")
 
@@ -13,4 +13,36 @@ expression GoldCsv =
 		    Nulls = Table.ReplaceValue(Contract, "", null, Replacer.ReplaceValue, Table.ColumnNames(Contract)),
 		    Typed = Table.TransformColumnTypes(Nulls, columnTypes, "en-US")
 		in Typed
+
+/// SYNTHETIC DEMO DATA export folder; keep separate from original Gold.
+expression SyntheticGoldDataPath = "" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+expression SyntheticCsv =
+		(fileName as text, expectedColumns as list, columnTypes as list) as table =>
+		let
+		    Root = if Text.Trim(SyntheticGoldDataPath) = "" then error "Set SyntheticGoldDataPath to the selected Gold build powerbi folder before refreshing." else Text.TrimEnd(SyntheticGoldDataPath, {"\", "/"}),
+		    Raw = Csv.Document(File.Contents(Root & "/" & fileName), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+		    Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]),
+		    Contract = Table.SelectColumns(Headers, expectedColumns, MissingField.Error),
+		    Nulls = Table.ReplaceValue(Contract, "", null, Replacer.ReplaceValue, Table.ColumnNames(Contract)),
+		    Typed = Table.TransformColumnTypes(Nulls, columnTypes, "en-US")
+		in Typed
+
+expression MLGoldDataPath = "" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+expression MLCsv =
+		(fileName as text, expectedColumns as list, columnTypes as list) as table =>
+		let Root = if Text.Trim(MLGoldDataPath) = "" then error "Set MLGoldDataPath to one successful SYNTHETIC DEMO MODEL scoring build." else Text.TrimEnd(MLGoldDataPath, {"\", "/"}),
+		Raw = Csv.Document(File.Contents(Root & "/" & fileName), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+		Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]), Contract = Table.SelectColumns(Headers, expectedColumns, MissingField.Error),
+		Nulls = Table.ReplaceValue(Contract, "", null, Replacer.ReplaceValue, Table.ColumnNames(Contract)), Typed = Table.TransformColumnTypes(Nulls, columnTypes, "en-US") in Typed
+
+expression AnalyticsGoldDataPath = "" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+expression AnalyticsCsv =
+		(fileName as text, expectedColumns as list, columnTypes as list) as table =>
+		let Root = if Text.Trim(AnalyticsGoldDataPath) = "" then error "Set AnalyticsGoldDataPath to a validated SYNTHETIC DEMO ANALYTICS build." else Text.TrimEnd(AnalyticsGoldDataPath, {"\", "/"}),
+		Raw = Csv.Document(File.Contents(Root & "/" & fileName), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+		Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]), Contract = Table.SelectColumns(Headers, expectedColumns, MissingField.Error),
+		Nulls = Table.ReplaceValue(Contract, "", null, Replacer.ReplaceValue, Table.ColumnNames(Contract)), Typed = Table.TransformColumnTypes(Nulls, columnTypes, "en-US") in Typed
 

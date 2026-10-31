@@ -1,3 +1,5 @@
+> Scope: Original nine-page / 61-measure BI baseline. For current totals and execution boundaries, see [final health](../reports/final_project_health.md) and [documentation index](README.md). Historical counts below are not current platform totals.
+
 # Banking Customer Analytics — Power BI project
 
 The current deliverable is a textual PBIP project with a TOM-validated TMDL semantic model, enhanced PBIR report definition, typed Power Query imports and a 61-measure catalog. The report is authored against the real accepted Gold customer snapshot. No synthetic business results or fabricated dates were introduced.

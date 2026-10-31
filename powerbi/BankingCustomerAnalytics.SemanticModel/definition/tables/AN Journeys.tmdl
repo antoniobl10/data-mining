@@ -1,0 +1,64 @@
+/// SYNTHETIC DEMO ANALYTICS. Aggregate analytical grains require scoped measures; no real bank results.
+table 'AN Journeys'
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_journeys.journey_path
+	column 'Journey Path'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Journey Path
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_journeys.customers
+	column Customers
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Customers
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_journeys.sessions
+	column Sessions
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Sessions
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_journeys.conversions
+	column Conversions
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Conversions
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_journeys.average_steps
+	column 'Average Steps'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Average Steps
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_journeys.average_duration
+	column 'Average Duration'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Average Duration
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_journeys.conversion_rate
+	column 'Conversion Rate'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Conversion Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_journeys.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_journeys.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'AN Journeys' = m
+		mode: import
+		source = let Source = AnalyticsCsv("mart_customer_journeys.csv", {"journey_path", "customers", "sessions", "conversions", "average_steps", "average_duration", "conversion_rate", "synthetic_data_flag", "data_origin"}, {{"journey_path", type text}, {"customers", Int64.Type}, {"sessions", Int64.Type}, {"conversions", Int64.Type}, {"average_steps", type number}, {"average_duration", type number}, {"conversion_rate", type number}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"journey_path", "Journey Path"}, {"customers", "Customers"}, {"sessions", "Sessions"}, {"conversions", "Conversions"}, {"average_steps", "Average Steps"}, {"average_duration", "Average Duration"}, {"conversion_rate", "Conversion Rate"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

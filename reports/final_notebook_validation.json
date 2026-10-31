@@ -1,0 +1,126 @@
+{
+  "results": [
+    {
+      "notebook": "00_setup.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "01_bronze_ingestion.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "02_silver_transformation.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "04_data_quality.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "01_bronze_silver_pipeline.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "03_gold_business_models.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "03_gold_business_analysis.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "05_exploratory_analysis.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "06_colab_entry.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "01_feature_analysis.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "02_campaign_propensity.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "03_churn_model.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "04_payroll_propensity.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "05_service_propensity.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "06_next_best_action.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "07_model_explainability.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "01_customer_journeys.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "02_customer_funnels.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "03_cohorts_retention.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "04_customer_lifecycle.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "05_experimentation.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "06_marketing_attribution.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "07_campaign_economics.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    },
+    {
+      "notebook": "08_customer_opportunities.ipynb",
+      "status": "PASS",
+      "outputs_persisted": false
+    }
+  ],
+  "executed": 24,
+  "limitations": "Install cells omitted; Colab upload/download UI not exercised. Historical root exploration preserved, not a supported walkthrough."
+}

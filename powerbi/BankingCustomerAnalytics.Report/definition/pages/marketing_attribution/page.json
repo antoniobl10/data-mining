@@ -1,0 +1,336 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "marketing_attribution",
+  "displayName": "Marketing Attribution",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_attribution_model",
+      "target": "slicer_attribution_window_days",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_model",
+      "target": "an_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_model",
+      "target": "an_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_model",
+      "target": "an_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_model",
+      "target": "an_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_model",
+      "target": "channel_credit",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_model",
+      "target": "first_last",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_model",
+      "target": "channel_value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_model",
+      "target": "campaign_roi",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_model",
+      "target": "cost_value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_window_days",
+      "target": "slicer_attribution_model",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_window_days",
+      "target": "an_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_window_days",
+      "target": "an_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_window_days",
+      "target": "an_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_window_days",
+      "target": "an_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_window_days",
+      "target": "channel_credit",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_window_days",
+      "target": "first_last",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_window_days",
+      "target": "channel_value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_window_days",
+      "target": "campaign_roi",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_attribution_window_days",
+      "target": "cost_value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_credit",
+      "target": "slicer_attribution_model",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_credit",
+      "target": "slicer_attribution_window_days",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_credit",
+      "target": "an_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_credit",
+      "target": "an_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_credit",
+      "target": "an_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_credit",
+      "target": "an_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_credit",
+      "target": "first_last",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_credit",
+      "target": "channel_value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_credit",
+      "target": "campaign_roi",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_credit",
+      "target": "cost_value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "first_last",
+      "target": "slicer_attribution_model",
+      "type": "DataFilter"
+    },
+    {
+      "source": "first_last",
+      "target": "slicer_attribution_window_days",
+      "type": "DataFilter"
+    },
+    {
+      "source": "first_last",
+      "target": "an_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "first_last",
+      "target": "an_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "first_last",
+      "target": "an_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "first_last",
+      "target": "an_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "first_last",
+      "target": "channel_credit",
+      "type": "DataFilter"
+    },
+    {
+      "source": "first_last",
+      "target": "channel_value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "first_last",
+      "target": "campaign_roi",
+      "type": "DataFilter"
+    },
+    {
+      "source": "first_last",
+      "target": "cost_value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_value",
+      "target": "slicer_attribution_model",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_value",
+      "target": "slicer_attribution_window_days",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_value",
+      "target": "an_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_value",
+      "target": "an_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_value",
+      "target": "an_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_value",
+      "target": "an_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_value",
+      "target": "channel_credit",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_value",
+      "target": "first_last",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_value",
+      "target": "campaign_roi",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel_value",
+      "target": "cost_value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_roi",
+      "target": "slicer_attribution_model",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_roi",
+      "target": "slicer_attribution_window_days",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_roi",
+      "target": "an_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_roi",
+      "target": "an_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_roi",
+      "target": "an_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_roi",
+      "target": "an_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_roi",
+      "target": "channel_credit",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_roi",
+      "target": "first_last",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_roi",
+      "target": "channel_value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_roi",
+      "target": "cost_value",
+      "type": "DataFilter"
+    }
+  ]
+}

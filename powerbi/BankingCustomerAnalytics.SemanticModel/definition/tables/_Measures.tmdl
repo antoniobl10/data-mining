@@ -325,6 +325,768 @@ table _Measures
 	measure 'Value Cell Color' = IF(ISBLANK([Average Customer Value Score]), "#617187", IF([Premium Customers] > 0, "#0F6B58", "#142D4E"))
 		displayFolder: Formatting
 
+	/// SYNTHETIC DEMO DATA. Accepted master cohort count; independent of demo date selection.
+	measure 'Demo Customers' = COALESCE(COUNTROWS('Demo Customer 360'),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.
+	measure 'Demo Customers with Payroll' = CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Has Salary Domiciliation] = TRUE()))
+		formatString: #,0
+		displayFolder: Digital Demo\Primary Banking
+
+	/// SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.
+	measure 'Demo Likely Primary Bank Customers' = CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Primary Bank Segment] = "Likely Primary Bank"))
+		formatString: #,0
+		displayFolder: Digital Demo\Primary Banking
+
+	/// SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.
+	measure 'Demo High Value Low Engagement Customers' = CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[High Value Low Engagement] = TRUE()))
+		formatString: #,0
+		displayFolder: Digital Demo\Primary Banking
+
+	/// SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.
+	measure 'Demo Payroll Opportunity Customers' = CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Eligible For Payroll Campaign] = TRUE()))
+		formatString: #,0
+		displayFolder: Digital Demo\Primary Banking
+
+	/// SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.
+	measure 'Demo Cross-Sell Opportunity Customers' = CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Cross Sell Opportunity] = TRUE()))
+		formatString: #,0
+		displayFolder: Digital Demo\Primary Banking
+
+	/// SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.
+	measure 'Demo High Engagement Low Product Depth Customers' = CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[High Engagement Low Product Depth] = TRUE()))
+		formatString: #,0
+		displayFolder: Digital Demo\Primary Banking
+
+	/// SYNTHETIC DEMO DATA. Snapshot percentage across selected customers.
+	measure 'Demo Salary Domiciliation Rate' = DIVIDE([Demo Customers with Payroll], [Demo Customers])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. Snapshot percentage across selected customers.
+	measure 'Demo Likely Primary Bank %' = DIVIDE([Demo Likely Primary Bank Customers], [Demo Customers])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. All-domain customer snapshot average; date slicers do not change the stock.
+	measure 'Demo Average Products per Customer' = AVERAGE('Demo Customer 360'[Active Product Count])
+		formatString: 0.00
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. All-domain customer snapshot average; date slicers do not change the stock.
+	measure 'Demo Average Engagement Score' = AVERAGE('Demo Customer 360'[Engagement Score])
+		formatString: 0.0
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. All-domain customer snapshot average; date slicers do not change the stock.
+	measure 'Demo Average Primary Bank Score' = AVERAGE('Demo Customer 360'[Primary Bank Score])
+		formatString: 0.0
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. Snapshot monthly payroll among customers with domiciliation; no annual-salary inference.
+	measure 'Demo Average Payroll Amount' = CALCULATE(AVERAGE('Demo Customer 360'[Monthly Payroll Amount]), KEEPFILTERS('Demo Customer 360'[Has Salary Domiciliation]=TRUE()))
+		formatString: €#,0
+		displayFolder: Digital Demo\Primary Banking
+
+	/// SYNTHETIC DEMO DATA. Active stock product count at the simulation endpoint.
+	measure 'Demo Customers with 2+ Products' = CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Active Product Count]>=2))
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. Active stock product count at the simulation endpoint.
+	measure 'Demo Customers with 3+ Products' = CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Active Product Count]>=3))
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. Defined as customers with at least two active products / all demo customers; distinct from the opportunity flag.
+	measure 'Demo Cross-Sell Rate' = DIVIDE([Demo Customers with 2+ Products], [Demo Customers])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. Selected product holders at endpoint; product/customer filters apply, dates are cleared.
+	measure 'Demo Active Product Customers' = COALESCE(CALCULATE(DISTINCTCOUNT('Demo Product Holdings'[Customer Key]), 'Demo Product Holdings'[Is Active]=TRUE(), REMOVEFILTERS('Demo Date')),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. Active holders of selected product / all master customers, assumed eligible for demo product analysis.
+	measure 'Demo Product Penetration Rate' = DIVIDE([Demo Active Product Customers], [Demo Customers])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. Customers whose modeled payroll start falls in selected dates; not net growth.
+	measure 'Demo New Payroll Customers' = COALESCE(CALCULATE(DISTINCTCOUNT('Demo Payroll'[Customer Key]), 'Demo Payroll'[Has Salary Domiciliation]=TRUE(), USERELATIONSHIP('Demo Payroll'[Payroll Start Date Key], 'Demo Date'[Date Key])),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Primary Banking
+
+	/// SYNTHETIC DEMO DATA. Customer-campaign contacts, not distinct campaign definitions. Date refers to send date.
+	measure 'Demo Campaigns Sent' = COALESCE(CALCULATE(COUNTROWS('Demo Campaign Interactions'), KEEPFILTERS('Demo Campaign Interactions'[Sent]=TRUE())),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Customer-campaign contacts, not distinct campaign definitions. Date refers to send date.
+	measure 'Demo Campaign Opens' = COALESCE(CALCULATE(COUNTROWS('Demo Campaign Interactions'), KEEPFILTERS('Demo Campaign Interactions'[Opened]=TRUE())),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Customer-campaign contacts, not distinct campaign definitions. Date refers to send date.
+	measure 'Demo Campaign Clicks' = COALESCE(CALCULATE(COUNTROWS('Demo Campaign Interactions'), KEEPFILTERS('Demo Campaign Interactions'[Clicked]=TRUE())),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Customer-campaign contacts, not distinct campaign definitions. Date refers to send date.
+	measure 'Demo Campaign Conversions' = COALESCE(CALCULATE(COUNTROWS('Demo Campaign Interactions'), KEEPFILTERS('Demo Campaign Interactions'[Converted]=TRUE())),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Synthetic contact costs only; no ROI or revenue.
+	measure 'Demo Campaign Cost' = SUM('Demo Campaign Interactions'[Campaign Cost])
+		formatString: €#,0.00
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Sent-based funnel rate; a conversion is a modeled campaign CTA completion, not causal incremental adoption.
+	measure 'Demo Open Rate' = DIVIDE([Demo Campaign Opens], [Demo Campaigns Sent])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Sent-based funnel rate; a conversion is a modeled campaign CTA completion, not causal incremental adoption.
+	measure 'Demo CTR' = DIVIDE([Demo Campaign Clicks], [Demo Campaigns Sent])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Sent-based funnel rate; a conversion is a modeled campaign CTA completion, not causal incremental adoption.
+	measure 'Demo Conversion Rate' = DIVIDE([Demo Campaign Conversions], [Demo Campaigns Sent])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Sent-based funnel rate; a conversion is a modeled campaign CTA completion, not causal incremental adoption.
+	measure 'Demo Cost per Conversion' = DIVIDE([Demo Campaign Cost], [Demo Campaign Conversions])
+		formatString: €#,0.00
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Events within selected dates, including modeled service activations.
+	measure 'Demo Digital Events' = COALESCE(COUNTROWS('Demo Digital Events'),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Distinct synthetic sessions within selected dates.
+	measure 'Demo Digital Sessions' = COALESCE(DISTINCTCOUNT('Demo Digital Events'[Session Id]),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Distinct customers with any qualifying event in selected dates.
+	measure 'Demo Digital Active Customers' = COALESCE(DISTINCTCOUNT('Demo Digital Events'[Customer Key]),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Selected-period numerator / full selected master cohort, including inactive customers.
+	measure 'Demo Average Sessions per Customer' = DIVIDE([Demo Digital Sessions], [Demo Customers])
+		formatString: 0.00
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Selected-period numerator / full selected master cohort, including inactive customers.
+	measure 'Demo Average Events per Customer' = DIVIDE([Demo Digital Events], [Demo Customers])
+		formatString: 0.00
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Selected-period numerator / full selected master cohort, including inactive customers.
+	measure 'Demo Digital Engagement Rate' = DIVIDE([Demo Digital Active Customers], [Demo Customers])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Customers with at least one app event in selected dates.
+	measure 'Demo Mobile App Customers' = COALESCE(CALCULATE(DISTINCTCOUNT('Demo Digital Events'[Customer Key]), KEEPFILTERS('Demo Digital Events'[Channel]="Mobile App")),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Selected-period app activity / selected master cohort; not installed-app count.
+	measure 'Demo Mobile App Adoption Rate' = DIVIDE([Demo Mobile App Customers], [Demo Customers])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Rolling 7 days ending at latest selected date. Blank when full lookback is unavailable.
+	measure 'Demo Weekly Active Customers' =
+			VAR EndDate=MAX('Demo Date'[Date])
+			VAR StartDate=EndDate-6
+			VAR FirstAvailable=MINX(ALL('Demo Date'),'Demo Date'[Date])
+			RETURN IF(StartDate>=FirstAvailable, CALCULATE([Demo Digital Active Customers], REMOVEFILTERS('Demo Date'), DATESBETWEEN('Demo Date'[Date],StartDate,EndDate)))
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Rolling 30 days ending at latest selected date. Blank when full lookback is unavailable.
+	measure 'Demo Active Customers 30D' =
+			VAR EndDate=MAX('Demo Date'[Date])
+			VAR StartDate=EndDate-29
+			VAR FirstAvailable=MINX(ALL('Demo Date'),'Demo Date'[Date])
+			RETURN IF(StartDate>=FirstAvailable, CALCULATE([Demo Digital Active Customers], REMOVEFILTERS('Demo Date'), DATESBETWEEN('Demo Date'[Date],StartDate,EndDate)))
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Rolling 90 days ending at latest selected date. Blank when full lookback is unavailable.
+	measure 'Demo Active Customers 90D' =
+			VAR EndDate=MAX('Demo Date'[Date])
+			VAR StartDate=EndDate-89
+			VAR FirstAvailable=MINX(ALL('Demo Date'),'Demo Date'[Date])
+			RETURN IF(StartDate>=FirstAvailable, CALCULATE([Demo Digital Active Customers], REMOVEFILTERS('Demo Date'), DATESBETWEEN('Demo Date'[Date],StartDate,EndDate)))
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Distinct active customers in month-to-date of latest selected date; month charts evaluate each month.
+	measure 'Demo Monthly Active Customers' =
+			VAR EndDate=MAX('Demo Date'[Date])
+			RETURN CALCULATE([Demo Digital Active Customers],REMOVEFILTERS('Demo Date'),DATESBETWEEN('Demo Date'[Date],DATE(YEAR(EndDate),MONTH(EndDate),1),EndDate))
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Selected master cohort minus rolling-30-day active customers.
+	measure 'Demo Inactive Customers 30D' = IF(NOT ISBLANK([Demo Active Customers 30D]),[Demo Customers]-[Demo Active Customers 30D])
+		formatString: #,0
+		displayFolder: Digital Demo\Digital Engagement
+
+	/// SYNTHETIC DEMO DATA. Endpoint customer-service relationships. Additive across services; not a distinct customer count.
+	measure 'Demo Eligible Service Relationships' = COALESCE(CALCULATE(COUNTROWS('Demo Service Adoption'), KEEPFILTERS('Demo Service Adoption'[Eligible]=TRUE()), REMOVEFILTERS('Demo Date')),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO DATA. Endpoint customer-service relationships. Additive across services; not a distinct customer count.
+	measure 'Demo Offered Service Relationships' = COALESCE(CALCULATE(COUNTROWS('Demo Service Adoption'), KEEPFILTERS('Demo Service Adoption'[Offered]=TRUE()), REMOVEFILTERS('Demo Date')),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO DATA. Endpoint customer-service relationships. Additive across services; not a distinct customer count.
+	measure 'Demo Activated Service Relationships' = COALESCE(CALCULATE(COUNTROWS('Demo Service Adoption'), KEEPFILTERS('Demo Service Adoption'[Activated]=TRUE()), REMOVEFILTERS('Demo Date')),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO DATA. Endpoint customer-service relationships. Additive across services; not a distinct customer count.
+	measure 'Demo Active Service Relationships' = COALESCE(CALCULATE(COUNTROWS('Demo Service Adoption'), KEEPFILTERS('Demo Service Adoption'[Active Status]=TRUE()), REMOVEFILTERS('Demo Date')),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO DATA. Distinct selected customers with at least one selected service in this endpoint state.
+	measure 'Demo Eligible Service Customers' = COALESCE(CALCULATE(DISTINCTCOUNT('Demo Service Adoption'[Customer Key]), KEEPFILTERS('Demo Service Adoption'[Eligible]=TRUE()), REMOVEFILTERS('Demo Date')),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO DATA. Distinct selected customers with at least one selected service in this endpoint state.
+	measure 'Demo Offered Service Customers' = COALESCE(CALCULATE(DISTINCTCOUNT('Demo Service Adoption'[Customer Key]), KEEPFILTERS('Demo Service Adoption'[Offered]=TRUE()), REMOVEFILTERS('Demo Date')),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO DATA. Distinct selected customers with at least one selected service in this endpoint state.
+	measure 'Demo Activated Service Customers' = COALESCE(CALCULATE(DISTINCTCOUNT('Demo Service Adoption'[Customer Key]), KEEPFILTERS('Demo Service Adoption'[Activated]=TRUE()), REMOVEFILTERS('Demo Date')),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO DATA. Distinct selected customers with at least one selected service in this endpoint state.
+	measure 'Demo Active Service Customers' = COALESCE(CALCULATE(DISTINCTCOUNT('Demo Service Adoption'[Customer Key]), KEEPFILTERS('Demo Service Adoption'[Active Status]=TRUE()), REMOVEFILTERS('Demo Date')),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO DATA. Activated / offered customer-service relationships at endpoint.
+	measure 'Demo Service Activation Rate' = DIVIDE([Demo Activated Service Relationships], [Demo Offered Service Relationships])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO DATA. Activated / eligible customer-service relationships at endpoint.
+	measure 'Demo Service Adoption Rate' = DIVIDE([Demo Activated Service Relationships], [Demo Eligible Service Relationships])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Digital Business Overview
+
+	/// SYNTHETIC DEMO DATA. Last snapshot-month modeled uses / active customer-service relationships.
+	measure 'Demo Average Service Usage' = DIVIDE(CALCULATE(SUM('Demo Service Adoption'[Monthly Usage Count]),REMOVEFILTERS('Demo Date')), [Demo Active Service Relationships])
+		formatString: 0.00
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO DATA. Survey responses in selected dates; repeat respondents may appear.
+	measure 'Demo Survey Responses' = COALESCE(COUNTROWS('Demo Satisfaction'),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Customer Satisfaction
+
+	/// SYNTHETIC DEMO DATA. Response count using standard score classification.
+	measure 'Demo Promoters' = COALESCE(CALCULATE([Demo Survey Responses], KEEPFILTERS('Demo Satisfaction'[Nps Score]>=9)),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Customer Satisfaction
+
+	/// SYNTHETIC DEMO DATA. Response count using standard score classification.
+	measure 'Demo Detractors' = COALESCE(CALCULATE([Demo Survey Responses], KEEPFILTERS('Demo Satisfaction'[Nps Score]<=6)),0)
+		formatString: #,0
+		displayFolder: Digital Demo\Customer Satisfaction
+
+	/// SYNTHETIC DEMO DATA. Responses scored seven or eight.
+	measure 'Demo Passives' = [Demo Survey Responses]-[Demo Promoters]-[Demo Detractors]
+		formatString: #,0
+		displayFolder: Digital Demo\Customer Satisfaction
+
+	/// SYNTHETIC DEMO DATA. Share of selected responses.
+	measure 'Demo Promoter %' = DIVIDE([Demo Promoters], [Demo Survey Responses])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Customer Satisfaction
+
+	/// SYNTHETIC DEMO DATA. Share of selected responses.
+	measure 'Demo Detractor %' = DIVIDE([Demo Detractors], [Demo Survey Responses])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Customer Satisfaction
+
+	/// SYNTHETIC DEMO DATA. Net Promoter Score in points from -100 to 100; response-weighted, not average raw score.
+	measure 'Demo NPS' = 100 * ([Demo Promoter %]-[Demo Detractor %])
+		formatString: 0.0
+		displayFolder: Digital Demo\Customer Satisfaction
+
+	/// SYNTHETIC DEMO DATA. Mean raw zero-to-ten response, distinct from NPS.
+	measure 'Demo Average NPS Score' = AVERAGE('Demo Satisfaction'[Nps Score])
+		formatString: 0.00
+		displayFolder: Digital Demo\Customer Satisfaction
+
+	/// SYNTHETIC DEMO DATA. Mean one-to-five score among responding customers.
+	measure 'Demo Average Satisfaction' = AVERAGE('Demo Satisfaction'[Satisfaction Score])
+		formatString: 0.00
+		displayFolder: Digital Demo\Customer Satisfaction
+
+	/// SYNTHETIC DEMO DATA. Resolved responses / all selected survey responses; no case SLA claim.
+	measure 'Demo Resolution Rate' = DIVIDE(CALCULATE([Demo Survey Responses], KEEPFILTERS('Demo Satisfaction'[Resolved]=TRUE())),[Demo Survey Responses])
+		formatString: 0.0%
+		displayFolder: Digital Demo\Customer Satisfaction
+
+	/// SYNTHETIC DEMO DATA. Send-cohort conversions for selected period-to-date; YTD blank when Jan 1 history is unavailable.
+	measure 'Demo Campaign Conversions MTD' = CALCULATE([Demo Campaign Conversions], DATESMTD('Demo Date'[Date]))
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Send-cohort conversions for selected period-to-date; YTD blank when Jan 1 history is unavailable.
+	measure 'Demo Campaign Conversions QTD' = CALCULATE([Demo Campaign Conversions], DATESQTD('Demo Date'[Date]))
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Send-cohort conversions for selected period-to-date; YTD blank when Jan 1 history is unavailable.
+	measure 'Demo Campaign Conversions YTD' = IF(DATE(YEAR(MAX('Demo Date'[Date])),1,1)>=MINX(ALL('Demo Date'),'Demo Date'[Date]),CALCULATE([Demo Campaign Conversions], DATESYTD('Demo Date'[Date])))
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Exact selected-date set shifted to prior period; blank without full comparison history.
+	measure 'Demo Campaign Conversions Previous Month' =
+			VAR BeginDate=MIN('Demo Date'[Date]) VAR FirstAvailable=MINX(ALL('Demo Date'),'Demo Date'[Date])
+			RETURN IF(EDATE(BeginDate,-1)>=FirstAvailable,CALCULATE([Demo Campaign Conversions],DATEADD('Demo Date'[Date],-1,MONTH)))
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Exact selected-date set shifted to prior period; blank without full comparison history.
+	measure 'Demo Campaign Conversions Previous Year' =
+			VAR BeginDate=MIN('Demo Date'[Date]) VAR FirstAvailable=MINX(ALL('Demo Date'),'Demo Date'[Date])
+			RETURN IF(EDATE(BeginDate,-12)>=FirstAvailable,CALCULATE([Demo Campaign Conversions],DATEADD('Demo Date'[Date],-1,YEAR)))
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Absolute change against shifted previous month.
+	measure 'Demo Campaign Conversions MoM Change' = IF(NOT ISBLANK([Demo Campaign Conversions Previous Month]),[Demo Campaign Conversions]-[Demo Campaign Conversions Previous Month])
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Absolute change against shifted previous year.
+	measure 'Demo Campaign Conversions YoY Change' = IF(NOT ISBLANK([Demo Campaign Conversions Previous Year]),[Demo Campaign Conversions]-[Demo Campaign Conversions Previous Year])
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Original observed balance of selected demo opportunity cohort; grouping signals are synthetic. Currency unverified.
+	measure 'Demo Engagement Balance' = SUM('Demo Customer 360'[Balance])
+		formatString: €#,0
+		displayFolder: Digital Demo\Primary Banking
+
+	/// SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.
+	measure 'Demo Detail Product Depth' = IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Active Product Count]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))
+		formatString: 0
+		displayFolder: Digital Demo\Customer Detail
+
+	/// SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.
+	measure 'Demo Detail Payroll Amount' = IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Monthly Payroll Amount]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))
+		formatString: €#,0
+		displayFolder: Digital Demo\Customer Detail
+
+	/// SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.
+	measure 'Demo Detail Engagement' = IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Engagement Score]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))
+		formatString: 0.0
+		displayFolder: Digital Demo\Customer Detail
+
+	/// SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.
+	measure 'Demo Detail Primary Score' = IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Primary Bank Score]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))
+		formatString: 0.0
+		displayFolder: Digital Demo\Customer Detail
+
+	/// SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.
+	measure 'Demo Detail Active Services' = IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Services Active]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))
+		formatString: 0
+		displayFolder: Digital Demo\Customer Detail
+
+	/// SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.
+	measure 'Demo Detail Campaign Conversions' = IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Campaigns Converted]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))
+		formatString: 0
+		displayFolder: Digital Demo\Customer Detail
+
+	/// SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.
+	measure 'Demo Detail Latest NPS Score' = IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Nps Score]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))
+		formatString: 0
+		displayFolder: Digital Demo\Customer Detail
+
+	/// SYNTHETIC DEMO DATA. Explainable flags, not a recommendation to contact without consent/suitability review.
+	measure 'Demo Detail Opportunity Flags' =
+			VAR Linked=CALCULATETABLE('Demo Customer 360',TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key]))
+			RETURN IF(HASONEVALUE('Dim Customer'[Customer ID]),CONCATENATEX(Linked,
+			IF('Demo Customer 360'[Eligible For Payroll Campaign],"Payroll; ","") & IF('Demo Customer 360'[Cross Sell Opportunity],"Cross-sell; ","") &
+			IF('Demo Customer 360'[High Value Low Engagement],"High value / low engagement; ","") & IF('Demo Customer 360'[Eligible For Travel Service],"Travel; ","") &
+			IF('Demo Customer 360'[Eligible For Fx Service],"FX; ","") & IF('Demo Customer 360'[Eligible For Tax Service],"Tax assistance; ","")))
+		displayFolder: Digital Demo\Customer Detail
+
+	/// SYNTHETIC DEMO DATA. Four-step sent/open/click/convert count.
+	measure 'Demo Campaign Funnel Value' = SWITCH(SELECTEDVALUE('Demo Funnel Stage'[Sort Order]),1,[Demo Campaigns Sent],2,[Demo Campaign Opens],3,[Demo Campaign Clicks],4,[Demo Campaign Conversions])
+		formatString: #,0
+		displayFolder: Digital Demo\Campaign Performance
+
+	/// SYNTHETIC DEMO DATA. Customer-service relationship funnel; distinct from customer counts.
+	measure 'Demo Service Funnel Value' = SWITCH(SELECTEDVALUE('Demo Funnel Stage'[Sort Order]),1,[Demo Eligible Service Relationships],2,[Demo Offered Service Relationships],3,[Demo Activated Service Relationships],4,[Demo Active Service Relationships])
+		formatString: #,0
+		displayFolder: Digital Demo\Value-Added Services
+
+	/// SYNTHETIC DEMO MODEL. Scored Customers. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Scored Customers' = COALESCE(COUNTROWS('ML Customer Scores'), 0)
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. High Churn Risk Customers. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML High Churn Risk Customers' = CALCULATE([ML Scored Customers], KEEPFILTERS('ML Customer Scores'[High Churn Risk] = TRUE()))
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. High Campaign Propensity Customers. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML High Campaign Propensity Customers' = CALCULATE([ML Scored Customers], KEEPFILTERS('ML Customer Scores'[High Campaign Propensity] = TRUE()))
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. High Payroll Propensity Customers. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML High Payroll Propensity Customers' = CALCULATE([ML Scored Customers], KEEPFILTERS('ML Customer Scores'[High Payroll Propensity] = TRUE()))
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. High Service Propensity Customers. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML High Service Propensity Customers' = CALCULATE([ML Scored Customers], KEEPFILTERS('ML Customer Scores'[High Travel Service Propensity] = TRUE()))
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Customers with Recommended Action. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Customers with Recommended Action' = CALCULATE([ML Scored Customers], KEEPFILTERS('ML Customer Scores'[Next Best Action] <> "No Action"))
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Average Churn Risk. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Average Churn Risk' = AVERAGE('ML Customer Scores'[Churn Risk Score])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Average Campaign Propensity. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Average Campaign Propensity' = AVERAGE('ML Customer Scores'[Campaign Propensity Score])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Average Payroll Propensity. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Average Payroll Propensity' = AVERAGE('ML Customer Scores'[Payroll Propensity Score])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Average Service Propensity. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Average Service Propensity' = AVERAGE('ML Customer Scores'[Travel Service Propensity Score])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Average Value Index. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Average Value Index' = AVERAGE('ML Customer Scores'[Customer Value Score])
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Average Engagement. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Average Engagement' = AVERAGE('ML Customer Scores'[Engagement Score])
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Average Action Score. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Average Action Score' = AVERAGE('ML Customer Scores'[Next Best Action Score])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Average Priority Index. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Average Priority Index' = AVERAGE('ML Customer Scores'[Priority Score])
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Total Priority Index. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Total Priority Index' = SUM('ML Customer Scores'[Priority Score])
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Offline ROC AUC. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Offline ROC AUC' = AVERAGE('ML Model Performance'[Roc Auc])
+		formatString: 0.000
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Offline PR AUC. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Offline PR AUC' = AVERAGE('ML Model Performance'[Pr Auc])
+		formatString: 0.000
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Offline Lift at 10. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Offline Lift at 10' = AVERAGE('ML Model Performance'[Lift At 10])
+		formatString: 0.000
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Offline Precision. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Offline Precision' = AVERAGE('ML Model Performance'[Precision])
+		formatString: 0.000
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Offline Recall. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Offline Recall' = AVERAGE('ML Model Performance'[Recall])
+		formatString: 0.000
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO MODEL. Offline Brier Score. Snapshot scoring; no real behavioral model or causal claim.
+	measure 'ML Offline Brier Score' = AVERAGE('ML Model Performance'[Brier Score])
+		formatString: 0.000
+		displayFolder: SYNTHETIC DEMO MODEL
+
+	/// SYNTHETIC DEMO ANALYTICS. Funnel Customers. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Funnel Customers' = VAR F = SELECTEDVALUE('AN Funnels'[Funnel Name], "Campaign") VAR D = SELECTEDVALUE('AN Funnels'[Segment Dimension], "All") RETURN CALCULATE(SUM('AN Funnels'[Customers]), KEEPFILTERS('AN Funnels'[Funnel Name] = F), KEEPFILTERS('AN Funnels'[Segment Dimension] = D))
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Funnel Drop Off. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Funnel Drop Off' = VAR F = SELECTEDVALUE('AN Funnels'[Funnel Name], "Campaign") VAR D = SELECTEDVALUE('AN Funnels'[Segment Dimension], "All") RETURN CALCULATE(SUM('AN Funnels'[Drop Off]), KEEPFILTERS('AN Funnels'[Funnel Name] = F), KEEPFILTERS('AN Funnels'[Segment Dimension] = D))
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Funnel Rate. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Funnel Rate' = VAR F = SELECTEDVALUE('AN Funnels'[Funnel Name], "Campaign") VAR D = SELECTEDVALUE('AN Funnels'[Segment Dimension], "All") RETURN CALCULATE(MAX('AN Funnels'[Conversion From Start]), KEEPFILTERS('AN Funnels'[Funnel Name] = F), KEEPFILTERS('AN Funnels'[Segment Dimension] = D))
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Primary Bank Customers. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Primary Bank Customers' = CALCULATE(SUM('AN Funnels'[Customers]), KEEPFILTERS('AN Funnels'[Funnel Name] = "Primary Bank Journey"), KEEPFILTERS('AN Funnels'[Segment Dimension] = "All"))
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Digital Retention. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Digital Retention' = VAR C = SELECTEDVALUE('AN Cohorts'[Cohort Type], "First Digital Activity") RETURN CALCULATE(DIVIDE(SUM('AN Cohorts'[Retained Customers]), SUM('AN Cohorts'[Customers])), KEEPFILTERS('AN Cohorts'[Cohort Type] = C), KEEPFILTERS('AN Cohorts'[Small Sample] = FALSE()))
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Product Retention. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Product Retention' = CALCULATE(DIVIDE(SUM('AN Cohorts'[Product Retained Customers]), SUM('AN Cohorts'[Customers])), KEEPFILTERS('AN Cohorts'[Cohort Type] = "Product Acquisition"))
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Segment Digital Retention. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Segment Digital Retention' = VAR C = SELECTEDVALUE('AN Cohorts'[Cohort Type], "First Digital Activity") RETURN CALCULATE(DIVIDE(SUM('AN Retention Segments'[Retained Customers]), SUM('AN Retention Segments'[Customers])), KEEPFILTERS('AN Retention Segments'[Cohort Type] = C))
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Retention Cell Color. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Retention Cell Color' = VAR R = [AN Digital Retention] RETURN IF(ISBLANK(R), "#FFFFFF", SWITCH(TRUE(), R >= 0.75, "#167D9A", R >= 0.50, "#71B6C7", R >= 0.25, "#BDDCE5", "#EEF5F8"))
+		formatString: General
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Service Cohort Digital Retention. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Service Cohort Digital Retention' = CALCULATE(DIVIDE(SUM('AN Cohorts'[Retained Customers]), SUM('AN Cohorts'[Customers])), KEEPFILTERS('AN Cohorts'[Cohort Type] = "Service Activation"))
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Cohort Engagement. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Cohort Engagement' = VAR C = SELECTEDVALUE('AN Cohorts'[Cohort Type], "First Digital Activity") RETURN CALCULATE(DIVIDE(SUMX('AN Cohorts', 'AN Cohorts'[Average Engagement Score] * 'AN Cohorts'[Customers]), SUM('AN Cohorts'[Customers])), KEEPFILTERS('AN Cohorts'[Cohort Type] = C))
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Journey Sessions. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Journey Sessions' = SUM('AN Journeys'[Sessions])
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Journey Customer Memberships. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Journey Customer Memberships' = SUM('AN Journeys'[Customers])
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Journey Activations. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Journey Activations' = SUM('AN Journeys'[Conversions])
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Journey Activation Rate. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Journey Activation Rate' = DIVIDE([AN Journey Activations], [AN Journey Sessions])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Completed Experiments. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Completed Experiments' = COALESCE(COUNTROWS('AN Experiments'),0)
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Active Experiments. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Active Experiments' = CALCULATE(COUNTROWS('AN Experiments'), KEEPFILTERS('AN Experiments'[Experiment Status] = "RUNNING")) + 0
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Winning Experiments. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Winning Experiments' = CALCULATE(COUNTROWS('AN Experiments'), KEEPFILTERS('AN Experiments'[Experiment Decision] = "WINNER")) + 0
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Mean Simulated Lift. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Mean Simulated Lift' = AVERAGE('AN Experiments'[Absolute Lift])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Control Conversion. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Control Conversion' = AVERAGE('AN Experiments'[Control Conversion Rate])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Treatment Conversion. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Treatment Conversion' = AVERAGE('AN Experiments'[Treatment Conversion Rate])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Lift CI Lower. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Lift CI Lower' = AVERAGE('AN Experiments'[Ci Lower])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Lift CI Upper. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Lift CI Upper' = AVERAGE('AN Experiments'[Ci Upper])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Adjusted P Value. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Adjusted P Value' = AVERAGE('AN Experiments'[Adjusted P Value])
+		formatString: 0.00000
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Incremental Conversion Estimate. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Incremental Conversion Estimate' = SUM('AN Experiments'[Incremental Conversions])
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Attributed Conversions. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Attributed Conversions' = VAR M = SELECTEDVALUE('AN Attribution'[Attribution Model], "Last Touch") VAR W = SELECTEDVALUE('AN Attribution'[Attribution Window Days], 30) RETURN CALCULATE(SUM('AN Attribution'[Attributed Conversions]), KEEPFILTERS('AN Attribution'[Attribution Model] = M), KEEPFILTERS('AN Attribution'[Attribution Window Days] = W))
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Attributed Value. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Attributed Value' = VAR M = SELECTEDVALUE('AN Attribution'[Attribution Model], "Last Touch") VAR W = SELECTEDVALUE('AN Attribution'[Attribution Window Days], 30) RETURN CALCULATE(SUM('AN Attribution'[Attributed Value]), KEEPFILTERS('AN Attribution'[Attribution Model] = M), KEEPFILTERS('AN Attribution'[Attribution Window Days] = W))
+		formatString: #,0.0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Attributed Cost. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Attributed Cost' = VAR M = SELECTEDVALUE('AN Attribution'[Attribution Model], "Last Touch") VAR W = SELECTEDVALUE('AN Attribution'[Attribution Window Days], 30) RETURN CALCULATE(SUM('AN Attribution'[Attributed Cost]), KEEPFILTERS('AN Attribution'[Attribution Model] = M), KEEPFILTERS('AN Attribution'[Attribution Window Days] = W))
+		formatString: #,0.00
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Attribution ROI Proxy. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Attribution ROI Proxy' = DIVIDE([AN Attributed Value] - [AN Attributed Cost], [AN Attributed Cost])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Observed Campaign Contacts. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Observed Campaign Contacts' = SUM('AN Campaign Economics'[Contacts])
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Observed Campaign Conversions. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Observed Campaign Conversions' = SUM('AN Campaign Economics'[Conversions])
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Observed Campaign Conversion Rate. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Observed Campaign Conversion Rate' = DIVIDE([AN Observed Campaign Conversions], [AN Observed Campaign Contacts])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. First Touch Conversions. All experiment effects are simulated; attribution is not causal.
+	measure 'AN First Touch Conversions' = CALCULATE(SUM('AN Attribution'[Attributed Conversions]), 'AN Attribution'[Attribution Model] = "First Touch", 'AN Attribution'[Attribution Window Days] = 30)
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Last Touch Conversions. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Last Touch Conversions' = CALCULATE(SUM('AN Attribution'[Attributed Conversions]), 'AN Attribution'[Attribution Model] = "Last Touch", 'AN Attribution'[Attribution Window Days] = 30)
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Opportunity Customers. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Opportunity Customers' = COALESCE(COUNTROWS('AN Opportunities'),0)
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Contactable Customers. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Contactable Customers' = CALCULATE([AN Opportunity Customers], KEEPFILTERS('AN Opportunities'[Contact Allowed] = TRUE()))
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Opportunity Priority. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Opportunity Priority' = AVERAGE('AN Opportunities'[Priority Score])
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Opportunity Value Index. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Opportunity Value Index' = AVERAGE('AN Opportunities'[Customer Value Score])
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Opportunity Probability. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Opportunity Probability' = AVERAGE('AN Opportunities'[Propensity Score])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Opportunity Experimental Lift. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Opportunity Experimental Lift' = AVERAGE('AN Opportunities'[Experimental Lift])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Likely Primary Bank Rate. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Likely Primary Bank Rate' = MAX('AN Growth'[Likely Primary Bank Rate])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Salary Domiciliation Rate. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Salary Domiciliation Rate' = MAX('AN Growth'[Salary Domiciliation Rate])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Service Activation Rate. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Service Activation Rate' = MAX('AN Growth'[Service Activation Rate])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. NPS. All experiment effects are simulated; attribution is not causal.
+	measure 'AN NPS' = MAX('AN Growth'[Nps])
+		formatString: 0.0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Campaign ROI Proxy. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Campaign ROI Proxy' = MAX('AN Growth'[Observed Campaign Roi Proxy])
+		formatString: 0.0%
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. High Value Low Engagement. All experiment effects are simulated; attribution is not causal.
+	measure 'AN High Value Low Engagement' = MAX('AN Growth'[High Value Low Engagement Customers])
+		formatString: #,0
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Primary Journey Narrative. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Primary Journey Narrative' = VAR T = TOPN(1, FILTER(ALL('AN Funnels'), 'AN Funnels'[Funnel Name] = "Primary Bank Journey" && 'AN Funnels'[Segment Dimension] = "All" && 'AN Funnels'[Stage Order] > 0), 'AN Funnels'[Drop Off], DESC, 'AN Funnels'[Stage Order], ASC) RETURN "Largest cross-sectional readiness drop-off: " & CONCATENATEX(T, 'AN Funnels'[Stage], "") & " (" & FORMAT(MAXX(T, 'AN Funnels'[Drop Off]), "#,0") & " customers). This is a nested snapshot, not longitudinal conversion."
+		formatString: General
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
+	/// SYNTHETIC DEMO ANALYTICS. Payroll Experiment Narrative. All experiment effects are simulated; attribution is not causal.
+	measure 'AN Payroll Experiment Narrative' = VAR L = CALCULATE(MAX('AN Experiments'[Absolute Lift]), REMOVEFILTERS('AN Experiments'), 'AN Experiments'[Experiment Id] = "EXP001") VAR D = CALCULATE(SELECTEDVALUE('AN Experiments'[Experiment Decision]), REMOVEFILTERS('AN Experiments'), 'AN Experiments'[Experiment Id] = "EXP001") RETURN "Simulated payroll lift: " & FORMAT(100 * L, "0.0") & " percentage points; decision: " & D & "."
+		formatString: General
+		displayFolder: SYNTHETIC DEMO ANALYTICS
+
 	column Value
 		dataType: int64
 		isHidden

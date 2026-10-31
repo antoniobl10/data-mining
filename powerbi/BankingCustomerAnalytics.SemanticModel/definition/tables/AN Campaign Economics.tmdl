@@ -1,0 +1,119 @@
+/// SYNTHETIC DEMO ANALYTICS. Aggregate analytical grains require scoped measures; no real bank results.
+table 'AN Campaign Economics'
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.campaign_id
+	column 'Campaign Id'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Campaign Id
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.channel
+	column Channel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Channel
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.campaign_type
+	column 'Campaign Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Campaign Type
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.contacts
+	column Contacts
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Contacts
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.opens
+	column Opens
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Opens
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.clicks
+	column Clicks
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Clicks
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.conversions
+	column Conversions
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Conversions
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.campaign_cost
+	column 'Campaign Cost'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Campaign Cost
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.gross_value_proxy
+	column 'Gross Value Proxy'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Gross Value Proxy
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.median_time_to_conversion
+	column 'Median Time To Conversion'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Median Time To Conversion
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.average_time_to_conversion
+	column 'Average Time To Conversion'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Average Time To Conversion
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.open_rate
+	column 'Open Rate'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Open Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.ctr
+	column Ctr
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Ctr
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.conversion_rate
+	column 'Conversion Rate'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Conversion Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.cost_per_conversion
+	column 'Cost Per Conversion'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Cost Per Conversion
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.roi_proxy
+	column 'Roi Proxy'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Roi Proxy
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_campaign_economics.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'AN Campaign Economics' = m
+		mode: import
+		source = let Source = AnalyticsCsv("mart_campaign_economics.csv", {"campaign_id", "channel", "campaign_type", "contacts", "opens", "clicks", "conversions", "campaign_cost", "gross_value_proxy", "median_time_to_conversion", "average_time_to_conversion", "open_rate", "ctr", "conversion_rate", "cost_per_conversion", "roi_proxy", "synthetic_data_flag", "data_origin"}, {{"campaign_id", type text}, {"channel", type text}, {"campaign_type", type text}, {"contacts", Int64.Type}, {"opens", Int64.Type}, {"clicks", Int64.Type}, {"conversions", Int64.Type}, {"campaign_cost", type number}, {"gross_value_proxy", type number}, {"median_time_to_conversion", type number}, {"average_time_to_conversion", type number}, {"open_rate", type number}, {"ctr", type number}, {"conversion_rate", type number}, {"cost_per_conversion", type number}, {"roi_proxy", type number}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"campaign_id", "Campaign Id"}, {"channel", "Channel"}, {"campaign_type", "Campaign Type"}, {"contacts", "Contacts"}, {"opens", "Opens"}, {"clicks", "Clicks"}, {"conversions", "Conversions"}, {"campaign_cost", "Campaign Cost"}, {"gross_value_proxy", "Gross Value Proxy"}, {"median_time_to_conversion", "Median Time To Conversion"}, {"average_time_to_conversion", "Average Time To Conversion"}, {"open_rate", "Open Rate"}, {"ctr", "Ctr"}, {"conversion_rate", "Conversion Rate"}, {"cost_per_conversion", "Cost Per Conversion"}, {"roi_proxy", "Roi Proxy"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

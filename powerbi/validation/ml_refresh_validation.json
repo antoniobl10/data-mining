@@ -1,0 +1,236 @@
+{
+  "data_origin": "SYNTHETIC DEMO MODEL",
+  "partitions": [
+    {
+      "table": "Dim Customer",
+      "name": "Dim Customer",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Dim Country",
+      "name": "Dim Country",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Dim Age Group",
+      "name": "Dim Age Group",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Dim Credit Band",
+      "name": "Dim Credit Band",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Dim Tenure Band",
+      "name": "Dim Tenure Band",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Fact Customer Financials",
+      "name": "Fact Customer Financials",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Balance Concentration",
+      "name": "Balance Concentration",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Pipeline Status",
+      "name": "Pipeline Status",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Gold Validation",
+      "name": "Gold Validation",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "_Measures",
+      "name": "_Measures",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Customer 360",
+      "name": "Demo Customer 360",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Date",
+      "name": "Demo Date",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Product",
+      "name": "Demo Product",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Service",
+      "name": "Demo Service",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Campaign",
+      "name": "Demo Campaign",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Product Holdings",
+      "name": "Demo Product Holdings",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Payroll",
+      "name": "Demo Payroll",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Campaign Interactions",
+      "name": "Demo Campaign Interactions",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Digital Events",
+      "name": "Demo Digital Events",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Service Adoption",
+      "name": "Demo Service Adoption",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Satisfaction",
+      "name": "Demo Satisfaction",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Funnel Stage",
+      "name": "Demo Funnel Stage",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "ML Customer Scores",
+      "name": "ML Customer Scores",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "ML Model Performance",
+      "name": "ML Model Performance",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "DateTableTemplate_0b1bb304-e19b-4fca-a264-622c3e285787",
+      "name": "DateTableTemplate_0b1bb304-e19b-4fca-a264-622c3e285787",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_37033206-c699-4e18-b799-24d3d1eb4cda",
+      "name": "LocalDateTable_37033206-c699-4e18-b799-24d3d1eb4cda",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_52d97415-6894-4731-b28b-772b999760db",
+      "name": "LocalDateTable_52d97415-6894-4731-b28b-772b999760db",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_fcf41eaa-2508-4839-adbd-600aba30cbfe",
+      "name": "LocalDateTable_fcf41eaa-2508-4839-adbd-600aba30cbfe",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_b08e95b7-45d3-48f8-ba42-2680080c745f",
+      "name": "LocalDateTable_b08e95b7-45d3-48f8-ba42-2680080c745f",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_065039a7-fd46-4612-8da8-523790d4ccad",
+      "name": "LocalDateTable_065039a7-fd46-4612-8da8-523790d4ccad",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_b50fad21-eac7-4e05-8476-cb057dc5512b",
+      "name": "LocalDateTable_b50fad21-eac7-4e05-8476-cb057dc5512b",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_d0f0681d-c582-4c25-a892-a515e64a425d",
+      "name": "LocalDateTable_d0f0681d-c582-4c25-a892-a515e64a425d",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_a82daa42-c8ab-4134-9b2f-e6084f731400",
+      "name": "LocalDateTable_a82daa42-c8ab-4134-9b2f-e6084f731400",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_159aa7c6-4581-4fc4-b742-8341549d7881",
+      "name": "LocalDateTable_159aa7c6-4581-4fc4-b742-8341549d7881",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_66cb0b99-00a0-4deb-8302-335c94790d6c",
+      "name": "LocalDateTable_66cb0b99-00a0-4deb-8302-335c94790d6c",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_3594c794-e862-4681-8c09-cca6bfb64350",
+      "name": "LocalDateTable_3594c794-e862-4681-8c09-cca6bfb64350",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_c000fc8c-9547-453d-9f4b-40719bb42a8f",
+      "name": "LocalDateTable_c000fc8c-9547-453d-9f4b-40719bb42a8f",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "LocalDateTable_3d3ba1a9-01af-4f58-85ed-866ad1f8aa1f",
+      "name": "LocalDateTable_3d3ba1a9-01af-4f58-85ed-866ad1f8aa1f",
+      "state": "Ready",
+      "error": ""
+    }
+  ],
+  "all_partitions_ready": true,
+  "authored_tables": 24,
+  "authored_measures": 162
+}

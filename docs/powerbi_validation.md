@@ -1,3 +1,5 @@
+> Scope: Original BI verification checkpoint. For current totals and execution boundaries, see [final health](../reports/final_project_health.md) and [documentation index](README.md). Historical counts below are not current platform totals.
+
 # Power BI validation evidence
 
 The current solution is a textual PBIP/PBIR/TMDL project. Subsequent native Desktop repair successfully refreshed all ten tables, rendered charts and evaluated all 61 measures. 360 core comparisons across twelve filter scenarios matched the Gold reference. Native captures succeeded for all nine pages. See [the repair record](powerbi_native_repair.md) and powerbi/validation/native_dax_validation.json. Dedicated interaction and accessibility acceptance remains pending. The table below also preserves earlier structural/reference evidence.

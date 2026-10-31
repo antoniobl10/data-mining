@@ -1,0 +1,60 @@
+dataset: digital_interactions
+contract_version: '1.0'
+owner: Digital Banking Data Owner
+technical_owner: Data Engineering
+description: Typed accepted synthetic digital_interactions; final states must not
+  be backfilled into historical ML features.
+layer: silver
+primary_key:
+- interaction_id
+allow_extra_columns: true
+fields:
+  customer_id:
+    type: string
+    nullable: false
+  interaction_id:
+    type: string
+    nullable: false
+  event_timestamp:
+    type: date
+    nullable: false
+  event_type:
+    type: string
+    nullable: false
+    allowed_values:
+    - login
+    - account_view
+    - transaction_view
+    - transfer
+    - card_view
+    - product_view
+    - campaign_view
+    - service_view
+    - service_activation
+    - profile_update
+  channel:
+    type: string
+    nullable: false
+    allowed_values:
+    - Mobile App
+    - Web
+    - Contact Center
+  session_id:
+    type: string
+    nullable: false
+  device_type:
+    type: string
+    nullable: false
+  feature_name:
+    type: string
+    nullable: false
+  synthetic_data_flag:
+    type: boolean
+    nullable: false
+    allowed_values:
+    - true
+  data_origin:
+    type: string
+    nullable: false
+    allowed_values:
+    - SYNTHETIC DEMO DATA

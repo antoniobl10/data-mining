@@ -1,0 +1,142 @@
+[
+  {
+    "experiment": "banking_service_propensity",
+    "run_id": "b957f30174704a0ebea12b572a6f2e32",
+    "status": "FINISHED",
+    "model_type": "gradient_boosting",
+    "registry_status": "Champion"
+  },
+  {
+    "experiment": "banking_service_propensity",
+    "run_id": "e3a2dfc5178248df85c4e40ec118621e",
+    "status": "FINISHED",
+    "model_type": "random_forest",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_service_propensity",
+    "run_id": "40018b5a11064c869ed6156674943496",
+    "status": "FINISHED",
+    "model_type": "logistic",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_service_propensity",
+    "run_id": "f6a2dea8e3e54f0f9ca9213ad55bc50a",
+    "status": "FINISHED",
+    "model_type": "dummy",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_payroll_propensity",
+    "run_id": "73ebe350d66d4774b4d567f45115b0f4",
+    "status": "FINISHED",
+    "model_type": "gradient_boosting",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_payroll_propensity",
+    "run_id": "e4372adce19446d4b36d7f4acf59c033",
+    "status": "FINISHED",
+    "model_type": "random_forest",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_payroll_propensity",
+    "run_id": "fb19fdc3d79e4db88f2cd2ec37356949",
+    "status": "FINISHED",
+    "model_type": "logistic",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_payroll_propensity",
+    "run_id": "2d9c544d1137438dabd5ba6c5c8258d3",
+    "status": "FINISHED",
+    "model_type": "dummy",
+    "registry_status": "Champion"
+  },
+  {
+    "experiment": "banking_churn_risk",
+    "run_id": "43d84e254b474a68b807d7b180953c4e",
+    "status": "FINISHED",
+    "model_type": "gradient_boosting",
+    "registry_status": "Champion"
+  },
+  {
+    "experiment": "banking_churn_risk",
+    "run_id": "a8eed2e65921430d9a0b28633edc94d3",
+    "status": "FINISHED",
+    "model_type": "random_forest",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_churn_risk",
+    "run_id": "89a869e686a34578a7aba776a497fdf4",
+    "status": "FINISHED",
+    "model_type": "logistic",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_churn_risk",
+    "run_id": "ee32fc10d60145128386818e4e663a34",
+    "status": "FINISHED",
+    "model_type": "dummy",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_campaign_propensity",
+    "run_id": "169ed62adbc04823b94ec6ea2e7b4101",
+    "status": "FINISHED",
+    "model_type": "gradient_boosting",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_campaign_propensity",
+    "run_id": "3dc88c661cc3488280984f6b88dfc0a6",
+    "status": "FINISHED",
+    "model_type": "random_forest",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_campaign_propensity",
+    "run_id": "b2b93dd099424035b9d89269df776cc8",
+    "status": "FINISHED",
+    "model_type": "logistic",
+    "registry_status": "Champion"
+  },
+  {
+    "experiment": "banking_campaign_propensity",
+    "run_id": "cdb591ddf45d4721948d48a1cb242385",
+    "status": "FINISHED",
+    "model_type": "dummy",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_campaign_propensity",
+    "run_id": "51052031f663465b8544f89a48adfeed",
+    "status": "FINISHED",
+    "model_type": "gradient_boosting",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_campaign_propensity",
+    "run_id": "c964b692c3a74b2d8bf0401b827498a4",
+    "status": "FINISHED",
+    "model_type": "random_forest",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_campaign_propensity",
+    "run_id": "58e21dddd64544acabe51db6dab4ac20",
+    "status": "FINISHED",
+    "model_type": "logistic",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  },
+  {
+    "experiment": "banking_campaign_propensity",
+    "run_id": "999de4879edd4d279651cc2a4960887f",
+    "status": "FINISHED",
+    "model_type": "dummy",
+    "registry_status": "Candidate or interrupted pre-promotion"
+  }
+]

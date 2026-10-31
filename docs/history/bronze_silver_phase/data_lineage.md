@@ -24,4 +24,4 @@ flowchart LR
 
 Join accepted or quarantine records to their source using `_batch_id` + `_source_row_number`. Workbook and configuration hashes identify the source and rules. Full configuration is snapshotted per batch. Accepted plus quarantine row sets must be disjoint and equal the Bronze row set, not merely have equal total counts.
 
-There is no edge to Gold or Power BI in this phase. Previously created assets are deferred and their historical lineage is preserved in `history/initial_project/data_lineage.md`. Local paths and the optional Delta batch-publication convention are documented in the [phase guide](phase_bronze_silver.md).
+There is no edge to Gold or Power BI in this phase. Previously created assets are deferred and their historical lineage is preserved in `history/initial_project/data_lineage.md`. Local paths and the optional Delta batch-publication convention are documented in the [phase guide](../../phase_bronze_silver.md).

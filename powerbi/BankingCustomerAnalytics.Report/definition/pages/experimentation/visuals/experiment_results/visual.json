@@ -1,0 +1,238 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "experiment_results",
+  "position": {
+    "x": 24,
+    "y": 683,
+    "width": 1392,
+    "height": 235,
+    "z": 19,
+    "tabOrder": 19
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Decision and planned power — right-click for Experiment Detail'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#142D4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SYNTHETIC DEMO ANALYTICS. experiment_results'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Experiments"
+                    }
+                  },
+                  "Property": "Experiment Name"
+                }
+              },
+              "queryRef": "AN Experiments.Experiment Name",
+              "nativeQueryRef": "Experiment Name",
+              "displayName": "Experiment Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Experiments"
+                    }
+                  },
+                  "Property": "Control N"
+                }
+              },
+              "queryRef": "AN Experiments.Control N",
+              "nativeQueryRef": "Control N",
+              "displayName": "Control N"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Experiments"
+                    }
+                  },
+                  "Property": "Treatment N"
+                }
+              },
+              "queryRef": "AN Experiments.Treatment N",
+              "nativeQueryRef": "Treatment N",
+              "displayName": "Treatment N"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Experiments"
+                    }
+                  },
+                  "Property": "Planned Per Variant"
+                }
+              },
+              "queryRef": "AN Experiments.Planned Per Variant",
+              "nativeQueryRef": "Planned Per Variant",
+              "displayName": "Planned Per Variant"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Experiments"
+                    }
+                  },
+                  "Property": "Experiment Decision"
+                }
+              },
+              "queryRef": "AN Experiments.Experiment Decision",
+              "nativeQueryRef": "Experiment Decision",
+              "displayName": "Experiment Decision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Experiments"
+                    }
+                  },
+                  "Property": "Guardrail Status"
+                }
+              },
+              "queryRef": "AN Experiments.Guardrail Status",
+              "nativeQueryRef": "Guardrail Status",
+              "displayName": "Guardrail Status"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

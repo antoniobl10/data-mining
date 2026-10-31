@@ -1,0 +1,64 @@
+resources:
+  jobs:
+    weekly_ml_training:
+      name: banking-${var.environment}-weekly-model-review
+      max_concurrent_runs: 1
+      schedule:
+        quartz_cron_expression: 0 0 3 ? * SUN
+        timezone_id: Europe/Berlin
+        pause_status: PAUSED
+      parameters:
+      - name: retrain_approved
+        default: 'false'
+      tasks:
+      - task_key: review_new_labels_and_model_health
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - review_new_labels_and_model_health
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+      - task_key: retraining_requested
+        depends_on:
+        - task_key: review_new_labels_and_model_health
+        condition_task:
+          op: EQUAL_TO
+          left: '{{job.parameters.retrain_approved}}'
+          right: 'true'
+      - task_key: train_candidates
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - train_candidates
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: retraining_requested
+          outcome: 'true'
+      - task_key: validate_candidates_without_auto_production_promotion
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - validate_candidates_without_auto_production_promotion
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: train_candidates

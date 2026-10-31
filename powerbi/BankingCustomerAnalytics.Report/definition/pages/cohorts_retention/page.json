@@ -1,0 +1,246 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "cohorts_retention",
+  "displayName": "Cohorts & Retention",
+  "displayOption": "FitToWidth",
+  "height": 1530,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_cohort_type",
+      "target": "slicer_cohort_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_type",
+      "target": "cohort_heatmap",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_type",
+      "target": "retention_curve",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_type",
+      "target": "engagement_decay",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_type",
+      "target": "retention_definitions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_type",
+      "target": "segment_retention",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_type",
+      "target": "product_retention",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_name",
+      "target": "slicer_cohort_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_name",
+      "target": "cohort_heatmap",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_name",
+      "target": "retention_curve",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_name",
+      "target": "engagement_decay",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_name",
+      "target": "retention_definitions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_name",
+      "target": "segment_retention",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_cohort_name",
+      "target": "product_retention",
+      "type": "DataFilter"
+    },
+    {
+      "source": "retention_curve",
+      "target": "slicer_cohort_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "retention_curve",
+      "target": "slicer_cohort_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "retention_curve",
+      "target": "cohort_heatmap",
+      "type": "DataFilter"
+    },
+    {
+      "source": "retention_curve",
+      "target": "engagement_decay",
+      "type": "DataFilter"
+    },
+    {
+      "source": "retention_curve",
+      "target": "retention_definitions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "retention_curve",
+      "target": "segment_retention",
+      "type": "DataFilter"
+    },
+    {
+      "source": "retention_curve",
+      "target": "product_retention",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_decay",
+      "target": "slicer_cohort_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_decay",
+      "target": "slicer_cohort_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_decay",
+      "target": "cohort_heatmap",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_decay",
+      "target": "retention_curve",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_decay",
+      "target": "retention_definitions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_decay",
+      "target": "segment_retention",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_decay",
+      "target": "product_retention",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_retention",
+      "target": "slicer_cohort_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_retention",
+      "target": "slicer_cohort_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_retention",
+      "target": "cohort_heatmap",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_retention",
+      "target": "retention_curve",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_retention",
+      "target": "engagement_decay",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_retention",
+      "target": "retention_definitions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_retention",
+      "target": "product_retention",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_retention",
+      "target": "slicer_cohort_type",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_retention",
+      "target": "slicer_cohort_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_retention",
+      "target": "cohort_heatmap",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_retention",
+      "target": "retention_curve",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_retention",
+      "target": "engagement_decay",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_retention",
+      "target": "retention_definitions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_retention",
+      "target": "segment_retention",
+      "type": "DataFilter"
+    }
+  ]
+}

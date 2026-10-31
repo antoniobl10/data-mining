@@ -1,0 +1,64 @@
+/// SYNTHETIC DEMO ANALYTICS. Aggregate analytical grains require scoped measures; no real bank results.
+table 'AN Retention Segments'
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_retention_segments.cohort_type
+	column 'Cohort Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Cohort Type
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_retention_segments.cohort_name
+	column 'Cohort Name'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Cohort Name
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_retention_segments.months_since_cohort
+	column 'Months Since Cohort'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Months Since Cohort
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_retention_segments.customer_value_segment
+	column 'Customer Value Segment'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Customer Value Segment
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_retention_segments.customers
+	column Customers
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Customers
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_retention_segments.retained_customers
+	column 'Retained Customers'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Retained Customers
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_retention_segments.retention_rate
+	column 'Retention Rate'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Retention Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_retention_segments.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_retention_segments.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'AN Retention Segments' = m
+		mode: import
+		source = let Source = AnalyticsCsv("mart_retention_segments.csv", {"cohort_type", "cohort_name", "months_since_cohort", "customer_value_segment", "customers", "retained_customers", "retention_rate", "synthetic_data_flag", "data_origin"}, {{"cohort_type", type text}, {"cohort_name", type text}, {"months_since_cohort", Int64.Type}, {"customer_value_segment", type text}, {"customers", Int64.Type}, {"retained_customers", Int64.Type}, {"retention_rate", type number}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"cohort_type", "Cohort Type"}, {"cohort_name", "Cohort Name"}, {"months_since_cohort", "Months Since Cohort"}, {"customer_value_segment", "Customer Value Segment"}, {"customers", "Customers"}, {"retained_customers", "Retained Customers"}, {"retention_rate", "Retention Rate"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

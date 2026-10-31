@@ -1,0 +1,221 @@
+{
+  "data_origin": "SYNTHETIC DEMO ANALYTICS",
+  "analytics_build_id": "20261031T144206_428261aa",
+  "all_partitions_ready": true,
+  "partitions": [
+    {
+      "table": "Dim Customer",
+      "name": "Dim Customer",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Dim Country",
+      "name": "Dim Country",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Dim Age Group",
+      "name": "Dim Age Group",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Dim Credit Band",
+      "name": "Dim Credit Band",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Dim Tenure Band",
+      "name": "Dim Tenure Band",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Fact Customer Financials",
+      "name": "Fact Customer Financials",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Balance Concentration",
+      "name": "Balance Concentration",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Pipeline Status",
+      "name": "Pipeline Status",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Gold Validation",
+      "name": "Gold Validation",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "_Measures",
+      "name": "_Measures",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Customer 360",
+      "name": "Demo Customer 360",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Date",
+      "name": "Demo Date",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Product",
+      "name": "Demo Product",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Service",
+      "name": "Demo Service",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Campaign",
+      "name": "Demo Campaign",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Product Holdings",
+      "name": "Demo Product Holdings",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Payroll",
+      "name": "Demo Payroll",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Campaign Interactions",
+      "name": "Demo Campaign Interactions",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Digital Events",
+      "name": "Demo Digital Events",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Service Adoption",
+      "name": "Demo Service Adoption",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Satisfaction",
+      "name": "Demo Satisfaction",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "Demo Funnel Stage",
+      "name": "Demo Funnel Stage",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "ML Customer Scores",
+      "name": "ML Customer Scores",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "ML Model Performance",
+      "name": "ML Model Performance",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Funnels",
+      "name": "AN Funnels",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Cohorts",
+      "name": "AN Cohorts",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Journeys",
+      "name": "AN Journeys",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Experiments",
+      "name": "AN Experiments",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Attribution",
+      "name": "AN Attribution",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Opportunities",
+      "name": "AN Opportunities",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Campaign Economics",
+      "name": "AN Campaign Economics",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Experiment Economics",
+      "name": "AN Experiment Economics",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Growth",
+      "name": "AN Growth",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Lifecycle",
+      "name": "AN Lifecycle",
+      "state": "Ready",
+      "error": ""
+    },
+    {
+      "table": "AN Retention Segments",
+      "name": "AN Retention Segments",
+      "state": "Ready",
+      "error": ""
+    }
+  ],
+  "authored_tables": 35,
+  "authored_measures": 209,
+  "visual_inspection_verified": false,
+  "desktop_cache_saved_verified": false
+}

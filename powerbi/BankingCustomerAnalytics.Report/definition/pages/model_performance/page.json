@@ -1,0 +1,311 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "model_performance",
+  "displayName": "Model Performance",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_use_case",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_use_case",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_use_case",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_use_case",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_use_case",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_use_case",
+      "target": "ml_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_use_case",
+      "target": "roc",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_use_case",
+      "target": "pr",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_use_case",
+      "target": "lift",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_use_case",
+      "target": "calibration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_use_case",
+      "target": "offline_results",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "slicer_use_case",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "ml_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "pr",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "lift",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "calibration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "roc",
+      "target": "offline_results",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "slicer_use_case",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "ml_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "roc",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "lift",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "calibration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "pr",
+      "target": "offline_results",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "slicer_use_case",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "ml_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "roc",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "pr",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "calibration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lift",
+      "target": "offline_results",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "slicer_use_case",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "ml_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "roc",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "pr",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "lift",
+      "type": "DataFilter"
+    },
+    {
+      "source": "calibration",
+      "target": "offline_results",
+      "type": "DataFilter"
+    }
+  ]
+}

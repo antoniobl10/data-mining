@@ -1,0 +1,30 @@
+{
+  "data_origin": "SYNTHETIC DEMO DATA",
+  "synthetic_build_id": "20261028T183617_6015ea1d1c",
+  "queries": {
+    "01_campaign_performance.sql": {
+      "rows": 5,
+      "executed": true
+    },
+    "02_opportunities.sql": {
+      "rows": 60,
+      "executed": true
+    },
+    "03_service_adoption.sql": {
+      "rows": 5,
+      "executed": true
+    },
+    "04_satisfaction.sql": {
+      "rows": 72,
+      "executed": true
+    },
+    "05_digital_monthly.sql": {
+      "rows": 24,
+      "executed": true
+    },
+    "06_payroll_products.sql": {
+      "rows": 4,
+      "executed": true
+    }
+  }
+}

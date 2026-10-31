@@ -1,0 +1,456 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "next_best_action",
+  "displayName": "Next Best Action",
+  "displayOption": "FitToWidth",
+  "height": 1530,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_country",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "action_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "priority_index",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "average_probability",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "customer_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "actions_by_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "action_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "priority_index",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "average_probability",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "customer_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "actions_by_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "action_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "priority_index",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "average_probability",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "customer_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "actions_by_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "priority_index",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "average_probability",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "customer_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "action_customers",
+      "target": "actions_by_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "action_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "average_probability",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "customer_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "priority_index",
+      "target": "actions_by_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "action_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "priority_index",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "customer_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "average_probability",
+      "target": "actions_by_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "action_customers",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "priority_index",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "average_probability",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "customer_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "actions_by_segment",
+      "type": "DataFilter"
+    }
+  ]
+}

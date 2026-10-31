@@ -91,6 +91,18 @@ in Renamed'''
     models.append({'name':'_Measures','columns':[{'name':'Value','dataType':'int64','sourceColumn':'Value','isHidden':True,'summarizeBy':'none'}],'measures':measures,'partitions':[{'name':'_Measures','mode':'import','source':{'type':'m','expression':'#table(type table [Value=nullable number], {{null}})'}}]})
     relationships=[{'name':'rel_'+source,'fromTable':'Fact Customer Financials','fromColumn':column_name(key),'toTable':TABLES[source],'toColumn':column_name(key),'fromCardinality':'many','toCardinality':'one','crossFilteringBehavior':'oneDirection','isActive':True} for source,key in [('dim_customer','customer_key'),('dim_country','country_key'),('dim_age_group','age_group_key'),('dim_credit_band','credit_band_key'),('dim_tenure_band','tenure_band_key')]]
     database={'name':'BankingCustomerAnalytics','compatibilityLevel':1600,'model':{'culture':'en-US','sourceQueryCulture':'en-US','defaultPowerBIDataSourceVersion':'powerBI_V3','expressions':expressions,'tables':models,'relationships':relationships}}
+    synthetic=ROOT/'data/reports/latest_synthetic.json'
+    if synthetic.exists():
+        from tools.powerbi_digital import extend
+        columns_map.update(extend(database,json.loads(synthetic.read_text(encoding='utf-8'))))
+    ml_manifest=ROOT/'data/reports/latest_ml.json'
+    if ml_manifest.exists():
+        from tools.powerbi_ml import extend as extend_ml
+        columns_map.update(extend_ml(database,json.loads(ml_manifest.read_text(encoding='utf-8'))))
+    analytics_manifest=ROOT/'data/reports/latest_analytics.json'
+    if analytics_manifest.exists():
+        from tools.powerbi_analytics import extend as extend_analytics
+        columns_map.update(extend_analytics(database,json.loads(analytics_manifest.read_text(encoding='utf-8'))))
     write(PBI/'model'/'model.source.json',json.dumps(database,indent=2,ensure_ascii=False)+'\n')
     write(PBI/'model'/'relationships.json',json.dumps(relationships,indent=2)+'\n')
     write(PBI/'model'/'column_mapping.json',json.dumps(columns_map,indent=2)+'\n')
@@ -104,4 +116,4 @@ in Renamed'''
 
 if __name__=='__main__':
     model=generate_model()
-    print(f'Generated {len(model["model"]["tables"])} tables, five relationships, {len(MEASURES)} measures.')
+    print(f'Generated {len(model["model"]["tables"])} tables, {len(model["model"]["relationships"])} relationships, {sum(len(t.get("measures",[])) for t in model["model"]["tables"])} measures.')

@@ -1,0 +1,9 @@
+{
+  "data_origin": "SYNTHETIC DEMO ANALYTICS",
+  "analytics_build_id": "20261031T144206_428261aa",
+  "native_dax_executed": true,
+  "comparisons": 264,
+  "scenarios": 6,
+  "measures_evaluated": 47,
+  "failures": []
+}

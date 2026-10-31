@@ -1,0 +1,53 @@
+resources:
+  jobs:
+    daily_ml_scoring:
+      name: banking-${var.environment}-daily-scoring
+      max_concurrent_runs: 1
+      schedule:
+        quartz_cron_expression: 0 0 6 * * ?
+        timezone_id: Europe/Berlin
+        pause_status: PAUSED
+      tasks:
+      - task_key: validate_published_feature_release
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - validate_published_feature_release
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+      - task_key: score_pinned_approved_models
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - score_pinned_approved_models
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: validate_published_feature_release
+      - task_key: validate_publish_scores
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - validate_publish_scores
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: score_pinned_approved_models

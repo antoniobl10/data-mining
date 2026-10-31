@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "customer_funnels",
+  "displayName": "Customer Funnels",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_funnel_name",
+      "target": "slicer_segment_dimension",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_funnel_name",
+      "target": "dynamic_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_funnel_name",
+      "target": "dropoff",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_funnel_name",
+      "target": "segment_conversion",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_funnel_name",
+      "target": "channel_conversion",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_funnel_name",
+      "target": "stage_table",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_segment_dimension",
+      "target": "slicer_funnel_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_segment_dimension",
+      "target": "dynamic_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_segment_dimension",
+      "target": "dropoff",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_segment_dimension",
+      "target": "segment_conversion",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_segment_dimension",
+      "target": "channel_conversion",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_segment_dimension",
+      "target": "stage_table",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dynamic_funnel",
+      "target": "slicer_funnel_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dynamic_funnel",
+      "target": "slicer_segment_dimension",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dynamic_funnel",
+      "target": "dropoff",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dynamic_funnel",
+      "target": "segment_conversion",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dynamic_funnel",
+      "target": "channel_conversion",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dynamic_funnel",
+      "target": "stage_table",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dropoff",
+      "target": "slicer_funnel_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dropoff",
+      "target": "slicer_segment_dimension",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dropoff",
+      "target": "dynamic_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dropoff",
+      "target": "segment_conversion",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dropoff",
+      "target": "channel_conversion",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dropoff",
+      "target": "stage_table",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_conversion",
+      "target": "slicer_funnel_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_conversion",
+      "target": "slicer_segment_dimension",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_conversion",
+      "target": "dynamic_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_conversion",
+      "target": "dropoff",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_conversion",
+      "target": "channel_conversion",
+      "type": "DataFilter"
+    },
+    {
+      "source": "segment_conversion",
+      "target": "stage_table",
+      "type": "DataFilter"
+    }
+  ]
+}

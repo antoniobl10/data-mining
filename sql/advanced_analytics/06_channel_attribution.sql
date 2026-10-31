@@ -1,0 +1,3 @@
+SELECT channel,attribution_model,SUM(attributed_conversions) AS attributed_conversions,SUM(attributed_value) AS synthetic_value
+FROM gold.mart_marketing_attribution WHERE attribution_window_days=30
+GROUP BY channel,attribution_model ORDER BY attribution_model,attributed_conversions DESC;

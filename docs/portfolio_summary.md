@@ -1,0 +1,15 @@
+# Portfolio summaries
+
+One-liner: An end-to-end banking analytics portfolio that turns fragmented customer data into validated profiles, decision dashboards and testable opportunities using Python, SQL and Power BI.
+
+## 50 words
+
+This banking analytics portfolio turns fragmented customer information into profiles, dashboards and testable opportunities. Python and SQL organize validated Medallion layers and Customer 360. Synthetic behavioral data supports demonstration models, campaign analysis and experiments. Power BI explains decisions and limitations. The result demonstrates engineering and analytical judgment, not bank deployment.
+
+## 100 words
+
+This banking analytics portfolio turns fragmented customer information into profiles, dashboards and testable opportunities. Python and SQL organize validated Medallion layers and Customer 360. Synthetic behavioral data supports demonstration models, campaign analysis and experiments. Power BI explains decisions and limitations. The result demonstrates engineering and analytical judgment, not bank deployment. The local workflow preserves sources, quarantines invalid records and publishes reconciled business outputs. Time-aware models explore campaign response, inactivity, payroll and service adoption with MLflow tracking. Journey, cohort and retention analysis connect customer understanding to proposed actions. Randomized simulations demonstrate why sample size, uncertainty and customer guardrails matter before scaling.
+
+## 200 words
+
+This banking analytics portfolio turns fragmented customer information into profiles, dashboards and testable opportunities. Python and SQL organize validated Medallion layers and Customer 360. Synthetic behavioral data supports demonstration models, campaign analysis and experiments. Power BI explains decisions and limitations. The result demonstrates engineering and analytical judgment, not bank deployment. The local workflow preserves sources, quarantines invalid records and publishes reconciled business outputs. Time-aware models explore campaign response, inactivity, payroll and service adoption with MLflow tracking. Journey, cohort and retention analysis connect customer understanding to proposed actions. Randomized simulations demonstrate why sample size, uncertainty and customer guardrails matter before scaling. Engineering controls include versioned contracts, isolated attempts, audited recovery, export validation and automated fixture tests. The original customer snapshot remains distinct from synthetic products, campaigns, payroll, services and digital events. Model evaluation reports weak holdout performance rather than inventing successful targeting. A constant payroll baseline illustrates the value of simple, honest comparisons. Next Best Action applies eligibility, ownership and contact policies before prioritization. Attribution allocates descriptive credit, while economic results use assumed synthetic value. Cloud assets remain undeployed references. Interview materials explain the business case, architecture, reproducible local workflow and evidence needed before any governed real campaign or production rollout.

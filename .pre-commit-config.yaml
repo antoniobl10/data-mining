@@ -1,0 +1,20 @@
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: Format controlled platform modules
+        entry: python -m black
+        language: system
+        types: [python]
+        files: ^(analytics|orchestration|deployment|src/(platform|contracts)|tests/(unit|integration|contracts|data_quality|ml|end_to_end))/
+      - id: ruff
+        name: Lint controlled platform modules
+        entry: python -m ruff check
+        language: system
+        types: [python]
+        files: ^(analytics|orchestration|deployment|src/(platform|contracts)|tests/(unit|integration|contracts|data_quality|ml|end_to_end))/
+      - id: repository-policy
+        name: Secret patterns, YAML and large-file policy
+        entry: python tools/check_repository_policy.py
+        language: system
+        pass_filenames: false

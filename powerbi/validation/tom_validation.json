@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "tables": 10,
-  "relationships": 5,
-  "measures": 61,
+  "tables": 35,
+  "relationships": 26,
+  "measures": 209,
   "validation": "Microsoft TOM and TMDL round-trip; no engine refresh or DAX execution"
 }

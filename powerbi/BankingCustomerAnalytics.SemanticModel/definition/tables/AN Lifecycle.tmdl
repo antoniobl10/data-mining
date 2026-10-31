@@ -1,0 +1,45 @@
+/// SYNTHETIC DEMO ANALYTICS. Aggregate analytical grains require scoped measures; no real bank results.
+table 'AN Lifecycle'
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_lifecycle_summary.prediction_date
+	column 'Prediction Date'
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: Prediction Date
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_lifecycle_summary.lifecycle_stage
+	column 'Lifecycle Stage'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Lifecycle Stage
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_lifecycle_summary.customers
+	column Customers
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Customers
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_lifecycle_summary.average_engagement
+	column 'Average Engagement'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Average Engagement
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_lifecycle_summary.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_lifecycle_summary.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'AN Lifecycle' = m
+		mode: import
+		source = let Source = AnalyticsCsv("mart_lifecycle_summary.csv", {"prediction_date", "lifecycle_stage", "customers", "average_engagement", "synthetic_data_flag", "data_origin"}, {{"prediction_date", type datetime}, {"lifecycle_stage", type text}, {"customers", Int64.Type}, {"average_engagement", type number}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"prediction_date", "Prediction Date"}, {"lifecycle_stage", "Lifecycle Stage"}, {"customers", "Customers"}, {"average_engagement", "Average Engagement"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

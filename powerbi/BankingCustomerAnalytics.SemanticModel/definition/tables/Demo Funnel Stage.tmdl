@@ -1,0 +1,21 @@
+table 'Demo Funnel Stage'
+
+	column 'Campaign Stage'
+		dataType: string
+		sourceColumn: Campaign Stage
+		sortByColumn: 'Sort Order'
+
+	column 'Service Stage'
+		dataType: string
+		sourceColumn: Service Stage
+		sortByColumn: 'Sort Order'
+
+	column 'Sort Order'
+		dataType: int64
+		isHidden
+		sourceColumn: Sort Order
+
+	partition 'Demo Funnel Stage' = m
+		mode: import
+		source = #table(type table [Campaign Stage=text, Service Stage=text, Sort Order=Int64.Type], {{"Sent","Eligible",1},{"Opened","Offered",2},{"Clicked","Activated",3},{"Converted","Active",4}})
+

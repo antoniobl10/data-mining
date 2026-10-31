@@ -1,0 +1,491 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "primary_banking",
+  "displayName": "Primary Banking",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_country",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "score_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "payroll",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "products",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "opportunities",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "score_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "payroll",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "products",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "opportunities",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "score_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "payroll",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "products",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "opportunities",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "payroll",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "products",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "score_distribution",
+      "target": "opportunities",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "score_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "products",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll",
+      "target": "opportunities",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "score_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "payroll",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "products",
+      "target": "opportunities",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "score_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "payroll",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "products",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement",
+      "target": "opportunities",
+      "type": "DataFilter"
+    }
+  ]
+}

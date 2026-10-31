@@ -1,5 +1,85 @@
 using Microsoft.AnalysisServices.Tabular;
 
+if (args.Length == 4 && args[0] == "--live-sync-analytics")
+{
+    using var server = new Server();
+    server.Connect("Data Source=localhost:" + args[1]);
+    if (server.Databases.Count != 1) throw new InvalidOperationException("Expected one Desktop database");
+    var authored = Microsoft.AnalysisServices.Tabular.JsonSerializer.DeserializeDatabase(File.ReadAllText(args[2]));
+    using var manifest = System.Text.Json.JsonDocument.Parse(File.ReadAllText(args[3]));
+    if (manifest.RootElement.GetProperty("data_origin").GetString() != "SYNTHETIC DEMO ANALYTICS") throw new InvalidOperationException("Expected validated synthetic analytics");
+    var folder=manifest.RootElement.GetProperty("powerbi_path").GetString()!;
+    var model=server.Databases[0].Model;
+    foreach(var table in authored.Model.Tables.Where(t=>t.Name.StartsWith("AN ")))
+        if(model.Tables.Find(table.Name)==null)model.Tables.Add(table.Clone());
+    var target=model.Tables["_Measures"];
+    var definitions=authored.Model.Tables["_Measures"].Measures.Where(m=>m.Name.StartsWith("AN ")).ToList();
+    var names=definitions.Select(m=>m.Name).ToHashSet();
+    foreach(var old in target.Measures.Where(m=>m.Name.StartsWith("AN ") && !names.Contains(m.Name)).ToList()) target.Measures.Remove(old);
+    foreach(var source in definitions)
+    {
+        var measure=target.Measures.Find(source.Name);
+        if(measure==null){measure=new Measure{Name=source.Name};target.Measures.Add(measure);}
+        measure.Expression=source.Expression;measure.FormatString=source.FormatString;measure.Description=source.Description;measure.DisplayFolder=source.DisplayFolder;
+    }
+    model.Expressions["AnalyticsGoldDataPath"].Expression="\""+folder.Replace("\\","/").Replace("\"","\"\"")+"\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]";
+    foreach(var table in model.Tables.Where(t=>t.Name.StartsWith("AN ")))table.RequestRefresh(RefreshType.Full);
+    model.SaveChanges();
+    Console.WriteLine("Synced and refreshed analytics measures: "+definitions.Count);
+    return;
+}
+
+if (args.Length == 3 && args[0] == "--live-bind-ml-build")
+{
+    using var server = new Server();
+    server.Connect("Data Source=localhost:" + args[1]);
+    if (server.Databases.Count != 1) throw new InvalidOperationException("Expected one Desktop database");
+    using var manifest = System.Text.Json.JsonDocument.Parse(File.ReadAllText(args[2]));
+    if (manifest.RootElement.GetProperty("data_origin").GetString() != "SYNTHETIC DEMO MODEL") throw new InvalidOperationException("Not a synthetic ML build");
+    var exportPath = Path.GetFullPath(manifest.RootElement.GetProperty("powerbi_path").GetString()!);
+    if (!File.Exists(Path.Combine(exportPath,"customer_ml_scores.csv")) || !File.Exists(Path.Combine(exportPath,"model_performance.csv"))) throw new InvalidOperationException("Missing scoring exports");
+    var model = server.Databases[0].Model;
+    model.Expressions["MLGoldDataPath"].Expression = "\"" + exportPath.Replace("\\","/").Replace("\"","\"\"") + "\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]";
+    model.Tables["ML Customer Scores"].RequestRefresh(RefreshType.Full);
+    model.Tables["ML Model Performance"].RequestRefresh(RefreshType.Full);
+    model.SaveChanges();
+    Console.WriteLine("Bound and refreshed ML tables from: " + exportPath);
+    return;
+}
+
+if (args.Length == 3 && args[0] == "--live-sync-ml-measures")
+{
+    using var server = new Server();
+    server.Connect("Data Source=localhost:" + args[1]);
+    if (server.Databases.Count != 1) throw new InvalidOperationException("Expected one Desktop database");
+    var authored = Microsoft.AnalysisServices.Tabular.JsonSerializer.DeserializeDatabase(File.ReadAllText(args[2]));
+    var target = server.Databases[0].Model.Tables["_Measures"];
+    server.Databases[0].Model.Tables["ML Customer Scores"].Columns["Customer Key"].FormatString = "0";
+    int count = 0;
+    foreach (var sourceMeasure in authored.Model.Tables["_Measures"].Measures.Where(m => m.Name.StartsWith("ML ")))
+    {
+        var measure = target.Measures[sourceMeasure.Name];
+        measure.Expression = sourceMeasure.Expression;
+        measure.FormatString = sourceMeasure.FormatString;
+        measure.Description = sourceMeasure.Description;
+        measure.DisplayFolder = sourceMeasure.DisplayFolder;
+        count++;
+    }
+    server.Databases[0].Model.SaveChanges();
+    Console.WriteLine("Updated ML measures: " + count);
+    return;
+}
+
+if (args.Length == 3 && args[0] == "--live-export")
+{
+    using var server = new Server();
+    server.Connect("Data Source=localhost:" + args[1]);
+    if (server.Databases.Count != 1) throw new InvalidOperationException("Expected one Desktop database");
+    TmdlSerializer.SerializeDatabaseToFolder(server.Databases[0],Path.GetFullPath(args[2]));
+    Console.WriteLine("Native model metadata exported: " + args[2]);
+    return;
+}
+
 if (args.Length == 3 && args[0] == "--live-query")
 {
     using var connection = new Microsoft.AnalysisServices.AdomdClient.AdomdConnection("Data Source=localhost:" + args[1]);

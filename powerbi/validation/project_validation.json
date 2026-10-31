@@ -1,10 +1,10 @@
 {
-  "schema_files_checked": 182,
-  "pages": 9,
-  "visuals": 165,
-  "tables": 10,
-  "relationships": 5,
-  "measures": 61,
+  "schema_files_checked": 582,
+  "pages": 26,
+  "visuals": 548,
+  "tables": 35,
+  "relationships": 26,
+  "measures": 209,
   "errors": [],
   "native_runtime_validated": false
 }

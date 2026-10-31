@@ -1,0 +1,42 @@
+random_seed: 42
+label: SYNTHETIC DEMO ANALYTICS
+session_timeout_minutes: 30
+max_path_steps: 8
+max_common_paths: 50
+minimum_segment_customers: 20
+conversion_window_days: 30
+meaningful_events: [account_view, transaction_view, transfer, card_view, product_view, service_view, service_activation]
+journey_stage_mapping:
+  login: Engagement
+  account_view: Usage
+  transaction_view: Usage
+  transfer: Usage
+  card_view: Usage
+  product_view: Product Exploration
+  campaign_view: Awareness
+  service_view: Consideration
+  service_activation: Application / Activation
+  profile_update: Engagement
+funnels:
+  campaign: [Sent, Opened, Clicked, Converted]
+  service: [Eligible, Offered, Activated, Active User]
+  primary_bank: [Digital Customer, Current Account, Regular Digital Activity, Salary Domiciliation, Multi-Product, Value-Added Services, Likely Primary Bank]
+cohort_definitions: [First Digital Activity, Payroll Start, Product Acquisition, Service Activation, Campaign Conversion]
+retention_months: 24
+primary_bank: {regular_sessions: 2, minimum_products: 3, score_threshold: 70}
+lifecycle: {new_days: 30, dormant_days: 90, engaged_score: 30, highly_engaged_score: 60, minimum_products: 3, decline_events: -3}
+contact_policy: {maximum_7d: 2, maximum_30d: 6, minimum_similar_gap_days: 3, persistent_holdout_fraction: 0.05}
+experiments:
+  alpha: 0.05
+  srm_alpha: 0.001
+  power: 0.80
+  minimum_per_variant: 100
+  multiple_testing: holm
+  maximum_missing_exposure_rate: 0.07
+  minimum_practical_lift: 0.02
+  guardrails: {unsubscribe_rate_increase: 0.015, complaint_rate_increase: 0.01, minimum_nps_change: -1.0, maximum_cost_per_customer: 0.50}
+attribution: {windows_days: [7, 30], position_first: 0.40, position_last: 0.40, position_middle: 0.20}
+economics:
+  value_by_campaign_type: {Payroll: 120.0, Travel: 35.0, FX: 25.0, Cross-Sell: 60.0, Engagement: 10.0, Retention: 30.0}
+  value_unit: Synthetic Value Units
+opportunities: {unvalidated_evidence_factor: 0.25, validated_lift_scale: 0.10, high_value_threshold: 70, high_opportunity_threshold: 0.5}

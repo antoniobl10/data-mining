@@ -1,0 +1,276 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "growth_opportunities",
+  "displayName": "Growth & Opportunities",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_experiment_id",
+      "target": "an_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "an_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "an_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "an_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "an_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "an_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "primary_bank",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "experiment_lift",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "narrative_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "narrative_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "lifecycle",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_experiment_id",
+      "target": "winners",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "slicer_experiment_id",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "an_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "an_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "an_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "an_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "an_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "an_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "experiment_lift",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "narrative_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "narrative_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "lifecycle",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_bank",
+      "target": "winners",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "slicer_experiment_id",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "an_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "an_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "an_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "an_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "an_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "an_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "primary_bank",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "narrative_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "narrative_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "lifecycle",
+      "type": "DataFilter"
+    },
+    {
+      "source": "experiment_lift",
+      "target": "winners",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "slicer_experiment_id",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "an_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "an_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "an_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "an_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "an_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "an_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "primary_bank",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "experiment_lift",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "narrative_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "narrative_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "lifecycle",
+      "target": "winners",
+      "type": "DataFilter"
+    }
+  ]
+}

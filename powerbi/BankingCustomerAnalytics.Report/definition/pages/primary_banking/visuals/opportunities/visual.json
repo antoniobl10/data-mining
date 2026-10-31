@@ -1,0 +1,242 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "opportunities",
+  "position": {
+    "x": 24,
+    "y": 925,
+    "width": 1392,
+    "height": 250,
+    "z": 25,
+    "tabOrder": 25
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Snapshot profiles — SYNTHETIC DEMO DATA'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#142D4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Snapshot profiles — SYNTHETIC DEMO DATA; based on the selected accepted-customer snapshot.'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Demo Customer 360"
+                    }
+                  },
+                  "Property": "Customer Value Segment"
+                }
+              },
+              "queryRef": "Demo Customer 360.Customer Value Segment",
+              "nativeQueryRef": "Customer Value Segment",
+              "displayName": "Customer Value Segment"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Customers"
+                }
+              },
+              "queryRef": "_Measures.Demo Customers",
+              "nativeQueryRef": "Demo Customers",
+              "displayName": "Demo Customers"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Payroll Opportunity Customers"
+                }
+              },
+              "queryRef": "_Measures.Demo Payroll Opportunity Customers",
+              "nativeQueryRef": "Demo Payroll Opportunity Customers",
+              "displayName": "Demo Payroll Opportunity Customers"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Cross-Sell Opportunity Customers"
+                }
+              },
+              "queryRef": "_Measures.Demo Cross-Sell Opportunity Customers",
+              "nativeQueryRef": "Demo Cross-Sell Opportunity Customers",
+              "displayName": "Demo Cross-Sell Opportunity Customers"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo High Value Low Engagement Customers"
+                }
+              },
+              "queryRef": "_Measures.Demo High Value Low Engagement Customers",
+              "nativeQueryRef": "Demo High Value Low Engagement Customers",
+              "displayName": "Demo High Value Low Engagement Customers"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Engagement Balance"
+                }
+              },
+              "queryRef": "_Measures.Demo Engagement Balance",
+              "nativeQueryRef": "Demo Engagement Balance",
+              "displayName": "Demo Engagement Balance"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

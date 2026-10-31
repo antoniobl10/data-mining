@@ -1,0 +1,272 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "segments",
+  "position": {
+    "x": 24,
+    "y": 925,
+    "width": 1392,
+    "height": 250,
+    "z": 24,
+    "tabOrder": 24
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Snapshot profiles — SYNTHETIC DEMO DATA'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#142D4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Snapshot profiles — SYNTHETIC DEMO DATA; based on the selected accepted-customer snapshot.'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Demo Customer 360"
+                    }
+                  },
+                  "Property": "Primary Bank Segment"
+                }
+              },
+              "queryRef": "Demo Customer 360.Primary Bank Segment",
+              "nativeQueryRef": "Primary Bank Segment",
+              "displayName": "Primary Bank Segment"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Campaigns Sent"
+                }
+              },
+              "queryRef": "_Measures.Demo Campaigns Sent",
+              "nativeQueryRef": "Demo Campaigns Sent",
+              "displayName": "Demo Campaigns Sent"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Campaign Opens"
+                }
+              },
+              "queryRef": "_Measures.Demo Campaign Opens",
+              "nativeQueryRef": "Demo Campaign Opens",
+              "displayName": "Demo Campaign Opens"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Campaign Clicks"
+                }
+              },
+              "queryRef": "_Measures.Demo Campaign Clicks",
+              "nativeQueryRef": "Demo Campaign Clicks",
+              "displayName": "Demo Campaign Clicks"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Campaign Conversions"
+                }
+              },
+              "queryRef": "_Measures.Demo Campaign Conversions",
+              "nativeQueryRef": "Demo Campaign Conversions",
+              "displayName": "Demo Campaign Conversions"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Conversion Rate"
+                }
+              },
+              "queryRef": "_Measures.Demo Conversion Rate",
+              "nativeQueryRef": "Demo Conversion Rate",
+              "displayName": "Demo Conversion Rate"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Campaign Cost"
+                }
+              },
+              "queryRef": "_Measures.Demo Campaign Cost",
+              "nativeQueryRef": "Demo Campaign Cost",
+              "displayName": "Demo Campaign Cost"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Cost per Conversion"
+                }
+              },
+              "queryRef": "_Measures.Demo Cost per Conversion",
+              "nativeQueryRef": "Demo Cost per Conversion",
+              "displayName": "Demo Cost per Conversion"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+/// SYNTHETIC DEMO DATA. fact_campaign_interactions
+table 'Demo Campaign Interactions'
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.interaction_id
+	column 'Interaction Id'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Interaction Id
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.campaign_id
+	column 'Campaign Id'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Campaign Id
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.customer_id
+	column 'Customer ID'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.campaign_name
+	column 'Campaign Name'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Campaign Name
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.campaign_type
+	column 'Campaign Type'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Campaign Type
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.channel
+	column Channel
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Channel
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.campaign_date
+	column 'Campaign Date'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Campaign Date
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.offer_type
+	column 'Offer Type'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Offer Type
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.target_service
+	column 'Target Service'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Target Service
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.sent
+	column Sent
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Sent
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.opened
+	column Opened
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Opened
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.clicked
+	column Clicked
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Clicked
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.converted
+	column Converted
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Converted
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.conversion_date
+	column 'Conversion Date'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Conversion Date
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.campaign_cost
+	column 'Campaign Cost'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Campaign Cost
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.customer_key
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.campaign_key
+	column 'Campaign Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Campaign Key
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.campaign_date_key
+	column 'Campaign Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Campaign Date Key
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.conversion_date_key
+	column 'Conversion Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Conversion Date Key
+
+	/// SYNTHETIC DEMO DATA. fact_campaign_interactions.month
+	column Month
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Month
+
+	partition 'Demo Campaign Interactions' = m
+		mode: import
+		source = let Source = SyntheticCsv("fact_campaign_interactions.csv", {"interaction_id", "campaign_id", "customer_id", "campaign_name", "campaign_type", "channel", "campaign_date", "offer_type", "target_service", "sent", "opened", "clicked", "converted", "conversion_date", "campaign_cost", "synthetic_data_flag", "data_origin", "customer_key", "campaign_key", "campaign_date_key", "conversion_date_key", "month"}, {{"interaction_id", type text}, {"campaign_id", type text}, {"customer_id", type text}, {"campaign_name", type text}, {"campaign_type", type text}, {"channel", type text}, {"campaign_date", type datetime}, {"offer_type", type text}, {"target_service", type text}, {"sent", type logical}, {"opened", type logical}, {"clicked", type logical}, {"converted", type logical}, {"conversion_date", type datetime}, {"campaign_cost", type number}, {"synthetic_data_flag", type logical}, {"data_origin", type text}, {"customer_key", Int64.Type}, {"campaign_key", Int64.Type}, {"campaign_date_key", Int64.Type}, {"conversion_date_key", Int64.Type}, {"month", type text}}), Renamed = Table.RenameColumns(Source, {{"interaction_id", "Interaction Id"}, {"campaign_id", "Campaign Id"}, {"customer_id", "Customer ID"}, {"campaign_name", "Campaign Name"}, {"campaign_type", "Campaign Type"}, {"channel", "Channel"}, {"campaign_date", "Campaign Date"}, {"offer_type", "Offer Type"}, {"target_service", "Target Service"}, {"sent", "Sent"}, {"opened", "Opened"}, {"clicked", "Clicked"}, {"converted", "Converted"}, {"conversion_date", "Conversion Date"}, {"campaign_cost", "Campaign Cost"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}, {"customer_key", "Customer Key"}, {"campaign_key", "Campaign Key"}, {"campaign_date_key", "Campaign Date Key"}, {"conversion_date_key", "Conversion Date Key"}, {"month", "Month"}}) in Renamed
+

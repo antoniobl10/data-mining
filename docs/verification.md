@@ -1,3 +1,5 @@
+> Scope: Bronze/Silver verification checkpoint. For current totals and execution boundaries, see [final health](../reports/final_project_health.md) and [documentation index](README.md). Historical counts below are not current platform totals.
+
 # Bronze/Silver verification — 27 October 2026
 
 The current project phase extends this verified upstream implementation through Gold. See [verification_gold.md](verification_gold.md) for the active end-to-end results, 96 Python tests, 69 Gold checks and 50 dbt data tests. The earlier command meanings and scope below describe the historical Bronze/Silver phase; current `--stage all` also builds Gold.

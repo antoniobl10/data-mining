@@ -1,0 +1,136 @@
+{
+  "generated_from_canonical_sources": true,
+  "external_publication": false,
+  "files": [
+    {
+      "path": "architecture.md",
+      "bytes": 996,
+      "sha256": "8b3196faf0cdf7374e02f9948da3726e5a5c0becf85ac544cd7e397307b0d475"
+    },
+    {
+      "path": "business_glossary.md",
+      "bytes": 2071,
+      "sha256": "c84775cb4316d2da25b8bfdd8b3ece781801048bb681581ab444f8d244af3fb6"
+    },
+    {
+      "path": "business_questions.md",
+      "bytes": 7520,
+      "sha256": "0b84878dcbc94eaf7d34f79e0f6e3cafb6010159bcf414c10a78ab9898b7c448"
+    },
+    {
+      "path": "career_positioning.md",
+      "bytes": 4123,
+      "sha256": "e386871fbbc3d2581c30334f999b464c12df4829628ceec0cf3fb1557359a66b"
+    },
+    {
+      "path": "data_engineering_cheatsheet.md",
+      "bytes": 1916,
+      "sha256": "9d8c5ae0e58773622401a993b0eef3079adc1d4cbd086f2e603f0e559efbd31e"
+    },
+    {
+      "path": "databricks_cheatsheet.md",
+      "bytes": 1378,
+      "sha256": "714f7acc1527baec93830031543ad5bcdd2eb3d3146dea313be3a9cb73817eb4"
+    },
+    {
+      "path": "demo_10_min.md",
+      "bytes": 2421,
+      "sha256": "49854223ca595c0538361e14414eef9257a95bcd86631587c9b1aebcf02c0665"
+    },
+    {
+      "path": "demo_2_min.md",
+      "bytes": 1513,
+      "sha256": "d431e8fe3d5d816cd4ebb46ffd97d5f234e7c89a8c62d0c79ed06838219ab8fd"
+    },
+    {
+      "path": "demo_5_min.md",
+      "bytes": 2527,
+      "sha256": "502ca57ac93777417b83a8a574bb7ea25166c3085d6505991c0f11b2a4266d6f"
+    },
+    {
+      "path": "flagship_cases.md",
+      "bytes": 3882,
+      "sha256": "9811cfb6a246954b645f929a5b69bacc56aff290bcf303be8db25fba4f94a3fc"
+    },
+    {
+      "path": "kpi_cheatsheet.md",
+      "bytes": 2968,
+      "sha256": "19672faba1434b9385fa1f167d66f055764423c9657cc11ad190774397de5605"
+    },
+    {
+      "path": "kpi_snapshot.md",
+      "bytes": 665,
+      "sha256": "bb443099b4f3af67b5d914e6708713ec29d501b17781a00aea3347315b20916a"
+    },
+    {
+      "path": "limitations.md",
+      "bytes": 3135,
+      "sha256": "744d1b2192a1a2bd88752aa72f991e71cfd9c5e848530fd2f750f00de00867d6"
+    },
+    {
+      "path": "ml_cheatsheet.md",
+      "bytes": 4516,
+      "sha256": "927737bd63d52b97d7e74f705875639df22ca749aeeabcef8174c4cacd451b4b"
+    },
+    {
+      "path": "pitches.md",
+      "bytes": 3396,
+      "sha256": "8ebe4b761e05c4e52013feb54b2f7bc9a656fd0ad20158ad8e52e76ef25b5824"
+    },
+    {
+      "path": "powerbi_cheatsheet.md",
+      "bytes": 2536,
+      "sha256": "69d04368f67c4866adbcf9fff042ad70a4de742c0ba9cbde7253841c255fef79"
+    },
+    {
+      "path": "project_summary.md",
+      "bytes": 3255,
+      "sha256": "461752964f5373a0abdc74c15678374294e6bb9a79332ee9d13d8d1e80ded52a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1442,
+      "sha256": "b0d5a52b1c266013e89d8da6a4b6d86992cffbb9db0ddcf22083f79f8322db8a"
+    },
+    {
+      "path": "screenshots/architecture.png",
+      "bytes": 69003,
+      "sha256": "8f2bbcfa9b795f3a2aecb6034a1fb7fd5e2ebb00e602009bf979f629a68732e3"
+    },
+    {
+      "path": "screenshots/earlier_native_overview.png",
+      "bytes": 246152,
+      "sha256": "1c2c9e4bca144a6f3c0e66e139e3f2e4dde79020ee92a1adab399f7736435ce4"
+    },
+    {
+      "path": "screenshots/README.md",
+      "bytes": 738,
+      "sha256": "d3c9d8bfcf9aab020d569dc5b7e88d7de2285b31fb0b88c8946b3861ab26a2c4"
+    },
+    {
+      "path": "screenshots/synthetic_experiment_lift.png",
+      "bytes": 54161,
+      "sha256": "366a3af9ef8689bfe6c36eb4caba82f9b743d15333bb5f9c18b6b1986f528390"
+    },
+    {
+      "path": "screenshots/synthetic_retention.png",
+      "bytes": 88418,
+      "sha256": "9bee53c2fe81c46f76108bdbd55fe12cee66fce563c0f7c1784aa6c087313e10"
+    },
+    {
+      "path": "star_stories.md",
+      "bytes": 3678,
+      "sha256": "f3f510d794d310e6e5a6cf96e4b35b596571be3aa7c9a50c6b067e03f308485e"
+    },
+    {
+      "path": "technical_questions.md",
+      "bytes": 13918,
+      "sha256": "cbccaca550d4294139fed09caa0b51c1c652e71e9d22678538b1ddcc2b3773e2"
+    },
+    {
+      "path": "why_decisions.md",
+      "bytes": 3192,
+      "sha256": "b7beffd031497b77a1de2e75c4d238f68b16991e6659e4b8d9ccc7c966963df9"
+    }
+  ]
+}

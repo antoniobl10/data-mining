@@ -1,3 +1,5 @@
+> Scope: Original nine-page BI rehearsal; use interview/ for the complete platform. For current totals and execution boundaries, see [final health](../reports/final_project_health.md) and [documentation index](README.md). Historical counts below are not current platform totals.
+
 # Banking customer analytics interview story
 
 Use the current build and disclose the execution boundary: the pipeline ran locally; textual Power BI artifacts were authored and structurally validated; native Desktop refresh, DAX and interactions are pending. Do not claim deployment or measured native performance. Speaking times depend on pace.

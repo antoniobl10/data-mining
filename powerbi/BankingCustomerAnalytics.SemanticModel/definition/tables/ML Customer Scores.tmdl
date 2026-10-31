@@ -1,0 +1,255 @@
+/// SYNTHETIC DEMO MODEL; one customer per scoring date; standardized Email/Cross-Sell campaign context
+table 'ML Customer Scores'
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.customer_key
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.scoring_date
+	column 'Scoring Date'
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: Scoring Date
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.country
+	column Country
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Country
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.customer_value_score
+	column 'Customer Value Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Customer Value Score
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.customer_value_segment
+	column 'Customer Value Segment'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Customer Value Segment
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.engagement_score
+	column 'Engagement Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Engagement Score
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.marketing_contact_allowed
+	column 'Marketing Contact Allowed'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Marketing Contact Allowed
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.has_salary_domiciliation
+	column 'Has Salary Domiciliation'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Has Salary Domiciliation
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.has_current_account
+	column 'Has Current Account'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Has Current Account
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.travel_eligible
+	column 'Travel Eligible'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Travel Eligible
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.travel_active
+	column 'Travel Active'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Travel Active
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.fx_eligible
+	column 'Fx Eligible'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Fx Eligible
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.has_savings
+	column 'Has Savings'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Has Savings
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.active_product_count
+	column 'Active Product Count'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Active Product Count
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.latest_satisfaction_score
+	column 'Latest Satisfaction Score'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Latest Satisfaction Score
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.campaign_propensity_score
+	column 'Campaign Propensity Score'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Campaign Propensity Score
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.campaign_propensity_band
+	column 'Campaign Propensity Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Campaign Propensity Band
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.churn_risk_score
+	column 'Churn Risk Score'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Churn Risk Score
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.churn_risk_band
+	column 'Churn Risk Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Churn Risk Band
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.payroll_propensity_score
+	column 'Payroll Propensity Score'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Payroll Propensity Score
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.payroll_propensity_band
+	column 'Payroll Propensity Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payroll Propensity Band
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.travel_service_propensity_score
+	column 'Travel Service Propensity Score'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Travel Service Propensity Score
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.travel_service_propensity_band
+	column 'Travel Service Propensity Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Travel Service Propensity Band
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.high_campaign_propensity
+	column 'High Campaign Propensity'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Campaign Propensity
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.high_churn_risk
+	column 'High Churn Risk'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Churn Risk
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.high_payroll_propensity
+	column 'High Payroll Propensity'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Payroll Propensity
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.high_travel_service_propensity
+	column 'High Travel Service Propensity'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Travel Service Propensity
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.next_best_action
+	column 'Next Best Action'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Next Best Action
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.next_best_action_score
+	column 'Next Best Action Score'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Next Best Action Score
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.next_best_action_reason
+	column 'Next Best Action Reason'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Next Best Action Reason
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.reason_code
+	column 'Reason Code'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Reason Code
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.recommended_product
+	column 'Recommended Product'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Recommended Product
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.priority_score
+	column 'Priority Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Priority Score
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.model_version_campaign
+	column 'Model Version Campaign'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Model Version Campaign
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.model_version_churn
+	column 'Model Version Churn'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Model Version Churn
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.model_version_payroll
+	column 'Model Version Payroll'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Model Version Payroll
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.model_version_service
+	column 'Model Version Service'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Model Version Service
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.synthetic_model_flag
+	column 'Synthetic Model Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Model Flag
+
+	/// SYNTHETIC DEMO MODEL. customer_ml_scores.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'ML Customer Scores' = m
+		mode: import
+		source = let Source = MLCsv("customer_ml_scores.csv", {"customer_key", "scoring_date", "country", "customer_value_score", "customer_value_segment", "engagement_score", "marketing_contact_allowed", "has_salary_domiciliation", "has_current_account", "travel_eligible", "travel_active", "fx_eligible", "has_savings", "active_product_count", "latest_satisfaction_score", "campaign_propensity_score", "campaign_propensity_band", "churn_risk_score", "churn_risk_band", "payroll_propensity_score", "payroll_propensity_band", "travel_service_propensity_score", "travel_service_propensity_band", "high_campaign_propensity", "high_churn_risk", "high_payroll_propensity", "high_travel_service_propensity", "next_best_action", "next_best_action_score", "next_best_action_reason", "reason_code", "recommended_product", "priority_score", "model_version_campaign", "model_version_churn", "model_version_payroll", "model_version_service", "synthetic_model_flag", "data_origin"}, {{"customer_key", Int64.Type}, {"scoring_date", type datetime}, {"country", type text}, {"customer_value_score", type number}, {"customer_value_segment", type text}, {"engagement_score", type number}, {"marketing_contact_allowed", type logical}, {"has_salary_domiciliation", Int64.Type}, {"has_current_account", Int64.Type}, {"travel_eligible", type logical}, {"travel_active", Int64.Type}, {"fx_eligible", type logical}, {"has_savings", Int64.Type}, {"active_product_count", type number}, {"latest_satisfaction_score", type number}, {"campaign_propensity_score", type number}, {"campaign_propensity_band", type text}, {"churn_risk_score", type number}, {"churn_risk_band", type text}, {"payroll_propensity_score", type number}, {"payroll_propensity_band", type text}, {"travel_service_propensity_score", type number}, {"travel_service_propensity_band", type text}, {"high_campaign_propensity", type logical}, {"high_churn_risk", type logical}, {"high_payroll_propensity", type logical}, {"high_travel_service_propensity", type logical}, {"next_best_action", type text}, {"next_best_action_score", type number}, {"next_best_action_reason", type text}, {"reason_code", type text}, {"recommended_product", type text}, {"priority_score", type number}, {"model_version_campaign", type text}, {"model_version_churn", type text}, {"model_version_payroll", type text}, {"model_version_service", type text}, {"synthetic_model_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"customer_key", "Customer Key"}, {"scoring_date", "Scoring Date"}, {"country", "Country"}, {"customer_value_score", "Customer Value Score"}, {"customer_value_segment", "Customer Value Segment"}, {"engagement_score", "Engagement Score"}, {"marketing_contact_allowed", "Marketing Contact Allowed"}, {"has_salary_domiciliation", "Has Salary Domiciliation"}, {"has_current_account", "Has Current Account"}, {"travel_eligible", "Travel Eligible"}, {"travel_active", "Travel Active"}, {"fx_eligible", "Fx Eligible"}, {"has_savings", "Has Savings"}, {"active_product_count", "Active Product Count"}, {"latest_satisfaction_score", "Latest Satisfaction Score"}, {"campaign_propensity_score", "Campaign Propensity Score"}, {"campaign_propensity_band", "Campaign Propensity Band"}, {"churn_risk_score", "Churn Risk Score"}, {"churn_risk_band", "Churn Risk Band"}, {"payroll_propensity_score", "Payroll Propensity Score"}, {"payroll_propensity_band", "Payroll Propensity Band"}, {"travel_service_propensity_score", "Travel Service Propensity Score"}, {"travel_service_propensity_band", "Travel Service Propensity Band"}, {"high_campaign_propensity", "High Campaign Propensity"}, {"high_churn_risk", "High Churn Risk"}, {"high_payroll_propensity", "High Payroll Propensity"}, {"high_travel_service_propensity", "High Travel Service Propensity"}, {"next_best_action", "Next Best Action"}, {"next_best_action_score", "Next Best Action Score"}, {"next_best_action_reason", "Next Best Action Reason"}, {"reason_code", "Reason Code"}, {"recommended_product", "Recommended Product"}, {"priority_score", "Priority Score"}, {"model_version_campaign", "Model Version Campaign"}, {"model_version_churn", "Model Version Churn"}, {"model_version_payroll", "Model Version Payroll"}, {"model_version_service", "Model Version Service"}, {"synthetic_model_flag", "Synthetic Model Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

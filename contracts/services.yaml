@@ -1,0 +1,59 @@
+dataset: services
+contract_version: '1.0'
+owner: Digital Banking Data Owner
+technical_owner: Data Engineering
+description: Typed accepted synthetic services; final states must not be backfilled
+  into historical ML features.
+layer: silver
+primary_key:
+- customer_id
+- service_name
+allow_extra_columns: true
+fields:
+  customer_id:
+    type: string
+    nullable: false
+  service_name:
+    type: string
+    nullable: false
+    allowed_values:
+    - Travel Plan
+    - FX / Global Exchange
+    - Tax Assistance
+    - Premium Travel Benefits
+    - Financial Health Service
+  snapshot_date:
+    type: date
+    nullable: false
+  eligible:
+    type: boolean
+    nullable: false
+  offered:
+    type: boolean
+    nullable: false
+  activated:
+    type: boolean
+    nullable: false
+  active_status:
+    type: boolean
+    nullable: false
+  offer_date:
+    type: date
+    nullable: true
+  activation_date:
+    type: date
+    nullable: true
+  monthly_usage_count:
+    type: integer
+    nullable: false
+    min: 0
+  synthetic_data_flag:
+    type: boolean
+    nullable: false
+    allowed_values:
+    - true
+  data_origin:
+    type: string
+    nullable: false
+    allowed_values:
+    - SYNTHETIC DEMO DATA

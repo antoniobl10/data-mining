@@ -1,0 +1,17 @@
+{
+  "tests_passed": 204,
+  "test_failures": 0,
+  "controlled_module_line_and_branch_coverage_percent": 90.09,
+  "analytical_quality_checks": 17,
+  "sql_examples_executed": 9,
+  "analytics_native_comparisons": 264,
+  "analytics_native_failures": 0,
+  "notebooks_executed": 24,
+  "bandit_medium_high_findings": 0,
+  "locked_dependencies_audited": 87,
+  "known_dependency_vulnerabilities": 0,
+  "docker_execution": "not verified: daemon unavailable",
+  "cloud_deployment": "not performed; paused reference jobs",
+  "desktop_visual_save_verification": "Compatible saved local cache restored; final visual and reopen acceptance unverified because UI helper failed",
+  "analytics_notebooks_executed": 8
+}

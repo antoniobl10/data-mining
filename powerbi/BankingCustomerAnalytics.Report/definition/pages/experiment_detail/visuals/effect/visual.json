@@ -1,0 +1,298 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "effect",
+  "position": {
+    "x": 24,
+    "y": 475,
+    "width": 1392,
+    "height": 240,
+    "z": 4,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Effect'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#142D4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SYNTHETIC DEMO ANALYTICS. effect'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Experiments"
+                    }
+                  },
+                  "Property": "Control N"
+                }
+              },
+              "queryRef": "AN Experiments.Control N",
+              "nativeQueryRef": "Control N",
+              "displayName": "Control N"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Experiments"
+                    }
+                  },
+                  "Property": "Treatment N"
+                }
+              },
+              "queryRef": "AN Experiments.Treatment N",
+              "nativeQueryRef": "Treatment N",
+              "displayName": "Treatment N"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Experiments"
+                    }
+                  },
+                  "Property": "Planned Per Variant"
+                }
+              },
+              "queryRef": "AN Experiments.Planned Per Variant",
+              "nativeQueryRef": "Planned Per Variant",
+              "displayName": "Planned Per Variant"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Experiments"
+                    }
+                  },
+                  "Property": "Experiment Decision"
+                }
+              },
+              "queryRef": "AN Experiments.Experiment Decision",
+              "nativeQueryRef": "Experiment Decision",
+              "displayName": "Experiment Decision"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "AN Control Conversion"
+                }
+              },
+              "queryRef": "_Measures.AN Control Conversion",
+              "nativeQueryRef": "AN Control Conversion",
+              "displayName": "AN Control Conversion"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "AN Treatment Conversion"
+                }
+              },
+              "queryRef": "_Measures.AN Treatment Conversion",
+              "nativeQueryRef": "AN Treatment Conversion",
+              "displayName": "AN Treatment Conversion"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "AN Mean Simulated Lift"
+                }
+              },
+              "queryRef": "_Measures.AN Mean Simulated Lift",
+              "nativeQueryRef": "AN Mean Simulated Lift",
+              "displayName": "AN Mean Simulated Lift"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "AN Lift CI Lower"
+                }
+              },
+              "queryRef": "_Measures.AN Lift CI Lower",
+              "nativeQueryRef": "AN Lift CI Lower",
+              "displayName": "AN Lift CI Lower"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "AN Lift CI Upper"
+                }
+              },
+              "queryRef": "_Measures.AN Lift CI Upper",
+              "nativeQueryRef": "AN Lift CI Upper",
+              "displayName": "AN Lift CI Upper"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "AN Adjusted P Value"
+                }
+              },
+              "queryRef": "_Measures.AN Adjusted P Value",
+              "nativeQueryRef": "AN Adjusted P Value",
+              "displayName": "AN Adjusted P Value"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "customer_actions",
+  "position": {
+    "x": 24,
+    "y": 942,
+    "width": 1392,
+    "height": 230,
+    "z": 21,
+    "tabOrder": 21
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Authorized analyst queue — priority index and reasons; no monetary value estimate'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#142D4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SYNTHETIC DEMO MODEL. customer_actions'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ML Customer Scores"
+                    }
+                  },
+                  "Property": "Customer Key"
+                }
+              },
+              "queryRef": "ML Customer Scores.Customer Key",
+              "nativeQueryRef": "Customer Key",
+              "displayName": "Customer Key"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ML Customer Scores"
+                    }
+                  },
+                  "Property": "Customer Value Segment"
+                }
+              },
+              "queryRef": "ML Customer Scores.Customer Value Segment",
+              "nativeQueryRef": "Customer Value Segment",
+              "displayName": "Customer Value Segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ML Customer Scores"
+                    }
+                  },
+                  "Property": "Next Best Action"
+                }
+              },
+              "queryRef": "ML Customer Scores.Next Best Action",
+              "nativeQueryRef": "Next Best Action",
+              "displayName": "Next Best Action"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ML Customer Scores"
+                    }
+                  },
+                  "Property": "Priority Score"
+                }
+              },
+              "queryRef": "ML Customer Scores.Priority Score",
+              "nativeQueryRef": "Priority Score",
+              "displayName": "Priority Score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ML Customer Scores"
+                    }
+                  },
+                  "Property": "Reason Code"
+                }
+              },
+              "queryRef": "ML Customer Scores.Reason Code",
+              "nativeQueryRef": "Reason Code",
+              "displayName": "Reason Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ML Customer Scores"
+                    }
+                  },
+                  "Property": "Next Best Action Reason"
+                }
+              },
+              "queryRef": "ML Customer Scores.Next Best Action Reason",
+              "nativeQueryRef": "Next Best Action Reason",
+              "displayName": "Next Best Action Reason"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ML Customer Scores"
+                  }
+                },
+                "Property": "Priority Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    }
+  }
+}

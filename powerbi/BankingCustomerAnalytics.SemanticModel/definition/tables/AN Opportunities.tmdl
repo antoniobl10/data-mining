@@ -1,0 +1,364 @@
+/// SYNTHETIC DEMO ANALYTICS. Aggregate analytical grains require scoped measures; no real bank results.
+table 'AN Opportunities'
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.customer_key
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.scoring_date
+	column 'Scoring Date'
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: Scoring Date
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.country
+	column Country
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Country
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.customer_value_score
+	column 'Customer Value Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Customer Value Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.customer_value_segment
+	column 'Customer Value Segment'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Customer Value Segment
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.engagement_score
+	column 'Engagement Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Engagement Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.marketing_contact_allowed
+	column 'Marketing Contact Allowed'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Marketing Contact Allowed
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.has_salary_domiciliation
+	column 'Has Salary Domiciliation'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Has Salary Domiciliation
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.has_current_account
+	column 'Has Current Account'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Has Current Account
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.travel_eligible
+	column 'Travel Eligible'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Travel Eligible
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.travel_active
+	column 'Travel Active'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Travel Active
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.fx_eligible
+	column 'Fx Eligible'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Fx Eligible
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.has_savings
+	column 'Has Savings'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Has Savings
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.active_product_count
+	column 'Active Product Count'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Active Product Count
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.latest_satisfaction_score
+	column 'Latest Satisfaction Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Latest Satisfaction Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.campaign_propensity_score
+	column 'Campaign Propensity Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Campaign Propensity Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.campaign_propensity_band
+	column 'Campaign Propensity Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Campaign Propensity Band
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.churn_risk_score
+	column 'Churn Risk Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Churn Risk Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.churn_risk_band
+	column 'Churn Risk Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Churn Risk Band
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.payroll_propensity_score
+	column 'Payroll Propensity Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Payroll Propensity Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.payroll_propensity_band
+	column 'Payroll Propensity Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payroll Propensity Band
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.travel_service_propensity_score
+	column 'Travel Service Propensity Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Travel Service Propensity Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.travel_service_propensity_band
+	column 'Travel Service Propensity Band'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Travel Service Propensity Band
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.high_campaign_propensity
+	column 'High Campaign Propensity'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Campaign Propensity
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.high_churn_risk
+	column 'High Churn Risk'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Churn Risk
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.high_payroll_propensity
+	column 'High Payroll Propensity'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Payroll Propensity
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.high_travel_service_propensity
+	column 'High Travel Service Propensity'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: High Travel Service Propensity
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.next_best_action
+	column 'Next Best Action'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Next Best Action
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.next_best_action_score
+	column 'Next Best Action Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Next Best Action Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.next_best_action_reason
+	column 'Next Best Action Reason'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Next Best Action Reason
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.reason_code
+	column 'Reason Code'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Reason Code
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.recommended_product
+	column 'Recommended Product'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Recommended Product
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.priority_score
+	column 'Priority Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Priority Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.model_version_campaign
+	column 'Model Version Campaign'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Model Version Campaign
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.model_version_churn
+	column 'Model Version Churn'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Model Version Churn
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.model_version_payroll
+	column 'Model Version Payroll'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Model Version Payroll
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.model_version_service
+	column 'Model Version Service'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Model Version Service
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.synthetic_model_flag
+	column 'Synthetic Model Flag'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Synthetic Model Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.campaigns_received_7d
+	column 'Campaigns Received 7D'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Campaigns Received 7D
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.campaigns_received_30d
+	column 'Campaigns Received 30D'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Campaigns Received 30D
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.days_since_last_campaign
+	column 'Days Since Last Campaign'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Days Since Last Campaign
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.campaign_frequency
+	column 'Campaign Frequency'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Campaign Frequency
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.possible_fatigue_flag
+	column 'Possible Fatigue Flag'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Possible Fatigue Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.persistent_holdout
+	column 'Persistent Holdout'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Persistent Holdout
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.primary_bank_stage
+	column 'Primary Bank Stage'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Primary Bank Stage
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.next_primary_stage
+	column 'Next Primary Stage'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Next Primary Stage
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.lifecycle_stage
+	column 'Lifecycle Stage'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Lifecycle Stage
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.early_warning_reason
+	column 'Early Warning Reason'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Early Warning Reason
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.engagement_change
+	column 'Engagement Change'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Engagement Change
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.contact_allowed
+	column 'Contact Allowed'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Contact Allowed
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.action_priority_score
+	column 'Action Priority Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Action Priority Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.experimental_lift
+	column 'Experimental Lift'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Experimental Lift
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.experiment_evidence
+	column 'Experiment Evidence'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Experiment Evidence
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.propensity_score
+	column 'Propensity Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Propensity Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.opportunity_quadrant
+	column 'Opportunity Quadrant'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Opportunity Quadrant
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.current_lifecycle_stage
+	column 'Current Lifecycle Stage'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Current Lifecycle Stage
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_opportunities.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	partition 'AN Opportunities' = m
+		mode: import
+		source = let Source = AnalyticsCsv("mart_customer_opportunities.csv", {"customer_key", "scoring_date", "country", "customer_value_score", "customer_value_segment", "engagement_score", "marketing_contact_allowed", "has_salary_domiciliation", "has_current_account", "travel_eligible", "travel_active", "fx_eligible", "has_savings", "active_product_count", "latest_satisfaction_score", "campaign_propensity_score", "campaign_propensity_band", "churn_risk_score", "churn_risk_band", "payroll_propensity_score", "payroll_propensity_band", "travel_service_propensity_score", "travel_service_propensity_band", "high_campaign_propensity", "high_churn_risk", "high_payroll_propensity", "high_travel_service_propensity", "next_best_action", "next_best_action_score", "next_best_action_reason", "reason_code", "recommended_product", "priority_score", "model_version_campaign", "model_version_churn", "model_version_payroll", "model_version_service", "synthetic_model_flag", "data_origin", "campaigns_received_7d", "campaigns_received_30d", "days_since_last_campaign", "campaign_frequency", "possible_fatigue_flag", "persistent_holdout", "primary_bank_stage", "next_primary_stage", "lifecycle_stage", "early_warning_reason", "engagement_change", "contact_allowed", "action_priority_score", "experimental_lift", "experiment_evidence", "propensity_score", "opportunity_quadrant", "current_lifecycle_stage", "synthetic_data_flag"}, {{"customer_key", Int64.Type}, {"scoring_date", type datetime}, {"country", type text}, {"customer_value_score", type number}, {"customer_value_segment", type text}, {"engagement_score", type number}, {"marketing_contact_allowed", type logical}, {"has_salary_domiciliation", Int64.Type}, {"has_current_account", Int64.Type}, {"travel_eligible", type logical}, {"travel_active", Int64.Type}, {"fx_eligible", type logical}, {"has_savings", Int64.Type}, {"active_product_count", type number}, {"latest_satisfaction_score", type number}, {"campaign_propensity_score", type number}, {"campaign_propensity_band", type text}, {"churn_risk_score", type number}, {"churn_risk_band", type text}, {"payroll_propensity_score", type number}, {"payroll_propensity_band", type text}, {"travel_service_propensity_score", type number}, {"travel_service_propensity_band", type text}, {"high_campaign_propensity", type logical}, {"high_churn_risk", type logical}, {"high_payroll_propensity", type logical}, {"high_travel_service_propensity", type logical}, {"next_best_action", type text}, {"next_best_action_score", type number}, {"next_best_action_reason", type text}, {"reason_code", type text}, {"recommended_product", type text}, {"priority_score", type number}, {"model_version_campaign", type text}, {"model_version_churn", type text}, {"model_version_payroll", type text}, {"model_version_service", type text}, {"synthetic_model_flag", type logical}, {"data_origin", type text}, {"campaigns_received_7d", Int64.Type}, {"campaigns_received_30d", Int64.Type}, {"days_since_last_campaign", type number}, {"campaign_frequency", type number}, {"possible_fatigue_flag", type logical}, {"persistent_holdout", type logical}, {"primary_bank_stage", type text}, {"next_primary_stage", type text}, {"lifecycle_stage", type text}, {"early_warning_reason", type text}, {"engagement_change", type number}, {"contact_allowed", type logical}, {"action_priority_score", type number}, {"experimental_lift", type number}, {"experiment_evidence", type text}, {"propensity_score", type number}, {"opportunity_quadrant", type text}, {"current_lifecycle_stage", type text}, {"synthetic_data_flag", type logical}}), Renamed = Table.RenameColumns(Source, {{"customer_key", "Customer Key"}, {"scoring_date", "Scoring Date"}, {"country", "Country"}, {"customer_value_score", "Customer Value Score"}, {"customer_value_segment", "Customer Value Segment"}, {"engagement_score", "Engagement Score"}, {"marketing_contact_allowed", "Marketing Contact Allowed"}, {"has_salary_domiciliation", "Has Salary Domiciliation"}, {"has_current_account", "Has Current Account"}, {"travel_eligible", "Travel Eligible"}, {"travel_active", "Travel Active"}, {"fx_eligible", "Fx Eligible"}, {"has_savings", "Has Savings"}, {"active_product_count", "Active Product Count"}, {"latest_satisfaction_score", "Latest Satisfaction Score"}, {"campaign_propensity_score", "Campaign Propensity Score"}, {"campaign_propensity_band", "Campaign Propensity Band"}, {"churn_risk_score", "Churn Risk Score"}, {"churn_risk_band", "Churn Risk Band"}, {"payroll_propensity_score", "Payroll Propensity Score"}, {"payroll_propensity_band", "Payroll Propensity Band"}, {"travel_service_propensity_score", "Travel Service Propensity Score"}, {"travel_service_propensity_band", "Travel Service Propensity Band"}, {"high_campaign_propensity", "High Campaign Propensity"}, {"high_churn_risk", "High Churn Risk"}, {"high_payroll_propensity", "High Payroll Propensity"}, {"high_travel_service_propensity", "High Travel Service Propensity"}, {"next_best_action", "Next Best Action"}, {"next_best_action_score", "Next Best Action Score"}, {"next_best_action_reason", "Next Best Action Reason"}, {"reason_code", "Reason Code"}, {"recommended_product", "Recommended Product"}, {"priority_score", "Priority Score"}, {"model_version_campaign", "Model Version Campaign"}, {"model_version_churn", "Model Version Churn"}, {"model_version_payroll", "Model Version Payroll"}, {"model_version_service", "Model Version Service"}, {"synthetic_model_flag", "Synthetic Model Flag"}, {"data_origin", "Data Origin"}, {"campaigns_received_7d", "Campaigns Received 7D"}, {"campaigns_received_30d", "Campaigns Received 30D"}, {"days_since_last_campaign", "Days Since Last Campaign"}, {"campaign_frequency", "Campaign Frequency"}, {"possible_fatigue_flag", "Possible Fatigue Flag"}, {"persistent_holdout", "Persistent Holdout"}, {"primary_bank_stage", "Primary Bank Stage"}, {"next_primary_stage", "Next Primary Stage"}, {"lifecycle_stage", "Lifecycle Stage"}, {"early_warning_reason", "Early Warning Reason"}, {"engagement_change", "Engagement Change"}, {"contact_allowed", "Contact Allowed"}, {"action_priority_score", "Action Priority Score"}, {"experimental_lift", "Experimental Lift"}, {"experiment_evidence", "Experiment Evidence"}, {"propensity_score", "Propensity Score"}, {"opportunity_quadrant", "Opportunity Quadrant"}, {"current_lifecycle_stage", "Current Lifecycle Stage"}, {"synthetic_data_flag", "Synthetic Data Flag"}}) in Renamed
+

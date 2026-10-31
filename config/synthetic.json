@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "start_date": "2024-10-01",
+  "as_of_date": "2026-09-30",
+  "max_sessions_per_month": 6,
+  "engagement_weights": {"logins": 0.20, "sessions": 0.20, "events": 0.15, "products": 0.20, "services": 0.15, "campaigns": 0.10},
+  "engagement_caps": {"logins": 8, "sessions": 8, "events": 24, "products": 5, "services": 12, "campaigns": 4},
+  "primary_weights": {"payroll": 0.35, "current_account": 0.20, "products": 0.15, "digital": 0.20, "services": 0.10},
+  "primary_thresholds": [30, 50, 70],
+  "high_engagement_threshold": 60,
+  "low_engagement_threshold": 30,
+  "high_value_threshold": 70,
+  "payroll_min_relationship_score": 30
+}

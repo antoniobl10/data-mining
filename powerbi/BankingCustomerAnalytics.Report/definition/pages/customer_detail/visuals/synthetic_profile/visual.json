@@ -1,0 +1,268 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "synthetic_profile",
+  "position": {
+    "x": 24,
+    "y": 979,
+    "width": 1392,
+    "height": 220,
+    "z": 11,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Synthetic relationship profile — blank until one customer is selected'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#142D4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Synthetic relationship profile — blank until one customer is selected; based on the selected accepted-customer snapshot.'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Detail Product Depth"
+                }
+              },
+              "queryRef": "_Measures.Demo Detail Product Depth",
+              "nativeQueryRef": "Demo Detail Product Depth",
+              "displayName": "Demo Detail Product Depth"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Detail Payroll Amount"
+                }
+              },
+              "queryRef": "_Measures.Demo Detail Payroll Amount",
+              "nativeQueryRef": "Demo Detail Payroll Amount",
+              "displayName": "Demo Detail Payroll Amount"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Detail Engagement"
+                }
+              },
+              "queryRef": "_Measures.Demo Detail Engagement",
+              "nativeQueryRef": "Demo Detail Engagement",
+              "displayName": "Demo Detail Engagement"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Detail Primary Score"
+                }
+              },
+              "queryRef": "_Measures.Demo Detail Primary Score",
+              "nativeQueryRef": "Demo Detail Primary Score",
+              "displayName": "Demo Detail Primary Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Detail Active Services"
+                }
+              },
+              "queryRef": "_Measures.Demo Detail Active Services",
+              "nativeQueryRef": "Demo Detail Active Services",
+              "displayName": "Demo Detail Active Services"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Detail Campaign Conversions"
+                }
+              },
+              "queryRef": "_Measures.Demo Detail Campaign Conversions",
+              "nativeQueryRef": "Demo Detail Campaign Conversions",
+              "displayName": "Demo Detail Campaign Conversions"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Detail Latest NPS Score"
+                }
+              },
+              "queryRef": "_Measures.Demo Detail Latest NPS Score",
+              "nativeQueryRef": "Demo Detail Latest NPS Score",
+              "displayName": "Demo Detail Latest NPS Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Detail Opportunity Flags"
+                }
+              },
+              "queryRef": "_Measures.Demo Detail Opportunity Flags",
+              "nativeQueryRef": "Demo Detail Opportunity Flags",
+              "displayName": "Demo Detail Opportunity Flags"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

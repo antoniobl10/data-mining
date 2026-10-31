@@ -1,0 +1,71 @@
+dataset: campaigns
+contract_version: '1.0'
+owner: Digital Banking Data Owner
+technical_owner: Data Engineering
+description: Typed accepted synthetic campaigns; final states must not be backfilled
+  into historical ML features.
+layer: silver
+primary_key:
+- customer_id
+- campaign_id
+allow_extra_columns: true
+fields:
+  customer_id:
+    type: string
+    nullable: false
+  campaign_id:
+    type: string
+    nullable: false
+  interaction_id:
+    type: string
+    nullable: false
+  campaign_name:
+    type: string
+    nullable: false
+  campaign_type:
+    type: string
+    nullable: false
+  channel:
+    type: string
+    nullable: false
+    allowed_values:
+    - Email
+    - Push Notification
+    - In-App
+    - SMS
+    - Web Banner
+  campaign_date:
+    type: date
+    nullable: false
+  target_service:
+    type: string
+    nullable: false
+  sent:
+    type: boolean
+    nullable: false
+  opened:
+    type: boolean
+    nullable: false
+  clicked:
+    type: boolean
+    nullable: false
+  converted:
+    type: boolean
+    nullable: false
+  conversion_date:
+    type: date
+    nullable: true
+  campaign_cost:
+    type: number
+    nullable: false
+    min: 0
+  synthetic_data_flag:
+    type: boolean
+    nullable: false
+    allowed_values:
+    - true
+  data_origin:
+    type: string
+    nullable: false
+    allowed_values:
+    - SYNTHETIC DEMO DATA

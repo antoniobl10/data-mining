@@ -1,0 +1,119 @@
+/// SYNTHETIC DEMO DATA. fact_service_adoption
+table 'Demo Service Adoption'
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.customer_id
+	column 'Customer ID'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.service_name
+	column 'Service Name'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Service Name
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.eligible
+	column Eligible
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Eligible
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.offered
+	column Offered
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Offered
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.offer_date
+	column 'Offer Date'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Offer Date
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.activated
+	column Activated
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Activated
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.activation_date
+	column 'Activation Date'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Activation Date
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.active_status
+	column 'Active Status'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Active Status
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.monthly_usage_count
+	column 'Monthly Usage Count'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Monthly Usage Count
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.snapshot_date
+	column 'Snapshot Date'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Snapshot Date
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.customer_key
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.service_key
+	column 'Service Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Service Key
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.offer_date_key
+	column 'Offer Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Offer Date Key
+
+	/// SYNTHETIC DEMO DATA. fact_service_adoption.activation_date_key
+	column 'Activation Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Activation Date Key
+
+	partition 'Demo Service Adoption' = m
+		mode: import
+		source = let Source = SyntheticCsv("fact_service_adoption.csv", {"customer_id", "service_name", "eligible", "offered", "offer_date", "activated", "activation_date", "active_status", "monthly_usage_count", "snapshot_date", "synthetic_data_flag", "data_origin", "customer_key", "service_key", "offer_date_key", "activation_date_key"}, {{"customer_id", type text}, {"service_name", type text}, {"eligible", type logical}, {"offered", type logical}, {"offer_date", type datetime}, {"activated", type logical}, {"activation_date", type datetime}, {"active_status", type logical}, {"monthly_usage_count", Int64.Type}, {"snapshot_date", type datetime}, {"synthetic_data_flag", type logical}, {"data_origin", type text}, {"customer_key", Int64.Type}, {"service_key", Int64.Type}, {"offer_date_key", Int64.Type}, {"activation_date_key", Int64.Type}}), Renamed = Table.RenameColumns(Source, {{"customer_id", "Customer ID"}, {"service_name", "Service Name"}, {"eligible", "Eligible"}, {"offered", "Offered"}, {"offer_date", "Offer Date"}, {"activated", "Activated"}, {"activation_date", "Activation Date"}, {"active_status", "Active Status"}, {"monthly_usage_count", "Monthly Usage Count"}, {"snapshot_date", "Snapshot Date"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}, {"customer_key", "Customer Key"}, {"service_key", "Service Key"}, {"offer_date_key", "Offer Date Key"}, {"activation_date_key", "Activation Date Key"}}) in Renamed
+

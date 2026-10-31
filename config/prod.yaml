@@ -1,0 +1,6 @@
+environment: prod
+catalog: banking_prod
+execution_backend: databricks_reference
+quality: {max_quarantine_fraction: 0.05, freshness_severity: CRITICAL}
+features: {synthetic_behavior: false}
+powerbi: {refresh_mode: gated_service_request}

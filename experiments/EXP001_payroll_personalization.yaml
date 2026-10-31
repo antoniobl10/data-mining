@@ -1,0 +1,41 @@
+experiment_id: EXP001
+name: Payroll personalization
+hypothesis: Personalized communication improves the 30-day primary conversion versus
+  Standard communication without harming customer guardrails.
+owner: Synthetic Experiment Owner
+status: APPROVED
+approval_scope: Synthetic local simulation only; not real marketing authorization
+start_date: '2026-05-01'
+end_date: '2026-05-31'
+population: non_payroll_current_account
+exclusions:
+- marketing_contact_not_allowed
+- persistent_holdout
+- preexisting_target_ownership
+control: Standard communication
+treatment: Personalized communication
+primary_metric: 30-day intention-to-treat binary conversion
+secondary_metrics:
+- revenue_proxy
+- NPS proxy
+guardrails:
+- unsubscribe
+- complaint
+- NPS proxy
+- cost per customer
+minimum_detectable_effect: 0.06
+alpha: 0.05
+power: 0.8
+simulation:
+  baseline_conversion: 0.08
+  treatment_effect: 0.06
+  conversion_value_proxy: 120.0
+  exposure_rate: 0.97
+  control_contact_cost: 0.08
+  treatment_contact_cost: 0.12
+  unsubscribe_control: 0.01
+  unsubscribe_increase: 0.002
+  complaint_control: 0.003
+  complaint_increase: 0.001
+  nps_change: 0.0
+action: Payroll Campaign

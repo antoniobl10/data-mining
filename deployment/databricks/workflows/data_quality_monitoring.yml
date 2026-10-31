@@ -1,0 +1,53 @@
+resources:
+  jobs:
+    data_quality_monitoring:
+      name: banking-${var.environment}-quality-monitoring
+      max_concurrent_runs: 1
+      schedule:
+        quartz_cron_expression: 0 0 * * * ?
+        timezone_id: Europe/Berlin
+        pause_status: PAUSED
+      tasks:
+      - task_key: quality_freshness_volume
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - quality_freshness_volume
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+      - task_key: monitor_scores_and_matured_labels
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - monitor_scores_and_matured_labels
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: quality_freshness_volume
+      - task_key: write_alert_outbox
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - write_alert_outbox
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: monitor_scores_and_matured_labels

@@ -1,0 +1,556 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "campaigns",
+  "displayName": "Campaign Performance",
+  "displayOption": "FitToWidth",
+  "height": 1570,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_month",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "campaign",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "segments",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "cost_conversions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "campaign",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "segments",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "cost_conversions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "campaign",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "segments",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "cost_conversions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "campaign",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "segments",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "cost_conversions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "campaign",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "segments",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "cost_conversions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "segments",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign",
+      "target": "cost_conversions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "campaign",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "segments",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "cost_conversions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "campaign",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "cost_conversions",
+      "target": "segments",
+      "type": "DataFilter"
+    }
+  ]
+}

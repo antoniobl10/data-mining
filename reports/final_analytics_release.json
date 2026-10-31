@@ -1,0 +1,8 @@
+{
+  "pipeline_run_id": "portfolio_final_20261031",
+  "quality_passed": true,
+  "tables": 27,
+  "quality_checks": 17,
+  "sql_examples": 9,
+  "data_origin": "SYNTHETIC DEMO ANALYTICS"
+}

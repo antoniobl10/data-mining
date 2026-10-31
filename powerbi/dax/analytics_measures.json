@@ -1,0 +1,378 @@
+[
+  {
+    "name": "AN Funnel Customers",
+    "expression": "VAR F = SELECTEDVALUE('AN Funnels'[Funnel Name], \"Campaign\") VAR D = SELECTEDVALUE('AN Funnels'[Segment Dimension], \"All\") RETURN CALCULATE(SUM('AN Funnels'[Customers]), KEEPFILTERS('AN Funnels'[Funnel Name] = F), KEEPFILTERS('AN Funnels'[Segment Dimension] = D))",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Funnel Customers. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_funnels"
+  },
+  {
+    "name": "AN Funnel Drop Off",
+    "expression": "VAR F = SELECTEDVALUE('AN Funnels'[Funnel Name], \"Campaign\") VAR D = SELECTEDVALUE('AN Funnels'[Segment Dimension], \"All\") RETURN CALCULATE(SUM('AN Funnels'[Drop Off]), KEEPFILTERS('AN Funnels'[Funnel Name] = F), KEEPFILTERS('AN Funnels'[Segment Dimension] = D))",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Funnel Drop Off. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_funnels"
+  },
+  {
+    "name": "AN Funnel Rate",
+    "expression": "VAR F = SELECTEDVALUE('AN Funnels'[Funnel Name], \"Campaign\") VAR D = SELECTEDVALUE('AN Funnels'[Segment Dimension], \"All\") RETURN CALCULATE(MAX('AN Funnels'[Conversion From Start]), KEEPFILTERS('AN Funnels'[Funnel Name] = F), KEEPFILTERS('AN Funnels'[Segment Dimension] = D))",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Funnel Rate. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_funnels"
+  },
+  {
+    "name": "AN Primary Bank Customers",
+    "expression": "CALCULATE(SUM('AN Funnels'[Customers]), KEEPFILTERS('AN Funnels'[Funnel Name] = \"Primary Bank Journey\"), KEEPFILTERS('AN Funnels'[Segment Dimension] = \"All\"))",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Primary Bank Customers. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "growth_opportunities"
+  },
+  {
+    "name": "AN Digital Retention",
+    "expression": "VAR C = SELECTEDVALUE('AN Cohorts'[Cohort Type], \"First Digital Activity\") RETURN CALCULATE(DIVIDE(SUM('AN Cohorts'[Retained Customers]), SUM('AN Cohorts'[Customers])), KEEPFILTERS('AN Cohorts'[Cohort Type] = C), KEEPFILTERS('AN Cohorts'[Small Sample] = FALSE()))",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Digital Retention. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "cohorts_retention"
+  },
+  {
+    "name": "AN Product Retention",
+    "expression": "CALCULATE(DIVIDE(SUM('AN Cohorts'[Product Retained Customers]), SUM('AN Cohorts'[Customers])), KEEPFILTERS('AN Cohorts'[Cohort Type] = \"Product Acquisition\"))",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Product Retention. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "cohorts_retention"
+  },
+  {
+    "name": "AN Segment Digital Retention",
+    "expression": "VAR C = SELECTEDVALUE('AN Cohorts'[Cohort Type], \"First Digital Activity\") RETURN CALCULATE(DIVIDE(SUM('AN Retention Segments'[Retained Customers]), SUM('AN Retention Segments'[Customers])), KEEPFILTERS('AN Retention Segments'[Cohort Type] = C))",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Segment Digital Retention. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "cohorts_retention"
+  },
+  {
+    "name": "AN Retention Cell Color",
+    "expression": "VAR R = [AN Digital Retention] RETURN IF(ISBLANK(R), \"#FFFFFF\", SWITCH(TRUE(), R >= 0.75, \"#167D9A\", R >= 0.50, \"#71B6C7\", R >= 0.25, \"#BDDCE5\", \"#EEF5F8\"))",
+    "formatString": "General",
+    "description": "SYNTHETIC DEMO ANALYTICS. Retention Cell Color. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "cohorts_retention"
+  },
+  {
+    "name": "AN Service Cohort Digital Retention",
+    "expression": "CALCULATE(DIVIDE(SUM('AN Cohorts'[Retained Customers]), SUM('AN Cohorts'[Customers])), KEEPFILTERS('AN Cohorts'[Cohort Type] = \"Service Activation\"))",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Service Cohort Digital Retention. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "cohorts_retention"
+  },
+  {
+    "name": "AN Cohort Engagement",
+    "expression": "VAR C = SELECTEDVALUE('AN Cohorts'[Cohort Type], \"First Digital Activity\") RETURN CALCULATE(DIVIDE(SUMX('AN Cohorts', 'AN Cohorts'[Average Engagement Score] * 'AN Cohorts'[Customers]), SUM('AN Cohorts'[Customers])), KEEPFILTERS('AN Cohorts'[Cohort Type] = C))",
+    "formatString": "0.0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Cohort Engagement. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "cohorts_retention"
+  },
+  {
+    "name": "AN Journey Sessions",
+    "expression": "SUM('AN Journeys'[Sessions])",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Journey Sessions. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "journey_analytics"
+  },
+  {
+    "name": "AN Journey Customer Memberships",
+    "expression": "SUM('AN Journeys'[Customers])",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Journey Customer Memberships. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "journey_analytics"
+  },
+  {
+    "name": "AN Journey Activations",
+    "expression": "SUM('AN Journeys'[Conversions])",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Journey Activations. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "journey_analytics"
+  },
+  {
+    "name": "AN Journey Activation Rate",
+    "expression": "DIVIDE([AN Journey Activations], [AN Journey Sessions])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Journey Activation Rate. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "journey_analytics"
+  },
+  {
+    "name": "AN Completed Experiments",
+    "expression": "COALESCE(COUNTROWS('AN Experiments'),0)",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Completed Experiments. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "experimentation"
+  },
+  {
+    "name": "AN Active Experiments",
+    "expression": "CALCULATE(COUNTROWS('AN Experiments'), KEEPFILTERS('AN Experiments'[Experiment Status] = \"RUNNING\")) + 0",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Active Experiments. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "experimentation"
+  },
+  {
+    "name": "AN Winning Experiments",
+    "expression": "CALCULATE(COUNTROWS('AN Experiments'), KEEPFILTERS('AN Experiments'[Experiment Decision] = \"WINNER\")) + 0",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Winning Experiments. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "experimentation"
+  },
+  {
+    "name": "AN Mean Simulated Lift",
+    "expression": "AVERAGE('AN Experiments'[Absolute Lift])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Mean Simulated Lift. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "experimentation"
+  },
+  {
+    "name": "AN Control Conversion",
+    "expression": "AVERAGE('AN Experiments'[Control Conversion Rate])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Control Conversion. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "experimentation"
+  },
+  {
+    "name": "AN Treatment Conversion",
+    "expression": "AVERAGE('AN Experiments'[Treatment Conversion Rate])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Treatment Conversion. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "experimentation"
+  },
+  {
+    "name": "AN Lift CI Lower",
+    "expression": "AVERAGE('AN Experiments'[Ci Lower])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Lift CI Lower. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "experimentation"
+  },
+  {
+    "name": "AN Lift CI Upper",
+    "expression": "AVERAGE('AN Experiments'[Ci Upper])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Lift CI Upper. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "experimentation"
+  },
+  {
+    "name": "AN Adjusted P Value",
+    "expression": "AVERAGE('AN Experiments'[Adjusted P Value])",
+    "formatString": "0.00000",
+    "description": "SYNTHETIC DEMO ANALYTICS. Adjusted P Value. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "experimentation"
+  },
+  {
+    "name": "AN Incremental Conversion Estimate",
+    "expression": "SUM('AN Experiments'[Incremental Conversions])",
+    "formatString": "0.0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Incremental Conversion Estimate. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "experimentation"
+  },
+  {
+    "name": "AN Attributed Conversions",
+    "expression": "VAR M = SELECTEDVALUE('AN Attribution'[Attribution Model], \"Last Touch\") VAR W = SELECTEDVALUE('AN Attribution'[Attribution Window Days], 30) RETURN CALCULATE(SUM('AN Attribution'[Attributed Conversions]), KEEPFILTERS('AN Attribution'[Attribution Model] = M), KEEPFILTERS('AN Attribution'[Attribution Window Days] = W))",
+    "formatString": "0.0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Attributed Conversions. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "marketing_attribution"
+  },
+  {
+    "name": "AN Attributed Value",
+    "expression": "VAR M = SELECTEDVALUE('AN Attribution'[Attribution Model], \"Last Touch\") VAR W = SELECTEDVALUE('AN Attribution'[Attribution Window Days], 30) RETURN CALCULATE(SUM('AN Attribution'[Attributed Value]), KEEPFILTERS('AN Attribution'[Attribution Model] = M), KEEPFILTERS('AN Attribution'[Attribution Window Days] = W))",
+    "formatString": "#,0.0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Attributed Value. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "marketing_attribution"
+  },
+  {
+    "name": "AN Attributed Cost",
+    "expression": "VAR M = SELECTEDVALUE('AN Attribution'[Attribution Model], \"Last Touch\") VAR W = SELECTEDVALUE('AN Attribution'[Attribution Window Days], 30) RETURN CALCULATE(SUM('AN Attribution'[Attributed Cost]), KEEPFILTERS('AN Attribution'[Attribution Model] = M), KEEPFILTERS('AN Attribution'[Attribution Window Days] = W))",
+    "formatString": "#,0.00",
+    "description": "SYNTHETIC DEMO ANALYTICS. Attributed Cost. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "marketing_attribution"
+  },
+  {
+    "name": "AN Attribution ROI Proxy",
+    "expression": "DIVIDE([AN Attributed Value] - [AN Attributed Cost], [AN Attributed Cost])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Attribution ROI Proxy. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "marketing_attribution"
+  },
+  {
+    "name": "AN Observed Campaign Contacts",
+    "expression": "SUM('AN Campaign Economics'[Contacts])",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Observed Campaign Contacts. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_funnels"
+  },
+  {
+    "name": "AN Observed Campaign Conversions",
+    "expression": "SUM('AN Campaign Economics'[Conversions])",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Observed Campaign Conversions. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_funnels"
+  },
+  {
+    "name": "AN Observed Campaign Conversion Rate",
+    "expression": "DIVIDE([AN Observed Campaign Conversions], [AN Observed Campaign Contacts])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Observed Campaign Conversion Rate. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_funnels"
+  },
+  {
+    "name": "AN First Touch Conversions",
+    "expression": "CALCULATE(SUM('AN Attribution'[Attributed Conversions]), 'AN Attribution'[Attribution Model] = \"First Touch\", 'AN Attribution'[Attribution Window Days] = 30)",
+    "formatString": "0.0",
+    "description": "SYNTHETIC DEMO ANALYTICS. First Touch Conversions. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "marketing_attribution"
+  },
+  {
+    "name": "AN Last Touch Conversions",
+    "expression": "CALCULATE(SUM('AN Attribution'[Attributed Conversions]), 'AN Attribution'[Attribution Model] = \"Last Touch\", 'AN Attribution'[Attribution Window Days] = 30)",
+    "formatString": "0.0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Last Touch Conversions. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "marketing_attribution"
+  },
+  {
+    "name": "AN Opportunity Customers",
+    "expression": "COALESCE(COUNTROWS('AN Opportunities'),0)",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Opportunity Customers. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_opportunities"
+  },
+  {
+    "name": "AN Contactable Customers",
+    "expression": "CALCULATE([AN Opportunity Customers], KEEPFILTERS('AN Opportunities'[Contact Allowed] = TRUE()))",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Contactable Customers. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_opportunities"
+  },
+  {
+    "name": "AN Opportunity Priority",
+    "expression": "AVERAGE('AN Opportunities'[Priority Score])",
+    "formatString": "0.0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Opportunity Priority. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_opportunities"
+  },
+  {
+    "name": "AN Opportunity Value Index",
+    "expression": "AVERAGE('AN Opportunities'[Customer Value Score])",
+    "formatString": "0.0",
+    "description": "SYNTHETIC DEMO ANALYTICS. Opportunity Value Index. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_opportunities"
+  },
+  {
+    "name": "AN Opportunity Probability",
+    "expression": "AVERAGE('AN Opportunities'[Propensity Score])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Opportunity Probability. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_opportunities"
+  },
+  {
+    "name": "AN Opportunity Experimental Lift",
+    "expression": "AVERAGE('AN Opportunities'[Experimental Lift])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Opportunity Experimental Lift. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "customer_opportunities"
+  },
+  {
+    "name": "AN Likely Primary Bank Rate",
+    "expression": "MAX('AN Growth'[Likely Primary Bank Rate])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Likely Primary Bank Rate. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "growth_opportunities"
+  },
+  {
+    "name": "AN Salary Domiciliation Rate",
+    "expression": "MAX('AN Growth'[Salary Domiciliation Rate])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Salary Domiciliation Rate. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "growth_opportunities"
+  },
+  {
+    "name": "AN Service Activation Rate",
+    "expression": "MAX('AN Growth'[Service Activation Rate])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Service Activation Rate. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "growth_opportunities"
+  },
+  {
+    "name": "AN NPS",
+    "expression": "MAX('AN Growth'[Nps])",
+    "formatString": "0.0",
+    "description": "SYNTHETIC DEMO ANALYTICS. NPS. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "growth_opportunities"
+  },
+  {
+    "name": "AN Campaign ROI Proxy",
+    "expression": "MAX('AN Growth'[Observed Campaign Roi Proxy])",
+    "formatString": "0.0%",
+    "description": "SYNTHETIC DEMO ANALYTICS. Campaign ROI Proxy. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "growth_opportunities"
+  },
+  {
+    "name": "AN High Value Low Engagement",
+    "expression": "MAX('AN Growth'[High Value Low Engagement Customers])",
+    "formatString": "#,0",
+    "description": "SYNTHETIC DEMO ANALYTICS. High Value Low Engagement. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "growth_opportunities"
+  },
+  {
+    "name": "AN Primary Journey Narrative",
+    "expression": "VAR T = TOPN(1, FILTER(ALL('AN Funnels'), 'AN Funnels'[Funnel Name] = \"Primary Bank Journey\" && 'AN Funnels'[Segment Dimension] = \"All\" && 'AN Funnels'[Stage Order] > 0), 'AN Funnels'[Drop Off], DESC, 'AN Funnels'[Stage Order], ASC) RETURN \"Largest cross-sectional readiness drop-off: \" & CONCATENATEX(T, 'AN Funnels'[Stage], \"\") & \" (\" & FORMAT(MAXX(T, 'AN Funnels'[Drop Off]), \"#,0\") & \" customers). This is a nested snapshot, not longitudinal conversion.\"",
+    "formatString": "General",
+    "description": "SYNTHETIC DEMO ANALYTICS. Primary Journey Narrative. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "growth_opportunities"
+  },
+  {
+    "name": "AN Payroll Experiment Narrative",
+    "expression": "VAR L = CALCULATE(MAX('AN Experiments'[Absolute Lift]), REMOVEFILTERS('AN Experiments'), 'AN Experiments'[Experiment Id] = \"EXP001\") VAR D = CALCULATE(SELECTEDVALUE('AN Experiments'[Experiment Decision]), REMOVEFILTERS('AN Experiments'), 'AN Experiments'[Experiment Id] = \"EXP001\") RETURN \"Simulated payroll lift: \" & FORMAT(100 * L, \"0.0\") & \" percentage points; decision: \" & D & \".\"",
+    "formatString": "General",
+    "description": "SYNTHETIC DEMO ANALYTICS. Payroll Experiment Narrative. All experiment effects are simulated; attribution is not causal.",
+    "displayFolder": "SYNTHETIC DEMO ANALYTICS",
+    "page": "growth_opportunities"
+  }
+]

@@ -308,6 +308,605 @@
       },
       "quality": {
         "visualContainers": {}
+      },
+      "digital_overview": {
+        "visualContainers": {
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_customer_value_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_primary_bank_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "campaigns": {
+        "visualContainers": {
+          "slicer_month": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_channel": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_primary_customer_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "engagement": {
+        "visualContainers": {
+          "slicer_month": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_customer_value_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "primary_banking": {
+        "visualContainers": {
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_customer_value_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_primary_bank_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "services": {
+        "visualContainers": {
+          "slicer_service_name": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_engagement_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "satisfaction": {
+        "visualContainers": {
+          "slicer_month": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_channel": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_primary_customer_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "predictive_analytics": {
+        "visualContainers": {
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_customer_value_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_next_best_action": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "next_best_action": {
+        "visualContainers": {
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_customer_value_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_next_best_action": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model_performance": {
+        "visualContainers": {
+          "slicer_use_case": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "journey_analytics": {
+        "visualContainers": {
+          "slicer_journey_path": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "customer_funnels": {
+        "visualContainers": {
+          "slicer_funnel_name": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_segment_dimension": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "cohorts_retention": {
+        "visualContainers": {
+          "slicer_cohort_type": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_cohort_name": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "experimentation": {
+        "visualContainers": {
+          "slicer_experiment_id": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "experiment_detail": {
+        "visualContainers": {}
+      },
+      "marketing_attribution": {
+        "visualContainers": {
+          "slicer_attribution_model": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_attribution_window_days": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "customer_opportunities": {
+        "visualContainers": {
+          "slicer_country": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_customer_value_segment": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_next_best_action": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          },
+          "slicer_contact_allowed": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "growth_opportunities": {
+        "visualContainers": {
+          "slicer_experiment_id": {
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "remove": [
+                  {
+                    "object": "general",
+                    "property": "filter",
+                    "selector": {}
+                  }
+                ]
+              }
+            }
+          }
+        }
       }
     },
     "filters": {

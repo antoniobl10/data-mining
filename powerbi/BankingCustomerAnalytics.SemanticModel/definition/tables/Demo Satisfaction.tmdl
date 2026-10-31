@@ -1,0 +1,126 @@
+/// SYNTHETIC DEMO DATA. fact_customer_satisfaction
+table 'Demo Satisfaction'
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.survey_id
+	column 'Survey Id'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Survey Id
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.customer_id
+	column 'Customer ID'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.survey_date
+	column 'Survey Date'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Survey Date
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.nps_score
+	column 'Nps Score'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Nps Score
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.satisfaction_score
+	column 'Satisfaction Score'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Satisfaction Score
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.feedback_category
+	column 'Feedback Category'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Feedback Category
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.channel
+	column Channel
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Channel
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.resolved
+	column Resolved
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Resolved
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.customer_key
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.date_key
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.promoter
+	column Promoter
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Promoter
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.detractor
+	column Detractor
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Detractor
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.passive
+	column Passive
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Passive
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.nps_group
+	column 'Nps Group'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Nps Group
+
+	/// SYNTHETIC DEMO DATA. fact_customer_satisfaction.month
+	column Month
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Month
+
+	partition 'Demo Satisfaction' = m
+		mode: import
+		source = let Source = SyntheticCsv("fact_customer_satisfaction.csv", {"survey_id", "customer_id", "survey_date", "nps_score", "satisfaction_score", "feedback_category", "channel", "resolved", "synthetic_data_flag", "data_origin", "customer_key", "date_key", "promoter", "detractor", "passive", "nps_group", "month"}, {{"survey_id", type text}, {"customer_id", type text}, {"survey_date", type datetime}, {"nps_score", Int64.Type}, {"satisfaction_score", Int64.Type}, {"feedback_category", type text}, {"channel", type text}, {"resolved", type logical}, {"synthetic_data_flag", type logical}, {"data_origin", type text}, {"customer_key", Int64.Type}, {"date_key", Int64.Type}, {"promoter", type logical}, {"detractor", type logical}, {"passive", type logical}, {"nps_group", type text}, {"month", type text}}), Renamed = Table.RenameColumns(Source, {{"survey_id", "Survey Id"}, {"customer_id", "Customer ID"}, {"survey_date", "Survey Date"}, {"nps_score", "Nps Score"}, {"satisfaction_score", "Satisfaction Score"}, {"feedback_category", "Feedback Category"}, {"channel", "Channel"}, {"resolved", "Resolved"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}, {"customer_key", "Customer Key"}, {"date_key", "Date Key"}, {"promoter", "Promoter"}, {"detractor", "Detractor"}, {"passive", "Passive"}, {"nps_group", "Nps Group"}, {"month", "Month"}}) in Renamed
+

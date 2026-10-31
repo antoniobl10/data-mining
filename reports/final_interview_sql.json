@@ -1,0 +1,42 @@
+[
+  {
+    "query": "01_top_countries.sql",
+    "rows": 3,
+    "status": "PASS"
+  },
+  {
+    "query": "02_campaign_conversion.sql",
+    "rows": 30,
+    "status": "PASS"
+  },
+  {
+    "query": "03_country_rankings.sql",
+    "rows": 931,
+    "status": "PASS"
+  },
+  {
+    "query": "04_value_without_payroll.sql",
+    "rows": 3,
+    "status": "PASS"
+  },
+  {
+    "query": "05_rolling_activity.sql",
+    "rows": 29443,
+    "status": "PASS"
+  },
+  {
+    "query": "06_campaign_funnel.sql",
+    "rows": 5,
+    "status": "PASS"
+  },
+  {
+    "query": "07_activity_change.sql",
+    "rows": 15168,
+    "status": "PASS"
+  },
+  {
+    "query": "08_customer_event_join.sql",
+    "rows": 3,
+    "status": "PASS"
+  }
+]

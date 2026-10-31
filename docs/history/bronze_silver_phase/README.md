@@ -59,7 +59,7 @@ Source-level PASS/WARNING/FAIL check reports and `exploration_summary.json` live
 | `databricks/01_bronze_silver_pipeline.py` | Excel landing, Delta Bronze/audit, Spark-native Silver/quality |
 | `tests/` | Synthetic source, edge-case, storage, policy and integration checks |
 
-Read the [complete phase guide](docs/phase_bronze_silver.md), [architecture](docs/architecture.md), [business rules](docs/business_rules.md), [dictionary](docs/data_dictionary.md), [lineage](docs/data_lineage.md) and [verification record](docs/verification.md).
+Read the [complete phase guide](../../phase_bronze_silver.md), [architecture](../../architecture.md), [business rules](../../business_rules.md), [dictionary](../../data_dictionary.md), [lineage](../../data_lineage.md) and [verification record](../../verification.md).
 
 ## Scope, privacy and next phase
 

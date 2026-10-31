@@ -21,4 +21,4 @@ An atomic latest-Silver pointer advances only after accepted/quarantine persiste
 
 The optional Databricks entry point lands Excel using the same validator, persists Delta Bronze/audit and executes Silver with Spark-native expressions/windows. All tables retain batch IDs. Successful batches are recorded in `silver.customer_publications`; consumers select a specific batch. Delta transactions are per table, so multi-table orchestration and reader coordination remain necessary.
 
-The existing Gold/BI assets are deferred and unchanged. See the [phase guide](phase_bronze_silver.md) for exact locations, policy, limitations and target-environment notes; previous architecture is preserved in `history/initial_project/architecture.md`.
+The existing Gold/BI assets are deferred and unchanged. See the [phase guide](../../phase_bronze_silver.md) for exact locations, policy, limitations and target-environment notes; previous architecture is preserved in `history/initial_project/architecture.md`.

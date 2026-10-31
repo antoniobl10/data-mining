@@ -1,0 +1,22 @@
+{
+  "tests_passed": 136,
+  "tests_failed": 0,
+  "warnings": 2,
+  "notebooks_executed": 7,
+  "notebook_errors": 0,
+  "feature_rows": 30219,
+  "scored_customers": 1439,
+  "completed_training_runs": 16,
+  "total_mlflow_runs_including_initial_failed_promotion_attempt": 20,
+  "native_ml_comparisons": 84,
+  "native_original_comparisons": 360,
+  "native_digital_comparisons": 418,
+  "native_ml_failures": 0,
+  "native_partitions_ready": 38,
+  "new_powerbi_pages": [
+    "Predictive Analytics",
+    "Next Best Action",
+    "Model Performance"
+  ],
+  "data_origin": "SYNTHETIC DEMO MODEL"
+}

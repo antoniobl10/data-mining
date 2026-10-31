@@ -1,0 +1,666 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "engagement",
+  "displayName": "Digital Engagement",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_month",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "monthly_active",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "sessions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "event",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "monthly_active",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "sessions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "event",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "monthly_active",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "sessions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "event",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "sessions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "event",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "monthly_active",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "monthly_active",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "event",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "sessions",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "monthly_active",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "sessions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "event",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "monthly_active",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "sessions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "event",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "monthly_active",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "sessions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "event",
+      "type": "DataFilter"
+    },
+    {
+      "source": "distribution",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "monthly_active",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "sessions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "event",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "distribution",
+      "type": "DataFilter"
+    }
+  ]
+}

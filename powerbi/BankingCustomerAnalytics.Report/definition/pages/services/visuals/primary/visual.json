@@ -1,0 +1,242 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "primary",
+  "position": {
+    "x": 24,
+    "y": 925,
+    "width": 1392,
+    "height": 250,
+    "z": 24,
+    "tabOrder": 24
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Snapshot profiles — SYNTHETIC DEMO DATA'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#142D4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Snapshot profiles — SYNTHETIC DEMO DATA; based on the selected accepted-customer snapshot.'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Demo Customer 360"
+                    }
+                  },
+                  "Property": "Primary Bank Segment"
+                }
+              },
+              "queryRef": "Demo Customer 360.Primary Bank Segment",
+              "nativeQueryRef": "Primary Bank Segment",
+              "displayName": "Primary Bank Segment"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Eligible Service Relationships"
+                }
+              },
+              "queryRef": "_Measures.Demo Eligible Service Relationships",
+              "nativeQueryRef": "Demo Eligible Service Relationships",
+              "displayName": "Demo Eligible Service Relationships"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Offered Service Relationships"
+                }
+              },
+              "queryRef": "_Measures.Demo Offered Service Relationships",
+              "nativeQueryRef": "Demo Offered Service Relationships",
+              "displayName": "Demo Offered Service Relationships"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Activated Service Relationships"
+                }
+              },
+              "queryRef": "_Measures.Demo Activated Service Relationships",
+              "nativeQueryRef": "Demo Activated Service Relationships",
+              "displayName": "Demo Activated Service Relationships"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Active Service Relationships"
+                }
+              },
+              "queryRef": "_Measures.Demo Active Service Relationships",
+              "nativeQueryRef": "Demo Active Service Relationships",
+              "displayName": "Demo Active Service Relationships"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Demo Average Service Usage"
+                }
+              },
+              "queryRef": "_Measures.Demo Average Service Usage",
+              "nativeQueryRef": "Demo Average Service Usage",
+              "displayName": "Demo Average Service Usage"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

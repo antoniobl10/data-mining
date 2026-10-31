@@ -1,0 +1,491 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "satisfaction",
+  "displayName": "Customer Satisfaction",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_month",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "groups",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "feedback",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_month",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "groups",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "feedback",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_channel",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "groups",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "feedback",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_customer_segment",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "feedback",
+      "type": "DataFilter"
+    },
+    {
+      "source": "groups",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "groups",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "feedback",
+      "type": "DataFilter"
+    },
+    {
+      "source": "channel",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "groups",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "feedback",
+      "type": "DataFilter"
+    },
+    {
+      "source": "month",
+      "target": "engagement",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "slicer_month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "slicer_channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "slicer_primary_customer_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "groups",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "channel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "month",
+      "type": "DataFilter"
+    },
+    {
+      "source": "feedback",
+      "target": "engagement",
+      "type": "DataFilter"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+/// SYNTHETIC DEMO ANALYTICS. Aggregate analytical grains require scoped measures; no real bank results.
+table 'AN Funnels'
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.funnel_name
+	column 'Funnel Name'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Funnel Name
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.stage
+	column Stage
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Stage
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.stage_order
+	column 'Stage Order'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Stage Order
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.customers
+	column Customers
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Customers
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.observations
+	column Observations
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Observations
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.previous_stage_customers
+	column 'Previous Stage Customers'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Previous Stage Customers
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.conversion_from_previous
+	column 'Conversion From Previous'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Conversion From Previous
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.conversion_from_start
+	column 'Conversion From Start'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Conversion From Start
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.drop_off
+	column 'Drop Off'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Drop Off
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.drop_off_rate
+	column 'Drop Off Rate'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Drop Off Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.date_period
+	column 'Date Period'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Date Period
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.segment
+	column Segment
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Segment
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.segment_dimension
+	column 'Segment Dimension'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Segment Dimension
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.small_sample
+	column 'Small Sample'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Small Sample
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_funnel_performance.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'AN Funnels' = m
+		mode: import
+		source = let Source = AnalyticsCsv("mart_funnel_performance.csv", {"funnel_name", "stage", "stage_order", "customers", "observations", "previous_stage_customers", "conversion_from_previous", "conversion_from_start", "drop_off", "drop_off_rate", "date_period", "segment", "segment_dimension", "small_sample", "synthetic_data_flag", "data_origin"}, {{"funnel_name", type text}, {"stage", type text}, {"stage_order", Int64.Type}, {"customers", Int64.Type}, {"observations", Int64.Type}, {"previous_stage_customers", type number}, {"conversion_from_previous", type number}, {"conversion_from_start", type number}, {"drop_off", Int64.Type}, {"drop_off_rate", type number}, {"date_period", type text}, {"segment", type text}, {"segment_dimension", type text}, {"small_sample", type logical}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"funnel_name", "Funnel Name"}, {"stage", "Stage"}, {"stage_order", "Stage Order"}, {"customers", "Customers"}, {"observations", "Observations"}, {"previous_stage_customers", "Previous Stage Customers"}, {"conversion_from_previous", "Conversion From Previous"}, {"conversion_from_start", "Conversion From Start"}, {"drop_off", "Drop Off"}, {"drop_off_rate", "Drop Off Rate"}, {"date_period", "Date Period"}, {"segment", "Segment"}, {"segment_dimension", "Segment Dimension"}, {"small_sample", "Small Sample"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

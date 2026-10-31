@@ -1,4 +1,4 @@
-# Minimal local/Colab dependencies for the current Bronze/Silver phase.
+# Minimal local/Colab dependencies for the source/Bronze/Silver runtime.
 pandas>=2.2,<3
 numpy>=1.26,<3
 openpyxl>=3.1,<4

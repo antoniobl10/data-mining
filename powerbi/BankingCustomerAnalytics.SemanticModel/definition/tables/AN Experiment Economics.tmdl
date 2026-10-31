@@ -1,0 +1,87 @@
+/// SYNTHETIC DEMO ANALYTICS. Aggregate analytical grains require scoped measures; no real bank results.
+table 'AN Experiment Economics'
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.experiment_id
+	column 'Experiment Id'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Experiment Id
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.experiment_name
+	column 'Experiment Name'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Experiment Name
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.treatment_campaign_cost
+	column 'Treatment Campaign Cost'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Treatment Campaign Cost
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.control_campaign_cost
+	column 'Control Campaign Cost'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Control Campaign Cost
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.incremental_contact_cost
+	column 'Incremental Contact Cost'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Incremental Contact Cost
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.incremental_conversions
+	column 'Incremental Conversions'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Incremental Conversions
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.incremental_value_proxy
+	column 'Incremental Value Proxy'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Incremental Value Proxy
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.cost_per_incremental_conversion
+	column 'Cost Per Incremental Conversion'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Cost Per Incremental Conversion
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.incremental_roi_proxy
+	column 'Incremental Roi Proxy'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Incremental Roi Proxy
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.experiment_decision
+	column 'Experiment Decision'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Experiment Decision
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.interpretation
+	column Interpretation
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Interpretation
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_economics.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'AN Experiment Economics' = m
+		mode: import
+		source = let Source = AnalyticsCsv("mart_experiment_economics.csv", {"experiment_id", "experiment_name", "treatment_campaign_cost", "control_campaign_cost", "incremental_contact_cost", "incremental_conversions", "incremental_value_proxy", "cost_per_incremental_conversion", "incremental_roi_proxy", "experiment_decision", "interpretation", "synthetic_data_flag", "data_origin"}, {{"experiment_id", type text}, {"experiment_name", type text}, {"treatment_campaign_cost", type number}, {"control_campaign_cost", type number}, {"incremental_contact_cost", type number}, {"incremental_conversions", type number}, {"incremental_value_proxy", type number}, {"cost_per_incremental_conversion", type number}, {"incremental_roi_proxy", type number}, {"experiment_decision", type text}, {"interpretation", type text}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"experiment_id", "Experiment Id"}, {"experiment_name", "Experiment Name"}, {"treatment_campaign_cost", "Treatment Campaign Cost"}, {"control_campaign_cost", "Control Campaign Cost"}, {"incremental_contact_cost", "Incremental Contact Cost"}, {"incremental_conversions", "Incremental Conversions"}, {"incremental_value_proxy", "Incremental Value Proxy"}, {"cost_per_incremental_conversion", "Cost Per Incremental Conversion"}, {"incremental_roi_proxy", "Incremental Roi Proxy"}, {"experiment_decision", "Experiment Decision"}, {"interpretation", "Interpretation"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

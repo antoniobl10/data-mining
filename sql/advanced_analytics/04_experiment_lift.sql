@@ -1,0 +1,2 @@
+SELECT experiment_id,control_n,treatment_n,absolute_lift,ci_lower,ci_upper,adjusted_p_value,experiment_decision
+FROM gold.mart_experiment_results ORDER BY experiment_id;

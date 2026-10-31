@@ -1,3 +1,5 @@
+> Scope: Gold verification checkpoint. For current totals and execution boundaries, see [final health](../reports/final_project_health.md) and [documentation index](README.md). Historical counts below are not current platform totals.
+
 # Gold verification record — 27 October 2026
 
 The full CLI and Gold-only CLI were both executed successfully against the supplied dataset. The active upstream policy produced 1,439 accepted Silver customers and 560 quarantined source rows. Gold preserves all 1,439 accepted customers in both its dimension and snapshot fact.

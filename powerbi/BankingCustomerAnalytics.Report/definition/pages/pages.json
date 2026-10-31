@@ -9,7 +9,24 @@
     "customer_detail",
     "country_tooltip",
     "segment_tooltip",
-    "quality"
+    "quality",
+    "digital_overview",
+    "campaigns",
+    "engagement",
+    "primary_banking",
+    "services",
+    "satisfaction",
+    "predictive_analytics",
+    "next_best_action",
+    "model_performance",
+    "journey_analytics",
+    "customer_funnels",
+    "cohorts_retention",
+    "experimentation",
+    "experiment_detail",
+    "marketing_attribution",
+    "customer_opportunities",
+    "growth_opportunities"
   ],
   "activePageName": "overview"
 }

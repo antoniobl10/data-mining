@@ -304,5 +304,1953 @@
       "source": "balance_share",
       "name": "Snapshot Balance Share"
     }
+  ],
+  "Demo Customer 360": [
+    {
+      "source": "customer_id",
+      "name": "Customer ID"
+    },
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "country_key",
+      "name": "Country Key"
+    },
+    {
+      "source": "age_group_key",
+      "name": "Age Group Key"
+    },
+    {
+      "source": "credit_band_key",
+      "name": "Credit Band Key"
+    },
+    {
+      "source": "tenure_band_key",
+      "name": "Tenure Band Key"
+    },
+    {
+      "source": "gender",
+      "name": "Gender"
+    },
+    {
+      "source": "age",
+      "name": "Age"
+    },
+    {
+      "source": "tenure",
+      "name": "Tenure"
+    },
+    {
+      "source": "credit_score",
+      "name": "Credit Score"
+    },
+    {
+      "source": "balance",
+      "name": "Balance"
+    },
+    {
+      "source": "estimated_salary",
+      "name": "Estimated Salary"
+    },
+    {
+      "source": "balance_band",
+      "name": "Balance Band"
+    },
+    {
+      "source": "salary_band",
+      "name": "Salary Band"
+    },
+    {
+      "source": "customer_value_score",
+      "name": "Customer Value Score"
+    },
+    {
+      "source": "customer_value_segment",
+      "name": "Customer Value Segment"
+    },
+    {
+      "source": "primary_customer_segment",
+      "name": "Primary Customer Segment"
+    },
+    {
+      "source": "data_quality_status",
+      "name": "Data Quality Status"
+    },
+    {
+      "source": "data_quality_issue_count",
+      "name": "Data Quality Issue Count"
+    },
+    {
+      "source": "is_high_value",
+      "name": "High Value Flag"
+    },
+    {
+      "source": "is_high_balance",
+      "name": "High Balance Flag"
+    },
+    {
+      "source": "is_high_income",
+      "name": "High Income Flag"
+    },
+    {
+      "source": "is_affluent",
+      "name": "Affluent Flag"
+    },
+    {
+      "source": "is_high_credit_quality",
+      "name": "High Credit Quality Flag"
+    },
+    {
+      "source": "is_long_tenure",
+      "name": "Long Tenure Flag"
+    },
+    {
+      "source": "country",
+      "name": "Country"
+    },
+    {
+      "source": "age_group",
+      "name": "Age Group"
+    },
+    {
+      "source": "active_product_count",
+      "name": "Active Product Count"
+    },
+    {
+      "source": "has_current_account",
+      "name": "Has Current Account"
+    },
+    {
+      "source": "has_savings",
+      "name": "Has Savings"
+    },
+    {
+      "source": "has_credit_card",
+      "name": "Has Credit Card"
+    },
+    {
+      "source": "has_loan",
+      "name": "Has Loan"
+    },
+    {
+      "source": "has_mortgage",
+      "name": "Has Mortgage"
+    },
+    {
+      "source": "has_salary_domiciliation",
+      "name": "Has Salary Domiciliation"
+    },
+    {
+      "source": "monthly_payroll_amount",
+      "name": "Monthly Payroll Amount"
+    },
+    {
+      "source": "digital_logins_30d",
+      "name": "Digital Logins 30D"
+    },
+    {
+      "source": "digital_events_30d",
+      "name": "Digital Events 30D"
+    },
+    {
+      "source": "sessions_30d",
+      "name": "Sessions 30D"
+    },
+    {
+      "source": "mobile_active_30d",
+      "name": "Mobile Active 30D"
+    },
+    {
+      "source": "campaigns_received",
+      "name": "Campaigns Received"
+    },
+    {
+      "source": "campaigns_opened",
+      "name": "Campaigns Opened"
+    },
+    {
+      "source": "campaigns_clicked",
+      "name": "Campaigns Clicked"
+    },
+    {
+      "source": "campaigns_converted",
+      "name": "Campaigns Converted"
+    },
+    {
+      "source": "campaign_conversion_rate",
+      "name": "Campaign Conversion Rate"
+    },
+    {
+      "source": "campaigns_clicked_90d",
+      "name": "Campaigns Clicked 90D"
+    },
+    {
+      "source": "services_eligible",
+      "name": "Services Eligible"
+    },
+    {
+      "source": "services_offered",
+      "name": "Services Offered"
+    },
+    {
+      "source": "services_activated",
+      "name": "Services Activated"
+    },
+    {
+      "source": "services_active",
+      "name": "Services Active"
+    },
+    {
+      "source": "service_usage_30d",
+      "name": "Service Usage 30D"
+    },
+    {
+      "source": "travel_service_active",
+      "name": "Travel Service Active"
+    },
+    {
+      "source": "fx_service_active",
+      "name": "Fx Service Active"
+    },
+    {
+      "source": "tax_service_active",
+      "name": "Tax Service Active"
+    },
+    {
+      "source": "nps_score",
+      "name": "Nps Score"
+    },
+    {
+      "source": "satisfaction_score",
+      "name": "Satisfaction Score"
+    },
+    {
+      "source": "engagement_score",
+      "name": "Engagement Score"
+    },
+    {
+      "source": "engagement_segment",
+      "name": "Engagement Segment"
+    },
+    {
+      "source": "primary_bank_score",
+      "name": "Primary Bank Score"
+    },
+    {
+      "source": "primary_bank_segment",
+      "name": "Primary Bank Segment"
+    },
+    {
+      "source": "engagement_score_band",
+      "name": "Engagement Score Band"
+    },
+    {
+      "source": "primary_score_band",
+      "name": "Primary Score Band"
+    },
+    {
+      "source": "primary_segment_sort",
+      "name": "Primary Segment Sort"
+    },
+    {
+      "source": "engagement_segment_sort",
+      "name": "Engagement Segment Sort"
+    },
+    {
+      "source": "cross_sell_opportunity",
+      "name": "Cross Sell Opportunity"
+    },
+    {
+      "source": "digital_reengagement_opportunity",
+      "name": "Digital Reengagement Opportunity"
+    },
+    {
+      "source": "high_value_low_engagement",
+      "name": "High Value Low Engagement"
+    },
+    {
+      "source": "high_engagement_low_product_depth",
+      "name": "High Engagement Low Product Depth"
+    },
+    {
+      "source": "eligible_for_payroll_campaign",
+      "name": "Eligible For Payroll Campaign"
+    },
+    {
+      "source": "eligible_for_travel_service",
+      "name": "Eligible For Travel Service"
+    },
+    {
+      "source": "eligible_for_fx_service",
+      "name": "Eligible For Fx Service"
+    },
+    {
+      "source": "eligible_for_tax_service",
+      "name": "Eligible For Tax Service"
+    },
+    {
+      "source": "snapshot_date",
+      "name": "Snapshot Date"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "Demo Date": [
+    {
+      "source": "date",
+      "name": "Date"
+    },
+    {
+      "source": "date_key",
+      "name": "Date Key"
+    },
+    {
+      "source": "year",
+      "name": "Year"
+    },
+    {
+      "source": "quarter",
+      "name": "Quarter"
+    },
+    {
+      "source": "month",
+      "name": "Month"
+    },
+    {
+      "source": "month_name",
+      "name": "Month Name"
+    },
+    {
+      "source": "month_number",
+      "name": "Month Number"
+    },
+    {
+      "source": "week",
+      "name": "Week"
+    },
+    {
+      "source": "day",
+      "name": "Day"
+    },
+    {
+      "source": "day_of_week",
+      "name": "Day Of Week"
+    },
+    {
+      "source": "is_weekend",
+      "name": "Is Weekend"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "Demo Product": [
+    {
+      "source": "product_type",
+      "name": "Product Type"
+    },
+    {
+      "source": "product_key",
+      "name": "Product Key"
+    },
+    {
+      "source": "product_category",
+      "name": "Product Category"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "Demo Service": [
+    {
+      "source": "service_name",
+      "name": "Service Name"
+    },
+    {
+      "source": "service_key",
+      "name": "Service Key"
+    },
+    {
+      "source": "service_category",
+      "name": "Service Category"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "Demo Campaign": [
+    {
+      "source": "campaign_id",
+      "name": "Campaign Id"
+    },
+    {
+      "source": "campaign_name",
+      "name": "Campaign Name"
+    },
+    {
+      "source": "campaign_type",
+      "name": "Campaign Type"
+    },
+    {
+      "source": "channel",
+      "name": "Channel"
+    },
+    {
+      "source": "target_service",
+      "name": "Target Service"
+    },
+    {
+      "source": "campaign_key",
+      "name": "Campaign Key"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "Demo Product Holdings": [
+    {
+      "source": "customer_id",
+      "name": "Customer ID"
+    },
+    {
+      "source": "product_id",
+      "name": "Product Id"
+    },
+    {
+      "source": "product_type",
+      "name": "Product Type"
+    },
+    {
+      "source": "product_status",
+      "name": "Product Status"
+    },
+    {
+      "source": "product_start_date",
+      "name": "Product Start Date"
+    },
+    {
+      "source": "product_end_date",
+      "name": "Product End Date"
+    },
+    {
+      "source": "monthly_fee",
+      "name": "Monthly Fee"
+    },
+    {
+      "source": "product_balance",
+      "name": "Product Balance"
+    },
+    {
+      "source": "is_active",
+      "name": "Is Active"
+    },
+    {
+      "source": "is_primary_product",
+      "name": "Is Primary Product"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    },
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "product_key",
+      "name": "Product Key"
+    },
+    {
+      "source": "start_date_key",
+      "name": "Start Date Key"
+    },
+    {
+      "source": "end_date_key",
+      "name": "End Date Key"
+    }
+  ],
+  "Demo Payroll": [
+    {
+      "source": "customer_id",
+      "name": "Customer ID"
+    },
+    {
+      "source": "has_salary_domiciliation",
+      "name": "Has Salary Domiciliation"
+    },
+    {
+      "source": "monthly_payroll_amount",
+      "name": "Monthly Payroll Amount"
+    },
+    {
+      "source": "payroll_start_date",
+      "name": "Payroll Start Date"
+    },
+    {
+      "source": "salary_frequency",
+      "name": "Salary Frequency"
+    },
+    {
+      "source": "months_with_payroll",
+      "name": "Months With Payroll"
+    },
+    {
+      "source": "snapshot_date",
+      "name": "Snapshot Date"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    },
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "payroll_start_date_key",
+      "name": "Payroll Start Date Key"
+    },
+    {
+      "source": "snapshot_date_key",
+      "name": "Snapshot Date Key"
+    }
+  ],
+  "Demo Campaign Interactions": [
+    {
+      "source": "interaction_id",
+      "name": "Interaction Id"
+    },
+    {
+      "source": "campaign_id",
+      "name": "Campaign Id"
+    },
+    {
+      "source": "customer_id",
+      "name": "Customer ID"
+    },
+    {
+      "source": "campaign_name",
+      "name": "Campaign Name"
+    },
+    {
+      "source": "campaign_type",
+      "name": "Campaign Type"
+    },
+    {
+      "source": "channel",
+      "name": "Channel"
+    },
+    {
+      "source": "campaign_date",
+      "name": "Campaign Date"
+    },
+    {
+      "source": "offer_type",
+      "name": "Offer Type"
+    },
+    {
+      "source": "target_service",
+      "name": "Target Service"
+    },
+    {
+      "source": "sent",
+      "name": "Sent"
+    },
+    {
+      "source": "opened",
+      "name": "Opened"
+    },
+    {
+      "source": "clicked",
+      "name": "Clicked"
+    },
+    {
+      "source": "converted",
+      "name": "Converted"
+    },
+    {
+      "source": "conversion_date",
+      "name": "Conversion Date"
+    },
+    {
+      "source": "campaign_cost",
+      "name": "Campaign Cost"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    },
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "campaign_key",
+      "name": "Campaign Key"
+    },
+    {
+      "source": "campaign_date_key",
+      "name": "Campaign Date Key"
+    },
+    {
+      "source": "conversion_date_key",
+      "name": "Conversion Date Key"
+    },
+    {
+      "source": "month",
+      "name": "Month"
+    }
+  ],
+  "Demo Digital Events": [
+    {
+      "source": "interaction_id",
+      "name": "Interaction Id"
+    },
+    {
+      "source": "customer_id",
+      "name": "Customer ID"
+    },
+    {
+      "source": "event_timestamp",
+      "name": "Event Timestamp"
+    },
+    {
+      "source": "channel",
+      "name": "Channel"
+    },
+    {
+      "source": "event_type",
+      "name": "Event Type"
+    },
+    {
+      "source": "session_id",
+      "name": "Session Id"
+    },
+    {
+      "source": "device_type",
+      "name": "Device Type"
+    },
+    {
+      "source": "feature_name",
+      "name": "Feature Name"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    },
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "date_key",
+      "name": "Date Key"
+    },
+    {
+      "source": "month",
+      "name": "Month"
+    },
+    {
+      "source": "login_flag",
+      "name": "Login Flag"
+    },
+    {
+      "source": "mobile_flag",
+      "name": "Mobile Flag"
+    }
+  ],
+  "Demo Service Adoption": [
+    {
+      "source": "customer_id",
+      "name": "Customer ID"
+    },
+    {
+      "source": "service_name",
+      "name": "Service Name"
+    },
+    {
+      "source": "eligible",
+      "name": "Eligible"
+    },
+    {
+      "source": "offered",
+      "name": "Offered"
+    },
+    {
+      "source": "offer_date",
+      "name": "Offer Date"
+    },
+    {
+      "source": "activated",
+      "name": "Activated"
+    },
+    {
+      "source": "activation_date",
+      "name": "Activation Date"
+    },
+    {
+      "source": "active_status",
+      "name": "Active Status"
+    },
+    {
+      "source": "monthly_usage_count",
+      "name": "Monthly Usage Count"
+    },
+    {
+      "source": "snapshot_date",
+      "name": "Snapshot Date"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    },
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "service_key",
+      "name": "Service Key"
+    },
+    {
+      "source": "offer_date_key",
+      "name": "Offer Date Key"
+    },
+    {
+      "source": "activation_date_key",
+      "name": "Activation Date Key"
+    }
+  ],
+  "Demo Satisfaction": [
+    {
+      "source": "survey_id",
+      "name": "Survey Id"
+    },
+    {
+      "source": "customer_id",
+      "name": "Customer ID"
+    },
+    {
+      "source": "survey_date",
+      "name": "Survey Date"
+    },
+    {
+      "source": "nps_score",
+      "name": "Nps Score"
+    },
+    {
+      "source": "satisfaction_score",
+      "name": "Satisfaction Score"
+    },
+    {
+      "source": "feedback_category",
+      "name": "Feedback Category"
+    },
+    {
+      "source": "channel",
+      "name": "Channel"
+    },
+    {
+      "source": "resolved",
+      "name": "Resolved"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    },
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "date_key",
+      "name": "Date Key"
+    },
+    {
+      "source": "promoter",
+      "name": "Promoter"
+    },
+    {
+      "source": "detractor",
+      "name": "Detractor"
+    },
+    {
+      "source": "passive",
+      "name": "Passive"
+    },
+    {
+      "source": "nps_group",
+      "name": "Nps Group"
+    },
+    {
+      "source": "month",
+      "name": "Month"
+    }
+  ],
+  "ML Customer Scores": [
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "scoring_date",
+      "name": "Scoring Date"
+    },
+    {
+      "source": "country",
+      "name": "Country"
+    },
+    {
+      "source": "customer_value_score",
+      "name": "Customer Value Score"
+    },
+    {
+      "source": "customer_value_segment",
+      "name": "Customer Value Segment"
+    },
+    {
+      "source": "engagement_score",
+      "name": "Engagement Score"
+    },
+    {
+      "source": "marketing_contact_allowed",
+      "name": "Marketing Contact Allowed"
+    },
+    {
+      "source": "has_salary_domiciliation",
+      "name": "Has Salary Domiciliation"
+    },
+    {
+      "source": "has_current_account",
+      "name": "Has Current Account"
+    },
+    {
+      "source": "travel_eligible",
+      "name": "Travel Eligible"
+    },
+    {
+      "source": "travel_active",
+      "name": "Travel Active"
+    },
+    {
+      "source": "fx_eligible",
+      "name": "Fx Eligible"
+    },
+    {
+      "source": "has_savings",
+      "name": "Has Savings"
+    },
+    {
+      "source": "active_product_count",
+      "name": "Active Product Count"
+    },
+    {
+      "source": "latest_satisfaction_score",
+      "name": "Latest Satisfaction Score"
+    },
+    {
+      "source": "campaign_propensity_score",
+      "name": "Campaign Propensity Score"
+    },
+    {
+      "source": "campaign_propensity_band",
+      "name": "Campaign Propensity Band"
+    },
+    {
+      "source": "churn_risk_score",
+      "name": "Churn Risk Score"
+    },
+    {
+      "source": "churn_risk_band",
+      "name": "Churn Risk Band"
+    },
+    {
+      "source": "payroll_propensity_score",
+      "name": "Payroll Propensity Score"
+    },
+    {
+      "source": "payroll_propensity_band",
+      "name": "Payroll Propensity Band"
+    },
+    {
+      "source": "travel_service_propensity_score",
+      "name": "Travel Service Propensity Score"
+    },
+    {
+      "source": "travel_service_propensity_band",
+      "name": "Travel Service Propensity Band"
+    },
+    {
+      "source": "high_campaign_propensity",
+      "name": "High Campaign Propensity"
+    },
+    {
+      "source": "high_churn_risk",
+      "name": "High Churn Risk"
+    },
+    {
+      "source": "high_payroll_propensity",
+      "name": "High Payroll Propensity"
+    },
+    {
+      "source": "high_travel_service_propensity",
+      "name": "High Travel Service Propensity"
+    },
+    {
+      "source": "next_best_action",
+      "name": "Next Best Action"
+    },
+    {
+      "source": "next_best_action_score",
+      "name": "Next Best Action Score"
+    },
+    {
+      "source": "next_best_action_reason",
+      "name": "Next Best Action Reason"
+    },
+    {
+      "source": "reason_code",
+      "name": "Reason Code"
+    },
+    {
+      "source": "recommended_product",
+      "name": "Recommended Product"
+    },
+    {
+      "source": "priority_score",
+      "name": "Priority Score"
+    },
+    {
+      "source": "model_version_campaign",
+      "name": "Model Version Campaign"
+    },
+    {
+      "source": "model_version_churn",
+      "name": "Model Version Churn"
+    },
+    {
+      "source": "model_version_payroll",
+      "name": "Model Version Payroll"
+    },
+    {
+      "source": "model_version_service",
+      "name": "Model Version Service"
+    },
+    {
+      "source": "synthetic_model_flag",
+      "name": "Synthetic Model Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "ML Model Performance": [
+    {
+      "source": "use_case",
+      "name": "Use Case"
+    },
+    {
+      "source": "model_name",
+      "name": "Model Name"
+    },
+    {
+      "source": "model_version",
+      "name": "Model Version"
+    },
+    {
+      "source": "evaluation_type",
+      "name": "Evaluation Type"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    },
+    {
+      "source": "roc_auc",
+      "name": "Roc Auc"
+    },
+    {
+      "source": "pr_auc",
+      "name": "Pr Auc"
+    },
+    {
+      "source": "precision",
+      "name": "Precision"
+    },
+    {
+      "source": "recall",
+      "name": "Recall"
+    },
+    {
+      "source": "f1",
+      "name": "F1"
+    },
+    {
+      "source": "log_loss",
+      "name": "Log Loss"
+    },
+    {
+      "source": "brier_score",
+      "name": "Brier Score"
+    },
+    {
+      "source": "lift_at_10",
+      "name": "Lift At 10"
+    },
+    {
+      "source": "recall_at_top_5",
+      "name": "Recall At Top 5"
+    },
+    {
+      "source": "recall_at_top_10",
+      "name": "Recall At Top 10"
+    },
+    {
+      "source": "calibration",
+      "name": "Calibration"
+    },
+    {
+      "source": "test_start",
+      "name": "Test Start"
+    },
+    {
+      "source": "test_end",
+      "name": "Test End"
+    }
+  ],
+  "AN Funnels": [
+    {
+      "source": "funnel_name",
+      "name": "Funnel Name"
+    },
+    {
+      "source": "stage",
+      "name": "Stage"
+    },
+    {
+      "source": "stage_order",
+      "name": "Stage Order"
+    },
+    {
+      "source": "customers",
+      "name": "Customers"
+    },
+    {
+      "source": "observations",
+      "name": "Observations"
+    },
+    {
+      "source": "previous_stage_customers",
+      "name": "Previous Stage Customers"
+    },
+    {
+      "source": "conversion_from_previous",
+      "name": "Conversion From Previous"
+    },
+    {
+      "source": "conversion_from_start",
+      "name": "Conversion From Start"
+    },
+    {
+      "source": "drop_off",
+      "name": "Drop Off"
+    },
+    {
+      "source": "drop_off_rate",
+      "name": "Drop Off Rate"
+    },
+    {
+      "source": "date_period",
+      "name": "Date Period"
+    },
+    {
+      "source": "segment",
+      "name": "Segment"
+    },
+    {
+      "source": "segment_dimension",
+      "name": "Segment Dimension"
+    },
+    {
+      "source": "small_sample",
+      "name": "Small Sample"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "AN Cohorts": [
+    {
+      "source": "cohort_type",
+      "name": "Cohort Type"
+    },
+    {
+      "source": "cohort_name",
+      "name": "Cohort Name"
+    },
+    {
+      "source": "cohort_period",
+      "name": "Cohort Period"
+    },
+    {
+      "source": "activity_period",
+      "name": "Activity Period"
+    },
+    {
+      "source": "months_since_cohort",
+      "name": "Months Since Cohort"
+    },
+    {
+      "source": "customers",
+      "name": "Customers"
+    },
+    {
+      "source": "active_customers",
+      "name": "Active Customers"
+    },
+    {
+      "source": "retained_customers",
+      "name": "Retained Customers"
+    },
+    {
+      "source": "average_products",
+      "name": "Average Products"
+    },
+    {
+      "source": "average_engagement_score",
+      "name": "Average Engagement Score"
+    },
+    {
+      "source": "current_value_proxy",
+      "name": "Current Value Proxy"
+    },
+    {
+      "source": "product_retained_customers",
+      "name": "Product Retained Customers"
+    },
+    {
+      "source": "retention_rate",
+      "name": "Retention Rate"
+    },
+    {
+      "source": "retention_definition",
+      "name": "Retention Definition"
+    },
+    {
+      "source": "product_retention_rate",
+      "name": "Product Retention Rate"
+    },
+    {
+      "source": "service_retention_rate",
+      "name": "Service Retention Rate"
+    },
+    {
+      "source": "average_balance",
+      "name": "Average Balance"
+    },
+    {
+      "source": "small_sample",
+      "name": "Small Sample"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "AN Retention Segments": [
+    {
+      "source": "cohort_type",
+      "name": "Cohort Type"
+    },
+    {
+      "source": "cohort_name",
+      "name": "Cohort Name"
+    },
+    {
+      "source": "months_since_cohort",
+      "name": "Months Since Cohort"
+    },
+    {
+      "source": "customer_value_segment",
+      "name": "Customer Value Segment"
+    },
+    {
+      "source": "customers",
+      "name": "Customers"
+    },
+    {
+      "source": "retained_customers",
+      "name": "Retained Customers"
+    },
+    {
+      "source": "retention_rate",
+      "name": "Retention Rate"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "AN Journeys": [
+    {
+      "source": "journey_path",
+      "name": "Journey Path"
+    },
+    {
+      "source": "customers",
+      "name": "Customers"
+    },
+    {
+      "source": "sessions",
+      "name": "Sessions"
+    },
+    {
+      "source": "conversions",
+      "name": "Conversions"
+    },
+    {
+      "source": "average_steps",
+      "name": "Average Steps"
+    },
+    {
+      "source": "average_duration",
+      "name": "Average Duration"
+    },
+    {
+      "source": "conversion_rate",
+      "name": "Conversion Rate"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "AN Experiments": [
+    {
+      "source": "control_conversion_rate",
+      "name": "Control Conversion Rate"
+    },
+    {
+      "source": "treatment_conversion_rate",
+      "name": "Treatment Conversion Rate"
+    },
+    {
+      "source": "absolute_lift",
+      "name": "Absolute Lift"
+    },
+    {
+      "source": "relative_lift",
+      "name": "Relative Lift"
+    },
+    {
+      "source": "incremental_conversions",
+      "name": "Incremental Conversions"
+    },
+    {
+      "source": "p_value",
+      "name": "P Value"
+    },
+    {
+      "source": "ci_lower",
+      "name": "Ci Lower"
+    },
+    {
+      "source": "ci_upper",
+      "name": "Ci Upper"
+    },
+    {
+      "source": "control_ci_lower",
+      "name": "Control Ci Lower"
+    },
+    {
+      "source": "control_ci_upper",
+      "name": "Control Ci Upper"
+    },
+    {
+      "source": "treatment_ci_lower",
+      "name": "Treatment Ci Lower"
+    },
+    {
+      "source": "treatment_ci_upper",
+      "name": "Treatment Ci Upper"
+    },
+    {
+      "source": "test_method",
+      "name": "Test Method"
+    },
+    {
+      "source": "experiment_id",
+      "name": "Experiment Id"
+    },
+    {
+      "source": "experiment_name",
+      "name": "Experiment Name"
+    },
+    {
+      "source": "action",
+      "name": "Action"
+    },
+    {
+      "source": "control_n",
+      "name": "Control N"
+    },
+    {
+      "source": "treatment_n",
+      "name": "Treatment N"
+    },
+    {
+      "source": "sample_size",
+      "name": "Sample Size"
+    },
+    {
+      "source": "conversions",
+      "name": "Conversions"
+    },
+    {
+      "source": "conversion_rate",
+      "name": "Conversion Rate"
+    },
+    {
+      "source": "control_conversions",
+      "name": "Control Conversions"
+    },
+    {
+      "source": "treatment_conversions",
+      "name": "Treatment Conversions"
+    },
+    {
+      "source": "planned_per_variant",
+      "name": "Planned Per Variant"
+    },
+    {
+      "source": "srm_p_value",
+      "name": "Srm P Value"
+    },
+    {
+      "source": "qa_pass",
+      "name": "Qa Pass"
+    },
+    {
+      "source": "guardrail_status",
+      "name": "Guardrail Status"
+    },
+    {
+      "source": "unsubscribe_rate_change",
+      "name": "Unsubscribe Rate Change"
+    },
+    {
+      "source": "complaint_rate_change",
+      "name": "Complaint Rate Change"
+    },
+    {
+      "source": "nps_change",
+      "name": "Nps Change"
+    },
+    {
+      "source": "cost_per_customer",
+      "name": "Cost Per Customer"
+    },
+    {
+      "source": "experiment_start",
+      "name": "Experiment Start"
+    },
+    {
+      "source": "experiment_end",
+      "name": "Experiment End"
+    },
+    {
+      "source": "hypothesis",
+      "name": "Hypothesis"
+    },
+    {
+      "source": "control_description",
+      "name": "Control Description"
+    },
+    {
+      "source": "treatment_description",
+      "name": "Treatment Description"
+    },
+    {
+      "source": "variant",
+      "name": "Variant"
+    },
+    {
+      "source": "experiment_status",
+      "name": "Experiment Status"
+    },
+    {
+      "source": "known_simulated_effect",
+      "name": "Known Simulated Effect"
+    },
+    {
+      "source": "adjusted_p_value",
+      "name": "Adjusted P Value"
+    },
+    {
+      "source": "statistically_significant",
+      "name": "Statistically Significant"
+    },
+    {
+      "source": "practically_significant",
+      "name": "Practically Significant"
+    },
+    {
+      "source": "experiment_decision",
+      "name": "Experiment Decision"
+    },
+    {
+      "source": "contamination_warning",
+      "name": "Contamination Warning"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "AN Attribution": [
+    {
+      "source": "channel",
+      "name": "Channel"
+    },
+    {
+      "source": "campaign",
+      "name": "Campaign"
+    },
+    {
+      "source": "attributed_cost",
+      "name": "Attributed Cost"
+    },
+    {
+      "source": "attributed_conversions",
+      "name": "Attributed Conversions"
+    },
+    {
+      "source": "attributed_value",
+      "name": "Attributed Value"
+    },
+    {
+      "source": "attribution_model",
+      "name": "Attribution Model"
+    },
+    {
+      "source": "attribution_window_days",
+      "name": "Attribution Window Days"
+    },
+    {
+      "source": "roi_proxy",
+      "name": "Roi Proxy"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "AN Opportunities": [
+    {
+      "source": "customer_key",
+      "name": "Customer Key"
+    },
+    {
+      "source": "scoring_date",
+      "name": "Scoring Date"
+    },
+    {
+      "source": "country",
+      "name": "Country"
+    },
+    {
+      "source": "customer_value_score",
+      "name": "Customer Value Score"
+    },
+    {
+      "source": "customer_value_segment",
+      "name": "Customer Value Segment"
+    },
+    {
+      "source": "engagement_score",
+      "name": "Engagement Score"
+    },
+    {
+      "source": "marketing_contact_allowed",
+      "name": "Marketing Contact Allowed"
+    },
+    {
+      "source": "has_salary_domiciliation",
+      "name": "Has Salary Domiciliation"
+    },
+    {
+      "source": "has_current_account",
+      "name": "Has Current Account"
+    },
+    {
+      "source": "travel_eligible",
+      "name": "Travel Eligible"
+    },
+    {
+      "source": "travel_active",
+      "name": "Travel Active"
+    },
+    {
+      "source": "fx_eligible",
+      "name": "Fx Eligible"
+    },
+    {
+      "source": "has_savings",
+      "name": "Has Savings"
+    },
+    {
+      "source": "active_product_count",
+      "name": "Active Product Count"
+    },
+    {
+      "source": "latest_satisfaction_score",
+      "name": "Latest Satisfaction Score"
+    },
+    {
+      "source": "campaign_propensity_score",
+      "name": "Campaign Propensity Score"
+    },
+    {
+      "source": "campaign_propensity_band",
+      "name": "Campaign Propensity Band"
+    },
+    {
+      "source": "churn_risk_score",
+      "name": "Churn Risk Score"
+    },
+    {
+      "source": "churn_risk_band",
+      "name": "Churn Risk Band"
+    },
+    {
+      "source": "payroll_propensity_score",
+      "name": "Payroll Propensity Score"
+    },
+    {
+      "source": "payroll_propensity_band",
+      "name": "Payroll Propensity Band"
+    },
+    {
+      "source": "travel_service_propensity_score",
+      "name": "Travel Service Propensity Score"
+    },
+    {
+      "source": "travel_service_propensity_band",
+      "name": "Travel Service Propensity Band"
+    },
+    {
+      "source": "high_campaign_propensity",
+      "name": "High Campaign Propensity"
+    },
+    {
+      "source": "high_churn_risk",
+      "name": "High Churn Risk"
+    },
+    {
+      "source": "high_payroll_propensity",
+      "name": "High Payroll Propensity"
+    },
+    {
+      "source": "high_travel_service_propensity",
+      "name": "High Travel Service Propensity"
+    },
+    {
+      "source": "next_best_action",
+      "name": "Next Best Action"
+    },
+    {
+      "source": "next_best_action_score",
+      "name": "Next Best Action Score"
+    },
+    {
+      "source": "next_best_action_reason",
+      "name": "Next Best Action Reason"
+    },
+    {
+      "source": "reason_code",
+      "name": "Reason Code"
+    },
+    {
+      "source": "recommended_product",
+      "name": "Recommended Product"
+    },
+    {
+      "source": "priority_score",
+      "name": "Priority Score"
+    },
+    {
+      "source": "model_version_campaign",
+      "name": "Model Version Campaign"
+    },
+    {
+      "source": "model_version_churn",
+      "name": "Model Version Churn"
+    },
+    {
+      "source": "model_version_payroll",
+      "name": "Model Version Payroll"
+    },
+    {
+      "source": "model_version_service",
+      "name": "Model Version Service"
+    },
+    {
+      "source": "synthetic_model_flag",
+      "name": "Synthetic Model Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    },
+    {
+      "source": "campaigns_received_7d",
+      "name": "Campaigns Received 7D"
+    },
+    {
+      "source": "campaigns_received_30d",
+      "name": "Campaigns Received 30D"
+    },
+    {
+      "source": "days_since_last_campaign",
+      "name": "Days Since Last Campaign"
+    },
+    {
+      "source": "campaign_frequency",
+      "name": "Campaign Frequency"
+    },
+    {
+      "source": "possible_fatigue_flag",
+      "name": "Possible Fatigue Flag"
+    },
+    {
+      "source": "persistent_holdout",
+      "name": "Persistent Holdout"
+    },
+    {
+      "source": "primary_bank_stage",
+      "name": "Primary Bank Stage"
+    },
+    {
+      "source": "next_primary_stage",
+      "name": "Next Primary Stage"
+    },
+    {
+      "source": "lifecycle_stage",
+      "name": "Lifecycle Stage"
+    },
+    {
+      "source": "early_warning_reason",
+      "name": "Early Warning Reason"
+    },
+    {
+      "source": "engagement_change",
+      "name": "Engagement Change"
+    },
+    {
+      "source": "contact_allowed",
+      "name": "Contact Allowed"
+    },
+    {
+      "source": "action_priority_score",
+      "name": "Action Priority Score"
+    },
+    {
+      "source": "experimental_lift",
+      "name": "Experimental Lift"
+    },
+    {
+      "source": "experiment_evidence",
+      "name": "Experiment Evidence"
+    },
+    {
+      "source": "propensity_score",
+      "name": "Propensity Score"
+    },
+    {
+      "source": "opportunity_quadrant",
+      "name": "Opportunity Quadrant"
+    },
+    {
+      "source": "current_lifecycle_stage",
+      "name": "Current Lifecycle Stage"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    }
+  ],
+  "AN Campaign Economics": [
+    {
+      "source": "campaign_id",
+      "name": "Campaign Id"
+    },
+    {
+      "source": "channel",
+      "name": "Channel"
+    },
+    {
+      "source": "campaign_type",
+      "name": "Campaign Type"
+    },
+    {
+      "source": "contacts",
+      "name": "Contacts"
+    },
+    {
+      "source": "opens",
+      "name": "Opens"
+    },
+    {
+      "source": "clicks",
+      "name": "Clicks"
+    },
+    {
+      "source": "conversions",
+      "name": "Conversions"
+    },
+    {
+      "source": "campaign_cost",
+      "name": "Campaign Cost"
+    },
+    {
+      "source": "gross_value_proxy",
+      "name": "Gross Value Proxy"
+    },
+    {
+      "source": "median_time_to_conversion",
+      "name": "Median Time To Conversion"
+    },
+    {
+      "source": "average_time_to_conversion",
+      "name": "Average Time To Conversion"
+    },
+    {
+      "source": "open_rate",
+      "name": "Open Rate"
+    },
+    {
+      "source": "ctr",
+      "name": "Ctr"
+    },
+    {
+      "source": "conversion_rate",
+      "name": "Conversion Rate"
+    },
+    {
+      "source": "cost_per_conversion",
+      "name": "Cost Per Conversion"
+    },
+    {
+      "source": "roi_proxy",
+      "name": "Roi Proxy"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "AN Experiment Economics": [
+    {
+      "source": "experiment_id",
+      "name": "Experiment Id"
+    },
+    {
+      "source": "experiment_name",
+      "name": "Experiment Name"
+    },
+    {
+      "source": "treatment_campaign_cost",
+      "name": "Treatment Campaign Cost"
+    },
+    {
+      "source": "control_campaign_cost",
+      "name": "Control Campaign Cost"
+    },
+    {
+      "source": "incremental_contact_cost",
+      "name": "Incremental Contact Cost"
+    },
+    {
+      "source": "incremental_conversions",
+      "name": "Incremental Conversions"
+    },
+    {
+      "source": "incremental_value_proxy",
+      "name": "Incremental Value Proxy"
+    },
+    {
+      "source": "cost_per_incremental_conversion",
+      "name": "Cost Per Incremental Conversion"
+    },
+    {
+      "source": "incremental_roi_proxy",
+      "name": "Incremental Roi Proxy"
+    },
+    {
+      "source": "experiment_decision",
+      "name": "Experiment Decision"
+    },
+    {
+      "source": "interpretation",
+      "name": "Interpretation"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "AN Growth": [
+    {
+      "source": "customers",
+      "name": "Customers"
+    },
+    {
+      "source": "likely_primary_bank_rate",
+      "name": "Likely Primary Bank Rate"
+    },
+    {
+      "source": "salary_domiciliation_rate",
+      "name": "Salary Domiciliation Rate"
+    },
+    {
+      "source": "service_activation_rate",
+      "name": "Service Activation Rate"
+    },
+    {
+      "source": "nps",
+      "name": "Nps"
+    },
+    {
+      "source": "high_value_low_engagement_customers",
+      "name": "High Value Low Engagement Customers"
+    },
+    {
+      "source": "high_value_low_engagement_balance_share",
+      "name": "High Value Low Engagement Balance Share"
+    },
+    {
+      "source": "observed_campaign_roi_proxy",
+      "name": "Observed Campaign Roi Proxy"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
+  ],
+  "AN Lifecycle": [
+    {
+      "source": "prediction_date",
+      "name": "Prediction Date"
+    },
+    {
+      "source": "lifecycle_stage",
+      "name": "Lifecycle Stage"
+    },
+    {
+      "source": "customers",
+      "name": "Customers"
+    },
+    {
+      "source": "average_engagement",
+      "name": "Average Engagement"
+    },
+    {
+      "source": "synthetic_data_flag",
+      "name": "Synthetic Data Flag"
+    },
+    {
+      "source": "data_origin",
+      "name": "Data Origin"
+    }
   ]
 }

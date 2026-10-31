@@ -1,0 +1,53 @@
+dataset: customer_satisfaction
+contract_version: '1.0'
+owner: Digital Banking Data Owner
+technical_owner: Data Engineering
+description: Typed accepted synthetic customer_satisfaction; final states must not
+  be backfilled into historical ML features.
+layer: silver
+primary_key:
+- survey_id
+allow_extra_columns: true
+fields:
+  customer_id:
+    type: string
+    nullable: false
+  survey_id:
+    type: string
+    nullable: false
+  survey_date:
+    type: date
+    nullable: false
+  feedback_category:
+    type: string
+    nullable: false
+  channel:
+    type: string
+    nullable: false
+    allowed_values:
+    - Mobile App
+    - Web
+    - Contact Center
+  resolved:
+    type: boolean
+    nullable: false
+  nps_score:
+    type: integer
+    nullable: false
+    min: 0
+    max: 10
+  satisfaction_score:
+    type: integer
+    nullable: false
+    min: 1
+    max: 5
+  synthetic_data_flag:
+    type: boolean
+    nullable: false
+    allowed_values:
+    - true
+  data_origin:
+    type: string
+    nullable: false
+    allowed_values:
+    - SYNTHETIC DEMO DATA

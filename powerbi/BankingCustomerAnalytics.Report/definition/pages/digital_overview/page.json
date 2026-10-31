@@ -1,0 +1,711 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "digital_overview",
+  "displayName": "Digital Business Overview",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_country",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "primary_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "engagement_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "product_penetration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "service_adoption",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "demo_kpi_6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "primary_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "engagement_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "product_penetration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "service_adoption",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "demo_kpi_6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "primary_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "engagement_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "product_penetration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_primary_bank_segment",
+      "target": "service_adoption",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "demo_kpi_6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "engagement_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "product_penetration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "primary_mix",
+      "target": "service_adoption",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "demo_kpi_6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "primary_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "product_penetration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_mix",
+      "target": "service_adoption",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "demo_kpi_6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "primary_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "engagement_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "product_penetration",
+      "target": "service_adoption",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "demo_kpi_6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "primary_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "engagement_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "product_penetration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "campaign_funnel",
+      "target": "service_adoption",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "demo_kpi_6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "primary_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "engagement_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "product_penetration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "service_adoption",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "slicer_primary_bank_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "demo_kpi_5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "demo_kpi_6",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "primary_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "engagement_mix",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "product_penetration",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "campaign_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_adoption",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    }
+  ]
+}

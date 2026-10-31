@@ -1,0 +1,32 @@
+random_seed: 42
+train_size: 0.60
+validation_size: 0.20
+test_size: 0.20
+classification_threshold: 0.5
+cross_validation_folds: 3
+label_horizon_days: 30
+first_snapshot: '2025-01-01'
+last_training_snapshot: '2026-08-01'
+scoring_date: '2026-10-01'
+imbalance_strategy: balanced_sample_weights
+capacity_fraction: 0.10
+threshold_grid: [0.01, 0.025, 0.05, 0.10, 0.20, 0.30, 0.50, 0.70]
+ranking_fractions: [0.01, 0.05, 0.10, 0.20]
+score_band_quantiles: [0.20, 0.40, 0.60, 0.80]
+calibration_min_positives: 10
+calibration_min_brier_improvement: 0.0001
+service_name: Travel Plan
+campaign_context: {channel: Email, campaign_type: Cross-Sell}
+feature_exclusions: [customer_key, customer_id, gender, country, age, tenure, credit_score, balance, estimated_salary, customer_value_score, customer_value_segment, opened, clicked, converted, conversion_date, active_status, monthly_usage_count, resolved, snapshot_date]
+categorical_features: [channel, campaign_type]
+numeric_features: [active_product_count, has_current_account, has_savings, has_credit_card, has_loan, has_mortgage, has_salary_domiciliation, months_with_payroll, logins_7d, logins_30d, sessions_7d, sessions_30d, events_7d, events_30d, active_days_30d, mobile_sessions_30d, web_sessions_30d, engagement_score, engagement_trend, campaigns_received_30d, campaigns_received_90d, conversions_90d, historical_conversion_rate, active_service_count, service_activation_rate, travel_active, fx_active, tax_service_active, latest_nps, average_nps_90d, latest_satisfaction_score, primary_bank_score_without_payroll, days_since_last_login, days_since_last_campaign_response, days_since_last_service_activation]
+payroll_exclusions: [has_salary_domiciliation, months_with_payroll]
+service_exclusions: [travel_active]
+model_parameters:
+  logistic: {C: [0.1, 1.0], max_iter: 600}
+  random_forest: {max_leaf_nodes: [15, 31], n_estimators: 80, min_samples_leaf: 30}
+  gradient_boosting: {max_leaf_nodes: [7, 15], max_iter: 80, learning_rate: 0.07, min_samples_leaf: 30}
+scoring_weights: {payroll: 1.0, travel: 0.8, reengagement: 0.9, cross_sell: 0.6, satisfaction: 1.0}
+business_rules: {minimum_action_score: 0.08, low_satisfaction: 2, low_engagement: 30, product_depth_limit: 2, contact_exclusion_fraction: 0.05, contact_cost: 0.10, simulation_budget: 20.0}
+mlflow: {tracking_uri: 'sqlite:///ml/reports/mlflow.db', artifact_path: ml/reports/mlflow_artifacts, experiment_prefix: banking_}
+paths: {features: data/gold_ml/features, models: ml/models, reports: ml/reports, predictions: data/gold_ml/predictions}

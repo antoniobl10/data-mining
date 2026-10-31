@@ -1,3 +1,5 @@
+> Scope: Original Gold architecture. For current totals and execution boundaries, see [final health](../reports/final_project_health.md) and [documentation index](README.md). Historical counts below are not current platform totals.
+
 # Architecture through Gold
 
 ```mermaid
@@ -17,8 +19,8 @@ flowchart LR
     M --> GQ
     GQ --> SQL[Independent SQL Parity]
     SQL --> E[Validated Parquet / CSV Exports]
-    E -.-> P[Future Power BI Semantic Model]
-    P -.-> R[Future Reports]
+    E -.-> P[Power BI Semantic Model]
+    P -.-> R[Reports]
 ```
 
 Bronze preserves original cell values, metadata and checksums; Silver performs explicit validation/normalization with lossless accepted/quarantine row accounting. Those upstream policies remain intact. Gold reads only published accepted Silver and adds stable integer surrogate keys, configured dimensions, a customer snapshot fact, relative value proxy, explicit segment flags, fixed-grain marts and diagnostics.

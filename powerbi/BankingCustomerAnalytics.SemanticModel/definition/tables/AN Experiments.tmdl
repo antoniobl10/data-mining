@@ -1,0 +1,287 @@
+/// SYNTHETIC DEMO ANALYTICS. Aggregate analytical grains require scoped measures; no real bank results.
+table 'AN Experiments'
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.control_conversion_rate
+	column 'Control Conversion Rate'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Control Conversion Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.treatment_conversion_rate
+	column 'Treatment Conversion Rate'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Treatment Conversion Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.absolute_lift
+	column 'Absolute Lift'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Absolute Lift
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.relative_lift
+	column 'Relative Lift'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Relative Lift
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.incremental_conversions
+	column 'Incremental Conversions'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Incremental Conversions
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.p_value
+	column 'P Value'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: P Value
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.ci_lower
+	column 'Ci Lower'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Ci Lower
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.ci_upper
+	column 'Ci Upper'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Ci Upper
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.control_ci_lower
+	column 'Control Ci Lower'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Control Ci Lower
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.control_ci_upper
+	column 'Control Ci Upper'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Control Ci Upper
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.treatment_ci_lower
+	column 'Treatment Ci Lower'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Treatment Ci Lower
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.treatment_ci_upper
+	column 'Treatment Ci Upper'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Treatment Ci Upper
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.test_method
+	column 'Test Method'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Test Method
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.experiment_id
+	column 'Experiment Id'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Experiment Id
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.experiment_name
+	column 'Experiment Name'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Experiment Name
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.action
+	column Action
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Action
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.control_n
+	column 'Control N'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Control N
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.treatment_n
+	column 'Treatment N'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Treatment N
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.sample_size
+	column 'Sample Size'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Sample Size
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.conversions
+	column Conversions
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Conversions
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.conversion_rate
+	column 'Conversion Rate'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Conversion Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.control_conversions
+	column 'Control Conversions'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Control Conversions
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.treatment_conversions
+	column 'Treatment Conversions'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Treatment Conversions
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.planned_per_variant
+	column 'Planned Per Variant'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Planned Per Variant
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.srm_p_value
+	column 'Srm P Value'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Srm P Value
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.qa_pass
+	column 'Qa Pass'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Qa Pass
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.guardrail_status
+	column 'Guardrail Status'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Guardrail Status
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.unsubscribe_rate_change
+	column 'Unsubscribe Rate Change'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Unsubscribe Rate Change
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.complaint_rate_change
+	column 'Complaint Rate Change'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Complaint Rate Change
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.nps_change
+	column 'Nps Change'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Nps Change
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.cost_per_customer
+	column 'Cost Per Customer'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Cost Per Customer
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.experiment_start
+	column 'Experiment Start'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Experiment Start
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.experiment_end
+	column 'Experiment End'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Experiment End
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.hypothesis
+	column Hypothesis
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Hypothesis
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.control_description
+	column 'Control Description'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Control Description
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.treatment_description
+	column 'Treatment Description'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Treatment Description
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.variant
+	column Variant
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Variant
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.experiment_status
+	column 'Experiment Status'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Experiment Status
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.known_simulated_effect
+	column 'Known Simulated Effect'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Known Simulated Effect
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.adjusted_p_value
+	column 'Adjusted P Value'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Adjusted P Value
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.statistically_significant
+	column 'Statistically Significant'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Statistically Significant
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.practically_significant
+	column 'Practically Significant'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Practically Significant
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.experiment_decision
+	column 'Experiment Decision'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Experiment Decision
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.contamination_warning
+	column 'Contamination Warning'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Contamination Warning
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_experiment_results.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'AN Experiments' = m
+		mode: import
+		source = let Source = AnalyticsCsv("mart_experiment_results.csv", {"control_conversion_rate", "treatment_conversion_rate", "absolute_lift", "relative_lift", "incremental_conversions", "p_value", "ci_lower", "ci_upper", "control_ci_lower", "control_ci_upper", "treatment_ci_lower", "treatment_ci_upper", "test_method", "experiment_id", "experiment_name", "action", "control_n", "treatment_n", "sample_size", "conversions", "conversion_rate", "control_conversions", "treatment_conversions", "planned_per_variant", "srm_p_value", "qa_pass", "guardrail_status", "unsubscribe_rate_change", "complaint_rate_change", "nps_change", "cost_per_customer", "experiment_start", "experiment_end", "hypothesis", "control_description", "treatment_description", "variant", "experiment_status", "known_simulated_effect", "adjusted_p_value", "statistically_significant", "practically_significant", "experiment_decision", "contamination_warning", "synthetic_data_flag", "data_origin"}, {{"control_conversion_rate", type number}, {"treatment_conversion_rate", type number}, {"absolute_lift", type number}, {"relative_lift", type number}, {"incremental_conversions", type number}, {"p_value", type number}, {"ci_lower", type number}, {"ci_upper", type number}, {"control_ci_lower", type number}, {"control_ci_upper", type number}, {"treatment_ci_lower", type number}, {"treatment_ci_upper", type number}, {"test_method", type text}, {"experiment_id", type text}, {"experiment_name", type text}, {"action", type text}, {"control_n", Int64.Type}, {"treatment_n", Int64.Type}, {"sample_size", Int64.Type}, {"conversions", Int64.Type}, {"conversion_rate", type number}, {"control_conversions", Int64.Type}, {"treatment_conversions", Int64.Type}, {"planned_per_variant", Int64.Type}, {"srm_p_value", type number}, {"qa_pass", type logical}, {"guardrail_status", type text}, {"unsubscribe_rate_change", type number}, {"complaint_rate_change", type number}, {"nps_change", type number}, {"cost_per_customer", type number}, {"experiment_start", type text}, {"experiment_end", type text}, {"hypothesis", type text}, {"control_description", type text}, {"treatment_description", type text}, {"variant", type text}, {"experiment_status", type text}, {"known_simulated_effect", type number}, {"adjusted_p_value", type number}, {"statistically_significant", type logical}, {"practically_significant", type logical}, {"experiment_decision", type text}, {"contamination_warning", type logical}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"control_conversion_rate", "Control Conversion Rate"}, {"treatment_conversion_rate", "Treatment Conversion Rate"}, {"absolute_lift", "Absolute Lift"}, {"relative_lift", "Relative Lift"}, {"incremental_conversions", "Incremental Conversions"}, {"p_value", "P Value"}, {"ci_lower", "Ci Lower"}, {"ci_upper", "Ci Upper"}, {"control_ci_lower", "Control Ci Lower"}, {"control_ci_upper", "Control Ci Upper"}, {"treatment_ci_lower", "Treatment Ci Lower"}, {"treatment_ci_upper", "Treatment Ci Upper"}, {"test_method", "Test Method"}, {"experiment_id", "Experiment Id"}, {"experiment_name", "Experiment Name"}, {"action", "Action"}, {"control_n", "Control N"}, {"treatment_n", "Treatment N"}, {"sample_size", "Sample Size"}, {"conversions", "Conversions"}, {"conversion_rate", "Conversion Rate"}, {"control_conversions", "Control Conversions"}, {"treatment_conversions", "Treatment Conversions"}, {"planned_per_variant", "Planned Per Variant"}, {"srm_p_value", "Srm P Value"}, {"qa_pass", "Qa Pass"}, {"guardrail_status", "Guardrail Status"}, {"unsubscribe_rate_change", "Unsubscribe Rate Change"}, {"complaint_rate_change", "Complaint Rate Change"}, {"nps_change", "Nps Change"}, {"cost_per_customer", "Cost Per Customer"}, {"experiment_start", "Experiment Start"}, {"experiment_end", "Experiment End"}, {"hypothesis", "Hypothesis"}, {"control_description", "Control Description"}, {"treatment_description", "Treatment Description"}, {"variant", "Variant"}, {"experiment_status", "Experiment Status"}, {"known_simulated_effect", "Known Simulated Effect"}, {"adjusted_p_value", "Adjusted P Value"}, {"statistically_significant", "Statistically Significant"}, {"practically_significant", "Practically Significant"}, {"experiment_decision", "Experiment Decision"}, {"contamination_warning", "Contamination Warning"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

@@ -1,0 +1,170 @@
+[
+  {
+    "name": "ML Scored Customers",
+    "expression": "COALESCE(COUNTROWS('ML Customer Scores'), 0)",
+    "formatString": "#,0",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Scored Customers. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML High Churn Risk Customers",
+    "expression": "CALCULATE([ML Scored Customers], KEEPFILTERS('ML Customer Scores'[High Churn Risk] = TRUE()))",
+    "formatString": "#,0",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. High Churn Risk Customers. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML High Campaign Propensity Customers",
+    "expression": "CALCULATE([ML Scored Customers], KEEPFILTERS('ML Customer Scores'[High Campaign Propensity] = TRUE()))",
+    "formatString": "#,0",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. High Campaign Propensity Customers. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML High Payroll Propensity Customers",
+    "expression": "CALCULATE([ML Scored Customers], KEEPFILTERS('ML Customer Scores'[High Payroll Propensity] = TRUE()))",
+    "formatString": "#,0",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. High Payroll Propensity Customers. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML High Service Propensity Customers",
+    "expression": "CALCULATE([ML Scored Customers], KEEPFILTERS('ML Customer Scores'[High Travel Service Propensity] = TRUE()))",
+    "formatString": "#,0",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. High Service Propensity Customers. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML Customers with Recommended Action",
+    "expression": "CALCULATE([ML Scored Customers], KEEPFILTERS('ML Customer Scores'[Next Best Action] <> \"No Action\"))",
+    "formatString": "#,0",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Customers with Recommended Action. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML Average Churn Risk",
+    "expression": "AVERAGE('ML Customer Scores'[Churn Risk Score])",
+    "formatString": "0.0%",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Average Churn Risk. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML Average Campaign Propensity",
+    "expression": "AVERAGE('ML Customer Scores'[Campaign Propensity Score])",
+    "formatString": "0.0%",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Average Campaign Propensity. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML Average Payroll Propensity",
+    "expression": "AVERAGE('ML Customer Scores'[Payroll Propensity Score])",
+    "formatString": "0.0%",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Average Payroll Propensity. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML Average Service Propensity",
+    "expression": "AVERAGE('ML Customer Scores'[Travel Service Propensity Score])",
+    "formatString": "0.0%",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Average Service Propensity. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML Average Value Index",
+    "expression": "AVERAGE('ML Customer Scores'[Customer Value Score])",
+    "formatString": "0.0",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Average Value Index. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML Average Engagement",
+    "expression": "AVERAGE('ML Customer Scores'[Engagement Score])",
+    "formatString": "0.0",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Average Engagement. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML Average Action Score",
+    "expression": "AVERAGE('ML Customer Scores'[Next Best Action Score])",
+    "formatString": "0.0%",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Average Action Score. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML Average Priority Index",
+    "expression": "AVERAGE('ML Customer Scores'[Priority Score])",
+    "formatString": "0.0",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Average Priority Index. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "predictive_analytics"
+  },
+  {
+    "name": "ML Total Priority Index",
+    "expression": "SUM('ML Customer Scores'[Priority Score])",
+    "formatString": "#,0",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Total Priority Index. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "next_best_action"
+  },
+  {
+    "name": "ML Offline ROC AUC",
+    "expression": "AVERAGE('ML Model Performance'[Roc Auc])",
+    "formatString": "0.000",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Offline ROC AUC. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "model_performance"
+  },
+  {
+    "name": "ML Offline PR AUC",
+    "expression": "AVERAGE('ML Model Performance'[Pr Auc])",
+    "formatString": "0.000",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Offline PR AUC. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "model_performance"
+  },
+  {
+    "name": "ML Offline Lift at 10",
+    "expression": "AVERAGE('ML Model Performance'[Lift At 10])",
+    "formatString": "0.000",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Offline Lift at 10. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "model_performance"
+  },
+  {
+    "name": "ML Offline Precision",
+    "expression": "AVERAGE('ML Model Performance'[Precision])",
+    "formatString": "0.000",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Offline Precision. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "model_performance"
+  },
+  {
+    "name": "ML Offline Recall",
+    "expression": "AVERAGE('ML Model Performance'[Recall])",
+    "formatString": "0.000",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Offline Recall. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "model_performance"
+  },
+  {
+    "name": "ML Offline Brier Score",
+    "expression": "AVERAGE('ML Model Performance'[Brier Score])",
+    "formatString": "0.000",
+    "displayFolder": "SYNTHETIC DEMO MODEL",
+    "description": "SYNTHETIC DEMO MODEL. Offline Brier Score. Snapshot scoring; no real behavioral model or causal claim.",
+    "page": "model_performance"
+  }
+]

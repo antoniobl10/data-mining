@@ -1,0 +1,40 @@
+/// SYNTHETIC DEMO DATA. dim_product
+table 'Demo Product'
+
+	/// SYNTHETIC DEMO DATA. dim_product.product_type
+	column 'Product Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Product Type
+
+	/// SYNTHETIC DEMO DATA. dim_product.product_key
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Product Key
+
+	/// SYNTHETIC DEMO DATA. dim_product.product_category
+	column 'Product Category'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Product Category
+
+	/// SYNTHETIC DEMO DATA. dim_product.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO DATA. dim_product.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'Demo Product' = m
+		mode: import
+		source = let Source = SyntheticCsv("dim_product.csv", {"product_type", "product_key", "product_category", "synthetic_data_flag", "data_origin"}, {{"product_type", type text}, {"product_key", Int64.Type}, {"product_category", type text}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"product_type", "Product Type"}, {"product_key", "Product Key"}, {"product_category", "Product Category"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

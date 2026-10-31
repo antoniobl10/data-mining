@@ -1,0 +1,130 @@
+/// SYNTHETIC DEMO ANALYTICS. Aggregate analytical grains require scoped measures; no real bank results.
+table 'AN Cohorts'
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.cohort_type
+	column 'Cohort Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Cohort Type
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.cohort_name
+	column 'Cohort Name'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Cohort Name
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.cohort_period
+	column 'Cohort Period'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Cohort Period
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.activity_period
+	column 'Activity Period'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Activity Period
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.months_since_cohort
+	column 'Months Since Cohort'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Months Since Cohort
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.customers
+	column Customers
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Customers
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.active_customers
+	column 'Active Customers'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Active Customers
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.retained_customers
+	column 'Retained Customers'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Retained Customers
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.average_products
+	column 'Average Products'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Average Products
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.average_engagement_score
+	column 'Average Engagement Score'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Average Engagement Score
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.current_value_proxy
+	column 'Current Value Proxy'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Current Value Proxy
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.product_retained_customers
+	column 'Product Retained Customers'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Product Retained Customers
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.retention_rate
+	column 'Retention Rate'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: Retention Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.retention_definition
+	column 'Retention Definition'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Retention Definition
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.product_retention_rate
+	column 'Product Retention Rate'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Product Retention Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.service_retention_rate
+	column 'Service Retention Rate'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Service Retention Rate
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.average_balance
+	column 'Average Balance'
+		dataType: double
+		summarizeBy: none
+		sourceColumn: Average Balance
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.small_sample
+	column 'Small Sample'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Small Sample
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO ANALYTICS. mart_customer_cohorts.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'AN Cohorts' = m
+		mode: import
+		source = let Source = AnalyticsCsv("mart_customer_cohorts.csv", {"cohort_type", "cohort_name", "cohort_period", "activity_period", "months_since_cohort", "customers", "active_customers", "retained_customers", "average_products", "average_engagement_score", "current_value_proxy", "product_retained_customers", "retention_rate", "retention_definition", "product_retention_rate", "service_retention_rate", "average_balance", "small_sample", "synthetic_data_flag", "data_origin"}, {{"cohort_type", type text}, {"cohort_name", type text}, {"cohort_period", type text}, {"activity_period", type text}, {"months_since_cohort", Int64.Type}, {"customers", Int64.Type}, {"active_customers", Int64.Type}, {"retained_customers", Int64.Type}, {"average_products", type number}, {"average_engagement_score", type number}, {"current_value_proxy", type number}, {"product_retained_customers", Int64.Type}, {"retention_rate", type number}, {"retention_definition", type text}, {"product_retention_rate", type number}, {"service_retention_rate", type number}, {"average_balance", type number}, {"small_sample", type logical}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"cohort_type", "Cohort Type"}, {"cohort_name", "Cohort Name"}, {"cohort_period", "Cohort Period"}, {"activity_period", "Activity Period"}, {"months_since_cohort", "Months Since Cohort"}, {"customers", "Customers"}, {"active_customers", "Active Customers"}, {"retained_customers", "Retained Customers"}, {"average_products", "Average Products"}, {"average_engagement_score", "Average Engagement Score"}, {"current_value_proxy", "Current Value Proxy"}, {"product_retained_customers", "Product Retained Customers"}, {"retention_rate", "Retention Rate"}, {"retention_definition", "Retention Definition"}, {"product_retention_rate", "Product Retention Rate"}, {"service_retention_rate", "Service Retention Rate"}, {"average_balance", "Average Balance"}, {"small_sample", "Small Sample"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

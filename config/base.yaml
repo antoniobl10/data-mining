@@ -1,0 +1,52 @@
+platform_version: 1.0.0
+environment: null
+execution_backend: local
+storage:
+  root: data/platform
+  cloud_uri: ${BANKING_CLOUD_STORAGE:-}
+source:
+  mode: existing
+  path: ${BANKING_SOURCE_PATH:-dataset.xlsx}
+  fixture_customers: 180
+pipeline:
+  name: daily_data_pipeline
+  retries: 2
+  retry_backoff_seconds: 0.1
+  preserve_failed_attempts: true
+  processing_mode: full_snapshot
+  synthetic_history_end: '2026-09-30'
+  scoring_date: '2026-10-01'
+logging: {level: INFO}
+quality:
+  max_quarantine_fraction: 0.40
+  volume_warning_fraction: 0.20
+  volume_critical_fraction: 0.80
+  customer_freshness_hours: 24
+  campaign_freshness_hours: 6
+  digital_freshness_hours: 2
+  freshness_severity: WARNING
+  score_min: 0.0
+  score_max: 1.0
+models:
+  mode: existing_demo_champions
+  registry: ml/models/registry.json
+  allow_synthetic_in_production: false
+  training_cadence: weekly_review_not_automatic_retrain
+  minimum_lift_for_production: 1.10
+  minimum_pr_auc_over_prevalence: 1.10
+  owner: Data Science Owner
+mlflow:
+  tracking_uri: ${BANKING_MLFLOW_URI:-}
+features: {synthetic_behavior: true, external_refresh: false, incremental_events: false}
+catalog: banking
+schemas: {bronze: bronze, silver: silver, gold: gold, ml: ml, monitoring: monitoring}
+powerbi:
+  export_subdir: powerbi
+  workspace_id: ${POWERBI_WORKSPACE_ID:-}
+  semantic_model_id: ${POWERBI_SEMANTIC_MODEL_ID:-}
+  refresh_mode: request_file_only
+deployment:
+  workspace_host: ${DATABRICKS_HOST:-}
+  secret_scope: ${DATABRICKS_SECRET_SCOPE:-}
+  service_principal_id: ${AZURE_CLIENT_ID:-}
+  release_tag: ${BANKING_RELEASE_TAG:-}

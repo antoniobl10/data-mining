@@ -1,0 +1,112 @@
+/// SYNTHETIC DEMO DATA. fact_digital_events
+table 'Demo Digital Events'
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.interaction_id
+	column 'Interaction Id'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Interaction Id
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.customer_id
+	column 'Customer ID'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.event_timestamp
+	column 'Event Timestamp'
+		dataType: dateTime
+		isHidden
+		summarizeBy: none
+		sourceColumn: Event Timestamp
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.channel
+	column Channel
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Channel
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.event_type
+	column 'Event Type'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Event Type
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.session_id
+	column 'Session Id'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Session Id
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.device_type
+	column 'Device Type'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Device Type
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.feature_name
+	column 'Feature Name'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Feature Name
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.customer_key
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.date_key
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.month
+	column Month
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Month
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.login_flag
+	column 'Login Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Login Flag
+
+	/// SYNTHETIC DEMO DATA. fact_digital_events.mobile_flag
+	column 'Mobile Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Mobile Flag
+
+	partition 'Demo Digital Events' = m
+		mode: import
+		source = let Source = SyntheticCsv("fact_digital_events.csv", {"interaction_id", "customer_id", "event_timestamp", "channel", "event_type", "session_id", "device_type", "feature_name", "synthetic_data_flag", "data_origin", "customer_key", "date_key", "month", "login_flag", "mobile_flag"}, {{"interaction_id", type text}, {"customer_id", type text}, {"event_timestamp", type datetime}, {"channel", type text}, {"event_type", type text}, {"session_id", type text}, {"device_type", type text}, {"feature_name", type text}, {"synthetic_data_flag", type logical}, {"data_origin", type text}, {"customer_key", Int64.Type}, {"date_key", Int64.Type}, {"month", type text}, {"login_flag", type logical}, {"mobile_flag", type logical}}), Renamed = Table.RenameColumns(Source, {{"interaction_id", "Interaction Id"}, {"customer_id", "Customer ID"}, {"event_timestamp", "Event Timestamp"}, {"channel", "Channel"}, {"event_type", "Event Type"}, {"session_id", "Session Id"}, {"device_type", "Device Type"}, {"feature_name", "Feature Name"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}, {"customer_key", "Customer Key"}, {"date_key", "Date Key"}, {"month", "Month"}, {"login_flag", "Login Flag"}, {"mobile_flag", "Mobile Flag"}}) in Renamed
+

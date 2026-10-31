@@ -14,6 +14,6 @@ In Power BI Desktop, select the appropriate Databricks connector and supply the 
 
 Import fits this small snapshot: interactive queries operate on an in-memory copy and freshness follows refresh scheduling. DirectQuery can suit requirements for source-governed query execution, dataset size or lower freshness latency, but it introduces SQL Warehouse compute cost, network/query latency, connector constraints and capacity considerations. Benchmark actual visuals and security rules before choosing. Neither mode is always superior, and local CSV/Parquet files are not a DirectQuery backend.
 
-This phase delivers typed datasets and connection/model specifications. It does not create the final PBIX/PBIP, authenticate to a workspace, configure RLS or publish a dashboard.
+The current platform also generates the PBIP semantic model/report and local prepared copies. These source-connection instructions do not authenticate to a workspace, configure real RLS identities or publish a service dashboard. See the current Power BI and platform runbooks for validated build/refresh behavior.
 
 References: [Parquet connector](https://learn.microsoft.com/en-us/power-query/connectors/parquet), [Databricks connection](https://learn.microsoft.com/en-us/azure/databricks/partners/bi/power-bi-desktop), [Import/DirectQuery guidance](https://learn.microsoft.com/power-bi/connect-data/desktop-directquery-about).

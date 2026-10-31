@@ -1,0 +1,59 @@
+/// SYNTHETIC DEMO DATA. dim_campaign
+table 'Demo Campaign'
+
+	/// SYNTHETIC DEMO DATA. dim_campaign.campaign_id
+	column 'Campaign Id'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Campaign Id
+
+	/// SYNTHETIC DEMO DATA. dim_campaign.campaign_name
+	column 'Campaign Name'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Campaign Name
+
+	/// SYNTHETIC DEMO DATA. dim_campaign.campaign_type
+	column 'Campaign Type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Campaign Type
+
+	/// SYNTHETIC DEMO DATA. dim_campaign.channel
+	column Channel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Channel
+
+	/// SYNTHETIC DEMO DATA. dim_campaign.target_service
+	column 'Target Service'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Target Service
+
+	/// SYNTHETIC DEMO DATA. dim_campaign.campaign_key
+	column 'Campaign Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Campaign Key
+
+	/// SYNTHETIC DEMO DATA. dim_campaign.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO DATA. dim_campaign.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'Demo Campaign' = m
+		mode: import
+		source = let Source = SyntheticCsv("dim_campaign.csv", {"campaign_id", "campaign_name", "campaign_type", "channel", "target_service", "campaign_key", "synthetic_data_flag", "data_origin"}, {{"campaign_id", type text}, {"campaign_name", type text}, {"campaign_type", type text}, {"channel", type text}, {"target_service", type text}, {"campaign_key", Int64.Type}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"campaign_id", "Campaign Id"}, {"campaign_name", "Campaign Name"}, {"campaign_type", "Campaign Type"}, {"channel", "Channel"}, {"target_service", "Target Service"}, {"campaign_key", "Campaign Key"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

@@ -1,3 +1,5 @@
+> Scope: Historical extension proposal; later implemented with synthetic data. For current totals and execution boundaries, see [final health](../reports/final_project_health.md) and [documentation index](README.md). Historical counts below are not current platform totals.
+
 # Future banking and digital business extension
 
 These are proposed sources and metrics, not current business results. Keep any demonstration data explicitly labeled SYNTHETIC, in separate tables, reports and lineage. Never append it to real Gold or use it to fill current missing observations.

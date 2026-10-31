@@ -1,0 +1,42 @@
+dataset: customers
+contract_version: '1.0'
+owner: Customer Data Owner
+technical_owner: Data Engineering
+description: Accepted Silver customer master. Raw source receives structural validation;
+  invalid rows are quarantined before full validation.
+layer: silver
+primary_key:
+- customer_id
+allow_extra_columns: true
+fields:
+  customer_id:
+    type: string
+    nullable: false
+  country:
+    type: string
+    nullable: false
+  gender:
+    type: string
+    nullable: false
+  credit_score:
+    type: number
+    nullable: true
+    min: 300
+    max: 850
+  age:
+    type: number
+    nullable: true
+    min: 18
+    max: 100
+  tenure:
+    type: number
+    nullable: true
+    min: 0
+    max: 120
+  balance:
+    type: number
+    nullable: true
+  estimated_salary:
+    type: number
+    nullable: true
+    min: 0

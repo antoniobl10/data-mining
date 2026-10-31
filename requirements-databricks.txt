@@ -1,0 +1,3 @@
+# Reference driver runs the existing bounded Pandas/sklearn code on governed Volumes.
+# Spark/Delta are provided by the selected Databricks runtime; do not pip-install pyspark over it.
+-r requirements-ml.txt

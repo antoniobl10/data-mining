@@ -1,0 +1,40 @@
+/// SYNTHETIC DEMO DATA. dim_service
+table 'Demo Service'
+
+	/// SYNTHETIC DEMO DATA. dim_service.service_name
+	column 'Service Name'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Service Name
+
+	/// SYNTHETIC DEMO DATA. dim_service.service_key
+	column 'Service Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Service Key
+
+	/// SYNTHETIC DEMO DATA. dim_service.service_category
+	column 'Service Category'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Service Category
+
+	/// SYNTHETIC DEMO DATA. dim_service.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO DATA. dim_service.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'Demo Service' = m
+		mode: import
+		source = let Source = SyntheticCsv("dim_service.csv", {"service_name", "service_key", "service_category", "synthetic_data_flag", "data_origin"}, {{"service_name", type text}, {"service_key", Int64.Type}, {"service_category", type text}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"service_name", "Service Name"}, {"service_key", "Service Key"}, {"service_category", "Service Category"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

@@ -1,0 +1,13 @@
+# Propensity, incrementality and attribution
+
+Propensity asks who is likely to convert under the observed conditions. High-propensity customers may convert without receiving a campaign. The existing synthetic models are weak and remain demonstration predictors.
+
+Experimentation asks whether an action changes outcomes compared with a defined control. Within a properly executed randomized population, the intention-to-treat difference estimates the effect of assignment. The project now generates **new randomized synthetic experiments**; it does not retrofit a control group onto the old nonrandom campaign data. All outcomes/effects are simulated and cannot establish real banking impact.
+
+Incremental conversions are `(treatment rate − control rate) × treatment population`, with uncertainty and potential negative values preserved. Comparisons using standard communication measure a different intervention contrast from no communication. Interference, noncompliance, missing outcomes, overlapping campaigns, novelty, seasonality and poorly executed exposure can still undermine interpretation. ITT retains assigned customers even if actual exposure is missing; an exposure failure invalidates the decision under the configured QA policy rather than dropping users after assignment.
+
+First Touch, Last Touch, Linear and Position Based attribution allocate observed conversion credit to eligible preceding sends within seven or 30 days. Untimestamped opens/clicks are not fabricated as touches. Ties from date-only sends use stable IDs for reproducibility, not a claim of known intraday order. Each observed conversion receives total credit one for each model/window, including an Unattributed member if needed. Costs are included once per original contact per model/window, not once per joined conversion. Comparing models/windows without filtering would multiply counts and is prevented by scoped measures.
+
+Rule-based credit is not causal credit or marketing synergy. Multiple-channel recipients can differ systematically from single-channel recipients. The channel-mix mart is observational. Synthetic ROI combines assumed conversion value and contact cost in synthetic value units; it is neither actual margin nor CLV. Experimental value/cost estimates are reported separately from observational ROI.
+
+The uplift-ready table contains pre-assignment features, treatment and outcome, with experiment identifiers and holdout exclusions. No complex uplift model is trained on this small simulation. A future two-model estimator needs sufficient randomized samples, honest validation, treatment-propensity/overlap checks, policy evaluation and fresh real-world experiments before decisions. Average experiment lift is not an individual treatment effect.

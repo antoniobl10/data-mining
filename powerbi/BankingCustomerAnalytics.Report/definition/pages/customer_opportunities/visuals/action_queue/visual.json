@@ -1,0 +1,301 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "action_queue",
+  "position": {
+    "x": 24,
+    "y": 942,
+    "width": 1392,
+    "height": 230,
+    "z": 22,
+    "tabOrder": 22
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Action Queue'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#142D4E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SYNTHETIC DEMO ANALYTICS. action_queue'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Opportunities"
+                    }
+                  },
+                  "Property": "Customer Key"
+                }
+              },
+              "queryRef": "AN Opportunities.Customer Key",
+              "nativeQueryRef": "Customer Key",
+              "displayName": "Customer Key"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Opportunities"
+                    }
+                  },
+                  "Property": "Current Lifecycle Stage"
+                }
+              },
+              "queryRef": "AN Opportunities.Current Lifecycle Stage",
+              "nativeQueryRef": "Current Lifecycle Stage",
+              "displayName": "Current Lifecycle Stage"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Opportunities"
+                    }
+                  },
+                  "Property": "Primary Bank Stage"
+                }
+              },
+              "queryRef": "AN Opportunities.Primary Bank Stage",
+              "nativeQueryRef": "Primary Bank Stage",
+              "displayName": "Primary Bank Stage"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Opportunities"
+                    }
+                  },
+                  "Property": "Next Best Action"
+                }
+              },
+              "queryRef": "AN Opportunities.Next Best Action",
+              "nativeQueryRef": "Next Best Action",
+              "displayName": "Next Best Action"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Opportunities"
+                    }
+                  },
+                  "Property": "Priority Score"
+                }
+              },
+              "queryRef": "AN Opportunities.Priority Score",
+              "nativeQueryRef": "Priority Score",
+              "displayName": "Priority Score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Opportunities"
+                    }
+                  },
+                  "Property": "Experimental Lift"
+                }
+              },
+              "queryRef": "AN Opportunities.Experimental Lift",
+              "nativeQueryRef": "Experimental Lift",
+              "displayName": "Experimental Lift"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Opportunities"
+                    }
+                  },
+                  "Property": "Contact Allowed"
+                }
+              },
+              "queryRef": "AN Opportunities.Contact Allowed",
+              "nativeQueryRef": "Contact Allowed",
+              "displayName": "Contact Allowed"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Opportunities"
+                    }
+                  },
+                  "Property": "Reason Code"
+                }
+              },
+              "queryRef": "AN Opportunities.Reason Code",
+              "nativeQueryRef": "Reason Code",
+              "displayName": "Reason Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AN Opportunities"
+                    }
+                  },
+                  "Property": "Next Best Action Reason"
+                }
+              },
+              "queryRef": "AN Opportunities.Next Best Action Reason",
+              "nativeQueryRef": "Next Best Action Reason",
+              "displayName": "Next Best Action Reason"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "AN Opportunities"
+                  }
+                },
+                "Property": "Priority Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    }
+  }
+}

@@ -1,0 +1,208 @@
+resources:
+  jobs:
+    daily_data_pipeline:
+      name: banking-${var.environment}-daily-data
+      max_concurrent_runs: 1
+      schedule:
+        quartz_cron_expression: 0 0 4 * * ?
+        timezone_id: Europe/Berlin
+        pause_status: PAUSED
+      tags:
+        implementation: PRODUCTION_REFERENCE_NOT_DEPLOYED
+      tasks:
+      - task_key: 01_source_validation
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 01_source_validation
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+      - task_key: 02_bronze_ingestion
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 02_bronze_ingestion
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 01_source_validation
+      - task_key: 03_silver_transformation
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 03_silver_transformation
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 02_bronze_ingestion
+      - task_key: 04_silver_quality
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 04_silver_quality
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 03_silver_transformation
+      - task_key: 05_gold_dimensions
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 05_gold_dimensions
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 04_silver_quality
+      - task_key: 06_gold_facts
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 06_gold_facts
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 05_gold_dimensions
+      - task_key: 07_customer_360
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 07_customer_360
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 06_gold_facts
+        - task_key: 04_silver_quality
+      - task_key: 08_feature_engineering
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 08_feature_engineering
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 07_customer_360
+      - task_key: 09_ml_scoring
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 09_ml_scoring
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 08_feature_engineering
+      - task_key: 10_gold_prediction_marts
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 10_gold_prediction_marts
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 09_ml_scoring
+      - task_key: 11_gold_quality
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 11_gold_quality
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 06_gold_facts
+        - task_key: 07_customer_360
+        - task_key: 10_gold_prediction_marts
+      - task_key: 12_export_powerbi
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 12_export_powerbi
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 11_gold_quality
+      - task_key: 13_pipeline_validation
+        existing_cluster_id: ${var.existing_cluster_id}
+        spark_python_task:
+          python_file: ${var.task_entry_path}
+          parameters:
+          - --task
+          - 13_pipeline_validation
+          - --env
+          - ${var.environment}
+          - --pipeline-run-id
+          - '{{job.run_id}}'
+        max_retries: 0
+        timeout_seconds: 3600
+        depends_on:
+        - task_key: 12_export_powerbi

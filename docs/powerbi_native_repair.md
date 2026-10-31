@@ -1,3 +1,5 @@
+> Scope: Earlier native Desktop repair evidence. For current totals and execution boundaries, see [final health](../reports/final_project_health.md) and [documentation index](README.md). Historical counts below are not current platform totals.
+
 # Native Desktop repair — 28 October 2026
 
 The original project had two separate issues: an unconfigured source parameter and an unprocessed model; its hand-authored report shell also omitted runtime metadata/resources. Schema-only validation did not detect these native problems.

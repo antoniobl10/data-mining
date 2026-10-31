@@ -1,0 +1,13 @@
+# Responsible modeling and use boundaries
+
+All artifacts are **SYNTHETIC DEMO MODEL**. Behavioral data and all targets are synthetic. Metrics cannot support claims about real banking performance. Neither propensity nor Next Best Action estimates causal impact. These artifacts must not automatically determine access, pricing, lending, eligibility for regulated products, or treatment of real customers.
+
+Country, gender and age group are withheld from predictors and retained only for offline group audits. Per-model fairness files report selection rates, precision, recall, group counts and positive counts. Groups with fewer than 50 observations or ten positives carry small-sample flags. These metrics are observational, repeated customers are dependent, and group correlations can persist through allowed features. Excluding sensitive columns does not prove fairness. Zero positives and small denominators make precision/recall unreliable.
+
+Audit disparities must be visible and investigated, never used to justify discriminatory targeting. The generated findings report the selection-rate range for each grouping, including small samples. A production review needs subgroup uncertainty, purpose-specific harm assessment, legal/privacy review, lawful basis and consent, customer controls, retention policy and independent validation.
+
+The deterministic synthetic `marketing_contact_allowed` flag excludes roughly 5% of keys using a stable hash-like modulus; it is a simulation fixture, not consent. Every action, including service recovery, respects it. Already-payroll customers cannot receive payroll acquisition actions. Previously activated travel customers cannot receive travel activation actions. Cross-sell recommends only a Savings Account when a current account exists, no savings account is owned and depth is low. FX remains a documented future model; no travel probability is relabeled as an FX model.
+
+The current predictive signal is weak. Payroll falls back to the constant baseline. Campaign weighted-logistic probabilities are poorly calibrated and have too few early-validation positives for the configured sigmoid minimum. Use all scores and recommendations only to inspect the prototype. No effectiveness claim or production go-live is supported.
+
+Customer-level score queues and local explanations are for authorized analytical use. Hiding report fields is not authorization. No RLS identity model or service publication is invented; real deployment requires access and export controls. Local model, cache and MLflow artifacts contain customer-linked data and remain outside Git.

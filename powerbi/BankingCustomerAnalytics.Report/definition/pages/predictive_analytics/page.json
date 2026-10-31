@@ -1,0 +1,621 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "predictive_analytics",
+  "displayName": "Predictive Analytics",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_country",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "risk_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "propensity_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "top_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "value_risk",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "engagement_propensity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "risk_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "propensity_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "top_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "value_risk",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_customer_value_segment",
+      "target": "engagement_propensity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "risk_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "propensity_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "top_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "value_risk",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_next_best_action",
+      "target": "engagement_propensity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "propensity_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "top_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "value_risk",
+      "type": "DataFilter"
+    },
+    {
+      "source": "risk_distribution",
+      "target": "engagement_propensity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "risk_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "top_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "value_risk",
+      "type": "DataFilter"
+    },
+    {
+      "source": "propensity_distribution",
+      "target": "engagement_propensity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "risk_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "propensity_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "value_risk",
+      "type": "DataFilter"
+    },
+    {
+      "source": "top_actions",
+      "target": "engagement_propensity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "risk_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "propensity_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "top_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "value_risk",
+      "type": "DataFilter"
+    },
+    {
+      "source": "payroll_segment",
+      "target": "engagement_propensity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "risk_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "propensity_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "top_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value_risk",
+      "target": "engagement_propensity",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "slicer_customer_value_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "slicer_next_best_action",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "ml_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "ml_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "ml_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "ml_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "ml_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "risk_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "propensity_distribution",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "top_actions",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "payroll_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "engagement_propensity",
+      "target": "value_risk",
+      "type": "DataFilter"
+    }
+  ]
+}

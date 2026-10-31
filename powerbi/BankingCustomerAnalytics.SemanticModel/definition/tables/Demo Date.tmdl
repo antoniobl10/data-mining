@@ -1,0 +1,92 @@
+/// SYNTHETIC DEMO DATA. dim_date
+table 'Demo Date'
+	dataCategory: Time
+
+	/// SYNTHETIC DEMO DATA. dim_date.date
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: Date
+
+	/// SYNTHETIC DEMO DATA. dim_date.date_key
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Date Key
+
+	/// SYNTHETIC DEMO DATA. dim_date.year
+	column Year
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Year
+
+	/// SYNTHETIC DEMO DATA. dim_date.quarter
+	column Quarter
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Quarter
+
+	/// SYNTHETIC DEMO DATA. dim_date.month
+	column Month
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Month
+
+	/// SYNTHETIC DEMO DATA. dim_date.month_name
+	column 'Month Name'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Month Name
+		sortByColumn: 'Month Number'
+
+	/// SYNTHETIC DEMO DATA. dim_date.month_number
+	column 'Month Number'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Month Number
+
+	/// SYNTHETIC DEMO DATA. dim_date.week
+	column Week
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Week
+
+	/// SYNTHETIC DEMO DATA. dim_date.day
+	column Day
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Day
+
+	/// SYNTHETIC DEMO DATA. dim_date.day_of_week
+	column 'Day Of Week'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Day Of Week
+
+	/// SYNTHETIC DEMO DATA. dim_date.is_weekend
+	column 'Is Weekend'
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: Is Weekend
+
+	/// SYNTHETIC DEMO DATA. dim_date.synthetic_data_flag
+	column 'Synthetic Data Flag'
+		dataType: boolean
+		isHidden
+		summarizeBy: none
+		sourceColumn: Synthetic Data Flag
+
+	/// SYNTHETIC DEMO DATA. dim_date.data_origin
+	column 'Data Origin'
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Data Origin
+
+	partition 'Demo Date' = m
+		mode: import
+		source = let Source = SyntheticCsv("dim_date.csv", {"date", "date_key", "year", "quarter", "month", "month_name", "month_number", "week", "day", "day_of_week", "is_weekend", "synthetic_data_flag", "data_origin"}, {{"date", type date}, {"date_key", Int64.Type}, {"year", Int64.Type}, {"quarter", Int64.Type}, {"month", type text}, {"month_name", type text}, {"month_number", Int64.Type}, {"week", Int64.Type}, {"day", Int64.Type}, {"day_of_week", Int64.Type}, {"is_weekend", type logical}, {"synthetic_data_flag", type logical}, {"data_origin", type text}}), Renamed = Table.RenameColumns(Source, {{"date", "Date"}, {"date_key", "Date Key"}, {"year", "Year"}, {"quarter", "Quarter"}, {"month", "Month"}, {"month_name", "Month Name"}, {"month_number", "Month Number"}, {"week", "Week"}, {"day", "Day"}, {"day_of_week", "Day Of Week"}, {"is_weekend", "Is Weekend"}, {"synthetic_data_flag", "Synthetic Data Flag"}, {"data_origin", "Data Origin"}}) in Renamed
+

@@ -1,0 +1,642 @@
+[
+  {
+    "name": "Demo Customers",
+    "expression": "COALESCE(COUNTROWS('Demo Customer 360'),0)",
+    "description": "SYNTHETIC DEMO DATA. Accepted master cohort count; independent of demo date selection.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Customers with Payroll",
+    "expression": "CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Has Salary Domiciliation] = TRUE()))",
+    "description": "SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Primary Banking",
+    "page": "Primary Banking"
+  },
+  {
+    "name": "Demo Likely Primary Bank Customers",
+    "expression": "CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Primary Bank Segment] = \"Likely Primary Bank\"))",
+    "description": "SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Primary Banking",
+    "page": "Primary Banking"
+  },
+  {
+    "name": "Demo High Value Low Engagement Customers",
+    "expression": "CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[High Value Low Engagement] = TRUE()))",
+    "description": "SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Primary Banking",
+    "page": "Primary Banking"
+  },
+  {
+    "name": "Demo Payroll Opportunity Customers",
+    "expression": "CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Eligible For Payroll Campaign] = TRUE()))",
+    "description": "SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Primary Banking",
+    "page": "Primary Banking"
+  },
+  {
+    "name": "Demo Cross-Sell Opportunity Customers",
+    "expression": "CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Cross Sell Opportunity] = TRUE()))",
+    "description": "SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Primary Banking",
+    "page": "Primary Banking"
+  },
+  {
+    "name": "Demo High Engagement Low Product Depth Customers",
+    "expression": "CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[High Engagement Low Product Depth] = TRUE()))",
+    "description": "SYNTHETIC DEMO DATA. Customer snapshot rule count; no future prediction.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Primary Banking",
+    "page": "Primary Banking"
+  },
+  {
+    "name": "Demo Salary Domiciliation Rate",
+    "expression": "DIVIDE([Demo Customers with Payroll], [Demo Customers])",
+    "description": "SYNTHETIC DEMO DATA. Snapshot percentage across selected customers.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Likely Primary Bank %",
+    "expression": "DIVIDE([Demo Likely Primary Bank Customers], [Demo Customers])",
+    "description": "SYNTHETIC DEMO DATA. Snapshot percentage across selected customers.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Average Products per Customer",
+    "expression": "AVERAGE('Demo Customer 360'[Active Product Count])",
+    "description": "SYNTHETIC DEMO DATA. All-domain customer snapshot average; date slicers do not change the stock.",
+    "formatString": "0.00",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Average Engagement Score",
+    "expression": "AVERAGE('Demo Customer 360'[Engagement Score])",
+    "description": "SYNTHETIC DEMO DATA. All-domain customer snapshot average; date slicers do not change the stock.",
+    "formatString": "0.0",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Average Primary Bank Score",
+    "expression": "AVERAGE('Demo Customer 360'[Primary Bank Score])",
+    "description": "SYNTHETIC DEMO DATA. All-domain customer snapshot average; date slicers do not change the stock.",
+    "formatString": "0.0",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Average Payroll Amount",
+    "expression": "CALCULATE(AVERAGE('Demo Customer 360'[Monthly Payroll Amount]), KEEPFILTERS('Demo Customer 360'[Has Salary Domiciliation]=TRUE()))",
+    "description": "SYNTHETIC DEMO DATA. Snapshot monthly payroll among customers with domiciliation; no annual-salary inference.",
+    "formatString": "€#,0",
+    "displayFolder": "Digital Demo\\Primary Banking",
+    "page": "Primary Banking"
+  },
+  {
+    "name": "Demo Customers with 2+ Products",
+    "expression": "CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Active Product Count]>=2))",
+    "description": "SYNTHETIC DEMO DATA. Active stock product count at the simulation endpoint.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Customers with 3+ Products",
+    "expression": "CALCULATE([Demo Customers], KEEPFILTERS('Demo Customer 360'[Active Product Count]>=3))",
+    "description": "SYNTHETIC DEMO DATA. Active stock product count at the simulation endpoint.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Cross-Sell Rate",
+    "expression": "DIVIDE([Demo Customers with 2+ Products], [Demo Customers])",
+    "description": "SYNTHETIC DEMO DATA. Defined as customers with at least two active products / all demo customers; distinct from the opportunity flag.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Active Product Customers",
+    "expression": "COALESCE(CALCULATE(DISTINCTCOUNT('Demo Product Holdings'[Customer Key]), 'Demo Product Holdings'[Is Active]=TRUE(), REMOVEFILTERS('Demo Date')),0)",
+    "description": "SYNTHETIC DEMO DATA. Selected product holders at endpoint; product/customer filters apply, dates are cleared.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Product Penetration Rate",
+    "expression": "DIVIDE([Demo Active Product Customers], [Demo Customers])",
+    "description": "SYNTHETIC DEMO DATA. Active holders of selected product / all master customers, assumed eligible for demo product analysis.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo New Payroll Customers",
+    "expression": "COALESCE(CALCULATE(DISTINCTCOUNT('Demo Payroll'[Customer Key]), 'Demo Payroll'[Has Salary Domiciliation]=TRUE(), USERELATIONSHIP('Demo Payroll'[Payroll Start Date Key], 'Demo Date'[Date Key])),0)",
+    "description": "SYNTHETIC DEMO DATA. Customers whose modeled payroll start falls in selected dates; not net growth.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Primary Banking",
+    "page": "Primary Banking"
+  },
+  {
+    "name": "Demo Campaigns Sent",
+    "expression": "COALESCE(CALCULATE(COUNTROWS('Demo Campaign Interactions'), KEEPFILTERS('Demo Campaign Interactions'[Sent]=TRUE())),0)",
+    "description": "SYNTHETIC DEMO DATA. Customer-campaign contacts, not distinct campaign definitions. Date refers to send date.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Campaign Opens",
+    "expression": "COALESCE(CALCULATE(COUNTROWS('Demo Campaign Interactions'), KEEPFILTERS('Demo Campaign Interactions'[Opened]=TRUE())),0)",
+    "description": "SYNTHETIC DEMO DATA. Customer-campaign contacts, not distinct campaign definitions. Date refers to send date.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Campaign Clicks",
+    "expression": "COALESCE(CALCULATE(COUNTROWS('Demo Campaign Interactions'), KEEPFILTERS('Demo Campaign Interactions'[Clicked]=TRUE())),0)",
+    "description": "SYNTHETIC DEMO DATA. Customer-campaign contacts, not distinct campaign definitions. Date refers to send date.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Campaign Conversions",
+    "expression": "COALESCE(CALCULATE(COUNTROWS('Demo Campaign Interactions'), KEEPFILTERS('Demo Campaign Interactions'[Converted]=TRUE())),0)",
+    "description": "SYNTHETIC DEMO DATA. Customer-campaign contacts, not distinct campaign definitions. Date refers to send date.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Campaign Cost",
+    "expression": "SUM('Demo Campaign Interactions'[Campaign Cost])",
+    "description": "SYNTHETIC DEMO DATA. Synthetic contact costs only; no ROI or revenue.",
+    "formatString": "€#,0.00",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Open Rate",
+    "expression": "DIVIDE([Demo Campaign Opens], [Demo Campaigns Sent])",
+    "description": "SYNTHETIC DEMO DATA. Sent-based funnel rate; a conversion is a modeled campaign CTA completion, not causal incremental adoption.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo CTR",
+    "expression": "DIVIDE([Demo Campaign Clicks], [Demo Campaigns Sent])",
+    "description": "SYNTHETIC DEMO DATA. Sent-based funnel rate; a conversion is a modeled campaign CTA completion, not causal incremental adoption.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Conversion Rate",
+    "expression": "DIVIDE([Demo Campaign Conversions], [Demo Campaigns Sent])",
+    "description": "SYNTHETIC DEMO DATA. Sent-based funnel rate; a conversion is a modeled campaign CTA completion, not causal incremental adoption.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Cost per Conversion",
+    "expression": "DIVIDE([Demo Campaign Cost], [Demo Campaign Conversions])",
+    "description": "SYNTHETIC DEMO DATA. Sent-based funnel rate; a conversion is a modeled campaign CTA completion, not causal incremental adoption.",
+    "formatString": "€#,0.00",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Digital Events",
+    "expression": "COALESCE(COUNTROWS('Demo Digital Events'),0)",
+    "description": "SYNTHETIC DEMO DATA. Events within selected dates, including modeled service activations.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Digital Sessions",
+    "expression": "COALESCE(DISTINCTCOUNT('Demo Digital Events'[Session Id]),0)",
+    "description": "SYNTHETIC DEMO DATA. Distinct synthetic sessions within selected dates.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Digital Active Customers",
+    "expression": "COALESCE(DISTINCTCOUNT('Demo Digital Events'[Customer Key]),0)",
+    "description": "SYNTHETIC DEMO DATA. Distinct customers with any qualifying event in selected dates.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Average Sessions per Customer",
+    "expression": "DIVIDE([Demo Digital Sessions], [Demo Customers])",
+    "description": "SYNTHETIC DEMO DATA. Selected-period numerator / full selected master cohort, including inactive customers.",
+    "formatString": "0.00",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Average Events per Customer",
+    "expression": "DIVIDE([Demo Digital Events], [Demo Customers])",
+    "description": "SYNTHETIC DEMO DATA. Selected-period numerator / full selected master cohort, including inactive customers.",
+    "formatString": "0.00",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Digital Engagement Rate",
+    "expression": "DIVIDE([Demo Digital Active Customers], [Demo Customers])",
+    "description": "SYNTHETIC DEMO DATA. Selected-period numerator / full selected master cohort, including inactive customers.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Mobile App Customers",
+    "expression": "COALESCE(CALCULATE(DISTINCTCOUNT('Demo Digital Events'[Customer Key]), KEEPFILTERS('Demo Digital Events'[Channel]=\"Mobile App\")),0)",
+    "description": "SYNTHETIC DEMO DATA. Customers with at least one app event in selected dates.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Mobile App Adoption Rate",
+    "expression": "DIVIDE([Demo Mobile App Customers], [Demo Customers])",
+    "description": "SYNTHETIC DEMO DATA. Selected-period app activity / selected master cohort; not installed-app count.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Weekly Active Customers",
+    "expression": "VAR EndDate=MAX('Demo Date'[Date])\nVAR StartDate=EndDate-6\nVAR FirstAvailable=MINX(ALL('Demo Date'),'Demo Date'[Date])\nRETURN IF(StartDate>=FirstAvailable, CALCULATE([Demo Digital Active Customers], REMOVEFILTERS('Demo Date'), DATESBETWEEN('Demo Date'[Date],StartDate,EndDate)))",
+    "description": "SYNTHETIC DEMO DATA. Rolling 7 days ending at latest selected date. Blank when full lookback is unavailable.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Active Customers 30D",
+    "expression": "VAR EndDate=MAX('Demo Date'[Date])\nVAR StartDate=EndDate-29\nVAR FirstAvailable=MINX(ALL('Demo Date'),'Demo Date'[Date])\nRETURN IF(StartDate>=FirstAvailable, CALCULATE([Demo Digital Active Customers], REMOVEFILTERS('Demo Date'), DATESBETWEEN('Demo Date'[Date],StartDate,EndDate)))",
+    "description": "SYNTHETIC DEMO DATA. Rolling 30 days ending at latest selected date. Blank when full lookback is unavailable.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Active Customers 90D",
+    "expression": "VAR EndDate=MAX('Demo Date'[Date])\nVAR StartDate=EndDate-89\nVAR FirstAvailable=MINX(ALL('Demo Date'),'Demo Date'[Date])\nRETURN IF(StartDate>=FirstAvailable, CALCULATE([Demo Digital Active Customers], REMOVEFILTERS('Demo Date'), DATESBETWEEN('Demo Date'[Date],StartDate,EndDate)))",
+    "description": "SYNTHETIC DEMO DATA. Rolling 90 days ending at latest selected date. Blank when full lookback is unavailable.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Monthly Active Customers",
+    "expression": "VAR EndDate=MAX('Demo Date'[Date])\nRETURN CALCULATE([Demo Digital Active Customers],REMOVEFILTERS('Demo Date'),DATESBETWEEN('Demo Date'[Date],DATE(YEAR(EndDate),MONTH(EndDate),1),EndDate))",
+    "description": "SYNTHETIC DEMO DATA. Distinct active customers in month-to-date of latest selected date; month charts evaluate each month.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Inactive Customers 30D",
+    "expression": "IF(NOT ISBLANK([Demo Active Customers 30D]),[Demo Customers]-[Demo Active Customers 30D])",
+    "description": "SYNTHETIC DEMO DATA. Selected master cohort minus rolling-30-day active customers.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Digital Engagement",
+    "page": "Digital Engagement"
+  },
+  {
+    "name": "Demo Eligible Service Relationships",
+    "expression": "COALESCE(CALCULATE(COUNTROWS('Demo Service Adoption'), KEEPFILTERS('Demo Service Adoption'[Eligible]=TRUE()), REMOVEFILTERS('Demo Date')),0)",
+    "description": "SYNTHETIC DEMO DATA. Endpoint customer-service relationships. Additive across services; not a distinct customer count.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  },
+  {
+    "name": "Demo Offered Service Relationships",
+    "expression": "COALESCE(CALCULATE(COUNTROWS('Demo Service Adoption'), KEEPFILTERS('Demo Service Adoption'[Offered]=TRUE()), REMOVEFILTERS('Demo Date')),0)",
+    "description": "SYNTHETIC DEMO DATA. Endpoint customer-service relationships. Additive across services; not a distinct customer count.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  },
+  {
+    "name": "Demo Activated Service Relationships",
+    "expression": "COALESCE(CALCULATE(COUNTROWS('Demo Service Adoption'), KEEPFILTERS('Demo Service Adoption'[Activated]=TRUE()), REMOVEFILTERS('Demo Date')),0)",
+    "description": "SYNTHETIC DEMO DATA. Endpoint customer-service relationships. Additive across services; not a distinct customer count.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  },
+  {
+    "name": "Demo Active Service Relationships",
+    "expression": "COALESCE(CALCULATE(COUNTROWS('Demo Service Adoption'), KEEPFILTERS('Demo Service Adoption'[Active Status]=TRUE()), REMOVEFILTERS('Demo Date')),0)",
+    "description": "SYNTHETIC DEMO DATA. Endpoint customer-service relationships. Additive across services; not a distinct customer count.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  },
+  {
+    "name": "Demo Eligible Service Customers",
+    "expression": "COALESCE(CALCULATE(DISTINCTCOUNT('Demo Service Adoption'[Customer Key]), KEEPFILTERS('Demo Service Adoption'[Eligible]=TRUE()), REMOVEFILTERS('Demo Date')),0)",
+    "description": "SYNTHETIC DEMO DATA. Distinct selected customers with at least one selected service in this endpoint state.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  },
+  {
+    "name": "Demo Offered Service Customers",
+    "expression": "COALESCE(CALCULATE(DISTINCTCOUNT('Demo Service Adoption'[Customer Key]), KEEPFILTERS('Demo Service Adoption'[Offered]=TRUE()), REMOVEFILTERS('Demo Date')),0)",
+    "description": "SYNTHETIC DEMO DATA. Distinct selected customers with at least one selected service in this endpoint state.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  },
+  {
+    "name": "Demo Activated Service Customers",
+    "expression": "COALESCE(CALCULATE(DISTINCTCOUNT('Demo Service Adoption'[Customer Key]), KEEPFILTERS('Demo Service Adoption'[Activated]=TRUE()), REMOVEFILTERS('Demo Date')),0)",
+    "description": "SYNTHETIC DEMO DATA. Distinct selected customers with at least one selected service in this endpoint state.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  },
+  {
+    "name": "Demo Active Service Customers",
+    "expression": "COALESCE(CALCULATE(DISTINCTCOUNT('Demo Service Adoption'[Customer Key]), KEEPFILTERS('Demo Service Adoption'[Active Status]=TRUE()), REMOVEFILTERS('Demo Date')),0)",
+    "description": "SYNTHETIC DEMO DATA. Distinct selected customers with at least one selected service in this endpoint state.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  },
+  {
+    "name": "Demo Service Activation Rate",
+    "expression": "DIVIDE([Demo Activated Service Relationships], [Demo Offered Service Relationships])",
+    "description": "SYNTHETIC DEMO DATA. Activated / offered customer-service relationships at endpoint.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  },
+  {
+    "name": "Demo Service Adoption Rate",
+    "expression": "DIVIDE([Demo Activated Service Relationships], [Demo Eligible Service Relationships])",
+    "description": "SYNTHETIC DEMO DATA. Activated / eligible customer-service relationships at endpoint.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Digital Business Overview",
+    "page": "Digital Business Overview"
+  },
+  {
+    "name": "Demo Average Service Usage",
+    "expression": "DIVIDE(CALCULATE(SUM('Demo Service Adoption'[Monthly Usage Count]),REMOVEFILTERS('Demo Date')), [Demo Active Service Relationships])",
+    "description": "SYNTHETIC DEMO DATA. Last snapshot-month modeled uses / active customer-service relationships.",
+    "formatString": "0.00",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  },
+  {
+    "name": "Demo Survey Responses",
+    "expression": "COALESCE(COUNTROWS('Demo Satisfaction'),0)",
+    "description": "SYNTHETIC DEMO DATA. Survey responses in selected dates; repeat respondents may appear.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Customer Satisfaction",
+    "page": "Customer Satisfaction"
+  },
+  {
+    "name": "Demo Promoters",
+    "expression": "COALESCE(CALCULATE([Demo Survey Responses], KEEPFILTERS('Demo Satisfaction'[Nps Score]>=9)),0)",
+    "description": "SYNTHETIC DEMO DATA. Response count using standard score classification.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Customer Satisfaction",
+    "page": "Customer Satisfaction"
+  },
+  {
+    "name": "Demo Detractors",
+    "expression": "COALESCE(CALCULATE([Demo Survey Responses], KEEPFILTERS('Demo Satisfaction'[Nps Score]<=6)),0)",
+    "description": "SYNTHETIC DEMO DATA. Response count using standard score classification.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Customer Satisfaction",
+    "page": "Customer Satisfaction"
+  },
+  {
+    "name": "Demo Passives",
+    "expression": "[Demo Survey Responses]-[Demo Promoters]-[Demo Detractors]",
+    "description": "SYNTHETIC DEMO DATA. Responses scored seven or eight.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Customer Satisfaction",
+    "page": "Customer Satisfaction"
+  },
+  {
+    "name": "Demo Promoter %",
+    "expression": "DIVIDE([Demo Promoters], [Demo Survey Responses])",
+    "description": "SYNTHETIC DEMO DATA. Share of selected responses.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Customer Satisfaction",
+    "page": "Customer Satisfaction"
+  },
+  {
+    "name": "Demo Detractor %",
+    "expression": "DIVIDE([Demo Detractors], [Demo Survey Responses])",
+    "description": "SYNTHETIC DEMO DATA. Share of selected responses.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Customer Satisfaction",
+    "page": "Customer Satisfaction"
+  },
+  {
+    "name": "Demo NPS",
+    "expression": "100 * ([Demo Promoter %]-[Demo Detractor %])",
+    "description": "SYNTHETIC DEMO DATA. Net Promoter Score in points from -100 to 100; response-weighted, not average raw score.",
+    "formatString": "0.0",
+    "displayFolder": "Digital Demo\\Customer Satisfaction",
+    "page": "Customer Satisfaction"
+  },
+  {
+    "name": "Demo Average NPS Score",
+    "expression": "AVERAGE('Demo Satisfaction'[Nps Score])",
+    "description": "SYNTHETIC DEMO DATA. Mean raw zero-to-ten response, distinct from NPS.",
+    "formatString": "0.00",
+    "displayFolder": "Digital Demo\\Customer Satisfaction",
+    "page": "Customer Satisfaction"
+  },
+  {
+    "name": "Demo Average Satisfaction",
+    "expression": "AVERAGE('Demo Satisfaction'[Satisfaction Score])",
+    "description": "SYNTHETIC DEMO DATA. Mean one-to-five score among responding customers.",
+    "formatString": "0.00",
+    "displayFolder": "Digital Demo\\Customer Satisfaction",
+    "page": "Customer Satisfaction"
+  },
+  {
+    "name": "Demo Resolution Rate",
+    "expression": "DIVIDE(CALCULATE([Demo Survey Responses], KEEPFILTERS('Demo Satisfaction'[Resolved]=TRUE())),[Demo Survey Responses])",
+    "description": "SYNTHETIC DEMO DATA. Resolved responses / all selected survey responses; no case SLA claim.",
+    "formatString": "0.0%",
+    "displayFolder": "Digital Demo\\Customer Satisfaction",
+    "page": "Customer Satisfaction"
+  },
+  {
+    "name": "Demo Campaign Conversions MTD",
+    "expression": "CALCULATE([Demo Campaign Conversions], DATESMTD('Demo Date'[Date]))",
+    "description": "SYNTHETIC DEMO DATA. Send-cohort conversions for selected period-to-date; YTD blank when Jan 1 history is unavailable.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Campaign Conversions QTD",
+    "expression": "CALCULATE([Demo Campaign Conversions], DATESQTD('Demo Date'[Date]))",
+    "description": "SYNTHETIC DEMO DATA. Send-cohort conversions for selected period-to-date; YTD blank when Jan 1 history is unavailable.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Campaign Conversions YTD",
+    "expression": "IF(DATE(YEAR(MAX('Demo Date'[Date])),1,1)>=MINX(ALL('Demo Date'),'Demo Date'[Date]),CALCULATE([Demo Campaign Conversions], DATESYTD('Demo Date'[Date])))",
+    "description": "SYNTHETIC DEMO DATA. Send-cohort conversions for selected period-to-date; YTD blank when Jan 1 history is unavailable.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Campaign Conversions Previous Month",
+    "expression": "VAR BeginDate=MIN('Demo Date'[Date]) VAR FirstAvailable=MINX(ALL('Demo Date'),'Demo Date'[Date])\nRETURN IF(EDATE(BeginDate,-1)>=FirstAvailable,CALCULATE([Demo Campaign Conversions],DATEADD('Demo Date'[Date],-1,MONTH)))",
+    "description": "SYNTHETIC DEMO DATA. Exact selected-date set shifted to prior period; blank without full comparison history.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Campaign Conversions Previous Year",
+    "expression": "VAR BeginDate=MIN('Demo Date'[Date]) VAR FirstAvailable=MINX(ALL('Demo Date'),'Demo Date'[Date])\nRETURN IF(EDATE(BeginDate,-12)>=FirstAvailable,CALCULATE([Demo Campaign Conversions],DATEADD('Demo Date'[Date],-1,YEAR)))",
+    "description": "SYNTHETIC DEMO DATA. Exact selected-date set shifted to prior period; blank without full comparison history.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Campaign Conversions MoM Change",
+    "expression": "IF(NOT ISBLANK([Demo Campaign Conversions Previous Month]),[Demo Campaign Conversions]-[Demo Campaign Conversions Previous Month])",
+    "description": "SYNTHETIC DEMO DATA. Absolute change against shifted previous month.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Campaign Conversions YoY Change",
+    "expression": "IF(NOT ISBLANK([Demo Campaign Conversions Previous Year]),[Demo Campaign Conversions]-[Demo Campaign Conversions Previous Year])",
+    "description": "SYNTHETIC DEMO DATA. Absolute change against shifted previous year.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Engagement Balance",
+    "expression": "SUM('Demo Customer 360'[Balance])",
+    "description": "SYNTHETIC DEMO DATA. Original observed balance of selected demo opportunity cohort; grouping signals are synthetic. Currency unverified.",
+    "formatString": "€#,0",
+    "displayFolder": "Digital Demo\\Primary Banking",
+    "page": "Primary Banking"
+  },
+  {
+    "name": "Demo Detail Product Depth",
+    "expression": "IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Active Product Count]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))",
+    "description": "SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.",
+    "formatString": "0",
+    "displayFolder": "Digital Demo\\Customer Detail",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Demo Detail Payroll Amount",
+    "expression": "IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Monthly Payroll Amount]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))",
+    "description": "SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.",
+    "formatString": "€#,0",
+    "displayFolder": "Digital Demo\\Customer Detail",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Demo Detail Engagement",
+    "expression": "IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Engagement Score]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))",
+    "description": "SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.",
+    "formatString": "0.0",
+    "displayFolder": "Digital Demo\\Customer Detail",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Demo Detail Primary Score",
+    "expression": "IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Primary Bank Score]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))",
+    "description": "SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.",
+    "formatString": "0.0",
+    "displayFolder": "Digital Demo\\Customer Detail",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Demo Detail Active Services",
+    "expression": "IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Services Active]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))",
+    "description": "SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.",
+    "formatString": "0",
+    "displayFolder": "Digital Demo\\Customer Detail",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Demo Detail Campaign Conversions",
+    "expression": "IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Campaigns Converted]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))",
+    "description": "SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.",
+    "formatString": "0",
+    "displayFolder": "Digital Demo\\Customer Detail",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Demo Detail Latest NPS Score",
+    "expression": "IF(HASONEVALUE('Dim Customer'[Customer ID]),CALCULATE(AVERAGE('Demo Customer 360'[Nps Score]),TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key])))",
+    "description": "SYNTHETIC DEMO DATA. Customer detail bridge from original customer ID; blank unless one customer is selected.",
+    "formatString": "0",
+    "displayFolder": "Digital Demo\\Customer Detail",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Demo Detail Opportunity Flags",
+    "expression": "VAR Linked=CALCULATETABLE('Demo Customer 360',TREATAS(VALUES('Dim Customer'[Customer Key]),'Demo Customer 360'[Customer Key]))\nRETURN IF(HASONEVALUE('Dim Customer'[Customer ID]),CONCATENATEX(Linked,\nIF('Demo Customer 360'[Eligible For Payroll Campaign],\"Payroll; \",\"\") & IF('Demo Customer 360'[Cross Sell Opportunity],\"Cross-sell; \",\"\") &\nIF('Demo Customer 360'[High Value Low Engagement],\"High value / low engagement; \",\"\") & IF('Demo Customer 360'[Eligible For Travel Service],\"Travel; \",\"\") &\nIF('Demo Customer 360'[Eligible For Fx Service],\"FX; \",\"\") & IF('Demo Customer 360'[Eligible For Tax Service],\"Tax assistance; \",\"\")))",
+    "description": "SYNTHETIC DEMO DATA. Explainable flags, not a recommendation to contact without consent/suitability review.",
+    "formatString": "",
+    "displayFolder": "Digital Demo\\Customer Detail",
+    "page": "Customer Detail"
+  },
+  {
+    "name": "Demo Campaign Funnel Value",
+    "expression": "SWITCH(SELECTEDVALUE('Demo Funnel Stage'[Sort Order]),1,[Demo Campaigns Sent],2,[Demo Campaign Opens],3,[Demo Campaign Clicks],4,[Demo Campaign Conversions])",
+    "description": "SYNTHETIC DEMO DATA. Four-step sent/open/click/convert count.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Campaign Performance",
+    "page": "Campaign Performance"
+  },
+  {
+    "name": "Demo Service Funnel Value",
+    "expression": "SWITCH(SELECTEDVALUE('Demo Funnel Stage'[Sort Order]),1,[Demo Eligible Service Relationships],2,[Demo Offered Service Relationships],3,[Demo Activated Service Relationships],4,[Demo Active Service Relationships])",
+    "description": "SYNTHETIC DEMO DATA. Customer-service relationship funnel; distinct from customer counts.",
+    "formatString": "#,0",
+    "displayFolder": "Digital Demo\\Value-Added Services",
+    "page": "Value-Added Services"
+  }
+]

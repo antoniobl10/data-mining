@@ -1,0 +1,456 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "services",
+  "displayName": "Value-Added Services",
+  "displayOption": "FitToWidth",
+  "height": 1240,
+  "width": 1440,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "slicer_service_name",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "slicer_engagement_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "service_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "service_rate",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_service_name",
+      "target": "primary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_service_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "slicer_engagement_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "service_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "service_rate",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_country",
+      "target": "primary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "slicer_service_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "service_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "service_rate",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "slicer_engagement_segment",
+      "target": "primary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "slicer_service_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "slicer_engagement_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "service_rate",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_funnel",
+      "target": "primary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "slicer_service_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "slicer_engagement_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "service_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "service_rate",
+      "target": "primary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "slicer_service_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "slicer_engagement_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "service_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "service_rate",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "value",
+      "target": "primary",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_service_name",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_country",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "slicer_engagement_segment",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "demo_kpi_0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "demo_kpi_1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "demo_kpi_2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "demo_kpi_3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "demo_kpi_4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "service_funnel",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "service_rate",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "value",
+      "type": "DataFilter"
+    },
+    {
+      "source": "country",
+      "target": "primary",
+      "type": "DataFilter"
+    }
+  ]
+}
